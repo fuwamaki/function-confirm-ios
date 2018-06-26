@@ -1,0 +1,19 @@
+# generally
+
+.DS_Store
+*.swp
+DerivedData
+
+# ios
+
+*.hmap
+*.ipa
+*.xccheckout
+*.xcuserstate
+**/xcuserdata/
+**/xcshareddata/
+
+# Cocoapods
+
+Pods
+
