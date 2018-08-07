@@ -23,7 +23,7 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,8 +37,11 @@ extension MainVC: UITableViewDataSource {
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "GitHubRepositoryListCell", for: indexPath)
             return cell
-        } else {
+        } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QiitaListCell", for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mvpCell", for: indexPath)
             return cell
         }
     }
@@ -63,6 +66,10 @@ extension MainVC: UITableViewDelegate {
         case 3:
             let storyBoard = UIStoryboard(name: "QiitaList", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "QiitaListVC")
+            navigationController?.pushViewController(vc, animated: true)
+        case 4:
+            let storyBoard = UIStoryboard(name: "MVPSystem", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "MVPViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:
             break
