@@ -18,9 +18,14 @@ class MVPViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "MVP"
+        self.navigationItem.title = "商品一覧"
+        setupTableView()
+    }
+
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.registerForCell(MVPTableCell.self)
     }
 }
 
@@ -34,8 +39,8 @@ extension MVPViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MVPCell", for: indexPath)
-        cell.textLabel?.text = "さんぷる"
+        let cell = tableView.dequeueCellForIndexPath(indexPath) as MVPTableCell
+        cell.setItem()
         return cell
     }
 }
