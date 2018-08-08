@@ -43,6 +43,9 @@
 		9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26451211A894100DD178E /* UITableViewCell+Addition.swift */; };
 		9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */; };
 		9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26455211A8FB300DD178E /* UIColor+Addition.swift */; };
+		9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26459211A917C00DD178E /* MVPRegistViewController.swift */; };
+		9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2645B211A918B00DD178E /* MVPRegistPresenter.swift */; };
+		9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2645D211A919900DD178E /* MVPRegistModel.swift */; };
 		D845A8B2324485DD1001D69B /* libPods-FunctionConfirm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570A547573912717DE462FBF /* libPods-FunctionConfirm.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		9CE26451211A894100DD178E /* UITableViewCell+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Addition.swift"; sourceTree = "<group>"; };
 		9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Addition.swift"; sourceTree = "<group>"; };
 		9CE26455211A8FB300DD178E /* UIColor+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Addition.swift"; sourceTree = "<group>"; };
+		9CE26459211A917C00DD178E /* MVPRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistViewController.swift; sourceTree = "<group>"; };
+		9CE2645B211A918B00DD178E /* MVPRegistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistPresenter.swift; sourceTree = "<group>"; };
+		9CE2645D211A919900DD178E /* MVPRegistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistModel.swift; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,7 +306,7 @@
 			children = (
 				9CCC0AF821199EFD007EFE26 /* MVP.storyboard */,
 				9CE26457211A90D000DD178E /* List */,
-				9CE26458211A90DA00DD178E /* Register */,
+				9CE26458211A90DA00DD178E /* Regist */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -316,11 +322,14 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		9CE26458211A90DA00DD178E /* Register */ = {
+		9CE26458211A90DA00DD178E /* Regist */ = {
 			isa = PBXGroup;
 			children = (
+				9CE26459211A917C00DD178E /* MVPRegistViewController.swift */,
+				9CE2645B211A918B00DD178E /* MVPRegistPresenter.swift */,
+				9CE2645D211A919900DD178E /* MVPRegistModel.swift */,
 			);
-			path = Register;
+			path = Regist;
 			sourceTree = "<group>";
 		};
 		F7CFB3FF5DBC8E92B546F54E /* Pods */ = {
@@ -505,11 +514,14 @@
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
+				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
+				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */,
 				7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
+				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
 				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
 				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
