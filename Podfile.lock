@@ -1,20 +1,24 @@
 PODS:
   - APIKit (3.2.1):
     - Result (~> 3.0)
+  - Cartography (3.0.2)
   - Result (3.2.4)
 
 DEPENDENCIES:
   - APIKit (~> 3.2)
+  - Cartography (~> 3.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - APIKit
+    - Cartography
     - Result
 
 SPEC CHECKSUMS:
   APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
+  Cartography: 231190d7d0b3107ce8d67c54189f059a509b3760
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: e9556ecf118c51796adfbffb6f0a78ad01cf975d
+PODFILE CHECKSUM: 740deab7149f615c4b5ce958e325a2e1ec33e055
 
 COCOAPODS: 1.5.3
