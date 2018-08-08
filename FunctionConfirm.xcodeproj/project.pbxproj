@@ -36,6 +36,7 @@
 		7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVPSystem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVPSystem.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
+		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		D845A8B2324485DD1001D69B /* libPods-FunctionConfirm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570A547573912717DE462FBF /* libPods-FunctionConfirm.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListRequest.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVPSystem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVPSystem.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
+		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +284,7 @@
 			children = (
 				9CCC0AF821199EFD007EFE26 /* MVPSystem.storyboard */,
 				9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */,
+				9CE26449211A74D100DD178E /* MVPPresenter.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
+				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				7B67232320E0BF3D00D8A5A3 /* DisplayVC.swift in Sources */,
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */,
