@@ -26,6 +26,7 @@ class MVPViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerForCell(MVPTableCell.self)
+        tableView.backgroundColor = UIColor.baseGray
     }
 }
 
@@ -46,4 +47,7 @@ extension MVPViewController: UITableViewDelegate {
 }
 
 extension MVPViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
