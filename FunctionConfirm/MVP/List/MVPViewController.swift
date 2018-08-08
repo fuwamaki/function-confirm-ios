@@ -14,11 +14,17 @@ protocol MVPView: class {
 
 class MVPViewController: UIViewController {
 
+    private struct Text {
+        static let title = "商品一覧"
+        static let regist = "登録"
+    }
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "商品一覧"
+        navigationItem.title = Text.title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Text.regist, style: .plain, target: self, action: #selector(clickRegistButton(_:)))
         setupTableView()
     }
 
@@ -27,6 +33,12 @@ class MVPViewController: UIViewController {
         tableView.dataSource = self
         tableView.registerForCell(MVPTableCell.self)
         tableView.backgroundColor = UIColor.baseGray
+    }
+
+    @objc func clickRegistButton(_ sender: UIBarButtonItem) {
+        let vc = MVPRegistViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
 }
 
