@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MVPView: class {
+    
+}
+
 class MVPViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +22,10 @@ class MVPViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+}
+
+extension MVPViewController: MVPView {
+    
 }
 
 extension MVPViewController: UITableViewDelegate {
