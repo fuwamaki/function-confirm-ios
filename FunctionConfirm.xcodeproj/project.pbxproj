@@ -299,12 +299,28 @@
 			isa = PBXGroup;
 			children = (
 				9CCC0AF821199EFD007EFE26 /* MVP.storyboard */,
+				9CE26457211A90D000DD178E /* List */,
+				9CE26458211A90DA00DD178E /* Register */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		9CE26457211A90D000DD178E /* List */ = {
+			isa = PBXGroup;
+			children = (
 				9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */,
 				9CE26449211A74D100DD178E /* MVPPresenter.swift */,
 				9CE2644B211A818A00DD178E /* MVPModel.swift */,
 				9CE2644D211A85E500DD178E /* MVPTableCell.swift */,
 			);
-			path = MVP;
+			path = List;
+			sourceTree = "<group>";
+		};
+		9CE26458211A90DA00DD178E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		F7CFB3FF5DBC8E92B546F54E /* Pods */ = {
