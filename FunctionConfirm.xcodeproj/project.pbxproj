@@ -34,7 +34,7 @@
 		7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
 		7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */; };
 		7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */; };
-		9CCC0AF921199EFD007EFE26 /* MVPSystem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVPSystem.storyboard */; };
+		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644B211A818A00DD178E /* MVPModel.swift */; };
@@ -99,7 +99,7 @@
 		7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListElement.swift; sourceTree = "<group>"; };
 		7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListRequest.swift; sourceTree = "<group>"; };
-		9CCC0AF821199EFD007EFE26 /* MVPSystem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVPSystem.storyboard; sourceTree = "<group>"; };
+		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		9CE2644B211A818A00DD178E /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 		9CCC0AF721199ECA007EFE26 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				9CCC0AF821199EFD007EFE26 /* MVPSystem.storyboard */,
+				9CCC0AF821199EFD007EFE26 /* MVP.storyboard */,
 				9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */,
 				9CE26449211A74D100DD178E /* MVPPresenter.swift */,
 				9CE2644B211A818A00DD178E /* MVPModel.swift */,
@@ -421,7 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CCC0AF921199EFD007EFE26 /* MVPSystem.storyboard in Resources */,
+				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,

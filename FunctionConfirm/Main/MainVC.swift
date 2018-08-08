@@ -68,7 +68,7 @@ extension MainVC: UITableViewDelegate {
             let vc = storyBoard.instantiateViewController(withIdentifier: "QiitaListVC")
             navigationController?.pushViewController(vc, animated: true)
         case 4:
-            let storyBoard = UIStoryboard(name: "MVPSystem", bundle: nil)
+            let storyBoard = UIStoryboard(name: "MVP", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "MVPViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:
