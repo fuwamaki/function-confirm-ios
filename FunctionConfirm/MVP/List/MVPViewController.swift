@@ -20,9 +20,12 @@ class MVPViewController: UIViewController {
     }
 
     @IBOutlet weak var tableView: UITableView!
+    private var presentable: MVPPresentable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let presenter = MVPPresenter(self)
+        presentable = presenter
         navigationItem.title = Text.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: Text.regist, style: .plain, target: self, action: #selector(clickRegistButton(_:)))
         setupTableView()

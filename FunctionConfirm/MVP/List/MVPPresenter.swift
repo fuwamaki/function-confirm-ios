@@ -14,8 +14,15 @@ protocol MVPPresentable: class {
 
 class MVPPresenter {
 
+    var model: MVPModelInterface
+    var view: MVPView
+    
+    init(_ view: MVPView) {
+        let model = MVPModel()
+        self.view = view
+        self.model = model
+    }
 }
 
 extension MVPPresenter: MVPPresentable {
-    
 }
