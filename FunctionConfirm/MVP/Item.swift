@@ -9,7 +9,7 @@
 import Foundation
 
 struct Item: Decodable {
-    let id: String?
+    let id: String? = nil
     let name: String
     let category: String
     let price: Int

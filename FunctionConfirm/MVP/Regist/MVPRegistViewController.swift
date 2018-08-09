@@ -136,6 +136,32 @@ class MVPRegistViewController: UIViewController {
         UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {() -> Void in
             self.registButton.alpha = 1
         }, completion: nil)
+        if let name = nameTextField.text, let category = categoryTextField.text, let priceStr = priceTextField.text,
+            name != "", category != "", let price = Int(priceStr) {
+            showConfirmAlert(message: Item(name: name, category: category, price: price).name)
+        } else {
+            showErrorAlert(message: "未入力です。")
+        }
+    }
+
+    private func showConfirmAlert(message: String) {
+        let alert = UIAlertController(
+            title: "登録します。よろしいですか？",
+            message: "商品名: \(message)",
+            preferredStyle: .alert)
+        // TODO: 登録後の処理
+        alert.addAction(UIAlertAction(title: "登録", style: .default))
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func showErrorAlert(message: String) {
+        let alert = UIAlertController(
+            title: "エラー",
+            message: message,
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "閉じる", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
