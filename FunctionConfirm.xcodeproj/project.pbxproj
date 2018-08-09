@@ -34,6 +34,8 @@
 		7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
 		7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */; };
 		7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */; };
+		9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */; };
+		9C096C45211C26E8008DB26D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C44211C26E8008DB26D /* Item.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
@@ -102,6 +104,8 @@
 		7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListElement.swift; sourceTree = "<group>"; };
 		7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListRequest.swift; sourceTree = "<group>"; };
+		9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTfulAPIRequest.swift; sourceTree = "<group>"; };
+		9C096C44211C26E8008DB26D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				9CCC0AF821199EFD007EFE26 /* MVP.storyboard */,
+				9C096C44211C26E8008DB26D /* Item.swift */,
+				9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */,
 				9CE26457211A90D000DD178E /* List */,
 				9CE26458211A90DA00DD178E /* Regist */,
 			);
@@ -510,6 +516,7 @@
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */,
+				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
@@ -527,6 +534,7 @@
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
+				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
