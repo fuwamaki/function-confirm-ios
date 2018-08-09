@@ -52,6 +52,16 @@ class MVPRegistViewController: UIViewController {
         textField.font = UIFont.systemFont(ofSize: 14.0)
         textField.textColor = UIColor.black
         textField.placeholder = Text.namePlaceholder
+        textField.textAlignment = .right
+
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth  = 1
+
+        // MEMO: padding.right
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 32))
+        textField.rightViewMode = .always
         return textField
     }()
 
@@ -60,6 +70,15 @@ class MVPRegistViewController: UIViewController {
         textField.font = UIFont.systemFont(ofSize: 14.0)
         textField.textColor = UIColor.black
         textField.placeholder = Text.categoryPlaceholder
+        textField.textAlignment = .right
+
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth  = 1
+        
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 32))
+        textField.rightViewMode = .always
         return textField
     }()
 
@@ -68,6 +87,15 @@ class MVPRegistViewController: UIViewController {
         textField.font = UIFont.systemFont(ofSize: 14.0)
         textField.textColor = UIColor.black
         textField.placeholder = Text.pricePlaceholder
+        textField.textAlignment = .right
+
+        textField.borderStyle = .none
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth  = 1
+        
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 32))
+        textField.rightViewMode = .always
         return textField
     }()
 
@@ -77,6 +105,8 @@ class MVPRegistViewController: UIViewController {
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
         button.backgroundColor = UIColor.red
+        button.addTarget(self, action: #selector(touchDownButton), for: .touchDown)
+        button.addTarget(self, action: #selector(touchUpInsideButton), for: .touchUpInside)
         return button
     }()
 
@@ -92,9 +122,26 @@ class MVPRegistViewController: UIViewController {
         setViews(view.safeAreaInsets.top)
     }
 
-    @objc func close(_ sender: UIBarButtonItem) {
+    @objc private func close(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+
+    @objc private func touchDownButton() {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {() -> Void in
+            self.registButton.alpha = 0.7
+        }, completion: nil)
+    }
+
+    @objc private func touchUpInsideButton() {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {() -> Void in
+            self.registButton.alpha = 1
+        }, completion: nil)
+    }
+}
+
+// MARK: setLayout
+
+extension MVPRegistViewController {
 
     private func setViews(_ topMargin: CGFloat) {
         view.addSubview(nameLabel)
@@ -107,7 +154,7 @@ class MVPRegistViewController: UIViewController {
         constrain(nameLabel, categoryLabel, priceLabel) { nameLabel, categoryLabel, priceLabel in
             nameLabel.width == 64
             nameLabel.height == 32
-            nameLabel.top == nameLabel.superview!.top + topMargin + 120
+            nameLabel.top == nameLabel.superview!.top + topMargin + 96
             nameLabel.left == nameLabel.superview!.left + 48
             categoryLabel.width == 64
             categoryLabel.height == 32
@@ -121,7 +168,7 @@ class MVPRegistViewController: UIViewController {
         constrain(nameTextField, categoryTextField, priceTextField) { nameTextField, categoryTextField, priceTextField in
             nameTextField.width == 120
             nameTextField.height == 32
-            nameTextField.top == nameTextField.superview!.top + topMargin + 120
+            nameTextField.top == nameTextField.superview!.top + topMargin + 96
             nameTextField.right == nameTextField.superview!.right - 48
             categoryTextField.width == 120
             categoryTextField.height == 32
