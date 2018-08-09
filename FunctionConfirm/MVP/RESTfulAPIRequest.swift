@@ -33,23 +33,42 @@ extension APIRequest where Response: Decodable {
     }
 }
 
-struct Items: APIRequest {
+struct GetItemRequest: APIRequest {
     typealias Response = [Item]
     let method: HTTPMethod = .get
     let path: String = "/api/v2/items"
     let parameters: Any = ["page":"1","per_page":"10"]
 }
 
+struct PostItemRequest: APIRequest {
+    //ココはItemじゃない何か
+    typealias Response = Item
+    let method: HTTPMethod = .post
+    let path: String = ""
+}
+
 class RESTfulApiRequest {
 
     private weak var task: URLSessionDataTask?
 
-    func getAPI(completion: @escaping (Result<Items.Response, NSError>) -> Void) {
-        let request = Items()
+    func getAPI(completion: @escaping (Result<GetItemRequest.Response, NSError>) -> Void) {
+        let request = GetItemRequest()
         Session.send(request) { result in
             switch result {
             case .success(let response):
                 completion(.success(response))
+            case .failure(let error):
+                completion(.failure(error as NSError))
+            }
+        }
+    }
+
+    func postAPI(item: Item, completion: @escaping (Result<Void, NSError>) -> Void) {
+        let request = PostItemRequest()
+        Session.send(request) { result in
+            switch result {
+            case .success:
+                completion(.success(()))
             case .failure(let error):
                 completion(.failure(error as NSError))
             }
