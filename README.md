@@ -1,2 +1,3 @@
-# function_confirm
-iosの機能確認用
+## function_confirm
+
+機能確認用のiOSアプリケーション。
