@@ -36,6 +36,7 @@
 		7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */; };
 		9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */; };
 		9C096C45211C26E8008DB26D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C44211C26E8008DB26D /* Item.swift */; };
+		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
@@ -106,6 +107,7 @@
 		7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListRequest.swift; sourceTree = "<group>"; };
 		9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTfulAPIRequest.swift; sourceTree = "<group>"; };
 		9C096C44211C26E8008DB26D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				9CCC0AF821199EFD007EFE26 /* MVP.storyboard */,
+				9C827A32213EB56600E72FDA /* ItemResponse.swift */,
 				9C096C44211C26E8008DB26D /* Item.swift */,
 				9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */,
 				9CE26457211A90D000DD178E /* List */,
@@ -527,6 +530,7 @@
 				7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
+				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
 				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
