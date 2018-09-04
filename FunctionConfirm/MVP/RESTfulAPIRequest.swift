@@ -15,7 +15,7 @@ protocol APIRequest: Request {
 extension APIRequest {
 
     var baseURL: URL {
-        return URL(string: "https://qiita.com")!
+        return URL(string: "https://item-server.herokuapp.com")!
     }
 }
 
@@ -34,10 +34,9 @@ extension APIRequest where Response: Decodable {
 }
 
 struct GetItemRequest: APIRequest {
-    typealias Response = [Item]
+    typealias Response = ItemResponse
     let method: HTTPMethod = .get
-    let path: String = "/api/v2/items"
-    let parameters: Any = ["page":"1","per_page":"10"]
+    let path: String = "/items"
 }
 
 struct PostItemRequest: APIRequest {
