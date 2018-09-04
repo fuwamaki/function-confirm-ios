@@ -9,26 +9,30 @@
 import UIKit
 
 protocol MVPView: class {
-    
+    func reloadData()
 }
 
-class MVPViewController: UIViewController {
+private struct Text {
+    static let title = "商品一覧"
+    static let regist = "登録"
+}
 
-    private struct Text {
-        static let title = "商品一覧"
-        static let regist = "登録"
-    }
+class MVPViewController: UIViewController, MVPView {
 
     @IBOutlet weak var tableView: UITableView!
-    private var presentable: MVPPresentable?
+    private var presenter: MVPPresentable!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        presenter = MVPPresenter.init(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let presenter = MVPPresenter(self)
-        presentable = presenter
         navigationItem.title = Text.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: Text.regist, style: .plain, target: self, action: #selector(clickRegistButton(_:)))
         setupTableView()
+        updateItems()
     }
 
     private func setupTableView() {
@@ -38,30 +42,36 @@ class MVPViewController: UIViewController {
         tableView.backgroundColor = UIColor.baseGray
     }
 
+    private func updateItems() {
+        presenter.updateItems()
+    }
+
     @objc func clickRegistButton(_ sender: UIBarButtonItem) {
         let vc = MVPRegistViewController()
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }
-}
 
-extension MVPViewController: MVPView {
-    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 extension MVPViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return presenter.numberOfItems
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCellForIndexPath(indexPath) as MVPTableCell
-        cell.setItem()
+        cell.setItem(presenter.entity(at: indexPath))
         return cell
     }
 }
 
 extension MVPViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

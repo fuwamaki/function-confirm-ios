@@ -35,10 +35,9 @@ final class MVPTableCell: UITableViewCell {
         addSubview(priceLabel)
     }
 
-    func setItem() {
-        // TODO: Item情報を入れる
-        textLabel?.text = "もふもふ"
-        detailTextLabel?.text = "神様、僕は気付いてしまった"
-        priceLabel.text = "2000円"
+    func setItem(_ item: Item) {
+        textLabel?.text = item.name
+        detailTextLabel?.text = item.category
+        priceLabel.text = String(item.price)
     }
 }
