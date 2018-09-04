@@ -9,13 +9,13 @@
 import Foundation
 
 struct Item: Decodable {
-    let id: String? = nil
+    let item_id: String? = nil
     let name: String
     let category: String
     let price: Int
-    
+
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case item_id = "item_id"
         case name = "name"
         case category = "category"
         case price = "price"
