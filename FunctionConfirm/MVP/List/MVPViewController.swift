@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KRProgressHUD
 
 protocol MVPView: class {
     func reloadData()
@@ -43,6 +44,7 @@ class MVPViewController: UIViewController, MVPView {
     }
 
     private func updateItems() {
+        KRProgressHUD.show()
         presenter.updateItems()
     }
 
@@ -53,6 +55,7 @@ class MVPViewController: UIViewController, MVPView {
     }
 
     func reloadData() {
+        KRProgressHUD.dismiss()
         tableView.reloadData()
     }
 }
