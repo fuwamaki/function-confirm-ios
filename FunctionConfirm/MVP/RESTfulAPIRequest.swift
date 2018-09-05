@@ -40,10 +40,14 @@ struct GetItemRequest: APIRequest {
 }
 
 struct PostItemRequest: APIRequest {
-    //ココはItemじゃない何か
     typealias Response = Item
+//    let item: Item
+    let data: Dictionary<String, Any>
     let method: HTTPMethod = .post
-    let path: String = ""
+    let path: String = "/create"
+    var bodyParameters: BodyParameters? {
+        return JSONBodyParameters(JSONObject: data)
+    }
 }
 
 class RESTfulApiRequest {
@@ -62,15 +66,29 @@ class RESTfulApiRequest {
         }
     }
 
-    func postAPI(item: Item, completion: @escaping (Result<Void, NSError>) -> Void) {
-        let request = PostItemRequest()
+    func postAPI(item: Item, completion: @escaping (Result<PostItemRequest.Response, NSError>) -> Void) {
+        let itemRequest = ItemRequest(item: item)
+        let data = try! JSONEncoder().encode(itemRequest)
+        print(String(data: data, encoding: String.Encoding.utf8)!)
+        let request = PostItemRequest(data: parse(data: data))
         Session.send(request) { result in
             switch result {
-            case .success:
-                completion(.success(()))
+            case .success(let response):
+                print(response)
+                completion(.success(response))
             case .failure(let error):
                 completion(.failure(error as NSError))
             }
+        }
+    }
+
+    func parse(data: Data) -> Dictionary<String, Any> {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, Any>
+            print(json)
+            return json
+        } catch {
+            fatalError("json parse error")
         }
     }
 }
