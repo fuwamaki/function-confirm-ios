@@ -8,6 +8,11 @@
 
 import UIKit
 import Cartography
+import KRProgressHUD
+
+protocol MVPRegistView: class {
+    func close()
+}
 
 private struct Text {
     static let title = "商品登録"
@@ -21,7 +26,7 @@ private struct Text {
     static let regist = "登録"
 }
 
-class MVPRegistViewController: UIViewController {
+class MVPRegistViewController: UIViewController, MVPRegistView {
 
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -110,10 +115,22 @@ class MVPRegistViewController: UIViewController {
         return button
     }()
 
+    private var presenter: MVPRegistPresentable!
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        presenter = MVPRegistPresenter.init(self)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        presenter = MVPRegistPresenter.init(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = Text.title
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: Text.close, style: .plain, target: self, action: #selector(close(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: Text.close, style: .plain, target: self, action: #selector(close))
         view.backgroundColor = UIColor.white
     }
 
@@ -122,7 +139,8 @@ class MVPRegistViewController: UIViewController {
         setViews(view.safeAreaInsets.top)
     }
 
-    @objc private func close(_ sender: UIBarButtonItem) {
+    @objc func close() {
+        KRProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
 
@@ -138,19 +156,22 @@ class MVPRegistViewController: UIViewController {
         }, completion: nil)
         if let name = nameTextField.text, let category = categoryTextField.text, let priceStr = priceTextField.text,
             name != "", category != "", let price = Int(priceStr) {
-            showConfirmAlert(message: Item(name: name, category: category, price: price).name)
+            showConfirmAlert(Item(name: name, category: category, price: price))
         } else {
             showErrorAlert(message: "未入力です。")
         }
     }
 
-    private func showConfirmAlert(message: String) {
+    private func showConfirmAlert(_ item: Item) {
         let alert = UIAlertController(
             title: "登録します。よろしいですか？",
-            message: "商品名: \(message)",
+            message: "商品名: \(item.name)",
             preferredStyle: .alert)
         // TODO: 登録後の処理
-        alert.addAction(UIAlertAction(title: "登録", style: .default))
+        alert.addAction(UIAlertAction(title: "登録", style: .default, handler: { _ in
+            KRProgressHUD.show()
+            self.presenter.registerItem(item)
+        }))
         alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
         self.present(alert, animated: true, completion: nil)
     }
