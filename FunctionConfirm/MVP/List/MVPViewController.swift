@@ -36,6 +36,11 @@ class MVPViewController: UIViewController, MVPView {
         updateItems()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        updateItems()
+    }
+
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
