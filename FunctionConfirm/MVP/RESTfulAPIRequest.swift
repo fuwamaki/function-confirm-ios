@@ -41,7 +41,6 @@ struct GetItemRequest: APIRequest {
 
 struct PostItemRequest: APIRequest {
     typealias Response = Item
-//    let item: Item
     let data: Dictionary<String, Any>
     let method: HTTPMethod = .post
     let path: String = "/create"
@@ -82,6 +81,7 @@ class RESTfulApiRequest {
         }
     }
 
+    // TODO: このパースはRESTfulApiRequestじゃないところにしたい
     func parse(data: Data) -> Dictionary<String, Any> {
         do {
             let json = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, Any>
