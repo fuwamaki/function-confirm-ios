@@ -156,7 +156,7 @@ class MVPRegistViewController: UIViewController, MVPRegistView {
         }, completion: nil)
         if let name = nameTextField.text, let category = categoryTextField.text, let priceStr = priceTextField.text,
             name != "", category != "", let price = Int(priceStr) {
-            showConfirmAlert(Item(name: name, category: category, price: price))
+            showConfirmAlert(Item(id: 0, name: name, category: category, price: price))
         } else {
             showErrorAlert(message: "未入力です。")
         }
