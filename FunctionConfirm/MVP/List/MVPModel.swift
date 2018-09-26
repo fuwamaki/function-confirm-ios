@@ -16,6 +16,7 @@ protocol MVPNotify: class {
 protocol MVPModelInterface: MVPNotify {
     var items: [Item] { get }
     func getItems()
+    func deleteItem(id: Int, row: Int)
 }
 
 class MVPModel {
@@ -36,6 +37,18 @@ extension MVPModel: MVPModelInterface {
             case .success(let response):
                 self?.items = response.data
                 self?.notify()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    func deleteItem(id: Int, row: Int) {
+        items.remove(at: row)
+        api.deleteAPI(id) { [weak self] result in
+            switch result {
+            case .success(let resposne):
+                print(resposne)
             case .failure(let error):
                 print(error)
             }

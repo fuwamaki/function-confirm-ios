@@ -44,7 +44,7 @@ class MVPPresenter: MVPPresentable {
     }
 
     func deleteItem(_ indexPath: IndexPath) {
-        
+        model.deleteItem(id: model.items[indexPath.row].id, row: indexPath.row)
     }
 
     func entity(at indexPath: IndexPath) -> Item {

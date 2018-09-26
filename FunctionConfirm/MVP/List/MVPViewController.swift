@@ -88,6 +88,7 @@ extension MVPViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             presenter.deleteItem(indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }

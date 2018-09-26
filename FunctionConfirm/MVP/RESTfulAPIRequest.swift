@@ -55,9 +55,12 @@ struct ItemDeleteResponse: Decodable {
 
 struct DeleteItemRequest: APIRequest {
     typealias Response = ItemDeleteResponse
-    let id: Int
     let method: HTTPMethod = .delete
     let path: String = "/delete"
+    let id: Int
+    var queryParameters: [String : Any]? {
+        return ["id": id]
+    }
 }
 
 class RESTfulApiRequest {
