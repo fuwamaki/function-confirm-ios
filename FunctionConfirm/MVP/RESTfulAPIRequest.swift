@@ -49,6 +49,17 @@ struct PostItemRequest: APIRequest {
     }
 }
 
+struct ItemDeleteResponse: Decodable {
+    let status: String?
+}
+
+struct DeleteItemRequest: APIRequest {
+    typealias Response = ItemDeleteResponse
+    let id: Int
+    let method: HTTPMethod = .delete
+    let path: String = "/delete"
+}
+
 class RESTfulApiRequest {
 
     private weak var task: URLSessionDataTask?
@@ -74,6 +85,17 @@ class RESTfulApiRequest {
             switch result {
             case .success(let response):
                 print(response)
+                completion(.success(response))
+            case .failure(let error):
+                completion(.failure(error as NSError))
+            }
+        }
+    }
+
+    func deleteAPI(_ id: Int, _ completion: @escaping (Result<DeleteItemRequest.Response, NSError>) -> Void) {
+        Session.send(DeleteItemRequest(id: id)) { result in
+            switch result {
+            case .success(let response):
                 completion(.success(response))
             case .failure(let error):
                 completion(.failure(error as NSError))

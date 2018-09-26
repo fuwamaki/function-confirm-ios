@@ -76,6 +76,20 @@ extension MVPViewController: UITableViewDelegate {
         cell.setItem(presenter.entity(at: indexPath))
         return cell
     }
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deleteItem(indexPath)
+        }
+    }
 }
 
 extension MVPViewController: UITableViewDataSource {

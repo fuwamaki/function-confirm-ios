@@ -12,6 +12,7 @@ protocol MVPPresentable: class {
     init(_ view: MVPView)
     var numberOfItems: Int { get }
     func updateItems()
+    func deleteItem(_ indexPath: IndexPath)
     func entity(at indexPath: IndexPath) -> Item
 }
 
@@ -40,6 +41,10 @@ class MVPPresenter: MVPPresentable {
 
     func updateItems() {
         model.getItems()
+    }
+
+    func deleteItem(_ indexPath: IndexPath) {
+        
     }
 
     func entity(at indexPath: IndexPath) -> Item {
