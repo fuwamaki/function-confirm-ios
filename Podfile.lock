@@ -1,20 +1,32 @@
 PODS:
   - APIKit (3.2.1):
     - Result (~> 3.0)
+  - Cartography (3.0.2)
+  - KRActivityIndicatorView (2.1.1)
+  - KRProgressHUD (3.1.2):
+    - KRActivityIndicatorView (= 2.1.1)
   - Result (3.2.4)
 
 DEPENDENCIES:
   - APIKit (~> 3.2)
+  - Cartography (~> 3.0.1)
+  - KRProgressHUD (~> 3.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - APIKit
+    - Cartography
+    - KRActivityIndicatorView
+    - KRProgressHUD
     - Result
 
 SPEC CHECKSUMS:
   APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
+  Cartography: 231190d7d0b3107ce8d67c54189f059a509b3760
+  KRActivityIndicatorView: fa5df9f4cf039651ad8b0f9c11c3159d1e19299f
+  KRProgressHUD: 6e23870531f8e854c8cba430b0f5a61074865250
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: e9556ecf118c51796adfbffb6f0a78ad01cf975d
+PODFILE CHECKSUM: 2b3c742978d0d820f2a94268c829cff0c2f34dca
 
 COCOAPODS: 1.5.3
