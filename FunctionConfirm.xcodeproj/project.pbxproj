@@ -50,6 +50,8 @@
 		9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26459211A917C00DD178E /* MVPRegistViewController.swift */; };
 		9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2645B211A918B00DD178E /* MVPRegistPresenter.swift */; };
 		9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2645D211A919900DD178E /* MVPRegistModel.swift */; };
+		9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */; };
+		9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB1C712195F6DB00ECF364 /* StackViewController.swift */; };
 		D845A8B2324485DD1001D69B /* libPods-FunctionConfirm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570A547573912717DE462FBF /* libPods-FunctionConfirm.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		9CE26459211A917C00DD178E /* MVPRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistViewController.swift; sourceTree = "<group>"; };
 		9CE2645B211A918B00DD178E /* MVPRegistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistPresenter.swift; sourceTree = "<group>"; };
 		9CE2645D211A919900DD178E /* MVPRegistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistModel.swift; sourceTree = "<group>"; };
+		9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StackView.storyboard; sourceTree = "<group>"; };
+		9CEB1C712195F6DB00ECF364 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +188,7 @@
 				7B67232620E0D3F500D8A5A3 /* GitHubRepositoryList */,
 				7B67232D20E1E12300D8A5A3 /* QiitaList */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
+				9CEB1C6E2195F68900ECF364 /* StackView */,
 				20521A5020DF50A500621136 /* Extension */,
 				2032A70B20DCCA8A0091952F /* CoreData */,
 				7B67231E20E0BC5700D8A5A3 /* Resource */,
@@ -344,6 +349,15 @@
 			path = Regist;
 			sourceTree = "<group>";
 		};
+		9CEB1C6E2195F68900ECF364 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */,
+				9CEB1C712195F6DB00ECF364 /* StackViewController.swift */,
+			);
+			path = StackView;
+			sourceTree = "<group>";
+		};
 		F7CFB3FF5DBC8E92B546F54E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +474,7 @@
 			files = (
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
+				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
@@ -524,6 +539,7 @@
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
+				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
