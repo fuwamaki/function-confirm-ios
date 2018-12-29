@@ -23,7 +23,7 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,8 +43,11 @@ extension MainVC: UITableViewDataSource {
         } else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mvpCell", for: indexPath)
             return cell
-        } else {
+        } else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "stackviewCell", for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mvvmCell", for: indexPath)
             return cell
         }
     }
@@ -77,6 +80,10 @@ extension MainVC: UITableViewDelegate {
         case 5:
             let storyBoard = UIStoryboard(name: "StackView", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            let storyBoard = UIStoryboard(name: "MVVM", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:
             break
