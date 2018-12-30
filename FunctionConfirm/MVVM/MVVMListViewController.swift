@@ -1,5 +1,5 @@
 //
-//  MVVMViewController.swift
+//  MVVMListViewController.swift
 //  FunctionConfirm
 //
 //  Created by Maki, Yusaku | Mackey | ECID on 2018/12/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MVVMViewController: UIViewController {
+class MVVMListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 
@@ -23,7 +23,7 @@ class MVVMViewController: UIViewController {
     }
 }
 
-extension MVVMViewController: UITableViewDelegate {
+extension MVVMListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
@@ -35,7 +35,7 @@ extension MVVMViewController: UITableViewDelegate {
     }
 }
 
-extension MVVMViewController: UITableViewDataSource {
+extension MVVMListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

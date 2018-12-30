@@ -39,7 +39,7 @@
 		9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EBBB9213F6B360085B838 /* ItemRequest.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9CB7156D21D76F6E00C0BAF6 /* MVVM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */; };
-		9CB7156F21D7703B00C0BAF6 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7156E21D7703B00C0BAF6 /* MVVMViewController.swift */; };
+		9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
@@ -117,7 +117,7 @@
 		9C5EBBB9213F6B360085B838 /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVM.storyboard; sourceTree = "<group>"; };
-		9CB7156E21D7703B00C0BAF6 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */,
-				9CB7156E21D7703B00C0BAF6 /* MVVMViewController.swift */,
+				9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -655,7 +655,7 @@
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
 				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
 				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
-				9CB7156F21D7703B00C0BAF6 /* MVVMViewController.swift in Sources */,
+				9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
