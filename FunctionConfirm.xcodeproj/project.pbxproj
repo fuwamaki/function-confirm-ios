@@ -871,7 +871,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98UFL8A7L4;
@@ -893,7 +893,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98UFL8A7L4;
