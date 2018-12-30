@@ -43,6 +43,7 @@
 		9CC3BF8C21D8A4F60033180B /* MVVMRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3BF8B21D8A4F60033180B /* MVVMRegistViewController.swift */; };
 		9CC3BF8E21D8A5010033180B /* MVVMListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3BF8D21D8A5010033180B /* MVVMListViewModel.swift */; };
 		9CC3BF9021D8A50C0033180B /* MVVMRegistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3BF8F21D8A50C0033180B /* MVVMRegistViewModel.swift */; };
+		9CC3BF9221D8A5CA0033180B /* ItemAPIRequestRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3BF9121D8A5CA0033180B /* ItemAPIRequestRx.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
@@ -124,6 +125,7 @@
 		9CC3BF8B21D8A4F60033180B /* MVVMRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMRegistViewController.swift; sourceTree = "<group>"; };
 		9CC3BF8D21D8A5010033180B /* MVVMListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewModel.swift; sourceTree = "<group>"; };
 		9CC3BF8F21D8A50C0033180B /* MVVMRegistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMRegistViewModel.swift; sourceTree = "<group>"; };
+		9CC3BF9121D8A5CA0033180B /* ItemAPIRequestRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAPIRequestRx.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				9CC3BF8B21D8A4F60033180B /* MVVMRegistViewController.swift */,
 				9CC3BF8D21D8A5010033180B /* MVVMListViewModel.swift */,
 				9CC3BF8F21D8A50C0033180B /* MVVMRegistViewModel.swift */,
+				9CC3BF9121D8A5CA0033180B /* ItemAPIRequestRx.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				9CC3BF9221D8A5CA0033180B /* ItemAPIRequestRx.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
