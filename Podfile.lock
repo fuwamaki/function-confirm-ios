@@ -6,11 +6,26 @@ PODS:
   - KRProgressHUD (3.1.2):
     - KRActivityIndicatorView (= 2.1.1)
   - Result (3.2.4)
+  - RxAtomic (4.4.0)
+  - RxBlocking (4.4.0):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - RxTest (4.4.0):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
 
 DEPENDENCIES:
   - APIKit (~> 3.2)
   - Cartography (~> 3.0.1)
   - KRProgressHUD (~> 3.1.0)
+  - RxBlocking (~> 4.4.0)
+  - RxCocoa (~> 4.4.0)
+  - RxSwift (~> 4.4.0)
+  - RxTest (~> 4.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -19,6 +34,11 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - Result
+    - RxAtomic
+    - RxBlocking
+    - RxCocoa
+    - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
@@ -26,7 +46,12 @@ SPEC CHECKSUMS:
   KRActivityIndicatorView: fa5df9f4cf039651ad8b0f9c11c3159d1e19299f
   KRProgressHUD: 6e23870531f8e854c8cba430b0f5a61074865250
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
 
-PODFILE CHECKSUM: 2b3c742978d0d820f2a94268c829cff0c2f34dca
+PODFILE CHECKSUM: 3b2d19b380e52a2d3b989d982e8fdd1bbf798769
 
 COCOAPODS: 1.5.3
