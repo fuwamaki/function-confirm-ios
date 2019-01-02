@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import RxSwift
 
 class MVVMListViewController: UIViewController {
-    
+
     @IBOutlet private weak var tableView: UITableView!
+
+    private lazy var viewModel: MVVMListViewModel = {
+        return MVVMListViewModel(viewController: self)
+    }()
 
     override func viewDidLoad() {
         setupTableView()
@@ -24,11 +29,10 @@ class MVVMListViewController: UIViewController {
 }
 
 extension MVVMListViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MVPTableCell", for: indexPath)
         return cell
@@ -36,7 +40,6 @@ extension MVVMListViewController: UITableViewDelegate {
 }
 
 extension MVVMListViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -7,3 +7,31 @@
 //
 
 import Foundation
+import UIKit
+import RxSwift
+
+class MVVMListViewModel {
+
+    private let viewController: UIViewController
+    private var apiRequest: ItemAPIRequestRxProtocol
+    private let disposeBag = DisposeBag()
+
+//    private lazy var registViewController: MVVMRegistViewController = {
+//        let viewController = MVVMRegistViewController.
+//    }
+
+    // for viewController
+    convenience init(viewController: UIViewController) {
+        self.init(viewController: viewController, request: ItemAPIRequestRx())
+    }
+
+    // for test
+    init(viewController: UIViewController, request: ItemAPIRequestRxProtocol) {
+        self.viewController = viewController
+        self.apiRequest = request
+    }
+
+    func showRegistViewController() {
+        
+    }
+}
