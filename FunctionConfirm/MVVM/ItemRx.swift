@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct ItemRx: Codable {
+    let id: Int?
+    let name: String
+    let category: String
+    let price: Int
+}
