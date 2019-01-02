@@ -39,6 +39,8 @@
 		9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EBBB9213F6B360085B838 /* ItemRequest.swift */; };
 		9C660DEB21DD3001003BF811 /* ItemRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DEA21DD3001003BF811 /* ItemRx.swift */; };
 		9C660DED21DD3CCF003BF811 /* MVVMRegist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C660DEC21DD3CCF003BF811 /* MVVMRegist.storyboard */; };
+		9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */; };
+		9C660DF121DD45F3003BF811 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF021DD45F3003BF811 /* UIStoryboard.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9CB7156D21D76F6E00C0BAF6 /* MVVM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */; };
 		9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */; };
@@ -123,6 +125,8 @@
 		9C5EBBB9213F6B360085B838 /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
 		9C660DEA21DD3001003BF811 /* ItemRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRx.swift; sourceTree = "<group>"; };
 		9C660DEC21DD3CCF003BF811 /* MVVMRegist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVMRegist.storyboard; sourceTree = "<group>"; };
+		9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		9C660DF021DD45F3003BF811 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVM.storyboard; sourceTree = "<group>"; };
 		9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 				9CE26451211A894100DD178E /* UITableViewCell+Addition.swift */,
 				9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */,
 				9CE26455211A8FB300DD178E /* UIColor+Addition.swift */,
+				9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */,
+				9C660DF021DD45F3003BF811 /* UIStoryboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -662,11 +668,13 @@
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9CC3BF9221D8A5CA0033180B /* ItemAPIRequestRx.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
+				9C660DF121DD45F3003BF811 /* UIStoryboard.swift in Sources */,
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */,
 				7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */,
