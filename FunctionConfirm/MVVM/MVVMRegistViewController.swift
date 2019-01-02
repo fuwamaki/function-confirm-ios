@@ -26,3 +26,5 @@ class MVVMRegistViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+extension MVVMRegistViewController: StoryboardLoadable {}

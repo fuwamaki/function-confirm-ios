@@ -44,3 +44,5 @@ extension MVVMListViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+extension MVVMListViewController: StoryboardLoadable {}
