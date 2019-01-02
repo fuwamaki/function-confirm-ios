@@ -30,8 +30,4 @@ class MVVMListViewModel {
         self.viewController = viewController
         self.apiRequest = request
     }
-
-    func showRegistViewController() {
-        
-    }
 }

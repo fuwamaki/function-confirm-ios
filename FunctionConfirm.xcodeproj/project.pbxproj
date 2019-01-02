@@ -38,6 +38,7 @@
 		9C096C45211C26E8008DB26D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C44211C26E8008DB26D /* Item.swift */; };
 		9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EBBB9213F6B360085B838 /* ItemRequest.swift */; };
 		9C660DEB21DD3001003BF811 /* ItemRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DEA21DD3001003BF811 /* ItemRx.swift */; };
+		9C660DED21DD3CCF003BF811 /* MVVMRegist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C660DEC21DD3CCF003BF811 /* MVVMRegist.storyboard */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9CB7156D21D76F6E00C0BAF6 /* MVVM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */; };
 		9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */; };
@@ -121,6 +122,7 @@
 		9C096C44211C26E8008DB26D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9C5EBBB9213F6B360085B838 /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
 		9C660DEA21DD3001003BF811 /* ItemRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRx.swift; sourceTree = "<group>"; };
+		9C660DEC21DD3CCF003BF811 /* MVVMRegist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVMRegist.storyboard; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVM.storyboard; sourceTree = "<group>"; };
 		9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */,
+				9C660DEC21DD3CCF003BF811 /* MVVMRegist.storyboard */,
 				9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */,
 				9CC3BF8B21D8A4F60033180B /* MVVMRegistViewController.swift */,
 				9CC3BF8D21D8A5010033180B /* MVVMListViewModel.swift */,
@@ -520,6 +523,7 @@
 				9CB7156D21D76F6E00C0BAF6 /* MVVM.storyboard in Resources */,
 				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
 				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
+				9C660DED21DD3CCF003BF811 /* MVVMRegist.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */,
