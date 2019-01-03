@@ -9,6 +9,23 @@
 import Foundation
 import RxSwift
 
+enum ItemAPIRequestError: Error {
+    case invalidRequest
+    case responseFailure
+    case notAvailable
+
+    var message: String {
+        switch self {
+        case .invalidRequest:
+            return "入力内容に誤りがあります。"
+        case .responseFailure:
+            return "エラーが発生しました。しばらく経ってからやり直してください。"
+        case .notAvailable:
+            return "現在利用できません。"
+        }
+    }
+}
+
 private struct Url {
     static let baseURLString = "https://item-server.herokuapp.com"
     static let getItemsURL: URL = URL(string: Url.baseURLString + "/items")!
@@ -19,7 +36,7 @@ private struct Url {
 
 struct GetItemResponseRx: Decodable {
     let status: Int
-    let data: [Item]
+    let data: [ItemRx]
 }
 
 struct PostItemRequestRx: Codable {
