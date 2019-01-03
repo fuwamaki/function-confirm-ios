@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Regist View Controller-->
+        <!--Title-->
         <scene sceneID="t5v-WG-x8F">
             <objects>
-                <viewController id="OFA-EK-koQ" customClass="MVVMRegistViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MVVMRegistViewController" id="OFA-EK-koQ" customClass="MVVMRegistViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0aF-HV-GAf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,8 +105,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nEK-qw-tPZ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="K17-VU-gdO">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="jTo-hx-ko6"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="categoryTextField" destination="tXC-39-sE0" id="BOH-G8-teY"/>
+                        <outlet property="closeNavigationBarButtonItem" destination="jTo-hx-ko6" id="NMF-D1-31a"/>
                         <outlet property="nameTextField" destination="d2P-zq-7Eh" id="iAr-tC-RAN"/>
                         <outlet property="priceTextField" destination="l2q-c3-5uJ" id="Yng-j7-OKe"/>
                         <outlet property="submitButton" destination="bzs-Y1-a5x" id="pUa-hI-I01"/>
