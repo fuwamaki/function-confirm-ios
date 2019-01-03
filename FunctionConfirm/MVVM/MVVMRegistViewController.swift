@@ -18,6 +18,12 @@ class MVVMRegistViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
+    // Submit完了通知
+    var submitCompleted: Observable<Void> {
+        return submitCompletedSubject.asObservable()
+    }
+    private let submitCompletedSubject = PublishSubject<Void>()
+
     private lazy var viewModel: MVVMRegistViewModel = {
         return MVVMRegistViewModel(viewController: self)
     }()
