@@ -45,6 +45,7 @@ struct PostItemRequestRx: Codable {
 
 protocol ItemAPIRequestRxProtocol {
     func getItems() -> Single<GetItemResponseRx>
+    func postItem(item: ItemRx) -> Single<ItemRx>
 }
 
 class ItemAPIRequestRx: ItemAPIRequestRxProtocol {
@@ -83,7 +84,7 @@ class ItemAPIRequestRx: ItemAPIRequestRxProtocol {
     }
 
     func postItem(item: ItemRx) -> Single<ItemRx> {
-        guard let data = try? JSONEncoder().encode(item) else {
+        guard let data = try? JSONEncoder().encode(PostItemRequestRx(item: item)) else {
             return Single.error(ItemAPIError.invalidRequest)
         }
         return Single<ItemRx>.create(subscribe: { single in
@@ -96,7 +97,7 @@ class ItemAPIRequestRx: ItemAPIRequestRxProtocol {
                     single(.error(error))
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                guard let response = response as? HTTPURLResponse, response.statusCode == 201 else {
                     single(.error(ItemAPIError.serverError))
                     return
                 }
