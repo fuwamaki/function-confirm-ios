@@ -33,6 +33,11 @@ class MVVMListViewController: UIViewController {
         viewModel.fetchItems().subscribe().disposed(by: disposeBag)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchItems().subscribe().disposed(by: disposeBag)
+    }
+
     private func openMVVMRegistViewController() {
         let storyBoard = UIStoryboard(name: "MVVMRegist", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMRegistViewController")
