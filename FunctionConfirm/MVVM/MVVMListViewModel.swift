@@ -13,35 +13,13 @@ import RxCocoa
 
 class MVVMListViewModel {
 
-    enum ViewState: Equatable {
-        case idle
-        case itemsFetching
-        case itemsFetchCompleted
-        case errorOccurred(ItemAPIRequestError)
-
-        static func == (lhs: ViewState, rhs: ViewState) -> Bool {
-            switch (lhs, rhs) {
-            case (.idle, .idle):
-                return true
-            case (.itemsFetching, .itemsFetching):
-                return true
-            case (.itemsFetchCompleted, .itemsFetchCompleted):
-                return true
-            case (.errorOccurred, .errorOccurred):
-                return true
-            default:
-                return false
-            }
-        }
-    }
-
     private let viewController: UIViewController
     private var apiRequest: ItemAPIRequestRxProtocol
     private let disposeBag = DisposeBag()
 
     // BehaviorRelayとDriverはRxcocoa
-    private let stateSubject = BehaviorRelay<ViewState>(value: .idle)
-    var state: Driver<ViewState> {
+    private let stateSubject = BehaviorRelay<MVVMViewFetchState>(value: .idle)
+    var state: Driver<MVVMViewFetchState> {
         return stateSubject.asDriver(onErrorJustReturn: .idle)
     }
 
