@@ -29,7 +29,9 @@ class MVVMListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
+        bindNavigationBar()
+        bindTableView()
+        bindState()
         viewModel.fetchItems().subscribe().disposed(by: disposeBag)
     }
 
@@ -51,15 +53,28 @@ class MVVMListViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func bind() {
+    func bindNavigationBar() {
         navigationBarTitle
             .bind(to: navigationItem.rx.title)
             .disposed(by: disposeBag)
-
+        
         registNavigationBarButtonItem.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.openMVVMSubmitViewController()
             })
+            .disposed(by: disposeBag)
+    }
+
+    func bindTableView() {
+        viewModel.items
+            .drive(tableView.rx.items) { tableView, _/*index*/, element in
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: MVVMListTableViewCell.defaultReuseIdentifier) as? MVVMListTableViewCell else {
+                    // TODO: ココどうにかする
+                    return UITableViewCell()
+                }
+                cell.render(item: element)
+                return cell
+            }
             .disposed(by: disposeBag)
 
         tableView.rx.itemSelected
@@ -68,7 +83,9 @@ class MVVMListViewController: UIViewController {
                 self?.tableView.deselectRow(at: indexPath, animated: false)
             })
             .disposed(by: disposeBag)
+    }
 
+    func bindState() {
         viewModel.state
             .drive(onNext: { state in
                 switch state {
@@ -83,18 +100,6 @@ class MVVMListViewController: UIViewController {
                     self.showErrorAlert(message: error.message)
                 }
             })
-            .disposed(by: disposeBag)
-
-        // TODO: tableviewどうにかする
-        viewModel.items
-            .drive(tableView.rx.items) { tableView, _/*index*/, element in
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: MVVMListTableViewCell.defaultReuseIdentifier) as? MVVMListTableViewCell else {
-                    // TODO: ココどうにかする
-                    return UITableViewCell()
-                }
-                cell.render(item: element)
-                return cell
-            }
             .disposed(by: disposeBag)
     }
 }
