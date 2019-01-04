@@ -19,7 +19,7 @@ class MVVMListViewController: UIViewController {
         }
     }
     @IBOutlet private weak var registNavigationBarButtonItem: UIBarButtonItem!
-    
+
     private let disposeBag = DisposeBag()
     var navigationBarTitle = BehaviorRelay(value: "MVVM List")
 
