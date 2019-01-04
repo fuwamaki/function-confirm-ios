@@ -44,6 +44,8 @@
 		9C660DF321DDD2A4003BF811 /* MVVMListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C660DF221DDD2A4003BF811 /* MVVMListTableViewCell.xib */; };
 		9C660DF521DDD44A003BF811 /* MVVMListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF421DDD449003BF811 /* MVVMListTableViewCell.swift */; };
 		9C660DF721DE8547003BF811 /* MVVMViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF621DE8547003BF811 /* MVVMViewState.swift */; };
+		9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF921DF5DE3003BF811 /* SubmitButton.swift */; };
+		9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DFB21DF5E54003BF811 /* UIImage+color.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9CB7156D21D76F6E00C0BAF6 /* MVVM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */; };
 		9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */; };
@@ -133,6 +135,8 @@
 		9C660DF221DDD2A4003BF811 /* MVVMListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVVMListTableViewCell.xib; sourceTree = "<group>"; };
 		9C660DF421DDD449003BF811 /* MVVMListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListTableViewCell.swift; sourceTree = "<group>"; };
 		9C660DF621DE8547003BF811 /* MVVMViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewState.swift; sourceTree = "<group>"; };
+		9C660DF921DF5DE3003BF811 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		9C660DFB21DF5E54003BF811 /* UIImage+color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+color.swift"; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9CB7156C21D76F6E00C0BAF6 /* MVVM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVM.storyboard; sourceTree = "<group>"; };
 		9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
@@ -219,8 +223,9 @@
 				7B67232620E0D3F500D8A5A3 /* GitHubRepositoryList */,
 				7B67232D20E1E12300D8A5A3 /* QiitaList */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
-				9CB7156B21D76F3900C0BAF6 /* MVVM */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
+				9CB7156B21D76F3900C0BAF6 /* MVVM */,
+				9C660DF821DF5DBF003BF811 /* Views */,
 				20521A5020DF50A500621136 /* Extension */,
 				2032A70B20DCCA8A0091952F /* CoreData */,
 				7B67231E20E0BC5700D8A5A3 /* Resource */,
@@ -293,6 +298,7 @@
 				9CE26455211A8FB300DD178E /* UIColor+Addition.swift */,
 				9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */,
 				9C660DF021DD45F3003BF811 /* UIStoryboard.swift */,
+				9C660DFB21DF5E54003BF811 /* UIImage+color.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -347,6 +353,14 @@
 				1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C660DF821DF5DBF003BF811 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C660DF921DF5DE3003BF811 /* SubmitButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9CB7156B21D76F3900C0BAF6 /* MVVM */ = {
@@ -687,6 +701,7 @@
 				9C660DF121DD45F3003BF811 /* UIStoryboard.swift in Sources */,
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */,
+				9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */,
 				7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
@@ -697,6 +712,7 @@
 				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
 				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
 				9C660DF521DDD44A003BF811 /* MVVMListTableViewCell.swift in Sources */,
+				9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */,
 				9CC3BF9021D8A50C0033180B /* MVVMRegistViewModel.swift in Sources */,
 				9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */,
 				9CC3BF8C21D8A4F60033180B /* MVVMRegistViewController.swift in Sources */,
