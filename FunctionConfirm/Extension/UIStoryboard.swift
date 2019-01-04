@@ -11,5 +11,6 @@ import UIKit
 extension UIStoryboard {
     enum Name: String {
         case mvp = "MVP"
+        case MVVMSubmitViewController = "MVVMSubmitViewController"
     }
 }

@@ -27,6 +27,10 @@ class MVVMListViewModel {
         return itemsSubject.asDriver(onErrorJustReturn: [])
     }
 
+    func selectedItem(indexPath: IndexPath) -> ItemRx {
+        return itemsSubject.value[indexPath.row]
+    }
+
     func fetchItems() -> Completable {
         stateSubject.accept(.itemsFetching)
         return apiRequest.getItemsAPI()

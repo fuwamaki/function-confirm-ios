@@ -41,6 +41,13 @@ class MVVMSubmitViewController: UIViewController {
         bindState()
     }
 
+    static func instantiateFromStoryboard(submitMode: MVVMSubmitViewModel.SubmitMode, item: ItemRx?) -> MVVMSubmitViewController {
+        let viewController = instantiateFromStoryboard()
+        viewController.viewModel.submitMode.accept(submitMode)
+        viewController.viewModel.submitItem.accept(item)
+        return viewController
+    }
+
     // TODO: エラー文言を適切に
     private func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
@@ -128,7 +135,12 @@ class MVVMSubmitViewController: UIViewController {
         submitButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 if let weakSelf = self {
-                    weakSelf.viewModel.postItem().subscribe().disposed(by: weakSelf.disposeBag)
+                    switch weakSelf.viewModel.submitMode.value {
+                    case .new:
+                        weakSelf.viewModel.postItem().subscribe().disposed(by: weakSelf.disposeBag)
+                    case .update:
+                        weakSelf.viewModel.putItem().subscribe().disposed(by: weakSelf.disposeBag)
+                    }
                 }
             })
             .disposed(by: disposeBag)
@@ -154,4 +166,6 @@ class MVVMSubmitViewController: UIViewController {
     }
 }
 
-extension MVVMSubmitViewController: StoryboardLoadable {}
+extension MVVMSubmitViewController: StoryboardLoadable {
+    static var storyboardName = UIStoryboard.Name.MVVMSubmitViewController
+}

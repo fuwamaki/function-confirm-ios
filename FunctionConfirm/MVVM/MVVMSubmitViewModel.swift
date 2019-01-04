@@ -112,7 +112,29 @@ class MVVMSubmitViewModel {
             .asCompletable()
     }
 
-    func putItem() {
-        
+    func putItem() -> Completable {
+        stateSubject.accept(.itemSubmitting)
+        guard let itemId = itemId.value, let name = nameText.value, let category = categoryText.value,
+            let priceStr = priceText.value, let price = Int(priceStr) else {
+                self.stateSubject.accept(.errorOccurred(.invalidRequest))
+                self.stateSubject.accept(.idle)
+                return Completable.empty()
+        }
+        let item = ItemRx(id: nil, name: name, category: category, price: price)
+        return apiRequest.putItemAPI(itemId: itemId, item: item)
+            .do(
+                onSuccess: { [weak self] _ in
+                    self?.stateSubject.accept(.itemSubmitCompleted)
+                    self?.stateSubject.accept(.idle)
+                    self?.dismissSubject.accept(true)
+                },
+                onError: { [weak self] error in
+                    print("Error: \(error)")
+                    self?.stateSubject.accept(.errorOccurred(.responseFailure))
+                    self?.stateSubject.accept(.idle)
+                }
+            )
+            .map { _ in }
+            .asCompletable()
     }
 }

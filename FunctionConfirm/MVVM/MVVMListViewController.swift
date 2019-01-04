@@ -40,10 +40,9 @@ class MVVMListViewController: UIViewController {
         viewModel.fetchItems().subscribe().disposed(by: disposeBag)
     }
 
-    private func openMVVMSubmitViewController() {
-        let storyBoard = UIStoryboard(name: "MVVMSubmitViewController", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMSubmitViewController")
-        let navigationController = UINavigationController(rootViewController: vc)
+    private func openMVVMSubmitViewController(submitMode: MVVMSubmitViewModel.SubmitMode, item: ItemRx?) {
+        let viewController = MVVMSubmitViewController.instantiateFromStoryboard(submitMode: submitMode, item: item)
+        let navigationController = UINavigationController(rootViewController: viewController)
         present(navigationController, animated: true, completion: nil)
     }
 
@@ -60,7 +59,7 @@ class MVVMListViewController: UIViewController {
         
         registNavigationBarButtonItem.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.openMVVMSubmitViewController()
+                self?.openMVVMSubmitViewController(submitMode: .new, item: nil)
             })
             .disposed(by: disposeBag)
     }
@@ -69,8 +68,7 @@ class MVVMListViewController: UIViewController {
         viewModel.items
             .drive(tableView.rx.items) { tableView, _/*index*/, element in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MVVMListTableViewCell.defaultReuseIdentifier) as? MVVMListTableViewCell else {
-                    // TODO: ココどうにかする
-                    return UITableViewCell()
+                    fatalError("UITableView.dequeueReusableCell Error")
                 }
                 cell.render(item: element)
                 return cell
@@ -79,7 +77,7 @@ class MVVMListViewController: UIViewController {
 
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                self?.openMVVMSubmitViewController()
+                self?.openMVVMSubmitViewController(submitMode: .update, item: self?.viewModel.selectedItem(indexPath: indexPath))
                 self?.tableView.deselectRow(at: indexPath, animated: false)
             })
             .disposed(by: disposeBag)
