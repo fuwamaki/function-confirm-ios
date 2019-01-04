@@ -24,7 +24,7 @@ class MVVMListViewController: UIViewController {
     var navigationBarTitle = BehaviorRelay(value: "MVVM List")
 
     private lazy var viewModel: MVVMListViewModel = {
-        return MVVMListViewModel(viewController: self)
+        return MVVMListViewModel()
     }()
 
     override func viewDidLoad() {

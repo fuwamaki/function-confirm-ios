@@ -13,8 +13,7 @@ import RxCocoa
 
 class MVVMListViewModel {
 
-    private let viewController: UIViewController
-    private var apiRequest: ItemAPIRequestRxProtocol
+    var apiRequest = ItemAPIRequestRx()
     private let disposeBag = DisposeBag()
 
     // BehaviorRelayとDriverはRxcocoa
@@ -26,17 +25,6 @@ class MVVMListViewModel {
     private let itemsSubject = BehaviorRelay<[ItemRx]>(value: [])
     var items: Driver<[ItemRx]> {
         return itemsSubject.asDriver(onErrorJustReturn: [])
-    }
-
-    // for viewController
-    convenience init(viewController: UIViewController) {
-        self.init(viewController: viewController, request: ItemAPIRequestRx())
-    }
-
-    // for test
-    init(viewController: UIViewController, request: ItemAPIRequestRxProtocol) {
-        self.viewController = viewController
-        self.apiRequest = request
     }
 
     func fetchItems() -> Completable {

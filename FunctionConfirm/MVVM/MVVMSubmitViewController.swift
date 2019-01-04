@@ -28,7 +28,7 @@ class MVVMSubmitViewController: UIViewController {
     private let submitCompletedSubject = PublishSubject<Void>()
 
     private lazy var viewModel: MVVMSubmitViewModel = {
-        return MVVMSubmitViewModel(viewController: self)
+        return MVVMSubmitViewModel()
     }()
 
     override func viewDidLoad() {

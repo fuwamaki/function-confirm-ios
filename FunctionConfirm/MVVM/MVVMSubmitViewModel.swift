@@ -19,8 +19,7 @@ class MVVMSubmitViewModel {
     }
 
     // viewController消す
-    private let viewController: UIViewController
-    private let apiRequest: ItemAPIRequestRxProtocol
+    var apiRequest = ItemAPIRequestRx()
     private let disposeBag = DisposeBag()
 
     var navigationBarTitle = BehaviorRelay(value: "Regist")
@@ -61,15 +60,7 @@ class MVVMSubmitViewModel {
     }
     let dismissSubject = BehaviorRelay<Bool>(value: false)
 
-    // for viewController
-    convenience init(viewController: UIViewController) {
-        self.init(viewController: viewController, request: ItemAPIRequestRx())
-    }
-
-    // for test
-    init(viewController: UIViewController, request: ItemAPIRequestRxProtocol) {
-        self.viewController = viewController
-        self.apiRequest = request
+    init() {
         bindSubmitItem()
     }
 

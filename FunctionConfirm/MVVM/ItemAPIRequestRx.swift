@@ -43,12 +43,7 @@ struct PostItemRequestRx: Codable {
     let item: ItemRx
 }
 
-protocol ItemAPIRequestRxProtocol {
-    func getItems() -> Single<GetItemResponseRx>
-    func postItem(item: ItemRx) -> Single<ItemRx>
-}
-
-class ItemAPIRequestRx: ItemAPIRequestRxProtocol {
+class ItemAPIRequestRx {
 
     enum ItemAPIError: Error {
         case jsonParseError
