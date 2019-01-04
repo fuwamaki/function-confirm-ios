@@ -21,7 +21,7 @@ class MVVMRegistViewModel {
     // viewController消す
     private let viewController: UIViewController
     private let apiRequest: ItemAPIRequestRxProtocol
-    private let disponseBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     var navigationBarTitle = BehaviorRelay(value: "Regist")
     var itemId = BehaviorRelay<Int?>(value: nil)
@@ -70,9 +70,29 @@ class MVVMRegistViewModel {
     init(viewController: UIViewController, request: ItemAPIRequestRxProtocol) {
         self.viewController = viewController
         self.apiRequest = request
+        bindSubmitItem()
     }
 
-    func bind() {
+    // view側に影響ないものはViewModel側でbindする
+    private func bindSubmitItem() {
+        submitItem
+            .flatMap { $0.flatMap{ Observable.just($0) } ?? Observable.empty() }
+            .subscribe(onNext: { [weak self] item in
+                self?.itemId.accept(item.id)
+                self?.nameText.accept(item.name)
+                self?.categoryText.accept(item.category)
+                self?.priceText.accept(String(item.price))
+            })
+            .disposed(by: disposeBag)
+
+        submitItem
+            .filter { $0 == nil }
+            .subscribe(onNext: { [weak self] _ in
+                self?.nameText.accept(nil)
+                self?.categoryText.accept(nil)
+                self?.priceText.accept(nil)
+            })
+            .disposed(by: disposeBag)
     }
 
     func postItem() -> Completable {

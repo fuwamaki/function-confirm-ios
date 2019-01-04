@@ -89,6 +89,7 @@ class MVVMListViewController: UIViewController {
         viewModel.items
             .drive(tableView.rx.items) { tableView, _/*index*/, element in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MVVMListTableViewCell.defaultReuseIdentifier) as? MVVMListTableViewCell else {
+                    // TODO: ココどうにかする
                     return UITableViewCell()
                 }
                 cell.render(item: element)
