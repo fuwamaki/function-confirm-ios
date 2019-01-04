@@ -1,5 +1,5 @@
 //
-//  MVVMRegistViewModel.swift
+//  MVVMSubmitViewModel.swift
 //  FunctionConfirm
 //
 //  Created by Maki, Yusaku | Mackey | ECID on 2018/12/30.
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 // TODO: RegistじゃなくてSubmitにする
-class MVVMRegistViewModel {
+class MVVMSubmitViewModel {
 
     enum SubmitMode {
         case new

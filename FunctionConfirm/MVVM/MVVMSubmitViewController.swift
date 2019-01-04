@@ -1,5 +1,5 @@
 //
-//  MVVMRegistViewController.swift
+//  MVVMSubmitViewController.swift
 //  FunctionConfirm
 //
 //  Created by Maki, Yusaku | Mackey | ECID on 2018/12/30.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import KRProgressHUD
 
-class MVVMRegistViewController: UIViewController {
+class MVVMSubmitViewController: UIViewController {
 
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var categoryTextField: UITextField!
@@ -27,8 +27,8 @@ class MVVMRegistViewController: UIViewController {
     }
     private let submitCompletedSubject = PublishSubject<Void>()
 
-    private lazy var viewModel: MVVMRegistViewModel = {
-        return MVVMRegistViewModel(viewController: self)
+    private lazy var viewModel: MVVMSubmitViewModel = {
+        return MVVMSubmitViewModel(viewController: self)
     }()
 
     override func viewDidLoad() {
@@ -154,4 +154,4 @@ class MVVMRegistViewController: UIViewController {
     }
 }
 
-extension MVVMRegistViewController: StoryboardLoadable {}
+extension MVVMSubmitViewController: StoryboardLoadable {}

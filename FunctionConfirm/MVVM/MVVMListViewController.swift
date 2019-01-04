@@ -38,9 +38,9 @@ class MVVMListViewController: UIViewController {
         viewModel.fetchItems().subscribe().disposed(by: disposeBag)
     }
 
-    private func openMVVMRegistViewController() {
-        let storyBoard = UIStoryboard(name: "MVVMRegist", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMRegistViewController")
+    private func openMVVMSubmitViewController() {
+        let storyBoard = UIStoryboard(name: "MVVMSubmitViewController", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMSubmitViewController")
         let navigationController = UINavigationController(rootViewController: vc)
         present(navigationController, animated: true, completion: nil)
     }
@@ -58,13 +58,13 @@ class MVVMListViewController: UIViewController {
 
         registNavigationBarButtonItem.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.openMVVMRegistViewController()
+                self?.openMVVMSubmitViewController()
             })
             .disposed(by: disposeBag)
 
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                self?.openMVVMRegistViewController()
+                self?.openMVVMSubmitViewController()
                 self?.tableView.deselectRow(at: indexPath, animated: false)
             })
             .disposed(by: disposeBag)

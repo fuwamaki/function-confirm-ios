@@ -28,18 +28,6 @@ class MVVMListViewModel {
         return itemsSubject.asDriver(onErrorJustReturn: [])
     }
 
-    private lazy var registViewController: MVVMRegistViewController = {
-        let viewController = MVVMRegistViewController.instantiateFromStoryboardByFileName()
-        viewController.submitCompleted
-            .subscribe(onNext: { [weak self] in
-                if let weakSelf = self {
-                    weakSelf.fetchItems().subscribe().disposed(by: weakSelf.disposeBag)
-                }
-            })
-            .disposed(by: disposeBag)
-        return viewController
-    }()
-
     // for viewController
     convenience init(viewController: UIViewController) {
         self.init(viewController: viewController, request: ItemAPIRequestRx())

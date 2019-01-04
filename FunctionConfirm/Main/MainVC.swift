@@ -82,7 +82,7 @@ extension MainVC: UITableViewDelegate {
             let vc = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
             navigationController?.pushViewController(vc, animated: true)
         case 6:
-            let storyBoard = UIStoryboard(name: "MVVM", bundle: nil)
+            let storyBoard = UIStoryboard(name: "MVVMViewController", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMListViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:

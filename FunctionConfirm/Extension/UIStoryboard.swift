@@ -11,7 +11,5 @@ import UIKit
 extension UIStoryboard {
     enum Name: String {
         case mvp = "MVP"
-        case mvvm = "MVVM"
-        case mvvmRegist = "MVVMRegist"
     }
 }
