@@ -29,7 +29,7 @@ class MVVMListViewModel {
 
     func fetchItems() -> Completable {
         stateSubject.accept(.itemsFetching)
-        return apiRequest.getItems()
+        return apiRequest.getItemsAPI()
             .do(
                 onSuccess: { [weak self] response in
                     self?.itemsSubject.accept([])

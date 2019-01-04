@@ -95,7 +95,7 @@ class MVVMSubmitViewModel {
                 return Completable.empty()
         }
         let item = ItemRx(id: nil, name: name, category: category, price: price)
-        return apiRequest.postItem(item: item)
+        return apiRequest.postItemAPI(item: item)
             .do(
                 onSuccess: { [weak self] _ in
                     self?.stateSubject.accept(.itemSubmitCompleted)
