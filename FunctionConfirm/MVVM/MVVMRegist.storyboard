@@ -81,7 +81,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzs-Y1-a5x">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzs-Y1-a5x" customClass="SubmitButton" customModule="FunctionConfirm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="258" width="222.5" height="44"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>

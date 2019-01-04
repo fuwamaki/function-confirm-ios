@@ -15,7 +15,7 @@ class MVVMRegistViewController: UIViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var categoryTextField: UITextField!
     @IBOutlet private weak var priceTextField: UITextField!
-    @IBOutlet private weak var submitButton: UIButton!
+    @IBOutlet private weak var submitButton: SubmitButton!
 
     @IBOutlet private weak var closeNavigationBarButtonItem: UIBarButtonItem!
 
