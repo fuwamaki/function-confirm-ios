@@ -13,7 +13,6 @@
 		2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DF20DCC9E50091952F /* FunctionConfirm.xcdatamodeld */; };
 		2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6E220DCC9E70091952F /* Assets.xcassets */; };
 		2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6E420DCC9E70091952F /* LaunchScreen.storyboard */; };
-		2032A6F120DCC9E80091952F /* FunctionConfirmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6F020DCC9E80091952F /* FunctionConfirmTests.swift */; };
 		2032A6FC20DCC9E80091952F /* FunctionConfirmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6FB20DCC9E80091952F /* FunctionConfirmUITests.swift */; };
 		2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A70D20DCDD1C0091952F /* CustomePickerView.swift */; };
 		2032A71020DCDD370091952F /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A70F20DCDD370091952F /* Picker.storyboard */; };
@@ -46,6 +45,8 @@
 		9C660DF721DE8547003BF811 /* MVVMViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF621DE8547003BF811 /* MVVMViewState.swift */; };
 		9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF921DF5DE3003BF811 /* SubmitButton.swift */; };
 		9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DFB21DF5E54003BF811 /* UIImage+color.swift */; };
+		9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */; };
+		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9CB7156D21D76F6E00C0BAF6 /* MVVMViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7156C21D76F6E00C0BAF6 /* MVVMViewController.storyboard */; };
 		9CB7156F21D7703B00C0BAF6 /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */; };
@@ -99,7 +100,6 @@
 		2032A6E520DCC9E70091952F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2032A6E720DCC9E70091952F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2032A6EC20DCC9E80091952F /* FunctionConfirmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionConfirmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2032A6F020DCC9E80091952F /* FunctionConfirmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionConfirmTests.swift; sourceTree = "<group>"; };
 		2032A6F220DCC9E80091952F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2032A6F720DCC9E80091952F /* FunctionConfirmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionConfirmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6FB20DCC9E80091952F /* FunctionConfirmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionConfirmUITests.swift; sourceTree = "<group>"; };
@@ -137,6 +137,8 @@
 		9C660DF621DE8547003BF811 /* MVVMViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewState.swift; sourceTree = "<group>"; };
 		9C660DF921DF5DE3003BF811 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		9C660DFB21DF5E54003BF811 /* UIImage+color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+color.swift"; sourceTree = "<group>"; };
+		9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewModelText.swift; sourceTree = "<group>"; };
+		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9CB7156C21D76F6E00C0BAF6 /* MVVMViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVMViewController.storyboard; sourceTree = "<group>"; };
 		9CB7156E21D7703B00C0BAF6 /* MVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
@@ -236,8 +238,9 @@
 		2032A6EF20DCC9E80091952F /* FunctionConfirmTests */ = {
 			isa = PBXGroup;
 			children = (
-				2032A6F020DCC9E80091952F /* FunctionConfirmTests.swift */,
 				2032A6F220DCC9E80091952F /* Info.plist */,
+				9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */,
+				9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */,
 			);
 			path = FunctionConfirmTests;
 			sourceTree = "<group>";
@@ -728,7 +731,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2032A6F120DCC9E80091952F /* FunctionConfirmTests.swift in Sources */,
+				9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */,
+				9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
