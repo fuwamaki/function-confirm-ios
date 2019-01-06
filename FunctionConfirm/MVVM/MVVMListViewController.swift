@@ -35,13 +35,15 @@ class MVVMListViewController: UIViewController {
         viewModel.fetchItems().subscribe().disposed(by: disposeBag)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.fetchItems().subscribe().disposed(by: disposeBag)
-    }
-
     private func openMVVMSubmitViewController(submitMode: MVVMSubmitViewModel.SubmitMode, item: ItemRx?) {
         let viewController = MVVMSubmitViewController.instantiateFromStoryboard(submitMode: submitMode, item: item)
+        viewController.submitCompleted
+            .subscribe(onNext: { [weak self] in
+                if let weakSelf = self {
+                    weakSelf.viewModel.fetchItems().subscribe().disposed(by: weakSelf.disposeBag)
+                }
+            })
+            .disposed(by: disposeBag)
         let navigationController = UINavigationController(rootViewController: viewController)
         present(navigationController, animated: true, completion: nil)
     }
