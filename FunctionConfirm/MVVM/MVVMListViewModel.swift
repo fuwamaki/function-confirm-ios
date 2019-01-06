@@ -17,9 +17,13 @@ class MVVMListViewModel {
     private let disposeBag = DisposeBag()
 
     // BehaviorRelayとDriverはRxcocoa
-    private let stateSubject = BehaviorRelay<MVVMViewFetchState>(value: .idle)
-    var state: Driver<MVVMViewFetchState> {
-        return stateSubject.asDriver(onErrorJustReturn: .idle)
+    private let stateFetchSubject = BehaviorRelay<MVVMViewFetchState>(value: .idle)
+    var stateFetch: Driver<MVVMViewFetchState> {
+        return stateFetchSubject.asDriver(onErrorJustReturn: .idle)
+    }
+    private let stateDeleteSubject = BehaviorRelay<MVVMViewDeleteState>(value: .idle)
+    var stateDelete: Driver<MVVMViewDeleteState> {
+        return stateDeleteSubject.asDriver(onErrorJustReturn: .idle)
     }
 
     private let itemsSubject = BehaviorRelay<[ItemRx]>(value: [])
@@ -32,21 +36,44 @@ class MVVMListViewModel {
     }
 
     func fetchItems() -> Completable {
-        stateSubject.accept(.itemsFetching)
+        stateFetchSubject.accept(.itemsFetching)
         return apiRequest.getItemsAPI()
             .do(
                 onSuccess: { [weak self] response in
                     self?.itemsSubject.accept([])
                     self?.itemsSubject.accept(response.data)
-                    self?.stateSubject.accept(.itemsFetchCompleted)
-                    self?.stateSubject.accept(.idle)
+                    self?.stateFetchSubject.accept(.itemsFetchCompleted)
+                    self?.stateFetchSubject.accept(.idle)
                 },
                 onError: { [weak self] error in
                     print("Error: \(error)")
-                    self?.stateSubject.accept(.errorOccurred(.responseFailure))
-                    self?.stateSubject.accept(.idle)
+                    self?.stateFetchSubject.accept(.errorOccurred(.responseFailure))
+                    self?.stateFetchSubject.accept(.idle)
                 }
             )
+            .map { _ in } // Single<Void>に変換
+            .asCompletable() // Completableに変換
+    }
+
+    func deleteItem(selectedIndexPath: IndexPath) -> Completable {
+        stateDeleteSubject.accept(.itemDeleting)
+        guard let itemId = selectedItem(indexPath: selectedIndexPath).id else {
+            self.stateDeleteSubject.accept(.errorOccurred(.invalidRequest))
+            self.stateDeleteSubject.accept(.idle)
+            return Completable.empty()
+        }
+        return apiRequest.deleteItemAPI(itemId: itemId)
+            .do(onSuccess: { [weak self] response in
+                var items = self?.itemsSubject.value
+                items?.remove(at: selectedIndexPath.row)
+                self?.itemsSubject.accept(items ?? [])
+                self?.stateDeleteSubject.accept(.itemDeleteCompleted)
+                self?.stateDeleteSubject.accept(.idle)
+                }, onError: { [weak self] error in
+                    print("Error: \(error)")
+                    self?.stateDeleteSubject.accept(.errorOccurred(.responseFailure))
+                    self?.stateDeleteSubject.accept(.idle)
+            })
             .map { _ in } // Single<Void>に変換
             .asCompletable() // Completableに変換
     }

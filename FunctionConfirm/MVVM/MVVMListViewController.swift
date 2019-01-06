@@ -83,10 +83,22 @@ class MVVMListViewController: UIViewController {
                 self?.tableView.deselectRow(at: indexPath, animated: false)
             })
             .disposed(by: disposeBag)
+
+        tableView.rx.itemDeleted
+            .subscribe(onNext: { [weak self] indexPath in
+                if let weakSelf = self {
+                    weakSelf.viewModel.deleteItem(selectedIndexPath: indexPath).subscribe().disposed(by: weakSelf.disposeBag)
+                }
+            })
+            .disposed(by: disposeBag)
+
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
     }
 
     func bindState() {
-        viewModel.state
+        viewModel.stateFetch
             .drive(onNext: { state in
                 switch state {
                 case .idle:
@@ -101,6 +113,31 @@ class MVVMListViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+
+        viewModel.stateDelete
+            .drive(onNext: { state in
+                switch state {
+                case .idle:
+                    break
+                case .itemDeleting:
+                    break
+                case .itemDeleteCompleted:
+                    break
+                case .errorOccurred(let error):
+                    self.showErrorAlert(message: error.message)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+extension MVVMListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+
+    private func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
 
