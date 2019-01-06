@@ -51,3 +51,25 @@ enum MVVMViewSubmitState: Equatable {
         }
     }
 }
+
+enum MVVMViewDeleteState: Equatable {
+    case idle
+    case itemDeleting
+    case itemDeleteCompleted
+    case errorOccurred(ItemAPIRequestError)
+
+    static func == (lhs: MVVMViewDeleteState, rhs: MVVMViewDeleteState) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle):
+            return true
+        case (.itemDeleting, .itemDeleting):
+            return true
+        case (.itemDeleteCompleted, .itemDeleteCompleted):
+            return true
+        case (.errorOccurred, .errorOccurred):
+            return true
+        default:
+            return false
+        }
+    }
+}
