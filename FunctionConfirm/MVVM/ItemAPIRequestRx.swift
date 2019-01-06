@@ -158,7 +158,7 @@ class ItemAPIRequestRx {
         component?.queryItems = [URLQueryItem(name: "id", value: String(itemId))]
         let url = (component?.url)!
         var request = URLRequest(url: url)
-        request.httpMethod = "Delete"
+        request.httpMethod = "DELETE"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return Single<DeleteItemResponseRx>.create(subscribe: { single in
             let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
@@ -166,7 +166,7 @@ class ItemAPIRequestRx {
                     single(.error(error))
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode == 204 else {
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     single(.error(ItemAPIError.serverError))
                     return
                 }
