@@ -15,14 +15,6 @@ import RxBlocking
 
 class MVVMListViewModelText: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-    }
-
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testStateFetch() {
         let scheduler = TestScheduler(initialClock: 0)
         let viewModel = MVVMListViewModel()
@@ -51,11 +43,37 @@ class MVVMListViewModelText: XCTestCase {
         XCTAssertEqual(results.events, expectedEvents)
     }
 
-    func testPerformanceExample() {
-        self.measure {
-        }
-    }
+    func testItems() {
+        let scheduler = TestScheduler(initialClock: 0)
+        let viewModel = MVVMListViewModel()
+        viewModel.apiRequest = MockItemAPIRequestRx()
+        let disposeBag = DisposeBag()
 
+        let results = scheduler.createObserver(Int.self)
+
+        scheduler.scheduleAt(100) {
+            viewModel.items
+                .map { $0.count }
+                .drive(results)
+                .disposed(by: disposeBag)
+        }
+
+        scheduler.scheduleAt(200) {
+            _ = try? viewModel.fetchItems().toBlocking().single()
+        }
+
+        scheduler.start()
+        let expectedEvents = Recorded.events(
+            .next(100, 0),
+            .next(200, 0),
+            .next(200, 3)
+        )
+
+        XCTAssertEqual(results.events, expectedEvents)
+    }
+}
+
+extension MVVMListViewModelText {
     class MockItemAPIRequestRx: ItemAPIRequestRx {
         override func getItemsAPI() -> Single<GetItemResponseRx> {
             let testData = GetItemResponseRx(status: 0, data: [
