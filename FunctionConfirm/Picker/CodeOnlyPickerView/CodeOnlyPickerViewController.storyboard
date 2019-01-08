@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code Only Picker View Controller-->
+        <scene sceneID="qVB-s0-CY3">
+            <objects>
+                <viewController storyboardIdentifier="CodeOnlyPickerViewController" id="QNp-9i-p4x" customClass="CodeOnlyPickerViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rec-3F-ITR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="8OX-jQ-YeQ">
+                                <rect key="frame" x="87.5" y="100" width="200" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code OnlyのDatePicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-Zk-dMw">
+                                        <rect key="frame" x="24" y="0.0" width="152.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oeb-fl-GQy">
+                                        <rect key="frame" x="0.0" y="57" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="L9D-j3-sKR"/>
+                                    <constraint firstItem="Oeb-fl-GQy" firstAttribute="leading" secondItem="8OX-jQ-YeQ" secondAttribute="leading" id="lWq-Wu-dgM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oeb-fl-GQy" secondAttribute="trailing" id="oS6-wS-HTE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8OX-jQ-YeQ" firstAttribute="top" secondItem="p8j-SX-qY0" secondAttribute="top" constant="80" id="Zjt-or-oOa"/>
+                            <constraint firstItem="8OX-jQ-YeQ" firstAttribute="centerX" secondItem="Rec-3F-ITR" secondAttribute="centerX" id="l2n-1c-Ns8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p8j-SX-qY0"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="Oeb-fl-GQy" id="jKd-1V-E3r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOw-cC-se3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402.39999999999998" y="141.67916041979012"/>
+        </scene>
+    </scenes>
+</document>
