@@ -70,6 +70,10 @@
 		9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB1C712195F6DB00ECF364 /* StackViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
 		CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */; };
+		9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */; };
+		9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */; };
+		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
+		D845A8B2324485DD1001D69B /* libPods-FunctionConfirm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570A547573912717DE462FBF /* libPods-FunctionConfirm.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +165,9 @@
 		9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StackView.storyboard; sourceTree = "<group>"; };
 		9CEB1C712195F6DB00ECF364 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.release.xcconfig"; sourceTree = "<group>"; };
+		9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerView.swift; sourceTree = "<group>"; };
+		9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CodeOnlyPickerViewController.storyboard; sourceTree = "<group>"; };
+		9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerViewController.swift; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
 		BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,10 +290,8 @@
 		2032A70C20DCDCF00091952F /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				2032A70D20DCDD1C0091952F /* CustomePickerView.swift */,
-				2032A71320DCE0180091952F /* PickerVC.swift */,
-				2032A70F20DCDD370091952F /* Picker.storyboard */,
-				2032A71120DCDD680091952F /* CustomPickerView.xib */,
+				9CFF6AB421E4A14F00E4097A /* NibPickerView */,
+				9CFF6AB521E4A15D00E4097A /* CodeOnlyPickerView */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -428,6 +433,27 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		9CFF6AB421E4A14F00E4097A /* NibPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				2032A70D20DCDD1C0091952F /* CustomePickerView.swift */,
+				2032A71320DCE0180091952F /* PickerVC.swift */,
+				2032A70F20DCDD370091952F /* Picker.storyboard */,
+				2032A71120DCDD680091952F /* CustomPickerView.xib */,
+			);
+			path = NibPickerView;
+			sourceTree = "<group>";
+		};
+		9CFF6AB521E4A15D00E4097A /* CodeOnlyPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */,
+				9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */,
+				9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */,
+			);
+			path = CodeOnlyPickerView;
+			sourceTree = "<group>";
+		};
 		F7CFB3FF5DBC8E92B546F54E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +581,7 @@
 				9CB7156D21D76F6E00C0BAF6 /* MVVMViewController.storyboard in Resources */,
 				9C660DF321DDD2A4003BF811 /* MVVMListTableViewCell.xib in Resources */,
 				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
+				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
 				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
 				9C660DED21DD3CCF003BF811 /* MVVMSubmitViewController.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
@@ -692,6 +719,7 @@
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */,
+				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
@@ -724,6 +752,7 @@
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
+				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
