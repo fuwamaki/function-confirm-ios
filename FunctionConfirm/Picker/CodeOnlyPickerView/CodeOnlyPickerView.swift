@@ -15,6 +15,7 @@ final class CodeOnlyPickerView: UIView {
     override init(frame: CGRect) {
         let view = CGRect.init(x: 0, y: 0, width: 320, height: 216)
         super.init(frame: view)
+        setupDatePicker()
     }
 
     required init?(coder aDecoder: NSCoder) {
