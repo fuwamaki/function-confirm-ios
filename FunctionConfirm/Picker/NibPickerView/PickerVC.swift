@@ -23,7 +23,7 @@ class PickerVC: UIViewController {
     func setupCustomPickerView() {
         customPickerView = CustomPickerView.instantiateFromNib()
         textField.inputView = customPickerView
-        customPickerView.datePickerView.addTarget(self, action: #selector(PickerVC.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        customPickerView.datePickerView.addTarget(self, action: #selector(PickerVC.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
     }
     
     func setupDoneToolBar() {

@@ -10,7 +10,7 @@ import UIKit
 
 // NavigationControllerがある場合、これをつけないと、StatusBarの色は変わらない
 extension UINavigationController {
-    open override var childViewControllerForStatusBarStyle: UIViewController? {
+    open override var childForStatusBarStyle: UIViewController? {
         return self.visibleViewController
     }
 }

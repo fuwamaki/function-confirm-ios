@@ -45,7 +45,7 @@ extension MVPModel: MVPModelInterface {
 
     func deleteItem(id: Int, row: Int) {
         items.remove(at: row)
-        api.deleteAPI(id) { [weak self] result in
+        api.deleteAPI(id) { result in
             switch result {
             case .success(let resposne):
                 print(resposne)
