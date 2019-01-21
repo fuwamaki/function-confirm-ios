@@ -31,6 +31,7 @@ final class StatusBarViewController: UIViewController {
     }
 
     // StatusBarStyle
+    // MEMO: Info.plistの「View controller-based status bar appearance」をYESにしておく必要がある。
     private var statusBarStyle: UIStatusBarStyle = .default
     func setStatusBarStyle(style: UIStatusBarStyle) {
         statusBarStyle = style
