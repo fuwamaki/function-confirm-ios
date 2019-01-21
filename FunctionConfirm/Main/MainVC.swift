@@ -23,7 +23,7 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,9 +52,13 @@ extension MainVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mvpCell", for: indexPath)
             cell.textLabel?.text = "アーキ確認システム（MVP）"
             return cell
-        } else {
+        } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "stackviewCell", for: indexPath)
             cell.textLabel?.text = "StackView練習"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarCell", for: indexPath)
+            cell.textLabel?.text = "ステータスバーの色"
             return cell
         }
     }
@@ -91,6 +95,10 @@ extension MainVC: UITableViewDelegate {
         case 6:
             let storyBoard = UIStoryboard(name: "StackView", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 7:
+            let storyBoard = UIStoryboard(name: "StatusBar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

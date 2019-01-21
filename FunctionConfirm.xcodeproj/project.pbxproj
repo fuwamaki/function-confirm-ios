@@ -38,6 +38,8 @@
 		9C096C45211C26E8008DB26D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C44211C26E8008DB26D /* Item.swift */; };
 		9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EBBB9213F6B360085B838 /* ItemRequest.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
+		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
+		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
@@ -115,6 +117,8 @@
 		9C096C44211C26E8008DB26D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9C5EBBB9213F6B360085B838 /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
+		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
+		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				7B67232D20E1E12300D8A5A3 /* QiitaList */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
+				9C87B27221F5964A00A50985 /* StatusBar */,
 				20521A5020DF50A500621136 /* Extension */,
 				2032A70B20DCCA8A0091952F /* CoreData */,
 				7B67231E20E0BC5700D8A5A3 /* Resource */,
@@ -316,6 +321,15 @@
 				570A547573912717DE462FBF /* libPods-FunctionConfirm.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C87B27221F5964A00A50985 /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				9C87B27321F5966100A50985 /* StatusBar.storyboard */,
+				9C87B27521F5967100A50985 /* StatusBarViewController.swift */,
+			);
+			path = StatusBar;
 			sourceTree = "<group>";
 		};
 		9CCC0AF721199ECA007EFE26 /* MVP */ = {
@@ -505,6 +519,7 @@
 				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
 				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
 				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
+				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */,
@@ -585,6 +600,7 @@
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
+				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
