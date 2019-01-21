@@ -13,13 +13,31 @@ final class StatusBarViewController: UIViewController {
     @IBAction func turnOverButtonTapped(_ sender: Any) {
         if view.backgroundColor == UIColor.black {
             view.backgroundColor = UIColor.white
+            setStatusBarStyle(style: .default)
         } else {
             view.backgroundColor = UIColor.black
+            setStatusBarStyle(style: .lightContent)
         }
+    }
+
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ステータスバーの色"
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    // StatusBarStyle
+    private var statusBarStyle: UIStatusBarStyle = .default
+    func setStatusBarStyle(style: UIStatusBarStyle) {
+        statusBarStyle = style
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
     }
 }

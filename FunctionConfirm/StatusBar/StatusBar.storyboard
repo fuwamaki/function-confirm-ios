@@ -33,11 +33,26 @@
                                     <action selector="turnOverButtonTapped:" destination="nDi-EV-t2u" eventType="touchUpInside" id="x7F-79-iVM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4r-Ld-Z5u">
+                                <rect key="frame" x="0.0" y="20" width="64" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="G4c-jV-jZk"/>
+                                    <constraint firstAttribute="height" constant="32" id="XVY-AJ-opL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="nDi-EV-t2u" eventType="touchUpInside" id="lT4-kX-paD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hc2-Qe-9Wn" firstAttribute="centerY" secondItem="AAx-NK-Nqg" secondAttribute="centerY" id="DIR-sZ-pEn"/>
                             <constraint firstItem="hc2-Qe-9Wn" firstAttribute="centerX" secondItem="AAx-NK-Nqg" secondAttribute="centerX" id="l9C-ej-iDt"/>
+                            <constraint firstItem="W4r-Ld-Z5u" firstAttribute="top" secondItem="xmh-0y-75R" secondAttribute="top" id="p9n-Tn-ZaR"/>
+                            <constraint firstItem="W4r-Ld-Z5u" firstAttribute="leading" secondItem="xmh-0y-75R" secondAttribute="leading" id="sfE-Ma-5jE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xmh-0y-75R"/>
                     </view>
