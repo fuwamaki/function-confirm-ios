@@ -40,9 +40,3 @@ extension StatusBarSecondViewController: StatusBarSecondDelegate {
         self.setNeedsStatusBarAppearanceUpdate()
     }
 }
-
-extension UIViewController {
-    func setStatusBarStyles(style: UIStatusBarStyle) {
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
-}
