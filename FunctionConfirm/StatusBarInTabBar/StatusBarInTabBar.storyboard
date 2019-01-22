@@ -33,7 +33,32 @@
                     <view key="view" contentMode="scaleToFill" id="SVb-B5-SW8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVj-CH-4It">
+                                <rect key="frame" x="87.5" y="311.5" width="200" height="44"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0sG-p6-ntK"/>
+                                    <constraint firstAttribute="height" constant="44" id="E4A-di-Zgx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="bRw-bO-ehc"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="d60-N5-Rr7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="hpR-Ez-a33"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="rbs-Rh-Sl5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="背景色反転">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="turnOverButtonTapped:" destination="0QI-Ua-dsq" eventType="touchUpInside" id="JVD-nO-bq8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HVj-CH-4It" firstAttribute="centerX" secondItem="SVb-B5-SW8" secondAttribute="centerX" id="4D6-FG-03T"/>
+                            <constraint firstItem="HVj-CH-4It" firstAttribute="centerY" secondItem="SVb-B5-SW8" secondAttribute="centerY" id="ilJ-Q0-AHu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b6G-Ot-HVo"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="T8j-fA-3O6"/>
