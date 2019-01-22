@@ -23,7 +23,7 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,9 +56,17 @@ extension MainVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "stackviewCell", for: indexPath)
             cell.textLabel?.text = "StackView練習"
             return cell
-        } else {
+        } else if indexPath.row == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarCell", for: indexPath)
             cell.textLabel?.text = "ステータスバーの色"
+            return cell
+        } else if indexPath.row == 8 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInNavigationCell", for: indexPath)
+            cell.textLabel?.text = "ステータスバーの色(NavigationBar)"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInTabBarCell", for: indexPath)
+            cell.textLabel?.text = "ステータスバーの色(TabBar)"
             return cell
         }
     }
@@ -99,6 +107,14 @@ extension MainVC: UITableViewDelegate {
         case 7:
             let storyBoard = UIStoryboard(name: "StatusBar", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 8:
+            let storyBoard = UIStoryboard(name: "StatusBarInNavigation", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarInNavigationViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 9:
+            let storyBoard = UIStoryboard(name: "StatusBarInTabBar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarInTabBarViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

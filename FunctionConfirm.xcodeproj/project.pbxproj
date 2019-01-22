@@ -42,6 +42,12 @@
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
+		9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */; };
+		9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7521F6FCDE00D6184A /* StatusBarInNavigationViewController.swift */; };
+		9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C7721F6FCFD00D6184A /* StatusBarInTabBar.storyboard */; };
+		9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7921F6FD0F00D6184A /* StatusBarInTabBarViewController.swift */; };
+		9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7B21F6FE8E00D6184A /* StatusBarFirstViewController.swift */; };
+		9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644B211A818A00DD178E /* MVPModel.swift */; };
 		9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644D211A85E500DD178E /* MVPTableCell.swift */; };
@@ -121,6 +127,12 @@
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
+		9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarInNavigation.storyboard; sourceTree = "<group>"; };
+		9CD30C7521F6FCDE00D6184A /* StatusBarInNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarInNavigationViewController.swift; sourceTree = "<group>"; };
+		9CD30C7721F6FCFD00D6184A /* StatusBarInTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarInTabBar.storyboard; sourceTree = "<group>"; };
+		9CD30C7921F6FD0F00D6184A /* StatusBarInTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarInTabBarViewController.swift; sourceTree = "<group>"; };
+		9CD30C7B21F6FE8E00D6184A /* StatusBarFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarFirstViewController.swift; sourceTree = "<group>"; };
+		9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarSecondViewController.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		9CE2644B211A818A00DD178E /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
 		9CE2644D211A85E500DD178E /* MVPTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTableCell.swift; sourceTree = "<group>"; };
@@ -200,6 +212,8 @@
 				9CCC0AF721199ECA007EFE26 /* MVP */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
 				9C87B27221F5964A00A50985 /* StatusBar */,
+				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
+				9CD30C7221F6FC8400D6184A /* StatusBarInTabBar */,
 				20521A5020DF50A500621136 /* Extension */,
 				2032A70B20DCCA8A0091952F /* CoreData */,
 				7B67231E20E0BC5700D8A5A3 /* Resource */,
@@ -344,6 +358,26 @@
 				9CE26458211A90DA00DD178E /* Regist */,
 			);
 			path = MVP;
+			sourceTree = "<group>";
+		};
+		9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */,
+				9CD30C7521F6FCDE00D6184A /* StatusBarInNavigationViewController.swift */,
+			);
+			path = StatusBarInNavigation;
+			sourceTree = "<group>";
+		};
+		9CD30C7221F6FC8400D6184A /* StatusBarInTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9CD30C7721F6FCFD00D6184A /* StatusBarInTabBar.storyboard */,
+				9CD30C7921F6FD0F00D6184A /* StatusBarInTabBarViewController.swift */,
+				9CD30C7B21F6FE8E00D6184A /* StatusBarFirstViewController.swift */,
+				9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */,
+			);
+			path = StatusBarInTabBar;
 			sourceTree = "<group>";
 		};
 		9CE26457211A90D000DD178E /* List */ = {
@@ -516,12 +550,14 @@
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
+				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
 				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
 				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
 				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
+				9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */,
 				7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +608,8 @@
 				7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
+				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
+				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
@@ -584,6 +622,7 @@
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
+				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
@@ -604,6 +643,7 @@
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
+				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
