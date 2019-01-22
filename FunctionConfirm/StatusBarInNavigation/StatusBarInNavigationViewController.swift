@@ -1,14 +1,14 @@
 //
-//  StatusBarViewController.swift
+//  StatusBarInNavigationViewController.swift
 //  FunctionConfirm
 //
-//  Created by Maki, Yusaku | Mackey | ECID on 2019/01/21.
+//  Created by Maki, Yusaku | Mackey | ECID on 2019/01/22.
 //  Copyright © 2019年 牧宥作. All rights reserved.
 //
 
 import UIKit
 
-final class StatusBarViewController: UIViewController {
+final class StatusBarInNavigationViewController: UIViewController {
 
     @IBAction func turnOverButtonTapped(_ sender: Any) {
         if view.backgroundColor == UIColor.black {
@@ -20,24 +20,20 @@ final class StatusBarViewController: UIViewController {
         }
     }
 
-    @IBAction func closeButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "ステータスバーの色"
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationItem.title = "ステータスバーの色(Navigation)"
     }
 
     // StatusBarStyle
     // MEMO: Info.plistの「View controller-based status bar appearance」をYESにしておく必要がある。
+    // MEMO: UINavigationControllerのextensionで、chilForStatusBarStyleを設定しておく必要がある。
     private var statusBarStyle: UIStatusBarStyle = .default
     func setStatusBarStyle(style: UIStatusBarStyle) {
         statusBarStyle = style
         self.setNeedsStatusBarAppearanceUpdate()
     }
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle
     }

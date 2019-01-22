@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="GAw-EB-jWt">
+            <objects>
+                <viewController storyboardIdentifier="StatusBarSecondViewController" id="fnK-CA-9Jb" customClass="StatusBarSecondViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o29-bN-jrc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tey-TX-Xwt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="eia-NA-Lj7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eh7-gk-FtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="403"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="iRV-QP-dFc">
+            <objects>
+                <viewController storyboardIdentifier="StatusBarFirstViewController" id="0QI-Ua-dsq" customClass="StatusBarFirstViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SVb-B5-SW8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b6G-Ot-HVo"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="T8j-fA-3O6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7E-Ds-6Pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="-262"/>
+        </scene>
+        <!--Status Bar In Tab Bar View Controller-->
+        <scene sceneID="9XE-gn-hA5">
+            <objects>
+                <tabBarController storyboardIdentifier="StatusBarInTabBarViewController" id="0Uh-5D-2BL" customClass="StatusBarInTabBarViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1bk-jq-2n5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0QI-Ua-dsq" kind="relationship" relationship="viewControllers" id="N4N-9d-mMa"/>
+                        <segue destination="fnK-CA-9Jb" kind="relationship" relationship="viewControllers" id="h4I-39-VEF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UlT-Ie-RKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="70"/>
+        </scene>
+    </scenes>
+</document>
