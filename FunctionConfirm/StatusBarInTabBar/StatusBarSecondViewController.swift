@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol StatusBarSecondDelegate: class {
+    func setStatusBarStyle(style: UIStatusBarStyle)
+}
+
 final class StatusBarSecondViewController: UIViewController {
     
+    private var statusBarStyle: UIStatusBarStyle = .default
+
     @IBAction func buttonTapped(_ sender: Any) {
         setStatusBarStyle(style: .lightContent)
-        let viewController = StatusBarPopupViewController()
+        let viewController = StatusBarPopupViewController(delegate: self)
         tabBarController?.present(viewController, animated: true, completion: nil)
     }
 
@@ -20,16 +26,23 @@ final class StatusBarSecondViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
+    }
+}
+
+extension StatusBarSecondViewController: StatusBarSecondDelegate {
     // StatusBarStyle
     // MEMO: Info.plistの「View controller-based status bar appearance」をYESにしておく必要がある。
     // MEMO: UINavigationControllerのextensionで、chilForStatusBarStyleを設定しておく必要がある。
-    private var statusBarStyle: UIStatusBarStyle = .default
     func setStatusBarStyle(style: UIStatusBarStyle) {
         statusBarStyle = style
         self.setNeedsStatusBarAppearanceUpdate()
     }
+}
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
+extension UIViewController {
+    func setStatusBarStyles(style: UIStatusBarStyle) {
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 }
