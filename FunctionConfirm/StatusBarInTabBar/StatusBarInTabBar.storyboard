@@ -31,7 +31,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="fnK-CA-9Jb" eventType="touchUpInside" id="2pc-iF-jy1"/>
-                                    <action selector="turnOverButtonTapped:" destination="0QI-Ua-dsq" eventType="touchUpInside" id="y5L-SO-msJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,7 +45,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eh7-gk-FtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="403"/>
+            <point key="canvasLocation" x="-794" y="921"/>
+        </scene>
+        <!--Status Bar Third View Controller-->
+        <scene sceneID="y5F-hZ-X7k">
+            <objects>
+                <viewController id="Wd4-JE-Ugf" customClass="StatusBarThirdViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ERl-dn-CuD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KN-0f-i2g">
+                                <rect key="frame" x="87.5" y="311.5" width="200" height="44"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="a8G-m3-Ex0"/>
+                                    <constraint firstAttribute="height" constant="44" id="eBe-yG-PYa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="h6g-LC-WvC"/>
+                                    <constraint firstAttribute="width" constant="200" id="oij-Zt-KR3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ポップアップ表示">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Wd4-JE-Ugf" eventType="touchUpInside" id="GJC-lH-xjl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6KN-0f-i2g" firstAttribute="centerX" secondItem="ERl-dn-CuD" secondAttribute="centerX" id="Aeo-aE-oQe"/>
+                            <constraint firstItem="6KN-0f-i2g" firstAttribute="centerY" secondItem="ERl-dn-CuD" secondAttribute="centerY" id="npm-fi-LYp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o82-lx-eAM"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="i6b-dx-X9h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lT-F3-c0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="921"/>
         </scene>
         <!--Status Bar First View Controller-->
         <scene sceneID="iRV-QP-dFc">
@@ -87,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7E-Ds-6Pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="-262"/>
+            <point key="canvasLocation" x="-1844" y="921"/>
         </scene>
         <!--Status Bar In Tab Bar View Controller-->
         <scene sceneID="9XE-gn-hA5">
@@ -101,6 +139,7 @@
                     <connections>
                         <segue destination="0QI-Ua-dsq" kind="relationship" relationship="viewControllers" id="N4N-9d-mMa"/>
                         <segue destination="fnK-CA-9Jb" kind="relationship" relationship="viewControllers" id="h4I-39-VEF"/>
+                        <segue destination="Wd4-JE-Ugf" kind="relationship" relationship="viewControllers" id="VbN-Tt-CUw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlT-Ie-RKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
