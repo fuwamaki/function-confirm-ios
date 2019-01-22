@@ -8,13 +8,6 @@
 
 import UIKit
 
-// NavigationControllerがある場合、これをつけないと、StatusBarの色は変わらない
-extension UINavigationController {
-    open override var childForStatusBarStyle: UIViewController? {
-        return self.visibleViewController
-    }
-}
-
 final class StatusBarViewController: UIViewController {
 
     @IBAction func turnOverButtonTapped(_ sender: Any) {
