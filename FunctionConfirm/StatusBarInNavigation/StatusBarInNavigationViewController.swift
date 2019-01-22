@@ -10,7 +10,31 @@ import UIKit
 
 final class StatusBarInNavigationViewController: UIViewController {
 
+    @IBAction func turnOverButtonTapped(_ sender: Any) {
+        if view.backgroundColor == UIColor.black {
+            view.backgroundColor = UIColor.white
+            setStatusBarStyle(style: .default)
+        } else {
+            view.backgroundColor = UIColor.black
+            setStatusBarStyle(style: .lightContent)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "ステータスバーの色(Navigation)"
+    }
+
+    // StatusBarStyle
+    // MEMO: Info.plistの「View controller-based status bar appearance」をYESにしておく必要がある。
+    // MEMO: UINavigationControllerのextensionで、chilForStatusBarStyleを設定しておく必要がある。
+    private var statusBarStyle: UIStatusBarStyle = .default
+    func setStatusBarStyle(style: UIStatusBarStyle) {
+        statusBarStyle = style
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
     }
 }

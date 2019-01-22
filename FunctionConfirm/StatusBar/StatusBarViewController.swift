@@ -27,7 +27,7 @@ final class StatusBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ステータスバーの色"
-//        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     // StatusBarStyle
