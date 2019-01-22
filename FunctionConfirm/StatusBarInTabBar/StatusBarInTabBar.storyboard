@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Status Bar Second View Controller-->
         <scene sceneID="GAw-EB-jWt">
             <objects>
                 <viewController storyboardIdentifier="StatusBarSecondViewController" id="fnK-CA-9Jb" customClass="StatusBarSecondViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,13 +20,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tey-TX-Xwt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="eia-NA-Lj7"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="eia-NA-Lj7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eh7-gk-FtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="158" y="403"/>
         </scene>
-        <!--Item 1-->
+        <!--Status Bar First View Controller-->
         <scene sceneID="iRV-QP-dFc">
             <objects>
                 <viewController storyboardIdentifier="StatusBarFirstViewController" id="0QI-Ua-dsq" customClass="StatusBarFirstViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="b6G-Ot-HVo"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="T8j-fA-3O6"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="T8j-fA-3O6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7E-Ds-6Pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
