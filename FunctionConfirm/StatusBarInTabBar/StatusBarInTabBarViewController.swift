@@ -15,3 +15,10 @@ final class StatusBarInTabBarViewController: UITabBarController {
         navigationItem.title = "ステータスバーの色(TabBar)"
     }
 }
+
+// コレつけるとダメっぽい...
+//extension UITabBarController {
+//    open override var childForStatusBarStyle: UIViewController? {
+//        return self.children.first
+//    }
+//}

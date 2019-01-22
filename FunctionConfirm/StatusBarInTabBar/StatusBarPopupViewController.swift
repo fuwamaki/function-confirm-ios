@@ -26,5 +26,19 @@ final class StatusBarPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //反応しない者たち
+//        setStatusBarStyle(style: .lightContent)
+//        UIApplication.shared.statusBarStyle = .lightContent
+    }
+
+    private var statusBarStyle: UIStatusBarStyle = .default
+    func setStatusBarStyle(style: UIStatusBarStyle) {
+        statusBarStyle = style
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle
     }
 }
