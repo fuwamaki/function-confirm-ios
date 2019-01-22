@@ -10,6 +10,11 @@ import UIKit
 
 final class StatusBarSecondViewController: UIViewController {
     
+    @IBAction func buttonTapped(_ sender: Any) {
+        let viewController = StatusBarPopupViewController()
+        tabBarController?.present(viewController, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

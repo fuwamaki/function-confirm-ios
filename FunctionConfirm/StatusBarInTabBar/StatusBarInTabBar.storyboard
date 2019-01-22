@@ -17,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="o29-bN-jrc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqv-0f-XKy">
+                                <rect key="frame" x="87.5" y="311.5" width="200" height="44"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3o8-8f-Ipn"/>
+                                    <constraint firstAttribute="width" constant="200" id="iVC-al-gR2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ポップアップ表示">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="fnK-CA-9Jb" eventType="touchUpInside" id="2pc-iF-jy1"/>
+                                    <action selector="turnOverButtonTapped:" destination="0QI-Ua-dsq" eventType="touchUpInside" id="y5L-SO-msJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nqv-0f-XKy" firstAttribute="centerY" secondItem="o29-bN-jrc" secondAttribute="centerY" id="1vi-Qh-Tbo"/>
+                            <constraint firstItem="nqv-0f-XKy" firstAttribute="centerX" secondItem="o29-bN-jrc" secondAttribute="centerX" id="p5P-F1-bZ3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tey-TX-Xwt"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="eia-NA-Lj7"/>
