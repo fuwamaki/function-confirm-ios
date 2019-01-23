@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="263" y="921"/>
         </scene>
-        <!--View Controller-->
+        <!--Status Bar Forth View Controller-->
         <scene sceneID="fy5-ct-kP0">
             <objects>
-                <viewController id="ygJ-Ca-9iY" sceneMemberID="viewController">
+                <viewController id="ygJ-Ca-9iY" customClass="StatusBarForthViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XR1-nO-7AQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +109,9 @@
                                 <state key="normal" title="ポップアップ③表示">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="ygJ-Ca-9iY" eventType="touchUpInside" id="mKc-bJ-Bat"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
