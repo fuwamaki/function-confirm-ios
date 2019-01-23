@@ -10,27 +10,39 @@ import UIKit
 
 final class StatusBarThirdViewController: UIViewController {
 
-    private var statusBarStyle: UIStatusBarStyle = .default
-
     @IBAction func buttonTapped(_ sender: Any) {
-        setStatusBarStyle(style: .lightContent)
-//        let viewController = StatusBarPopupViewController(delegate: self)
-//        tabBarController?.present(viewController, animated: true, completion: nil)
+        let viewController = StatusBarPopup2ViewController()
+        tabBarController?.present(viewController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
-    }
+    // MEMO: tabBarControllerのpresentだと戻ってきても反応しない
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
 
-    // StatusBarStyle
-    // MEMO: Info.plistの「View controller-based status bar appearance」をYESにしておく必要がある。
-    // MEMO: UINavigationControllerのextensionで、chilForStatusBarStyleを設定しておく必要がある。
-    func setStatusBarStyle(style: UIStatusBarStyle) {
-        statusBarStyle = style
-        self.setNeedsStatusBarAppearanceUpdate()
+    // ThirdViewController表示時&StatusBarPopup2ViewController表示に呼ばれる
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return StatusBar2Manager.shared.statusBarStyle
+    }
+}
+
+extension UIApplication {
+    class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let navigationController = controller as? UINavigationController {
+            return topViewController(controller: navigationController.visibleViewController)
+        }
+        if let tabController = controller as? UITabBarController {
+            if let selected = tabController.selectedViewController {
+                return topViewController(controller: selected)
+            }
+        }
+        if let presented = controller?.presentedViewController {
+            return topViewController(controller: presented)
+        }
+        return controller
     }
 }
