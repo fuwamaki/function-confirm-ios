@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="2070" y="921"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Status Bar3 Navigation View Controller-->
         <scene sceneID="o2U-9W-fe6">
             <objects>
-                <navigationController id="Urr-l4-mNN" sceneMemberID="viewController">
+                <navigationController id="Urr-l4-mNN" customClass="StatusBar3NavigationViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="0tf-MM-vjN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qCO-ih-d8Y">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
