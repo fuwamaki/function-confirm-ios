@@ -385,9 +385,9 @@
 		9CB8083221F8230100DAD155 /* Second */ = {
 			isa = PBXGroup;
 			children = (
+				9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */,
 				9CD30C8121F7149A00D6184A /* StatusBarPopupViewController.xib */,
 				9CB8082321F716AB00DAD155 /* StatusBarPopupViewController.swift */,
-				9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -395,10 +395,10 @@
 		9CB8083321F8230A00DAD155 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				9CB8083421F8236000DAD155 /* StatusBar2Manager.swift */,
 				9CB8082521F751A900DAD155 /* StatusBarThirdViewController.swift */,
 				9CB8082721F753C900DAD155 /* StatusBarPopup2ViewController.xib */,
 				9CB8082921F7540E00DAD155 /* StatusBarPopup2ViewController.swift */,
-				9CB8083421F8236000DAD155 /* StatusBar2Manager.swift */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -406,11 +406,11 @@
 		9CB8083621F8281A00DAD155 /* Forth */ = {
 			isa = PBXGroup;
 			children = (
-				9CB8083721F8283900DAD155 /* StatusBarForthViewController.swift */,
 				9CB8083921F832BA00DAD155 /* StatusBar3Manager.swift */,
-				9CB8083B21F8330B00DAD155 /* StatusBarPopup3ViewController.swift */,
-				9CB8083D21F8332300DAD155 /* StatusBarPopup3ViewController.xib */,
 				9CB8083F21F8349700DAD155 /* StatusBar3NavigationViewController.swift */,
+				9CB8083721F8283900DAD155 /* StatusBarForthViewController.swift */,
+				9CB8083D21F8332300DAD155 /* StatusBarPopup3ViewController.xib */,
+				9CB8083B21F8330B00DAD155 /* StatusBarPopup3ViewController.swift */,
 			);
 			path = Forth;
 			sourceTree = "<group>";
