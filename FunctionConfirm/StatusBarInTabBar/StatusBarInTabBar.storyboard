@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="200" id="iVC-al-gR2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="ポップアップ表示">
+                                <state key="normal" title="ポップアップ①表示">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="width" constant="200" id="oij-Zt-KR3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="ポップアップ表示">
+                                <state key="normal" title="ポップアップ②表示">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -85,6 +85,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lT-F3-c0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="263" y="921"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fy5-ct-kP0">
+            <objects>
+                <viewController id="ygJ-Ca-9iY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XR1-nO-7AQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3II-g8-xmD">
+                                <rect key="frame" x="87.5" y="311.5" width="200" height="44"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QTK-8X-9h2"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="SnF-Mc-NTO"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="YyG-mN-HkQ"/>
+                                    <constraint firstAttribute="width" constant="200" id="kf6-ea-aaE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="sXW-As-r07"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="zyO-23-eGy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ポップアップ③表示">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3II-g8-xmD" firstAttribute="centerX" secondItem="XR1-nO-7AQ" secondAttribute="centerX" id="90t-iZ-jqA"/>
+                            <constraint firstItem="3II-g8-xmD" firstAttribute="centerY" secondItem="XR1-nO-7AQ" secondAttribute="centerY" id="dGn-jK-l2E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nqL-HX-Yd1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ghi-hj-vIA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zj0-o7-HQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2070" y="921"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o2U-9W-fe6">
+            <objects>
+                <navigationController id="Urr-l4-mNN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="0tf-MM-vjN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qCO-ih-d8Y">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ygJ-Ca-9iY" kind="relationship" relationship="rootViewController" id="q50-Cd-dRJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqM-5N-Ntz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="921"/>
         </scene>
         <!--Status Bar First View Controller-->
         <scene sceneID="iRV-QP-dFc">
@@ -140,11 +195,12 @@
                         <segue destination="0QI-Ua-dsq" kind="relationship" relationship="viewControllers" id="N4N-9d-mMa"/>
                         <segue destination="fnK-CA-9Jb" kind="relationship" relationship="viewControllers" id="h4I-39-VEF"/>
                         <segue destination="Wd4-JE-Ugf" kind="relationship" relationship="viewControllers" id="VbN-Tt-CUw"/>
+                        <segue destination="Urr-l4-mNN" kind="relationship" relationship="viewControllers" id="VC1-DW-lkw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlT-Ie-RKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="70"/>
+            <point key="canvasLocation" x="-236" y="51"/>
         </scene>
     </scenes>
 </document>
