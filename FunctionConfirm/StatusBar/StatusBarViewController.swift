@@ -21,6 +21,7 @@ final class StatusBarViewController: UIViewController {
     }
 
     @IBAction func closeButtonTapped(_ sender: Any) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.popViewController(animated: true)
     }
 
