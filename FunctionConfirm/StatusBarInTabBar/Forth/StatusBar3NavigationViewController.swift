@@ -9,7 +9,7 @@
 import UIKit
 
 class StatusBar3NavigationViewController: UINavigationController {
-    // TabBarControllerより全面にNavigationControllerがあれば、NavigationControllerのpreferredStatusBarStyleが呼ばれる
+    // TabBarControllerより前面にNavigationControllerがあれば、NavigationControllerのpreferredStatusBarStyleが呼ばれる
     open override var preferredStatusBarStyle: UIStatusBarStyle {
         return StatusBar3Manager.shared.statusBarStyle
     }
