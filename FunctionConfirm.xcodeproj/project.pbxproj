@@ -240,6 +240,7 @@
 				9C87B27221F5964A00A50985 /* StatusBar */,
 				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
 				9CD30C7221F6FC8400D6184A /* StatusBarInTabBar */,
+				9C91E4B22209DC470021E1BC /* AWSRekognition */,
 				20521A5020DF50A500621136 /* Extension */,
 				2032A70B20DCCA8A0091952F /* CoreData */,
 				7B67231E20E0BC5700D8A5A3 /* Resource */,
@@ -372,6 +373,13 @@
 				9C87B27521F5967100A50985 /* StatusBarViewController.swift */,
 			);
 			path = StatusBar;
+			sourceTree = "<group>";
+		};
+		9C91E4B22209DC470021E1BC /* AWSRekognition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AWSRekognition;
 			sourceTree = "<group>";
 		};
 		9CB8083121F822F800DAD155 /* First */ = {
