@@ -40,6 +40,8 @@
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
+		9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C91E4B32209DD490021E1BC /* AWSRekognition.storyboard */; };
+		9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C91E4B52209DD6D0021E1BC /* FaceTrackingHomeViewController.swift */; };
 		9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8082321F716AB00DAD155 /* StatusBarPopupViewController.swift */; };
 		9CB8082621F751A900DAD155 /* StatusBarThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8082521F751A900DAD155 /* StatusBarThirdViewController.swift */; };
 		9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8082721F753C900DAD155 /* StatusBarPopup2ViewController.xib */; };
@@ -138,6 +140,8 @@
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
+		9C91E4B32209DD490021E1BC /* AWSRekognition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AWSRekognition.storyboard; sourceTree = "<group>"; };
+		9C91E4B52209DD6D0021E1BC /* FaceTrackingHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackingHomeViewController.swift; sourceTree = "<group>"; };
 		9CB8082321F716AB00DAD155 /* StatusBarPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarPopupViewController.swift; sourceTree = "<group>"; };
 		9CB8082521F751A900DAD155 /* StatusBarThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarThirdViewController.swift; sourceTree = "<group>"; };
 		9CB8082721F753C900DAD155 /* StatusBarPopup2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusBarPopup2ViewController.xib; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 		9C91E4B22209DC470021E1BC /* AWSRekognition */ = {
 			isa = PBXGroup;
 			children = (
+				9C91E4B32209DD490021E1BC /* AWSRekognition.storyboard */,
+				9C91E4B52209DD6D0021E1BC /* FaceTrackingHomeViewController.swift */,
 			);
 			path = AWSRekognition;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			files = (
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
 				9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */,
+				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
@@ -701,6 +708,7 @@
 				9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */,
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
+				9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */,
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
