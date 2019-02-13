@@ -42,6 +42,7 @@
 		9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */; };
 		9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232920E0D43800D8A5A3 /* GitHubRepositoryList.storyboard */; };
 		9C78A29B221481FC0036D3FD /* GitHubRepositoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232720E0D41600D8A5A3 /* GitHubRepositoryListVC.swift */; };
+		9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -722,6 +723,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */,
 				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
