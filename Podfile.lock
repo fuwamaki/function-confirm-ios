@@ -1,11 +1,14 @@
 PODS:
-  - APIKit (3.2.1):
-    - Result (~> 3.0)
-  - Cartography (3.0.2)
-  - KRActivityIndicatorView (2.1.1)
-  - KRProgressHUD (3.1.2):
-    - KRActivityIndicatorView (= 2.1.1)
-  - Result (3.2.4)
+  - APIKit (4.0.0):
+    - Result (~> 4.0)
+  - AWSCore (2.8.4)
+  - AWSRekognition (2.8.4):
+    - AWSCore (= 2.8.4)
+  - Cartography (3.1.0)
+  - KRActivityIndicatorView (3.0.0)
+  - KRProgressHUD (3.4.0):
+    - KRActivityIndicatorView (= 3.0.0)
+  - Result (4.1.0)
   - RxAtomic (4.4.0)
   - RxBlocking (4.4.0):
     - RxAtomic (~> 4.4)
@@ -19,9 +22,10 @@ PODS:
     - RxSwift (~> 4.0)
 
 DEPENDENCIES:
-  - APIKit (~> 3.2)
-  - Cartography (~> 3.0.1)
-  - KRProgressHUD (~> 3.1.0)
+  - APIKit (~> 4.0.0)
+  - AWSRekognition (~> 2.8.4)
+  - Cartography (~> 3.1.0)
+  - KRProgressHUD (~> 3.4.0)
   - RxBlocking (~> 4.4.0)
   - RxCocoa (~> 4.4.0)
   - RxSwift (~> 4.4.0)
@@ -30,6 +34,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - APIKit
+    - AWSCore
+    - AWSRekognition
     - Cartography
     - KRActivityIndicatorView
     - KRProgressHUD
@@ -41,17 +47,19 @@ SPEC REPOS:
     - RxTest
 
 SPEC CHECKSUMS:
-  APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
-  Cartography: 231190d7d0b3107ce8d67c54189f059a509b3760
-  KRActivityIndicatorView: fa5df9f4cf039651ad8b0f9c11c3159d1e19299f
-  KRProgressHUD: 6e23870531f8e854c8cba430b0f5a61074865250
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  APIKit: 23ddce4be7eccd746d2ab3c62713cd80d5846d5a
+  AWSCore: 734b0d67c2c77f6edae9e5520431a37310ea4193
+  AWSRekognition: fad6467f39d64657a634da4265fb97a4d2349eda
+  Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
+  KRActivityIndicatorView: c414000730a6f4969eeb354bee4f2aebc89c2c2e
+  KRProgressHUD: 79c8703f82179fe34b3602f10b30726f887983fa
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
 
-PODFILE CHECKSUM: 3b2d19b380e52a2d3b989d982e8fdd1bbf798769
+PODFILE CHECKSUM: c27992430b1a3b717356f9395bbc7db07148ff12
 
 COCOAPODS: 1.5.3

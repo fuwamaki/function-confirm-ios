@@ -28,7 +28,7 @@ class SubmitButton: UIButton {
 
     func setup() {
         layer.cornerRadius = 5
-        [UIControlState.normal, UIControlState.highlighted, UIControlState.disabled].forEach { state in
+        [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.disabled].forEach { state in
             switch state {
             case .normal:
                 setTitleColor(UIColor.white, for: state)

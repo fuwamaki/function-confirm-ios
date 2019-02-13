@@ -12,7 +12,7 @@ final class MVPTableCell: UITableViewCell {
 
     private var priceLabel: UILabel
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         priceLabel = UILabel(frame: CGRect.zero)
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         setupView()

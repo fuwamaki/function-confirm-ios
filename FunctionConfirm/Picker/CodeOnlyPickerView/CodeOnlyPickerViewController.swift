@@ -21,8 +21,8 @@ final class CodeOnlyPickerViewController: UIViewController {
 
     func setupDatePicker() {
         let datePickerView = CodeOnlyPickerView()
-        textField.inputView = datePickerView.datePicker
-        datePickerView.datePicker.addTarget(self, action: #selector(PickerVC.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        textField.inputView = datePickerView
+        datePickerView.datePicker.addTarget(self, action: #selector(PickerVC.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
     }
 
     func setupDoneToolBar() {

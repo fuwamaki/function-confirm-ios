@@ -23,7 +23,7 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 11
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,12 +52,29 @@ extension MainVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mvpCell", for: indexPath)
             cell.textLabel?.text = "アーキ確認システム（MVP）"
             return cell
-        } else if indexPath.row == 5 {
+        } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "stackviewCell", for: indexPath)
             cell.textLabel?.text = "StackView練習"
             return cell
+        } else if indexPath.row == 7 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarCell", for: indexPath)
+            cell.textLabel?.text = "ステータスバーの色"
+            return cell
+        } else if indexPath.row == 8 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInNavigationCell", for: indexPath)
+            cell.textLabel?.text = "ステータスバーの色(NavigationBar)"
+            return cell
+        } else if indexPath.row == 9 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInTabBarCell", for: indexPath)
+            cell.textLabel?.text = "ステータスバーの色(TabBar)"
+            return cell
+        } else if indexPath.row == 10 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
+            cell.textLabel?.text = "AWS 顔認識"
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mvvmCell", for: indexPath)
+            cell.textLabel?.text = "アーキ確認システム（MVVM）"
             return cell
         }
     }
@@ -95,7 +112,23 @@ extension MainVC: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "StackView", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
             navigationController?.pushViewController(vc, animated: true)
-        case 6:
+        case 7:
+            let storyBoard = UIStoryboard(name: "StatusBar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 8:
+            let storyBoard = UIStoryboard(name: "StatusBarInNavigation", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarInNavigationViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 9:
+            let storyBoard = UIStoryboard(name: "StatusBarInTabBar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarInTabBarViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 10:
+            let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 11:
             let storyBoard = UIStoryboard(name: "MVVMViewController", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMListViewController")
             navigationController?.pushViewController(vc, animated: true)
