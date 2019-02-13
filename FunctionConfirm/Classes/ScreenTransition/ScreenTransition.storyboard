@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Screen TransitionVC-->
+        <!--Screen Transition View Controller-->
         <scene sceneID="fgj-L1-j9k">
             <objects>
-                <viewController storyboardIdentifier="ScreenTransitionVC" id="JfX-By-ybm" customClass="ScreenTransitionVC" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScreenTransitionVC" id="JfX-By-ybm" customClass="ScreenTransitionViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5YM-3W-xEc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uik-VY-sYk">
-                                <rect key="frame" x="87.5" y="283.5" width="200" height="100"/>
+                                <rect key="frame" x="200" y="250" width="200" height="100"/>
                                 <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="RHv-6I-1qA"/>
@@ -50,16 +46,16 @@
             </objects>
             <point key="canvasLocation" x="-302" y="164"/>
         </scene>
-        <!--DisplayVC-->
+        <!--Display View Controller-->
         <scene sceneID="Lzn-M8-a9x">
             <objects>
-                <viewController storyboardIdentifier="DisplayVC" id="hz3-G1-3dR" customClass="DisplayVC" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DisplayVC" id="hz3-G1-3dR" customClass="DisplayViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbC-LN-tOc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road" translatesAutoresizingMaskIntoConstraints="NO" id="sBp-N6-fCp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

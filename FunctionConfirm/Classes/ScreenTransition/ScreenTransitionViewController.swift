@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScreenTransitionVC: UIViewController {
+class ScreenTransitionViewController: UIViewController {
 
     @IBOutlet weak var nextButton: UIButton!
 
@@ -25,15 +25,15 @@ class ScreenTransitionVC: UIViewController {
     }
 
     @IBAction func nextTouchUpInside(_ sender: Any) {
-        transitionToSecondVC()
+        transitionToSecondViewController()
     }
 
-    func transitionToSecondVC() {
+    func transitionToSecondViewController() {
         self.performSegue(withIdentifier: "toDisplayVC", sender: nil)
     }
 }
 
-extension ScreenTransitionVC: UIViewControllerPreviewingDelegate {
+extension ScreenTransitionViewController: UIViewControllerPreviewingDelegate {
 
     // peek action
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -44,12 +44,12 @@ extension ScreenTransitionVC: UIViewControllerPreviewingDelegate {
         }
 
         let storyBoard = UIStoryboard(name: "ScreenTransition", bundle: nil)
-        let secondVC = storyBoard.instantiateViewController(withIdentifier: "DisplayVC")
-        return secondVC
+        let secondViewController = storyBoard.instantiateViewController(withIdentifier: "DisplayVC")
+        return secondViewController
     }
 
     // pop action
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        transitionToSecondVC()
+        transitionToSecondViewController()
     }
 }
