@@ -11,7 +11,7 @@ import UIKit
 class MainVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "動作確認"
@@ -21,11 +21,13 @@ class MainVC: UIViewController {
 }
 
 extension MainVC: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 12
     }
-    
+
+    // swiftlint:disable function_body_length
+    // swiftlint:disable cyclomatic_complexity
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // ココどうにかしてキレイに書きたい（Dynamic Prototypesとして）
         if indexPath.row == 0 {
@@ -81,6 +83,8 @@ extension MainVC: UITableViewDataSource {
 }
 
 extension MainVC: UITableViewDelegate {
+    // swiftlint:disable function_body_length
+    // swiftlint:disable cyclomatic_complexity
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {

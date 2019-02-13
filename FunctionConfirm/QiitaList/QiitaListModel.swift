@@ -12,14 +12,14 @@ protocol QiitaListInteractable {
     func getQiitaList()
 }
 
-protocol QiitaListDelegate {
+protocol QiitaListDelegate: class {
     func setQiitaList(_ elements: [QiitaListElement])
 }
 
 class QiitaListModel: QiitaListInteractable {
-    
-    var delegate: QiitaListDelegate?
-    
+
+    weak var delegate: QiitaListDelegate?
+
     func getQiitaList() {
         let qiitaListApiRequestService = QiitaListApiRequestService()
         qiitaListApiRequestService.getAPI { [weak self] result in

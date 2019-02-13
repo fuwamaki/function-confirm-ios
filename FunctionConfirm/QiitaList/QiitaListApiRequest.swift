@@ -13,13 +13,13 @@ struct QiitaLists: QiitaListRequest {
     typealias Response = [QiitaListElement]
     let method: HTTPMethod = .get
     let path: String = "/api/v2/items"
-    let parameters: Any = ["page":"1","per_page":"10"]
+    let parameters: Any = ["page": "1", "per_page": "10"]
 }
 
 class QiitaListApiRequestService {
-    
+
     private weak var task: URLSessionDataTask?
-    
+
     func getAPI(completion: @escaping (Result<QiitaLists.Response, NSError>) -> Void) {
         let request = QiitaLists()
         Session.send(request) { result in

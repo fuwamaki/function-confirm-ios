@@ -17,14 +17,14 @@ protocol QiitaListUserInterface {
 }
 
 class QiitaListVM: QiitaListEventHandler, QiitaListDelegate {
-    
+
     var interactable: QiitaListInteractable?
     var userInterface: QiitaListUserInterface?
-    
+
     func getQiitaList() {
         interactable?.getQiitaList()
     }
-    
+
     func setQiitaList(_ elements: [QiitaListElement]) {
         userInterface?.setQiitaListElements(elements)
     }

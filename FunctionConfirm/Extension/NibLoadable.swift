@@ -18,12 +18,12 @@ extension NibLoadable {
     static var nibName: String {
         return String(describing: self)
     }
-    
+
     static func loadNib(_ bundle: Bundle? = nil) -> UINib {
         let bundle = bundle ?? Bundle.main
         return UINib(nibName: nibName, bundle: bundle)
     }
-    
+
     static func instantiateFromNib(_ bundle: Bundle? = nil) -> Self {
         return loadNib(bundle).instantiate(withOwner: nil, options: nil).first as! Self
     }

@@ -81,7 +81,7 @@ class MVPRegistViewController: UIViewController, MVPRegistView {
         textField.layer.cornerRadius = 5
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth  = 1
-        
+
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 32))
         textField.rightViewMode = .always
         return textField
@@ -98,7 +98,7 @@ class MVPRegistViewController: UIViewController, MVPRegistView {
         textField.layer.cornerRadius = 5
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth  = 1
-        
+
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 32))
         textField.rightViewMode = .always
         return textField

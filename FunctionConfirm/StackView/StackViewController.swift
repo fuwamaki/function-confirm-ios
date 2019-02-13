@@ -8,6 +8,4 @@
 
 import UIKit
 
-class StackViewController: UIViewController {
-    
-}
+class StackViewController: UIViewController {}

@@ -41,7 +41,7 @@ struct GetItemRequest: APIRequest {
 
 struct PostItemRequest: APIRequest {
     typealias Response = Item
-    let data: Dictionary<String, Any>
+    let data: [String: Any]
     let method: HTTPMethod = .post
     let path: String = "/create"
     var bodyParameters: BodyParameters? {
@@ -58,7 +58,7 @@ struct DeleteItemRequest: APIRequest {
     let method: HTTPMethod = .delete
     let path: String = "/delete"
     let id: Int
-    var queryParameters: [String : Any]? {
+    var queryParameters: [String: Any]? {
         return ["id": id]
     }
 }
@@ -107,9 +107,9 @@ class RESTfulApiRequest {
     }
 
     // TODO: このパースはRESTfulApiRequestじゃないところにしたい
-    func parse(data: Data) -> Dictionary<String, Any> {
+    func parse(data: Data) -> [String: Any] {
         do {
-            let json = try JSONSerialization.jsonObject(with: data) as! Dictionary<String, Any>
+            let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
             print(json)
             return json
         } catch {

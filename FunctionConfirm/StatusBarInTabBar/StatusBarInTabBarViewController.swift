@@ -9,7 +9,7 @@
 import UIKit
 
 final class StatusBarInTabBarViewController: UITabBarController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ステータスバーの色(TabBar)"

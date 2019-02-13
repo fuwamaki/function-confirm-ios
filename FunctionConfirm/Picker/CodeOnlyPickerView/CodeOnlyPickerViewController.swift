@@ -35,11 +35,11 @@ final class CodeOnlyPickerViewController: UIViewController {
 
     @objc func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat  = "yyyy/MM/dd";
+        dateFormatter.dateFormat = "yyyy/MM/dd"
         textField.text = dateFormatter.string(from: sender.date)
     }
 
-    @objc func doneButtonAction(){
+    @objc func doneButtonAction() {
         textField.resignFirstResponder()
     }
 }

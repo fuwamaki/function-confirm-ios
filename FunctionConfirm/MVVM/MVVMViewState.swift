@@ -13,7 +13,7 @@ enum MVVMViewFetchState: Equatable {
     case itemsFetching
     case itemsFetchCompleted
     case errorOccurred(ItemAPIRequestError)
-    
+
     static func == (lhs: MVVMViewFetchState, rhs: MVVMViewFetchState) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle):

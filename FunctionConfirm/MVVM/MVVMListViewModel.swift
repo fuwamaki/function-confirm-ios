@@ -63,7 +63,7 @@ class MVVMListViewModel {
             return Completable.empty()
         }
         return apiRequest.deleteItemAPI(itemId: itemId)
-            .do(onSuccess: { [weak self] response in
+            .do(onSuccess: { [weak self] _ in
                 var items = self?.itemsSubject.value
                 items?.remove(at: selectedIndexPath.row)
                 self?.itemsSubject.accept(items ?? [])

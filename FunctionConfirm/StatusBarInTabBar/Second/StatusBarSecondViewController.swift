@@ -13,7 +13,7 @@ protocol StatusBarSecondDelegate: class {
 }
 
 final class StatusBarSecondViewController: UIViewController {
-    
+
     private var statusBarStyle: UIStatusBarStyle = .default
 
     @IBAction func buttonTapped(_ sender: Any) {

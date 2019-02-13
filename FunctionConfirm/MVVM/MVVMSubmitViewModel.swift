@@ -38,13 +38,13 @@ class MVVMSubmitViewModel {
 
     lazy var categoryValid: Observable<Bool> = {
         return categoryText
-            .map{ ($0 ?? "").count > 0}
+            .map { ($0 ?? "").count > 0 }
             .share(replay: 1)
     }()
 
     lazy var priceValid: Observable<Bool> = {
         return priceText
-            .map{ ($0 ?? "").count > 0}
+            .map { ($0 ?? "").count > 0 }
             .share(replay: 1)
     }()
 
@@ -67,7 +67,7 @@ class MVVMSubmitViewModel {
     // view側に影響ないものはViewModel側でbindする
     private func bindSubmitItem() {
         submitItem
-            .flatMap { $0.flatMap{ Observable.just($0) } ?? Observable.empty() }
+            .flatMap { $0.flatMap { Observable.just($0) } ?? Observable.empty() }
             .subscribe(onNext: { [weak self] item in
                 self?.itemId.accept(item.id)
                 self?.nameText.accept(item.name)

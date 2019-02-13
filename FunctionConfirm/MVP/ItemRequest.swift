@@ -10,8 +10,4 @@ import Foundation
 
 struct ItemRequest: Codable {
     let item: Item
-    
-    private enum CodingKeys: String, CodingKey {
-        case item = "item"
-    }
 }

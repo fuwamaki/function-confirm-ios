@@ -13,7 +13,7 @@ struct QiitaListElement: Decodable {
     let title: String
     let likesCount: Int
     let url: String
-    
+
     private enum CodingKeys: String, CodingKey {
         case title = "title"
         case likesCount = "likes_count"

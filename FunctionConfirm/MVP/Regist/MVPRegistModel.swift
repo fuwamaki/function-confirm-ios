@@ -45,15 +45,15 @@ extension MVPRegistModel: MVPNotify {
     var notificationName: Notification.Name {
         return Notification.Name(rawValue: "mvpNotify")
     }
-    
+
     func addObserver(_ observer: Any, selector: Selector) {
         NotificationCenter.default.addObserver(observer, selector: selector, name: notificationName, object: nil)
     }
-    
+
     func removeObserver(_ observer: Any) {
         NotificationCenter.default.removeObserver(observer)
     }
-    
+
     func notify() {
         NotificationCenter.default.post(name: notificationName, object: nil)
     }

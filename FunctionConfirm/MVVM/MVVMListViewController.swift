@@ -58,7 +58,7 @@ class MVVMListViewController: UIViewController {
         navigationBarTitle
             .bind(to: navigationItem.rx.title)
             .disposed(by: disposeBag)
-        
+
         registNavigationBarButtonItem.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.openMVVMSubmitViewController(submitMode: .new, item: nil)

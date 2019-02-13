@@ -11,9 +11,4 @@ import Foundation
 struct ItemResponse: Decodable {
     let status: Int
     let data: [Item]
-    
-    private enum CodingKeys: String, CodingKey {
-        case status = "status"
-        case data = "data"
-    }
 }

@@ -79,7 +79,7 @@ class MVVMSubmitViewController: UIViewController {
 
     private func bindSubmitItem() {
         viewModel.submitItem
-            .flatMap { $0.flatMap{ Observable.just($0) } ?? Observable.empty() }
+            .flatMap { $0.flatMap { Observable.just($0) } ?? Observable.empty() }
             .subscribe(onNext: { [weak self] item in
                 self?.viewModel.itemId.accept(item.id)
                 self?.viewModel.nameText.accept(item.name)

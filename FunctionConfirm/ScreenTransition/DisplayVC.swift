@@ -9,21 +9,19 @@
 import UIKit
 
 class DisplayVC: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     override var previewActionItems: [UIPreviewActionItem] {
-        get {
-            let backAction = UIPreviewAction(title: "戻る", style: .default) { _, _ in
-                self.dismiss(animated: true, completion: nil)
-            }
-            return [backAction]
+        let backAction = UIPreviewAction(title: "戻る", style: .default) { _, _ in
+            self.dismiss(animated: true, completion: nil)
         }
+        return [backAction]
     }
 }

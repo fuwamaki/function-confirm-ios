@@ -33,7 +33,7 @@ final class StatusBarInNavigationViewController: UIViewController {
         statusBarStyle = style
         self.setNeedsStatusBarAppearanceUpdate()
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle
     }

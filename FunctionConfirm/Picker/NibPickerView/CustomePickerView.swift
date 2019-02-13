@@ -9,9 +9,9 @@
 import UIKit
 
 final class CustomPickerView: UIView {
-    
+
     @IBOutlet weak var datePickerView: UIDatePicker!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

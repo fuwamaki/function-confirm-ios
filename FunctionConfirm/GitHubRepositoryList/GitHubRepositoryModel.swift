@@ -15,7 +15,7 @@ struct Repository {
     var avatarUrl: URL
     var htmlUrl: URL
     var image: UIImage?
-    
+
     init(id: Int, fullName: String, stargazersCount: Int, avatarUrl: URL, htmlUrl: URL, image: UIImage? = nil) {
         self.id = id
         self.fullName = fullName
@@ -37,9 +37,9 @@ protocol gitHubRepositoryListUserInterface {
 }
 
 class GitHubRepositoryModel: NSObject, gitHubRepositoryListEventHandler {
-    
+
     var userInterface: gitHubRepositoryListUserInterface?
-    
+
     private struct Constant {
         static let httpsScheme = "https"
         static let githubHost = "api.github.com"
@@ -51,7 +51,7 @@ class GitHubRepositoryModel: NSObject, gitHubRepositoryListEventHandler {
         static let queryOrderName = "order"
         static let queryOrderValueDesc = "desc"
     }
-    
+
     func createUrl(_ programmingLanguage: String) -> URL? {
         var components = URLComponents()
         components.scheme = Constant.httpsScheme
@@ -63,7 +63,7 @@ class GitHubRepositoryModel: NSObject, gitHubRepositoryListEventHandler {
         components.queryItems = [queryItemLanguage, queryItemSort, queryItemOrder]
         return components.url
     }
-    
+
     func getGitHubRepositoryList(_ programmingLanguage: String) {
         guard let url = createUrl(programmingLanguage) else {
             return
@@ -89,25 +89,25 @@ class GitHubRepositoryModel: NSObject, gitHubRepositoryListEventHandler {
                     }
                 })
                 self.userInterface?.loadGitHubRepositoryList(repositoryList)
-            } catch (_) {
+            } catch {
                 print("Serializeエラーが発生しました。")
             }
-        }) { errorMessage in
+        }, error: { errorMessage in
             self.userInterface?.showErrorAlert(errorMessage)
-        }
+        })
     }
-    
+
     func getRepositoryImageList(id: Int, imageUrl: URL) {
         getApiRequest(imageUrl, success: { data in
             if let image = UIImage(data: data) {
                 self.userInterface?.registItemImage(id: id, image: image)
             }
-        }) { errorMessage in
+        }, error: { errorMessage in
             print(errorMessage)
 //            self.userInterface?.showErrorAlert(errorMessage)
-        }
+        })
     }
-    
+
     func getApiRequest(_ url: URL, success:@escaping(Data) -> Void, error:@escaping(String) -> Void) {
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
@@ -117,6 +117,8 @@ class GitHubRepositoryModel: NSObject, gitHubRepositoryListEventHandler {
                 success(data)
             } else {
                 error("API Request Error")
+                let description = err?.localizedDescription ?? "Error Message"
+                print(description)
             }
         }
         task.resume()
