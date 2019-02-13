@@ -278,7 +278,7 @@
 				7B67232D20E1E12300D8A5A3 /* QiitaList */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
-				9CB7156B21D76F3900C0BAF6 /* MVVM */,
+				9CC560CC2214650D005AD60B /* MVVM */,
 				9C660DF821DF5DBF003BF811 /* Views */,
 				9C87B27221F5964A00A50985 /* StatusBar */,
 				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
@@ -440,24 +440,6 @@
 			path = AWSRekognition;
 			sourceTree = "<group>";
 		};
-		9CB7156B21D76F3900C0BAF6 /* MVVM */ = {
-			isa = PBXGroup;
-			children = (
-				9CC560B62214645A005AD60B /* MVVMViewController.storyboard */,
-				9CC560BE22146477005AD60B /* MVVMListViewModel.swift */,
-				9CC560CA22146485005AD60B /* MVVMViewState.swift */,
-				9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */,
-				9CC560BC22146477005AD60B /* ItemRx.swift */,
-				9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */,
-				9CC560BA22146477005AD60B /* ItemAPIRequestRx.swift */,
-				9CC560BB22146477005AD60B /* MVVMListViewController.swift */,
-				9CC560BD22146477005AD60B /* MVVMSubmitViewController.storyboard */,
-				9CC560B922146477005AD60B /* MVVMSubmitViewController.swift */,
-				9CC560B822146477005AD60B /* MVVMSubmitViewModel.swift */,
-			);
-			path = MVVM;
-			sourceTree = "<unknown>";
-		};
 		9CB8083121F822F800DAD155 /* First */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +479,25 @@
 				9CB8083B21F8330B00DAD155 /* StatusBarPopup3ViewController.swift */,
 			);
 			path = Forth;
+			sourceTree = "<group>";
+		};
+		9CC560CC2214650D005AD60B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				9CC560B62214645A005AD60B /* MVVMViewController.storyboard */,
+				9CC560BE22146477005AD60B /* MVVMListViewModel.swift */,
+				9CC560CA22146485005AD60B /* MVVMViewState.swift */,
+				9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */,
+				9CC560BC22146477005AD60B /* ItemRx.swift */,
+				9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */,
+				9CC560BA22146477005AD60B /* ItemAPIRequestRx.swift */,
+				9CC560BB22146477005AD60B /* MVVMListViewController.swift */,
+				9CC560BD22146477005AD60B /* MVVMSubmitViewController.storyboard */,
+				9CC560B922146477005AD60B /* MVVMSubmitViewController.swift */,
+				9CC560B822146477005AD60B /* MVVMSubmitViewModel.swift */,
+			);
+			name = MVVM;
+			path = MVVMa;
 			sourceTree = "<group>";
 		};
 		9CCC0AF721199ECA007EFE26 /* MVP */ = {
