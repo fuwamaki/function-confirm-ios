@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class GitHubRepositoryListVC: UIViewController, gitHubRepositoryListUserInterface {
+class GitHubRepositoryListViewController: UIViewController, gitHubRepositoryListUserInterface {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -92,7 +92,7 @@ class GitHubRepositoryListVC: UIViewController, gitHubRepositoryListUserInterfac
     }
 }
 
-extension GitHubRepositoryListVC: UITableViewDelegate {
+extension GitHubRepositoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositoryItems.count
     }
@@ -108,11 +108,11 @@ extension GitHubRepositoryListVC: UITableViewDelegate {
     }
 }
 
-extension GitHubRepositoryListVC: UITableViewDataSource {
+extension GitHubRepositoryListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let safariVC = SFSafariViewController(url: repositoryItems[indexPath.row].htmlUrl)
-        present(safariVC, animated: true, completion: nil)
+        let safariViewController = SFSafariViewController(url: repositoryItems[indexPath.row].htmlUrl)
+        present(safariViewController, animated: true, completion: nil)
     }
 }
 
