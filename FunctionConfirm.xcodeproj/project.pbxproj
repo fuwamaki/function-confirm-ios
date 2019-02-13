@@ -606,6 +606,7 @@
 				2032A6D220DCC9E50091952F /* Frameworks */,
 				2032A6D320DCC9E50091952F /* Resources */,
 				23A8E3A06E04D289A6EEBBE7 /* [CP] Embed Pods Frameworks */,
+				9C78A295221471460036D3FD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -793,6 +794,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9C78A295221471460036D3FD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		A1FA6E37932A90E930284752 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
