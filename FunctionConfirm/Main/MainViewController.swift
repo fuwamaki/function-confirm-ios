@@ -76,6 +76,10 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInTabBarCell", for: indexPath)
             cell.textLabel?.text = "ステータスバーの色:TabBar"
             return cell
+        } else if indexPath.row == 11 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "roundedCornerCell", for: indexPath)
+            cell.textLabel?.text = "UIView:角丸"
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
             cell.textLabel?.text = "AWS顔認識"
@@ -134,6 +138,10 @@ extension MainViewController: UITableViewDelegate {
         case 10:
             let storyBoard = UIStoryboard(name: "StatusBarInTabBar", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarInTabBarViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        case 11:
+            let storyBoard = UIStoryboard(name: "RoundedCorner", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "RoundedCornerViewController")
             navigationController?.pushViewController(viewController, animated: true)
         default:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)

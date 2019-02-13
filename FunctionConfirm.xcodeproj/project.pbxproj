@@ -43,6 +43,8 @@
 		9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232920E0D43800D8A5A3 /* GitHubRepositoryList.storyboard */; };
 		9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232720E0D41600D8A5A3 /* GitHubRepositoryListViewController.swift */; };
 		9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */; };
+		9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */; };
+		9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -160,6 +162,8 @@
 		9C660DFB21DF5E54003BF811 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewModelText.swift; sourceTree = "<group>"; };
 		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
+		9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerViewController.swift; sourceTree = "<group>"; };
+		9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoundedCorner.storyboard; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 				9C87B27221F5964A00A50985 /* StatusBar */,
 				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
 				9CD30C7221F6FC8400D6184A /* StatusBarInTabBar */,
+				9C78A29D221493E80036D3FD /* RoundedCorner */,
 				9C91E4B22209DC470021E1BC /* AWSRekognition */,
 			);
 			path = Classes;
@@ -436,6 +441,15 @@
 				9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		9C78A29D221493E80036D3FD /* RoundedCorner */ = {
+			isa = PBXGroup;
+			children = (
+				9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */,
+				9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */,
+			);
+			path = RoundedCorner;
 			sourceTree = "<group>";
 		};
 		9C87B27221F5964A00A50985 /* StatusBar */ = {
@@ -744,6 +758,7 @@
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
 				9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */,
 				7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */,
+				9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +930,7 @@
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				9CC560C322146478005AD60B /* ItemAPIRequestRx.swift in Sources */,
 				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,
+				9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				9CB8082A21F7540E00DAD155 /* StatusBarPopup2ViewController.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
