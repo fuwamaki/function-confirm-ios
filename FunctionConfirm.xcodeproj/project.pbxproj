@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
-		2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainVC.swift */; };
+		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
 		2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DF20DCC9E50091952F /* FunctionConfirm.xcdatamodeld */; };
 		2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6E220DCC9E70091952F /* Assets.xcassets */; };
@@ -119,7 +119,7 @@
 		1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunctionConfirmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2032A6DA20DCC9E50091952F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2032A6DD20DCC9E50091952F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2032A6E020DCC9E50091952F /* FunctionConfirm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FunctionConfirm.xcdatamodel; sourceTree = "<group>"; };
 		2032A6E220DCC9E70091952F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 		2032A70A20DCCA750091952F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2032A6DA20DCC9E50091952F /* MainVC.swift */,
+				2032A6DA20DCC9E50091952F /* MainViewController.swift */,
 				2032A6DC20DCC9E50091952F /* Main.storyboard */,
 				2032A6E420DCC9E70091952F /* LaunchScreen.storyboard */,
 			);
@@ -904,7 +904,7 @@
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */,
-				2032A6DB20DCC9E50091952F /* MainVC.swift in Sources */,
+				2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */,
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,

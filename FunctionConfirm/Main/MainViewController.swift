@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  FunctionConfirm
 //
 //  Created by 牧宥作 on 2018/06/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -21,7 +21,7 @@ class MainVC: UIViewController {
 }
 
 // セルを追加する場合の作業1/4: Main.storyboardにセルを追加
-extension MainVC: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,7 +84,7 @@ extension MainVC: UITableViewDataSource {
     }
 }
 
-extension MainVC: UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
     // セルを追加する場合の作業4/4: Selectを追加
     // swiftlint:disable function_body_length
     // swiftlint:disable cyclomatic_complexity
@@ -93,52 +93,52 @@ extension MainVC: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             let storyBoard = UIStoryboard(name: "GitHubRepositoryList", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "GitHubRepositoryListVC")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "GitHubRepositoryListVC")
+            navigationController?.pushViewController(viewController, animated: true)
         case 1:
             let storyBoard = UIStoryboard(name: "QiitaList", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "QiitaListVC")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "QiitaListVC")
+            navigationController?.pushViewController(viewController, animated: true)
         case 2:
             let storyBoard = UIStoryboard(name: "Picker", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "PickerVC")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "PickerVC")
+            navigationController?.pushViewController(viewController, animated: true)
         case 3:
             let storyBoard = UIStoryboard(name: "CodeOnlyPickerViewController", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "CodeOnlyPickerViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "CodeOnlyPickerViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         case 4:
             let storyBoard = UIStoryboard(name: "ScreenTransition", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "ScreenTransitionVC")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "ScreenTransitionVC")
+            navigationController?.pushViewController(viewController, animated: true)
         case 5:
             let storyBoard = UIStoryboard(name: "MVP", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "MVPViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "MVPViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         case 6:
             let storyBoard = UIStoryboard(name: "MVVMViewController", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMListViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "MVVMListViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         case 7:
             let storyBoard = UIStoryboard(name: "StackView", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         case 8:
             let storyBoard = UIStoryboard(name: "StatusBar", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         case 9:
             let storyBoard = UIStoryboard(name: "StatusBarInNavigation", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarInNavigationViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarInNavigationViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         case 10:
             let storyBoard = UIStoryboard(name: "StatusBarInTabBar", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "StatusBarInTabBarViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarInTabBarViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         default:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
-            navigationController?.pushViewController(vc, animated: true)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }
