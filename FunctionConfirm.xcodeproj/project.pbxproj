@@ -47,6 +47,9 @@
 		9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */; };
 		9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */; };
 		9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C78A2A5221499160036D3FD /* Animation.storyboard */; };
+		9C78A2A822149CDC0036D3FD /* AnimationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A722149CDC0036D3FD /* AnimationPageViewController.swift */; };
+		9C78A2AA22149F0F0036D3FD /* AnimationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */; };
+		9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -168,6 +171,9 @@
 		9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoundedCorner.storyboard; sourceTree = "<group>"; };
 		9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFirstViewController.swift; sourceTree = "<group>"; };
 		9C78A2A5221499160036D3FD /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
+		9C78A2A722149CDC0036D3FD /* AnimationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPageViewController.swift; sourceTree = "<group>"; };
+		9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSecondViewController.swift; sourceTree = "<group>"; };
+		9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationThirdViewController.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -461,7 +467,10 @@
 			isa = PBXGroup;
 			children = (
 				9C78A2A5221499160036D3FD /* Animation.storyboard */,
+				9C78A2A722149CDC0036D3FD /* AnimationPageViewController.swift */,
 				9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */,
+				9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */,
+				9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -914,6 +923,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C78A2A822149CDC0036D3FD /* AnimationPageViewController.swift in Sources */,
 				9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */,
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerViewController.swift in Sources */,
@@ -956,6 +966,7 @@
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */,
 				9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */,
+				9C78A2AA22149F0F0036D3FD /* AnimationSecondViewController.swift in Sources */,
 				7B67233320E1E71D00D8A5A3 /* QiitaListViewModel.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
@@ -979,6 +990,7 @@
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
 				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
+				9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

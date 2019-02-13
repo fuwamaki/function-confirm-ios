@@ -1,5 +1,5 @@
 //
-//  AnimationFirstViewController.swift
+//  AnimationSecondViewController.swift
 //  FunctionConfirm
 //
 //  Created by Maki, Yusaku | Mackey | ECID on 2019/02/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AnimationFirstViewController: UIViewController {
+final class AnimationSecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -149,7 +149,7 @@ extension MainViewController: UITableViewDelegate {
             navigationController?.pushViewController(viewController, animated: true)
         case 12:
             let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationFirstViewController")
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationPageViewController")
             navigationController?.pushViewController(viewController, animated: true)
         default:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
