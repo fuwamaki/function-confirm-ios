@@ -9,7 +9,7 @@
         <!--Qiita List View Controller-->
         <scene sceneID="oZF-vI-X4r">
             <objects>
-                <viewController storyboardIdentifier="QiitaListVC" id="b0H-pc-Q2I" customClass="QiitaListViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QiitaListViewController" id="b0H-pc-Q2I" customClass="QiitaListViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fxg-4u-Ce1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

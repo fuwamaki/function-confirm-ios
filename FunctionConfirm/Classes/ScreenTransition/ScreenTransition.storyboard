@@ -9,7 +9,7 @@
         <!--Screen Transition View Controller-->
         <scene sceneID="fgj-L1-j9k">
             <objects>
-                <viewController storyboardIdentifier="ScreenTransitionVC" id="JfX-By-ybm" customClass="ScreenTransitionViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScreenTransitionViewController" id="JfX-By-ybm" customClass="ScreenTransitionViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5YM-3W-xEc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="uik-VY-sYk" id="lCu-wX-7Rw"/>
-                        <segue destination="hz3-G1-3dR" kind="show" identifier="toDisplayVC" id="eJM-1P-3f9"/>
+                        <segue destination="hz3-G1-3dR" kind="show" identifier="toDisplayViewController" id="eJM-1P-3f9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i98-y5-O12" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,7 +49,7 @@
         <!--Display View Controller-->
         <scene sceneID="Lzn-M8-a9x">
             <objects>
-                <viewController storyboardIdentifier="DisplayVC" id="hz3-G1-3dR" customClass="DisplayViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DisplayViewController" id="hz3-G1-3dR" customClass="DisplayViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbC-LN-tOc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,5 +1,5 @@
 //
-//  ScreenTransitionVC.swift
+//  ScreenTransitionViewController.swift
 //  FunctionConfirm
 //
 //  Created by y-maki on 2018/06/25.
@@ -29,7 +29,7 @@ class ScreenTransitionViewController: UIViewController {
     }
 
     func transitionToSecondViewController() {
-        self.performSegue(withIdentifier: "toDisplayVC", sender: nil)
+        self.performSegue(withIdentifier: "toDisplayViewController", sender: nil)
     }
 }
 
@@ -44,7 +44,7 @@ extension ScreenTransitionViewController: UIViewControllerPreviewingDelegate {
         }
 
         let storyBoard = UIStoryboard(name: "ScreenTransition", bundle: nil)
-        let secondViewController = storyBoard.instantiateViewController(withIdentifier: "DisplayVC")
+        let secondViewController = storyBoard.instantiateViewController(withIdentifier: "DisplayViewController")
         return secondViewController
     }
 

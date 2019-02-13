@@ -54,8 +54,8 @@ class MVPViewController: UIViewController, MVPView {
     }
 
     @objc func clickRegistButton(_ sender: UIBarButtonItem) {
-        let vc = MVPRegistViewController()
-        let nav = UINavigationController(rootViewController: vc)
+        let viewController = MVPRegistViewController()
+        let nav = UINavigationController(rootViewController: viewController)
         present(nav, animated: true, completion: nil)
     }
 

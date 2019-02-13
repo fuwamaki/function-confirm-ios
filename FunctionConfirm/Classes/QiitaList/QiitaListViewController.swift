@@ -1,5 +1,5 @@
 //
-//  QiitaListVC.swift
+//  QiitaListViewController.swift
 //  FunctionConfirm
 //
 //  Created by y-maki on 2018/06/26.

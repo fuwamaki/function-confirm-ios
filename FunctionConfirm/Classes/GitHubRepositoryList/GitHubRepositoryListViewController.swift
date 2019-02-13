@@ -1,5 +1,5 @@
 //
-//  GitHubRepositoryListVC.swift
+//  GitHubRepositoryListViewController.swift
 //  FunctionConfirm
 //
 //  Created by y-maki on 2018/06/25.

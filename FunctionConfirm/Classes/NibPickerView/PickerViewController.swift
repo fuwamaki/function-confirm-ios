@@ -1,5 +1,5 @@
 //
-//  PickerVC.swift
+//  PickerViewController.swift
 //  FunctionConfirm
 //
 //  Created by 牧宥作 on 2018/06/22.

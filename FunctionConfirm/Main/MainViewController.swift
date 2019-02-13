@@ -93,15 +93,15 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             let storyBoard = UIStoryboard(name: "GitHubRepositoryList", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "GitHubRepositoryListVC")
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "GitHubRepositoryListViewController")
             navigationController?.pushViewController(viewController, animated: true)
         case 1:
             let storyBoard = UIStoryboard(name: "QiitaList", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "QiitaListVC")
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "QiitaListViewController")
             navigationController?.pushViewController(viewController, animated: true)
         case 2:
             let storyBoard = UIStoryboard(name: "Picker", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "PickerVC")
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "PickerViewController")
             navigationController?.pushViewController(viewController, animated: true)
         case 3:
             let storyBoard = UIStoryboard(name: "CodeOnlyPickerViewController", bundle: nil)
@@ -109,7 +109,7 @@ extension MainViewController: UITableViewDelegate {
             navigationController?.pushViewController(viewController, animated: true)
         case 4:
             let storyBoard = UIStoryboard(name: "ScreenTransition", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "ScreenTransitionVC")
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "ScreenTransitionViewController")
             navigationController?.pushViewController(viewController, animated: true)
         case 5:
             let storyBoard = UIStoryboard(name: "MVP", bundle: nil)
