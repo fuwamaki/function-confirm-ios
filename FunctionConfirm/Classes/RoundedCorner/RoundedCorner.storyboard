@@ -17,9 +17,44 @@
                     <view key="view" contentMode="scaleToFill" id="xXt-fb-c7j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-1C-QoT">
+                                <rect key="frame" x="127.5" y="100" width="120" height="60"/>
+                                <color key="backgroundColor" red="0.62745098040000002" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MRy-7R-XtI"/>
+                                    <constraint firstAttribute="width" constant="120" id="sDy-wf-HVd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEf-Yh-hPs">
+                                <rect key="frame" x="127.5" y="200" width="120" height="60"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.76470588240000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Et9-XT-4ys"/>
+                                    <constraint firstAttribute="width" constant="120" id="McB-xc-IcP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UEf-Yh-hPs" firstAttribute="top" secondItem="hkl-1C-QoT" secondAttribute="bottom" constant="40" id="62o-CI-ztV"/>
+                            <constraint firstItem="hkl-1C-QoT" firstAttribute="top" secondItem="BYf-HC-ETs" secondAttribute="top" constant="80" id="LoC-6Y-TM6"/>
+                            <constraint firstItem="hkl-1C-QoT" firstAttribute="centerX" secondItem="xXt-fb-c7j" secondAttribute="centerX" id="ss0-gP-LQ6"/>
+                            <constraint firstItem="UEf-Yh-hPs" firstAttribute="centerX" secondItem="xXt-fb-c7j" secondAttribute="centerX" id="zTE-c7-VIs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BYf-HC-ETs"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="UEf-Yh-hPs" id="g6L-in-q2f"/>
+                        <outlet property="label" destination="hkl-1C-QoT" id="adL-qy-TsM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYc-rO-QtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
