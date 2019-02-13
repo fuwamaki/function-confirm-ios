@@ -23,7 +23,7 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return 12
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,9 +68,13 @@ extension MainVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInTabBarCell", for: indexPath)
             cell.textLabel?.text = "ステータスバーの色(TabBar)"
             return cell
-        } else {
+        } else if indexPath.row == 10 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
             cell.textLabel?.text = "AWS 顔認識"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mvvmCell", for: indexPath)
+            cell.textLabel?.text = "アーキ確認システム（MVVM）"
             return cell
         }
     }
@@ -123,6 +127,10 @@ extension MainVC: UITableViewDelegate {
         case 10:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
+            navigationController?.pushViewController(vc, animated: true)
+        case 11:
+            let storyBoard = UIStoryboard(name: "MVVMViewController", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "MVVMListViewController")
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

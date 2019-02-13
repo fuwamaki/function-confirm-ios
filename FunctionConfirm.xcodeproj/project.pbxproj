@@ -13,7 +13,6 @@
 		2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DF20DCC9E50091952F /* FunctionConfirm.xcdatamodeld */; };
 		2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6E220DCC9E70091952F /* Assets.xcassets */; };
 		2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6E420DCC9E70091952F /* LaunchScreen.storyboard */; };
-		2032A6F120DCC9E80091952F /* FunctionConfirmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6F020DCC9E80091952F /* FunctionConfirmTests.swift */; };
 		2032A6FC20DCC9E80091952F /* FunctionConfirmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6FB20DCC9E80091952F /* FunctionConfirmUITests.swift */; };
 		2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A70D20DCDD1C0091952F /* CustomePickerView.swift */; };
 		2032A71020DCDD370091952F /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A70F20DCDD370091952F /* Picker.storyboard */; };
@@ -37,6 +36,12 @@
 		9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */; };
 		9C096C45211C26E8008DB26D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C44211C26E8008DB26D /* Item.swift */; };
 		9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EBBB9213F6B360085B838 /* ItemRequest.swift */; };
+		9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */; };
+		9C660DF121DD45F3003BF811 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF021DD45F3003BF811 /* UIStoryboard.swift */; };
+		9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF921DF5DE3003BF811 /* SubmitButton.swift */; };
+		9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DFB21DF5E54003BF811 /* UIImage+color.swift */; };
+		9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */; };
+		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -53,6 +58,17 @@
 		9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8083B21F8330B00DAD155 /* StatusBarPopup3ViewController.swift */; };
 		9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8083D21F8332300DAD155 /* StatusBarPopup3ViewController.xib */; };
 		9CB8084021F8349700DAD155 /* StatusBar3NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8083F21F8349700DAD155 /* StatusBar3NavigationViewController.swift */; };
+		9CC560B72214645A005AD60B /* MVVMViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC560B62214645A005AD60B /* MVVMViewController.storyboard */; };
+		9CC560C122146478005AD60B /* MVVMSubmitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560B822146477005AD60B /* MVVMSubmitViewModel.swift */; };
+		9CC560C222146478005AD60B /* MVVMSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560B922146477005AD60B /* MVVMSubmitViewController.swift */; };
+		9CC560C322146478005AD60B /* ItemAPIRequestRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560BA22146477005AD60B /* ItemAPIRequestRx.swift */; };
+		9CC560C422146478005AD60B /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560BB22146477005AD60B /* MVVMListViewController.swift */; };
+		9CC560C522146478005AD60B /* ItemRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560BC22146477005AD60B /* ItemRx.swift */; };
+		9CC560C622146478005AD60B /* MVVMSubmitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC560BD22146477005AD60B /* MVVMSubmitViewController.storyboard */; };
+		9CC560C722146478005AD60B /* MVVMListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560BE22146477005AD60B /* MVVMListViewModel.swift */; };
+		9CC560C822146478005AD60B /* MVVMListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */; };
+		9CC560C922146478005AD60B /* MVVMListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */; };
+		9CC560CB22146485005AD60B /* MVVMViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560CA22146485005AD60B /* MVVMViewState.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
 		9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */; };
@@ -78,7 +94,8 @@
 		9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */; };
 		9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */; };
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
-		D845A8B2324485DD1001D69B /* libPods-FunctionConfirm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570A547573912717DE462FBF /* libPods-FunctionConfirm.a */; };
+		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
+		CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +116,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunctionConfirmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -108,7 +126,6 @@
 		2032A6E520DCC9E70091952F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2032A6E720DCC9E70091952F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2032A6EC20DCC9E80091952F /* FunctionConfirmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionConfirmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2032A6F020DCC9E80091952F /* FunctionConfirmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionConfirmTests.swift; sourceTree = "<group>"; };
 		2032A6F220DCC9E80091952F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2032A6F720DCC9E80091952F /* FunctionConfirmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionConfirmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6FB20DCC9E80091952F /* FunctionConfirmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionConfirmUITests.swift; sourceTree = "<group>"; };
@@ -119,7 +136,6 @@
 		2032A71320DCE0180091952F /* PickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVC.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
-		570A547573912717DE462FBF /* libPods-FunctionConfirm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionConfirm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B67232020E0BF0300D8A5A3 /* ScreenTransitionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionVC.swift; sourceTree = "<group>"; };
 		7B67232220E0BF3D00D8A5A3 /* DisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayVC.swift; sourceTree = "<group>"; };
 		7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScreenTransition.storyboard; sourceTree = "<group>"; };
@@ -134,9 +150,16 @@
 		7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListElement.swift; sourceTree = "<group>"; };
 		7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListRequest.swift; sourceTree = "<group>"; };
+		86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunctionConfirm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTfulAPIRequest.swift; sourceTree = "<group>"; };
 		9C096C44211C26E8008DB26D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9C5EBBB9213F6B360085B838 /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
+		9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		9C660DF021DD45F3003BF811 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		9C660DF921DF5DE3003BF811 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		9C660DFB21DF5E54003BF811 /* UIImage+color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+color.swift"; sourceTree = "<group>"; };
+		9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewModelText.swift; sourceTree = "<group>"; };
+		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +176,17 @@
 		9CB8083B21F8330B00DAD155 /* StatusBarPopup3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarPopup3ViewController.swift; sourceTree = "<group>"; };
 		9CB8083D21F8332300DAD155 /* StatusBarPopup3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusBarPopup3ViewController.xib; sourceTree = "<group>"; };
 		9CB8083F21F8349700DAD155 /* StatusBar3NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar3NavigationViewController.swift; sourceTree = "<group>"; };
+		9CC560B62214645A005AD60B /* MVVMViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MVVMViewController.storyboard; path = FunctionConfirm/MVVM/MVVMViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		9CC560B822146477005AD60B /* MVVMSubmitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMSubmitViewModel.swift; path = FunctionConfirm/MVVM/MVVMSubmitViewModel.swift; sourceTree = SOURCE_ROOT; };
+		9CC560B922146477005AD60B /* MVVMSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMSubmitViewController.swift; path = FunctionConfirm/MVVM/MVVMSubmitViewController.swift; sourceTree = SOURCE_ROOT; };
+		9CC560BA22146477005AD60B /* ItemAPIRequestRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemAPIRequestRx.swift; path = FunctionConfirm/MVVM/ItemAPIRequestRx.swift; sourceTree = SOURCE_ROOT; };
+		9CC560BB22146477005AD60B /* MVVMListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMListViewController.swift; path = FunctionConfirm/MVVM/MVVMListViewController.swift; sourceTree = SOURCE_ROOT; };
+		9CC560BC22146477005AD60B /* ItemRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemRx.swift; path = FunctionConfirm/MVVM/ItemRx.swift; sourceTree = SOURCE_ROOT; };
+		9CC560BD22146477005AD60B /* MVVMSubmitViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MVVMSubmitViewController.storyboard; path = FunctionConfirm/MVVM/MVVMSubmitViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		9CC560BE22146477005AD60B /* MVVMListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMListViewModel.swift; path = FunctionConfirm/MVVM/MVVMListViewModel.swift; sourceTree = SOURCE_ROOT; };
+		9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MVVMListTableViewCell.xib; path = FunctionConfirm/MVVM/MVVMListTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMListTableViewCell.swift; path = FunctionConfirm/MVVM/MVVMListTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		9CC560CA22146485005AD60B /* MVVMViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewState.swift; path = FunctionConfirm/MVVM/MVVMViewState.swift; sourceTree = SOURCE_ROOT; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
 		9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarInNavigation.storyboard; sourceTree = "<group>"; };
@@ -178,7 +212,9 @@
 		9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerView.swift; sourceTree = "<group>"; };
 		9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CodeOnlyPickerViewController.storyboard; sourceTree = "<group>"; };
 		9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerViewController.swift; sourceTree = "<group>"; };
+		9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.release.xcconfig"; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
+		BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D845A8B2324485DD1001D69B /* libPods-FunctionConfirm.a in Frameworks */,
+				CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +278,8 @@
 				7B67232D20E1E12300D8A5A3 /* QiitaList */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
+				9CC560CC2214650D005AD60B /* MVVM */,
+				9C660DF821DF5DBF003BF811 /* Views */,
 				9C87B27221F5964A00A50985 /* StatusBar */,
 				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
 				9CD30C7221F6FC8400D6184A /* StatusBarInTabBar */,
@@ -255,8 +294,9 @@
 		2032A6EF20DCC9E80091952F /* FunctionConfirmTests */ = {
 			isa = PBXGroup;
 			children = (
-				2032A6F020DCC9E80091952F /* FunctionConfirmTests.swift */,
 				2032A6F220DCC9E80091952F /* Info.plist */,
+				9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */,
+				9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */,
 			);
 			path = FunctionConfirmTests;
 			sourceTree = "<group>";
@@ -313,6 +353,9 @@
 				9CE26451211A894100DD178E /* UITableViewCell+Addition.swift */,
 				9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */,
 				9CE26455211A8FB300DD178E /* UIColor+Addition.swift */,
+				9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */,
+				9C660DF021DD45F3003BF811 /* UIStoryboard.swift */,
+				9C660DFB21DF5E54003BF811 /* UIImage+color.swift */,
 				9CD30C7F21F7100B00D6184A /* UINavigationController.swift */,
 				9CB8082F21F8229600DAD155 /* UIApplication.swift */,
 			);
@@ -365,9 +408,18 @@
 		7F5A2E3764CA968357E66040 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				570A547573912717DE462FBF /* libPods-FunctionConfirm.a */,
+				86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */,
+				1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C660DF821DF5DBF003BF811 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C660DF921DF5DE3003BF811 /* SubmitButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9C87B27221F5964A00A50985 /* StatusBar */ = {
@@ -427,6 +479,25 @@
 				9CB8083B21F8330B00DAD155 /* StatusBarPopup3ViewController.swift */,
 			);
 			path = Forth;
+			sourceTree = "<group>";
+		};
+		9CC560CC2214650D005AD60B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				9CC560B62214645A005AD60B /* MVVMViewController.storyboard */,
+				9CC560BE22146477005AD60B /* MVVMListViewModel.swift */,
+				9CC560CA22146485005AD60B /* MVVMViewState.swift */,
+				9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */,
+				9CC560BC22146477005AD60B /* ItemRx.swift */,
+				9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */,
+				9CC560BA22146477005AD60B /* ItemAPIRequestRx.swift */,
+				9CC560BB22146477005AD60B /* MVVMListViewController.swift */,
+				9CC560BD22146477005AD60B /* MVVMSubmitViewController.storyboard */,
+				9CC560B922146477005AD60B /* MVVMSubmitViewController.swift */,
+				9CC560B822146477005AD60B /* MVVMSubmitViewModel.swift */,
+			);
+			name = MVVM;
+			path = MVVMa;
 			sourceTree = "<group>";
 		};
 		9CCC0AF721199ECA007EFE26 /* MVP */ = {
@@ -521,6 +592,8 @@
 			children = (
 				36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */,
 				B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */,
+				BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */,
+				9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -536,6 +609,7 @@
 				2032A6D120DCC9E50091952F /* Sources */,
 				2032A6D220DCC9E50091952F /* Frameworks */,
 				2032A6D320DCC9E50091952F /* Resources */,
+				23A8E3A06E04D289A6EEBBE7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -550,9 +624,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2032A70320DCC9E80091952F /* Build configuration list for PBXNativeTarget "FunctionConfirmTests" */;
 			buildPhases = (
+				0A4121F03E657EB07E2968CD /* [CP] Check Pods Manifest.lock */,
 				2032A6E820DCC9E80091952F /* Sources */,
 				2032A6E920DCC9E80091952F /* Frameworks */,
 				2032A6EA20DCC9E80091952F /* Resources */,
+				AD5DEEACD0500C40D55C9B4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -638,11 +714,17 @@
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
-				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
 				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
 				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
 				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
+				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
+				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
+				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
+				9CC560B72214645A005AD60B /* MVVMViewController.storyboard in Resources */,
+				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
+				9CC560C822146478005AD60B /* MVVMListTableViewCell.xib in Resources */,
+				9CC560C622146478005AD60B /* MVVMSubmitViewController.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
@@ -668,6 +750,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A4121F03E657EB07E2968CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FunctionConfirmTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23A8E3A06E04D289A6EEBBE7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSRekognition/AWSRekognition.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSRekognition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A1FA6E37932A90E930284752 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -686,6 +822,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AD5DEEACD0500C40D55C9B4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -698,8 +858,10 @@
 				7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
+				9CC560C122146478005AD60B /* MVVMSubmitViewModel.swift in Sources */,
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
+				9CC560C222146478005AD60B /* MVVMSubmitViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
@@ -714,33 +876,45 @@
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
+				9CC560C722146478005AD60B /* MVVMListViewModel.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication.swift in Sources */,
+				9CC560C322146478005AD60B /* ItemAPIRequestRx.swift in Sources */,
 				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				9CB8082A21F7540E00DAD155 /* StatusBarPopup2ViewController.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
+				9C660DF121DD45F3003BF811 /* UIStoryboard.swift in Sources */,
 				9CB8083A21F832BA00DAD155 /* StatusBar3Manager.swift in Sources */,
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */,
+				9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */,
 				7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
 				9CB8082621F751A900DAD155 /* StatusBarThirdViewController.swift in Sources */,
+				9CC560C422146478005AD60B /* MVVMListViewController.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
+				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
+				9CC560C922146478005AD60B /* MVVMListTableViewCell.swift in Sources */,
+				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
+				9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */,
 				9CD30C8021F7100B00D6184A /* UINavigationController.swift in Sources */,
 				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
 				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
 				9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */,
+				9CC560C522146478005AD60B /* ItemRx.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
 				9CB8083521F8236000DAD155 /* StatusBar2Manager.swift in Sources */,
 				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
+				9CC560CB22146485005AD60B /* MVVMViewState.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
 				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
@@ -751,7 +925,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2032A6F120DCC9E80091952F /* FunctionConfirmTests.swift in Sources */,
+				9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */,
+				9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,8 +1127,9 @@
 		};
 		2032A70420DCC9E80091952F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98UFL8A7L4;
@@ -973,8 +1149,9 @@
 		};
 		2032A70520DCC9E80091952F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98UFL8A7L4;
