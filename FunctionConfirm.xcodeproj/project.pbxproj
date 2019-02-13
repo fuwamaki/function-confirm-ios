@@ -17,7 +17,7 @@
 		2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A70D20DCDD1C0091952F /* CustomePickerView.swift */; };
 		2032A71020DCDD370091952F /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A70F20DCDD370091952F /* Picker.storyboard */; };
 		2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032A71120DCDD680091952F /* CustomPickerView.xib */; };
-		2032A71420DCE0180091952F /* PickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerVC.swift */; };
+		2032A71420DCE0180091952F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerViewController.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionVC.swift */; };
 		7B67232320E0BF3D00D8A5A3 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232220E0BF3D00D8A5A3 /* DisplayVC.swift */; };
@@ -133,7 +133,7 @@
 		2032A70D20DCDD1C0091952F /* CustomePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomePickerView.swift; sourceTree = "<group>"; };
 		2032A70F20DCDD370091952F /* Picker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
 		2032A71120DCDD680091952F /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
-		2032A71320DCE0180091952F /* PickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVC.swift; sourceTree = "<group>"; };
+		2032A71320DCE0180091952F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
 		7B67232020E0BF0300D8A5A3 /* ScreenTransitionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionVC.swift; sourceTree = "<group>"; };
@@ -586,7 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				2032A70F20DCDD370091952F /* Picker.storyboard */,
-				2032A71320DCE0180091952F /* PickerVC.swift */,
+				2032A71320DCE0180091952F /* PickerViewController.swift */,
 				2032A71120DCDD680091952F /* CustomPickerView.xib */,
 				2032A70D20DCDD1C0091952F /* CustomePickerView.swift */,
 			);
@@ -886,7 +886,7 @@
 			files = (
 				9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */,
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
-				2032A71420DCE0180091952F /* PickerVC.swift in Sources */,
+				2032A71420DCE0180091952F /* PickerViewController.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,

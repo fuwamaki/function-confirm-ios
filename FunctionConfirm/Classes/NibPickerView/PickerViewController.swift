@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PickerVC: UIViewController {
+class PickerViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     var customPickerView: CustomPickerView!
@@ -23,13 +23,13 @@ class PickerVC: UIViewController {
     func setupCustomPickerView() {
         customPickerView = CustomPickerView.instantiateFromNib()
         textField.inputView = customPickerView
-        customPickerView.datePickerView.addTarget(self, action: #selector(PickerVC.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        customPickerView.datePickerView.addTarget(self, action: #selector(PickerViewController.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
     }
 
     func setupDoneToolBar() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(PickerVC.doneButtonAction))
+        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(PickerViewController.doneButtonAction))
         toolBar.items = [toolBarBtn]
         textField.inputAccessoryView = toolBar
     }
