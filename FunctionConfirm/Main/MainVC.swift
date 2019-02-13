@@ -20,16 +20,18 @@ class MainVC: UIViewController {
     }
 }
 
+// セルを追加する場合の作業1/4: Main.storyboardにセルを追加
 extension MainVC: UITableViewDataSource {
 
+    // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 12
     }
 
+    // セルを追加する場合の作業3/4: Cellを追加
     // swiftlint:disable function_body_length
     // swiftlint:disable cyclomatic_complexity
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // ココどうにかしてキレイに書きたい（Dynamic Prototypesとして）
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "pickerCell", for: indexPath)
             cell.textLabel?.text = "PickerView表示(InterfaceBuilder)"
@@ -83,6 +85,7 @@ extension MainVC: UITableViewDataSource {
 }
 
 extension MainVC: UITableViewDelegate {
+    // セルを追加する場合の作業4/4: Selectを追加
     // swiftlint:disable function_body_length
     // swiftlint:disable cyclomatic_complexity
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
