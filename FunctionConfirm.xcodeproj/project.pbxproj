@@ -45,6 +45,8 @@
 		9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */; };
 		9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */; };
 		9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */; };
+		9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */; };
+		9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C78A2A5221499160036D3FD /* Animation.storyboard */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -164,6 +166,8 @@
 		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
 		9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerViewController.swift; sourceTree = "<group>"; };
 		9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoundedCorner.storyboard; sourceTree = "<group>"; };
+		9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFirstViewController.swift; sourceTree = "<group>"; };
+		9C78A2A5221499160036D3FD /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
 				9CD30C7221F6FC8400D6184A /* StatusBarInTabBar */,
 				9C78A29D221493E80036D3FD /* RoundedCorner */,
+				9C78A2A2221498690036D3FD /* Animation */,
 				9C91E4B22209DC470021E1BC /* AWSRekognition */,
 			);
 			path = Classes;
@@ -450,6 +455,15 @@
 				9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */,
 			);
 			path = RoundedCorner;
+			sourceTree = "<group>";
+		};
+		9C78A2A2221498690036D3FD /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9C78A2A5221499160036D3FD /* Animation.storyboard */,
+				9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		9C87B27221F5964A00A50985 /* StatusBar */ = {
@@ -739,6 +753,7 @@
 			files = (
 				9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */,
 				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
+				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
 				9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */,
@@ -911,6 +926,7 @@
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
 				9CC560C222146478005AD60B /* MVVMSubmitViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
+				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
 				9CB8084021F8349700DAD155 /* StatusBar3NavigationViewController.swift in Sources */,

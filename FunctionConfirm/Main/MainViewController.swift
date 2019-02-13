@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return 13
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -79,6 +79,10 @@ extension MainViewController: UITableViewDataSource {
         } else if indexPath.row == 11 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "roundedCornerCell", for: indexPath)
             cell.textLabel?.text = "UIView:角丸"
+            return cell
+        } else if indexPath.row == 12 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "animationCell", for: indexPath)
+            cell.textLabel?.text = "Animation"
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
@@ -142,6 +146,10 @@ extension MainViewController: UITableViewDelegate {
         case 11:
             let storyBoard = UIStoryboard(name: "RoundedCorner", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "RoundedCornerViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        case 12:
+            let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationFirstViewController")
             navigationController?.pushViewController(viewController, animated: true)
         default:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
