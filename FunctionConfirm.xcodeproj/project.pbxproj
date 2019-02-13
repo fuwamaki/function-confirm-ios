@@ -21,16 +21,12 @@
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionVC.swift */; };
 		7B67232320E0BF3D00D8A5A3 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232220E0BF3D00D8A5A3 /* DisplayVC.swift */; };
-		7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */; };
-		7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232720E0D41600D8A5A3 /* GitHubRepositoryListVC.swift */; };
-		7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232920E0D43800D8A5A3 /* GitHubRepositoryList.storyboard */; };
 		7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232B20E0D78300D8A5A3 /* GitHubRepositoryModel.swift */; };
 		7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232E20E1E13B00D8A5A3 /* QiitaListVC.swift */; };
 		7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67233020E1E14700D8A5A3 /* QiitaList.storyboard */; };
 		7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233220E1E71D00D8A5A3 /* QiitaListVM.swift */; };
 		7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233420E1E72800D8A5A3 /* QiitaListModel.swift */; };
 		7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233620E1EC7C00D8A5A3 /* QiitaListApiRequest.swift */; };
-		7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
 		7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */; };
 		7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233C20E200FF00D8A5A3 /* QiitaListRequest.swift */; };
 		9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */; };
@@ -42,6 +38,7 @@
 		9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DFB21DF5E54003BF811 /* UIImage+color.swift */; };
 		9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */; };
 		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
+		9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -92,7 +89,6 @@
 		9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */; };
 		9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB1C712195F6DB00ECF364 /* StackViewController.swift */; };
 		9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */; };
-		9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */; };
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
 		CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */; };
@@ -714,14 +710,8 @@
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
-				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
-				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
-				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
-				7B67232A20E0D43800D8A5A3 /* GitHubRepositoryList.storyboard in Resources */,
-				9CFF6AB721E4A19900E4097A /* CodeOnlyPickerViewController.storyboard in Resources */,
 				9CC560B72214645A005AD60B /* MVVMViewController.storyboard in Resources */,
-				7B67232520E0BF5C00D8A5A3 /* ScreenTransition.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				9CC560C822146478005AD60B /* MVVMListTableViewCell.xib in Resources */,
 				9CC560C622146478005AD60B /* MVVMSubmitViewController.storyboard in Resources */,
@@ -853,6 +843,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerVC.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
 				7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */,
@@ -899,13 +890,9 @@
 				9CC560C422146478005AD60B /* MVVMListViewController.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
-				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
 				9CC560C922146478005AD60B /* MVVMListTableViewCell.swift in Sources */,
-				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
 				9C660DFC21DF5E54003BF811 /* UIImage+color.swift in Sources */,
 				9CD30C8021F7100B00D6184A /* UINavigationController.swift in Sources */,
-				7B67232820E0D41600D8A5A3 /* GitHubRepositoryListVC.swift in Sources */,
-				7B67233920E1ECE500D8A5A3 /* QiitaListElement.swift in Sources */,
 				9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */,
 				9CC560C522146478005AD60B /* ItemRx.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
