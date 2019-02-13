@@ -39,6 +39,9 @@
 		9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */; };
 		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
 		9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
+		9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */; };
+		9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232920E0D43800D8A5A3 /* GitHubRepositoryList.storyboard */; };
+		9C78A29B221481FC0036D3FD /* GitHubRepositoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232720E0D41600D8A5A3 /* GitHubRepositoryListVC.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -727,6 +730,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
+				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
 				9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */,
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
@@ -885,6 +890,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C78A29B221481FC0036D3FD /* GitHubRepositoryListVC.swift in Sources */,
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerVC.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
