@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class QiitaListVC: UIViewController, QiitaListUserInterface {
+class QiitaListViewController: UIViewController, QiitaListUserInterface {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -21,12 +21,12 @@ class QiitaListVC: UIViewController, QiitaListUserInterface {
         super.viewDidLoad()
         self.navigationItem.title = "Qiitaの記事リスト表示"
 
-        let qiitaListVM = QiitaListVM()
+        let qiitaListViewModel = QiitaListViewModel()
         let qiitaListModel = QiitaListModel()
-        qiitaListVM.interactable = qiitaListModel
-        qiitaListVM.userInterface = self
-        qiitaListModel.delegate = qiitaListVM
-        eventHandler = qiitaListVM
+        qiitaListViewModel.interactable = qiitaListModel
+        qiitaListViewModel.userInterface = self
+        qiitaListModel.delegate = qiitaListViewModel
+        eventHandler = qiitaListViewModel
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,7 +55,7 @@ class QiitaListVC: UIViewController, QiitaListUserInterface {
     }
 }
 
-extension QiitaListVC: UITableViewDelegate {
+extension QiitaListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let elements = qiitaListElements {
@@ -74,15 +74,15 @@ extension QiitaListVC: UITableViewDelegate {
     }
 }
 
-extension QiitaListVC: UITableViewDataSource {
+extension QiitaListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let elements = qiitaListElements, let url = URL(string: elements[indexPath.row].url) {
-            let safariVC = SFSafariViewController(url: url)
-            present(safariVC, animated: true, completion: nil)
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true, completion: nil)
         }
     }
 }
 
-extension QiitaListVC: UISearchBarDelegate {}
+extension QiitaListViewController: UISearchBarDelegate {}

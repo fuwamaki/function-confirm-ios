@@ -16,7 +16,7 @@ protocol QiitaListUserInterface {
     func setQiitaListElements(_ elements: [QiitaListElement])
 }
 
-class QiitaListVM: QiitaListEventHandler, QiitaListDelegate {
+class QiitaListViewModel: QiitaListEventHandler, QiitaListDelegate {
 
     var interactable: QiitaListInteractable?
     var userInterface: QiitaListUserInterface?

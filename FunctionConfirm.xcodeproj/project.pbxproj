@@ -22,9 +22,9 @@
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionVC.swift */; };
 		7B67232320E0BF3D00D8A5A3 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232220E0BF3D00D8A5A3 /* DisplayVC.swift */; };
 		7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232B20E0D78300D8A5A3 /* GitHubRepositoryModel.swift */; };
-		7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232E20E1E13B00D8A5A3 /* QiitaListVC.swift */; };
+		7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232E20E1E13B00D8A5A3 /* QiitaListViewController.swift */; };
 		7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67233020E1E14700D8A5A3 /* QiitaList.storyboard */; };
-		7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233220E1E71D00D8A5A3 /* QiitaListVM.swift */; };
+		7B67233320E1E71D00D8A5A3 /* QiitaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233220E1E71D00D8A5A3 /* QiitaListViewModel.swift */; };
 		7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233420E1E72800D8A5A3 /* QiitaListModel.swift */; };
 		7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233620E1EC7C00D8A5A3 /* QiitaListApiRequest.swift */; };
 		7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */; };
@@ -142,9 +142,9 @@
 		7B67232720E0D41600D8A5A3 /* GitHubRepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryListViewController.swift; sourceTree = "<group>"; };
 		7B67232920E0D43800D8A5A3 /* GitHubRepositoryList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitHubRepositoryList.storyboard; sourceTree = "<group>"; };
 		7B67232B20E0D78300D8A5A3 /* GitHubRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryModel.swift; sourceTree = "<group>"; };
-		7B67232E20E1E13B00D8A5A3 /* QiitaListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListVC.swift; sourceTree = "<group>"; };
+		7B67232E20E1E13B00D8A5A3 /* QiitaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListViewController.swift; sourceTree = "<group>"; };
 		7B67233020E1E14700D8A5A3 /* QiitaList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QiitaList.storyboard; sourceTree = "<group>"; };
-		7B67233220E1E71D00D8A5A3 /* QiitaListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListVM.swift; sourceTree = "<group>"; };
+		7B67233220E1E71D00D8A5A3 /* QiitaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListViewModel.swift; sourceTree = "<group>"; };
 		7B67233420E1E72800D8A5A3 /* QiitaListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListModel.swift; sourceTree = "<group>"; };
 		7B67233620E1EC7C00D8A5A3 /* QiitaListApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListApiRequest.swift; sourceTree = "<group>"; };
 		7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaListElement.swift; sourceTree = "<group>"; };
@@ -372,8 +372,8 @@
 		7B67232D20E1E12300D8A5A3 /* QiitaList */ = {
 			isa = PBXGroup;
 			children = (
-				7B67232E20E1E13B00D8A5A3 /* QiitaListVC.swift */,
-				7B67233220E1E71D00D8A5A3 /* QiitaListVM.swift */,
+				7B67232E20E1E13B00D8A5A3 /* QiitaListViewController.swift */,
+				7B67233220E1E71D00D8A5A3 /* QiitaListViewModel.swift */,
 				7B67233420E1E72800D8A5A3 /* QiitaListModel.swift */,
 				7B67233020E1E14700D8A5A3 /* QiitaList.storyboard */,
 				7B67233620E1EC7C00D8A5A3 /* QiitaListApiRequest.swift */,
@@ -888,7 +888,7 @@
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerVC.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
-				7B67232F20E1E13B00D8A5A3 /* QiitaListVC.swift in Sources */,
+				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
 				9CC560C122146478005AD60B /* MVVMSubmitViewModel.swift in Sources */,
@@ -924,7 +924,7 @@
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionVC.swift in Sources */,
 				9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */,
-				7B67233320E1E71D00D8A5A3 /* QiitaListVM.swift in Sources */,
+				7B67233320E1E71D00D8A5A3 /* QiitaListViewModel.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
