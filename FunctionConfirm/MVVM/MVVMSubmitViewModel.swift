@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// TODO: RegistじゃなくてSubmitにする
 class MVVMSubmitViewModel {
 
     enum SubmitMode {

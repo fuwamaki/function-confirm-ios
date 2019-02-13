@@ -106,7 +106,6 @@ class RESTfulApiRequest {
         }
     }
 
-    // TODO: このパースはRESTfulApiRequestじゃないところにしたい
     func parse(data: Data) -> [String: Any] {
         do {
             let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]

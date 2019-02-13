@@ -167,7 +167,6 @@ class MVPRegistViewController: UIViewController, MVPRegistView {
             title: "登録します。よろしいですか？",
             message: "商品名: \(item.name)",
             preferredStyle: .alert)
-        // TODO: 登録後の処理
         alert.addAction(UIAlertAction(title: "登録", style: .default, handler: { _ in
             KRProgressHUD.show()
             self.presenter.registerItem(item)

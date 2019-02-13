@@ -48,7 +48,6 @@ class MVVMSubmitViewController: UIViewController {
         return viewController
     }
 
-    // TODO: エラー文言を適切に
     private func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
