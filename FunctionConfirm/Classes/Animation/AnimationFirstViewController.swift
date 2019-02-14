@@ -25,5 +25,10 @@ final class AnimationFirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // y軸に40下がった状態から、元の高さに上がって、また40下がる
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .autoreverse, animations: {
+            self.block1Label.center.y -= 40.0
+        }, completion: nil)
     }
 }
