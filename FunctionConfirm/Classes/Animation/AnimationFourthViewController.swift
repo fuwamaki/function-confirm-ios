@@ -8,6 +8,7 @@
 
 import UIKit
 
+// StackViewのAnimationを試す用のクラス
 final class AnimationFourthViewController: UIViewController {
 
     override func viewDidLoad() {
