@@ -19,18 +19,21 @@ final class AnimationPageViewController: UIPageViewController {
     func getFirst() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationFirstViewController")
+        navigationItem.title = "Animation First"
         return viewController
     }
 
     func getSecond() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationSecondViewController")
+        navigationItem.title = "Animation Second"
         return viewController
     }
 
     func getThird() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationThirdViewController")
+        navigationItem.title = "Animation Third"
         return viewController
     }
 }
