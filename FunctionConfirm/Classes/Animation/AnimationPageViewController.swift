@@ -128,7 +128,7 @@ final class AnimationPageViewController: UIPageViewController {
 extension AnimationPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if viewController.isKind(of: AnimationFourthViewController.self) {
-            return getFourth()
+            return getThird()
         } else if viewController.isKind(of: AnimationThirdViewController.self) {
             return getSecond()
         } else if viewController.isKind(of: AnimationSecondViewController.self) {
