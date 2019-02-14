@@ -26,15 +26,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I44-6X-WUW">
-                                <rect key="frame" x="166" y="323" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I44-6X-WUW">
+                                <rect key="frame" x="162.5" y="323" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I44-6X-WUW" firstAttribute="centerY" secondItem="7uw-2T-7mY" secondAttribute="centerY" id="CuY-nf-koh"/>
+                            <constraint firstItem="I44-6X-WUW" firstAttribute="centerX" secondItem="7uw-2T-7mY" secondAttribute="centerX" id="kGW-hl-hkk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H3h-bL-PQk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Animation First" id="Fie-R0-suR"/>
@@ -52,15 +55,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Labe2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-xf-4jY">
-                                <rect key="frame" x="166" y="323" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labe2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3W-xf-4jY">
+                                <rect key="frame" x="163.5" y="323" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b3W-xf-4jY" firstAttribute="centerY" secondItem="7sn-wn-Jli" secondAttribute="centerY" id="92u-u3-5WW"/>
+                            <constraint firstItem="b3W-xf-4jY" firstAttribute="centerX" secondItem="7sn-wn-Jli" secondAttribute="centerX" id="xf3-4A-487"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Fxl-CO-zAH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Animation Second" id="xU2-90-4Ik"/>
@@ -78,15 +84,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-Yb-rAf">
-                                <rect key="frame" x="166" y="323" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-Yb-rAf">
+                                <rect key="frame" x="161.5" y="323" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cH3-Yb-rAf" firstAttribute="centerX" secondItem="fDi-Ll-2eJ" secondAttribute="centerX" id="8FP-IL-Po8"/>
+                            <constraint firstItem="cH3-Yb-rAf" firstAttribute="centerY" secondItem="fDi-Ll-2eJ" secondAttribute="centerY" id="nWV-13-pig"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eAA-xB-kVR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Animation Third" id="yM7-hT-6DJ"/>
@@ -95,6 +104,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BF-Vm-9PJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1520" y="238"/>
+        </scene>
+        <!--Animation Fourth-->
+        <scene sceneID="m55-kN-dEY">
+            <objects>
+                <viewController storyboardIdentifier="AnimationFourthViewController" id="T67-Cy-5xH" customClass="AnimationFourthViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yhr-wd-Hvt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXa-U2-x6n">
+                                <rect key="frame" x="161.5" y="323" width="52.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SXa-U2-x6n" firstAttribute="centerY" secondItem="Yhr-wd-Hvt" secondAttribute="centerY" id="Quq-0J-PW4"/>
+                            <constraint firstItem="SXa-U2-x6n" firstAttribute="centerX" secondItem="Yhr-wd-Hvt" secondAttribute="centerX" id="hNB-Bi-4VF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WaY-zp-8BW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Animation Fourth" id="mPG-L2-eq6"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Omz-4F-1h2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2220" y="238"/>
         </scene>
     </scenes>
 </document>

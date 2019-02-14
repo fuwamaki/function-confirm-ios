@@ -34,7 +34,7 @@ final class AnimationPageViewController: UIPageViewController {
         pageControl.backgroundColor = UIColor.baseGray
         pageControl.currentPageIndicatorTintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.black
-        pageControl.numberOfPages = 3 // ページ数
+        pageControl.numberOfPages = 4 // ページ数
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
         view.addSubview(pageControl)
@@ -58,6 +58,12 @@ final class AnimationPageViewController: UIPageViewController {
         return viewController
     }
 
+    private func getFourth() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationFourthViewController")
+        return viewController
+    }
+
     // ページ情報（navigationのタイトルとpageControl）を更新
     private func updatePageInfo(currentViewController: UIViewController) {
         switch currentViewController {
@@ -70,6 +76,9 @@ final class AnimationPageViewController: UIPageViewController {
         case is AnimationThirdViewController:
             navigationItem.title = "Animation Third"
             pageControl.currentPage = 2
+        case is AnimationFourthViewController:
+            navigationItem.title = "Animation Fourth"
+            pageControl.currentPage = 3
         default:
             break
         }
@@ -78,7 +87,9 @@ final class AnimationPageViewController: UIPageViewController {
 
 extension AnimationPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if viewController.isKind(of: AnimationThirdViewController.self) {
+        if viewController.isKind(of: AnimationFourthViewController.self) {
+            return getFourth()
+        } else if viewController.isKind(of: AnimationThirdViewController.self) {
             return getSecond()
         } else if viewController.isKind(of: AnimationSecondViewController.self) {
             return getFirst()
@@ -92,6 +103,8 @@ extension AnimationPageViewController: UIPageViewControllerDataSource {
             return getSecond()
         } else if viewController.isKind(of: AnimationSecondViewController.self) {
             return getThird()
+        } else if viewController.isKind(of: AnimationThirdViewController.self) {
+            return getFourth()
         } else {
             return nil
         }

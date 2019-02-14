@@ -50,6 +50,7 @@
 		9C78A2A822149CDC0036D3FD /* AnimationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A722149CDC0036D3FD /* AnimationPageViewController.swift */; };
 		9C78A2AA22149F0F0036D3FD /* AnimationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */; };
 		9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */; };
+		9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2AD22152C5F0036D3FD /* AnimationFourthViewController.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -174,6 +175,7 @@
 		9C78A2A722149CDC0036D3FD /* AnimationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPageViewController.swift; sourceTree = "<group>"; };
 		9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSecondViewController.swift; sourceTree = "<group>"; };
 		9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationThirdViewController.swift; sourceTree = "<group>"; };
+		9C78A2AD22152C5F0036D3FD /* AnimationFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFourthViewController.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */,
 				9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */,
 				9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */,
+				9C78A2AD22152C5F0036D3FD /* AnimationFourthViewController.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
 				9CC560C222146478005AD60B /* MVVMSubmitViewController.swift in Sources */,
+				9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
