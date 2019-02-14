@@ -18,11 +18,12 @@ final class AnimationPageViewController: UIPageViewController {
         dataSource = self
         setupPageControl()
         setupFirstViewController()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(clickNextButton))
     }
 
     private func setupFirstViewController() {
         let firstViewController = getFirst()
-        self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+        setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         updatePageInfo(currentViewController: firstViewController)
     }
 
@@ -38,6 +39,45 @@ final class AnimationPageViewController: UIPageViewController {
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
         view.addSubview(pageControl)
+    }
+
+    // ボタンでも画面遷移できるように
+    @objc private func clickNextButton() {
+        guard let currentViewController = viewControllers?[0] else {
+            return
+        }
+        switch currentViewController {
+        case is AnimationFirstViewController:
+            setViewControllers([getSecond()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationSecondViewController:
+            setViewControllers([getThird()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationThirdViewController:
+            setViewControllers([getFourth()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationFourthViewController:
+            setViewControllers([getFirst()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        default:
+            break
+        }
     }
 
     private func getFirst() -> UIViewController {
