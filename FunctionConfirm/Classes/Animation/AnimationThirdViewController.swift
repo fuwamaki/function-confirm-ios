@@ -19,6 +19,9 @@ final class AnimationThirdViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        guard let purpleView = purpleView else {
+            return
+        }
         let redView = UIView(frame: purpleView.frame)
         redView.backgroundColor = .red
         UIView.transition(from: purpleView, to: redView, duration: 1.0, options: [.transitionCurlDown, .autoreverse], completion: { _ in
