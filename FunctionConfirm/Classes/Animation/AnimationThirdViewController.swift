@@ -8,7 +8,7 @@
 
 import UIKit
 
-// StackViewのAnimationを試す用のクラス
+// UIView.transitionのView変更を試す用のクラス
 final class AnimationThirdViewController: UIViewController {
 
     @IBOutlet private weak var purpleView: UIView!
