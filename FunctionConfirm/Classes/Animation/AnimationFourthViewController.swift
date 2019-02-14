@@ -9,7 +9,7 @@
 import UIKit
 
 final class AnimationFourthViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
