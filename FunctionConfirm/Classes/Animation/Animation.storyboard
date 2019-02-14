@@ -436,22 +436,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-Yb-rAf">
-                                <rect key="frame" x="181" y="437.66666666666669" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7f-8V-RVp">
+                                <rect key="frame" x="87" y="388" width="240" height="120"/>
+                                <color key="backgroundColor" red="0.56862745100000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="7zn-Zn-L7G"/>
+                                    <constraint firstAttribute="width" constant="240" id="iE6-fP-lPB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cH3-Yb-rAf" firstAttribute="centerX" secondItem="fDi-Ll-2eJ" secondAttribute="centerX" id="8FP-IL-Po8"/>
-                            <constraint firstItem="cH3-Yb-rAf" firstAttribute="centerY" secondItem="fDi-Ll-2eJ" secondAttribute="centerY" id="nWV-13-pig"/>
+                            <constraint firstItem="w7f-8V-RVp" firstAttribute="centerY" secondItem="fDi-Ll-2eJ" secondAttribute="centerY" id="CAq-CQ-qyR"/>
+                            <constraint firstItem="w7f-8V-RVp" firstAttribute="centerX" secondItem="fDi-Ll-2eJ" secondAttribute="centerX" id="vZn-5Q-DAM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eAA-xB-kVR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Animation Third" id="yM7-hT-6DJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="purpleView" destination="w7f-8V-RVp" id="Tnr-Xz-aii"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BF-Vm-9PJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
