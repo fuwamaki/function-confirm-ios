@@ -18,6 +18,16 @@ final class AnimationFourthViewController: UIViewController {
     @IBOutlet private weak var view5: UIView!
 
     @IBAction func clickButton1(_ sender: Any) {
+        switch view1.isHidden {
+        case true:
+            UIView.animate(withDuration: 0.3) {
+                self.view1.isHidden = false
+            }
+        case false:
+            UIView.animate(withDuration: 0.3) {
+                self.view1.isHidden = true
+            }
+        }
     }
 
     @IBAction func clickButton2(_ sender: Any) {
