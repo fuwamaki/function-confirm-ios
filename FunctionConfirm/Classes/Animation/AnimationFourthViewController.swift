@@ -11,6 +11,27 @@ import UIKit
 // StackViewのAnimationを試す用のクラス
 final class AnimationFourthViewController: UIViewController {
 
+    @IBOutlet private weak var view1: UIView!
+    @IBOutlet private weak var view2: UIView!
+    @IBOutlet private weak var view3: UIView!
+    @IBOutlet private weak var view4: UIView!
+    @IBOutlet private weak var view5: UIView!
+
+    @IBAction func clickButton1(_ sender: Any) {
+    }
+
+    @IBAction func clickButton2(_ sender: Any) {
+    }
+
+    @IBAction func clickButton3(_ sender: Any) {
+    }
+
+    @IBAction func clickButton4(_ sender: Any) {
+    }
+
+    @IBAction func clickButton5(_ sender: Any) {
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
