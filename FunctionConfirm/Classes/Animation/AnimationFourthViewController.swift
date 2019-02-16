@@ -31,6 +31,21 @@ final class AnimationFourthViewController: UIViewController {
     }
 
     @IBAction func clickButton2(_ sender: Any) {
+        switch view2.isHidden {
+        case true:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view2.isHidden = false
+                self.view2.alpha = 1.0
+            })
+        case false:
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view2.alpha = 0.0
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view2.isHidden = true
+                })
+            })
+        }
     }
 
     @IBAction func clickButton3(_ sender: Any) {
