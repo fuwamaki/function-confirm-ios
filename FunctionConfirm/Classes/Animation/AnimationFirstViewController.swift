@@ -44,30 +44,35 @@ final class AnimationFirstViewController: UIViewController {
         // memo - オプションの種類について
         // .autoreverse: アニメーション逆再生
 
-        // y軸に40下がった状態から、元の高さに上がって、また40下がる
+        // block1: y軸に40下がった状態から、元の高さに上がって、また40下がる
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .autoreverse, animations: {
             self.block1Label.center.y -= 40.0
         }, completion: nil)
 
+        // block2:
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseIn, .autoreverse], animations: {
             self.block2Label.center.y -= 40.0
         }, completion: nil)
 
+        // block3:
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseIn, .autoreverse], animations: {
             self.block3Label.center.y -= 40.0
         }, completion: { _ in
             self.block3Label.center.y += 40.0
         })
 
+        // block4:
         block4Label.alpha = 0.0
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseIn], animations: {
             self.block4Label.alpha = 1.0
         }, completion: nil)
 
+        // block5:
         UIView.animate(withDuration: 2.0, delay: 0.0, options: [.repeat], animations: {
             self.block5Label.center.y -= 40.0
         }, completion: nil)
 
+        // block6:
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0.0, options: .autoreverse, animations: {
             self.block6Label.center.y -= 40.0
             self.block6Label.bounds = CGRect(x: self.block6Label.center.x, y: self.block6Label.center.y, width: self.block6Label.bounds.width - 20, height: self.block6Label.bounds.height - 20)
@@ -75,5 +80,12 @@ final class AnimationFirstViewController: UIViewController {
             self.block6Label.center.y += 40.0
             self.block6Label.bounds = CGRect(x: self.block6Label.center.x, y: self.block6Label.center.y, width: self.block6Label.bounds.width + 20, height: self.block6Label.bounds.height + 20)
         })
+
+        // block7: TBA
+        // block8: TBA
+        // block9: TBA
+        // block10: TBA
+        // block11: TBA
+        // block12: TBA
     }
 }

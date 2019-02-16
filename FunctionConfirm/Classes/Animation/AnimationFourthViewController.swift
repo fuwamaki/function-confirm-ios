@@ -49,12 +49,15 @@ final class AnimationFourthViewController: UIViewController {
     }
 
     @IBAction func clickButton3(_ sender: Any) {
+        //TBA
     }
 
     @IBAction func clickButton4(_ sender: Any) {
+        //TBA
     }
 
     @IBAction func clickButton5(_ sender: Any) {
+        //TBA
     }
 
     override func viewDidLoad() {
