@@ -40,6 +40,26 @@ final class AnimationSixthViewController: UIViewController {
     }
 
     @IBAction func clickButton3(_ sender: Any) {
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = 1.0
+        animationGroup.fillMode = CAMediaTimingFillMode.forwards
+        animationGroup.isRemovedOnCompletion = false
+
+        let animation1 = CABasicAnimation(keyPath: "transform.scale")
+        animation1.fromValue = 2.0
+        animation1.toValue = 1.0
+
+        let animation2 = CABasicAnimation(keyPath: "cornerRadius")
+        animation2.fromValue = 0.0
+        animation2.toValue = 20.0
+
+        let animation3 = CABasicAnimation(keyPath: "transform.rotation")
+        animation3.fromValue = 0.0
+        animation3.toValue = Double.pi * 2.0
+        animation3.speed = 2.0
+
+        animationGroup.animations = [animation1, animation2, animation3]
+        view3.layer.add(animationGroup, forKey: nil)
     }
 
     @IBAction func clickButton4(_ sender: Any) {
