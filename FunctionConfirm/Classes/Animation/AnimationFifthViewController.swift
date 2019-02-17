@@ -10,6 +10,8 @@ import UIKit
 
 final class AnimationFifthViewController: UIViewController {
 
+    @IBOutlet private weak var blockLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
