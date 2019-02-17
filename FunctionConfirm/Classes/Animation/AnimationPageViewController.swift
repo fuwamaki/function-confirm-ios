@@ -43,6 +43,7 @@ final class AnimationPageViewController: UIPageViewController {
 
     // ボタンでも画面遷移できるように
     // swiftlint:disable function_body_length
+    // swiftlint:disable cyclomatic_complexity
     @objc private func clickNextButton() {
         guard let currentViewController = viewControllers?[0] else {
             return
