@@ -35,13 +35,14 @@ final class AnimationPageViewController: UIPageViewController {
         pageControl.backgroundColor = UIColor.baseGray
         pageControl.currentPageIndicatorTintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.black
-        pageControl.numberOfPages = 4 // ページ数
+        pageControl.numberOfPages = 8 // ページ数
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
         view.addSubview(pageControl)
     }
 
     // ボタンでも画面遷移できるように
+    // swiftlint:disable function_body_length
     @objc private func clickNextButton() {
         guard let currentViewController = viewControllers?[0] else {
             return
@@ -69,6 +70,34 @@ final class AnimationPageViewController: UIPageViewController {
                 self?.updatePageInfo(currentViewController: nextViewController)
             }
         case is AnimationFourthViewController:
+            setViewControllers([getFifth()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationFifthViewController:
+            setViewControllers([getSixth()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationSixthViewController:
+            setViewControllers([getSeventh()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationSeventhViewController:
+            setViewControllers([getEighth()], direction: .forward, animated: true) { [weak self] _ in
+                guard let nextViewController = self?.viewControllers?[0] else {
+                    return
+                }
+                self?.updatePageInfo(currentViewController: nextViewController)
+            }
+        case is AnimationEighthViewController:
             setViewControllers([getFirst()], direction: .forward, animated: true) { [weak self] _ in
                 guard let nextViewController = self?.viewControllers?[0] else {
                     return
@@ -104,6 +133,30 @@ final class AnimationPageViewController: UIPageViewController {
         return viewController
     }
 
+    private func getFifth() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationFifthViewController")
+        return viewController
+    }
+
+    private func getSixth() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationSixthViewController")
+        return viewController
+    }
+
+    private func getSeventh() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationSeventhViewController")
+        return viewController
+    }
+
+    private func getEighth() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationEighthViewController")
+        return viewController
+    }
+
     // ページ情報（navigationのタイトルとpageControl）を更新
     private func updatePageInfo(currentViewController: UIViewController) {
         switch currentViewController {
@@ -119,6 +172,18 @@ final class AnimationPageViewController: UIPageViewController {
         case is AnimationFourthViewController:
             navigationItem.title = "Animation Fourth"
             pageControl.currentPage = 3
+        case is AnimationFifthViewController:
+            navigationItem.title = "Animation Fifth"
+            pageControl.currentPage = 4
+        case is AnimationSixthViewController:
+            navigationItem.title = "Animation Sixth"
+            pageControl.currentPage = 5
+        case is AnimationSeventhViewController:
+            navigationItem.title = "Animation Seventh"
+            pageControl.currentPage = 6
+        case is AnimationEighthViewController:
+            navigationItem.title = "Animation Eighth"
+            pageControl.currentPage = 7
         default:
             break
         }
@@ -127,7 +192,15 @@ final class AnimationPageViewController: UIPageViewController {
 
 extension AnimationPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if viewController.isKind(of: AnimationFourthViewController.self) {
+        if viewController.isKind(of: AnimationEighthViewController.self) {
+            return getSeventh()
+        } else if viewController.isKind(of: AnimationSeventhViewController.self) {
+            return getSixth()
+        } else if viewController.isKind(of: AnimationSixthViewController.self) {
+            return getFifth()
+        } else if viewController.isKind(of: AnimationFifthViewController.self) {
+            return getFourth()
+        } else if viewController.isKind(of: AnimationFourthViewController.self) {
             return getThird()
         } else if viewController.isKind(of: AnimationThirdViewController.self) {
             return getSecond()
@@ -145,6 +218,14 @@ extension AnimationPageViewController: UIPageViewControllerDataSource {
             return getThird()
         } else if viewController.isKind(of: AnimationThirdViewController.self) {
             return getFourth()
+        } else if viewController.isKind(of: AnimationFourthViewController.self) {
+            return getFifth()
+        } else if viewController.isKind(of: AnimationFifthViewController.self) {
+            return getSixth()
+        } else if viewController.isKind(of: AnimationSixthViewController.self) {
+            return getSeventh()
+        } else if viewController.isKind(of: AnimationSeventhViewController.self) {
+            return getEighth()
         } else {
             return nil
         }

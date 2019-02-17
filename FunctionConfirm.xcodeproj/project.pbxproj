@@ -51,6 +51,10 @@
 		9C78A2AA22149F0F0036D3FD /* AnimationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */; };
 		9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */; };
 		9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2AD22152C5F0036D3FD /* AnimationFourthViewController.swift */; };
+		9C78A2B022194BA60036D3FD /* AnimationFifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2AF22194BA60036D3FD /* AnimationFifthViewController.swift */; };
+		9C78A2B222194BB50036D3FD /* AnimationSixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2B122194BB50036D3FD /* AnimationSixthViewController.swift */; };
+		9C78A2B422194BC50036D3FD /* AnimationSeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2B322194BC50036D3FD /* AnimationSeventhViewController.swift */; };
+		9C78A2B622194C060036D3FD /* AnimationEighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78A2B522194C060036D3FD /* AnimationEighthViewController.swift */; };
 		9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C827A32213EB56600E72FDA /* ItemResponse.swift */; };
 		9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C87B27321F5966100A50985 /* StatusBar.storyboard */; };
 		9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B27521F5967100A50985 /* StatusBarViewController.swift */; };
@@ -176,6 +180,10 @@
 		9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSecondViewController.swift; sourceTree = "<group>"; };
 		9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationThirdViewController.swift; sourceTree = "<group>"; };
 		9C78A2AD22152C5F0036D3FD /* AnimationFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFourthViewController.swift; sourceTree = "<group>"; };
+		9C78A2AF22194BA60036D3FD /* AnimationFifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFifthViewController.swift; sourceTree = "<group>"; };
+		9C78A2B122194BB50036D3FD /* AnimationSixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSixthViewController.swift; sourceTree = "<group>"; };
+		9C78A2B322194BC50036D3FD /* AnimationSeventhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSeventhViewController.swift; sourceTree = "<group>"; };
+		9C78A2B522194C060036D3FD /* AnimationEighthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationEighthViewController.swift; sourceTree = "<group>"; };
 		9C827A32213EB56600E72FDA /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		9C87B27321F5966100A50985 /* StatusBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBar.storyboard; sourceTree = "<group>"; };
 		9C87B27521F5967100A50985 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -474,6 +482,10 @@
 				9C78A2A922149F0F0036D3FD /* AnimationSecondViewController.swift */,
 				9C78A2AB22149F1B0036D3FD /* AnimationThirdViewController.swift */,
 				9C78A2AD22152C5F0036D3FD /* AnimationFourthViewController.swift */,
+				9C78A2AF22194BA60036D3FD /* AnimationFifthViewController.swift */,
+				9C78A2B122194BB50036D3FD /* AnimationSixthViewController.swift */,
+				9C78A2B322194BC50036D3FD /* AnimationSeventhViewController.swift */,
+				9C78A2B522194C060036D3FD /* AnimationEighthViewController.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -947,6 +959,7 @@
 				7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */,
 				9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */,
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
+				9C78A2B022194BA60036D3FD /* AnimationFifthViewController.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */,
@@ -975,6 +988,7 @@
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
+				9C78A2B222194BB50036D3FD /* AnimationSixthViewController.swift in Sources */,
 				9CB8082621F751A900DAD155 /* StatusBarThirdViewController.swift in Sources */,
 				9CC560C422146478005AD60B /* MVVMListViewController.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
@@ -991,8 +1005,10 @@
 				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				9CC560CB22146485005AD60B /* MVVMViewState.swift in Sources */,
+				9C78A2B422194BC50036D3FD /* AnimationSeventhViewController.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
+				9C78A2B622194C060036D3FD /* AnimationEighthViewController.swift in Sources */,
 				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
 				9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */,
 			);
