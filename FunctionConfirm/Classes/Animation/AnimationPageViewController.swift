@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 全般的にこれを参考に: https://qiita.com/hachinobu/items/57d4c305c907805b4a53
 final class AnimationPageViewController: UIPageViewController {
 
     private var pageControl: UIPageControl!
