@@ -11,6 +11,7 @@ import UIKit
 final class AnimationSeventhViewController: UIViewController {
 
     @IBOutlet private weak var view1: UIView!
+    @IBOutlet private weak var label1: UILabel!
 
     // UIBezierPathの描画アニメーションをCoreAnimationで実現
     @IBAction func clickButton1(_ sender: Any) {
@@ -33,6 +34,15 @@ final class AnimationSeventhViewController: UIViewController {
 
         view.layer.addSublayer(lineLayer)
         lineLayer.add(animation, forKey: nil)
+
+        // ラベルの角度を変える
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.beginTime = CACurrentMediaTime() + 0.5 // 遅延を実現
+        rotateAnimation.toValue = Double.pi / 4
+        rotateAnimation.duration = 1.0
+        rotateAnimation.isRemovedOnCompletion = false
+        rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
+        label1.layer.add(rotateAnimation, forKey: nil)
     }
 
     override func viewDidLoad() {
