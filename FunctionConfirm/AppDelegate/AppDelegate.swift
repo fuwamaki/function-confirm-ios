@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // for AWS FaceRekognition
         let credentialsProvider = AWSCognitoCredentialsProvider(
-            regionType: .USEast1,
+            regionType: .USWest2,
             identityPoolId: "us-west-2:bf9f38f9-20a2-4fd2-87c0-2286c0c123a6")
         let configuration = AWSServiceConfiguration(
-            region: .USEast1,
+            region: .USWest2,
             credentialsProvider: credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
 
