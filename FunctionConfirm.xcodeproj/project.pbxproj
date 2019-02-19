@@ -104,6 +104,7 @@
 		9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2645D211A919900DD178E /* MVPRegistModel.swift */; };
 		9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */; };
 		9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB1C712195F6DB00ECF364 /* StackViewController.swift */; };
+		9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA441A221C5C2A00CA07CD /* Celebrity.swift */; };
 		9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */; };
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
@@ -233,6 +234,7 @@
 		9CE2645D211A919900DD178E /* MVPRegistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPRegistModel.swift; sourceTree = "<group>"; };
 		9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StackView.storyboard; sourceTree = "<group>"; };
 		9CEB1C712195F6DB00ECF364 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
+		9CFA441A221C5C2A00CA07CD /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
 		9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerView.swift; sourceTree = "<group>"; };
 		9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CodeOnlyPickerViewController.storyboard; sourceTree = "<group>"; };
 		9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerViewController.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 			children = (
 				9C91E4B32209DD490021E1BC /* AWSRekognition.storyboard */,
 				9C91E4B52209DD6D0021E1BC /* FaceTrackingHomeViewController.swift */,
+				9CFA441A221C5C2A00CA07CD /* Celebrity.swift */,
 			);
 			path = AWSRekognition;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				9CC560C422146478005AD60B /* MVVMListViewController.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
+				9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */,
 				9CC560C922146478005AD60B /* MVVMListTableViewCell.swift in Sources */,
 				9C660DFC21DF5E54003BF811 /* UIImage+Color.swift in Sources */,
 				9CD30C8021F7100B00D6184A /* UINavigationController+StatusBarStyle.swift in Sources */,
