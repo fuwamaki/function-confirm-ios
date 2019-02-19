@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        // for AWS FaceRekognition
+        let credentialsProvider = AWSCognitoCredentialsProvider(
+            regionType: .USEast1,
+            identityPoolId: "us-west-2:bf9f38f9-20a2-4fd2-87c0-2286c0c123a6")
+        let configuration = AWSServiceConfiguration(
+            region: .USEast1,
+            credentialsProvider: credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+
         return true
     }
 
