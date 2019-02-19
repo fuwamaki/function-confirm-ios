@@ -17,11 +17,41 @@
                     <view key="view" contentMode="scaleToFill" id="nIT-ir-qrj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bqn-ol-lhj">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fF-Th-qsx">
+                                <rect key="frame" x="136" y="504" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera Button"/>
+                                <connections>
+                                    <action selector="CameraOpen:" destination="Lgz-mr-RkQ" eventType="touchUpInside" id="ut7-qI-Z6N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc6-Kn-8NI">
+                                <rect key="frame" x="118" y="562" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PhotoLibrary Button"/>
+                                <connections>
+                                    <action selector="PhotoLibraryOpen:" destination="Lgz-mr-RkQ" eventType="touchUpInside" id="Gxy-rU-WjB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bqn-ol-lhj" firstAttribute="top" secondItem="oaR-4B-Mse" secondAttribute="top" id="5Nt-Np-4Bx"/>
+                            <constraint firstItem="oaR-4B-Mse" firstAttribute="bottom" secondItem="Bqn-ol-lhj" secondAttribute="bottom" id="DFY-8t-eK3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bqn-ol-lhj" secondAttribute="trailing" id="jLN-lg-DYS"/>
+                            <constraint firstItem="Bqn-ol-lhj" firstAttribute="leading" secondItem="nIT-ir-qrj" secondAttribute="leadingMargin" id="klf-sn-8o3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oaR-4B-Mse"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="VlW-CL-u07"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="celebImageView" destination="Bqn-ol-lhj" id="CnE-7x-toz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXi-Fq-5dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
