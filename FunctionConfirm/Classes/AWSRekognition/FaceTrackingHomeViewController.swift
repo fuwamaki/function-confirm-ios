@@ -25,6 +25,7 @@ final class FaceTrackingHomeViewController: UIViewController {
     // MARK: Button Actions
     @IBAction func CameraOpen(_ sender: Any) {
         // TODO: Camera起動できるように
+        // Simlatorのときは押せないようにするとかが解決策かも
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = .camera
