@@ -23,13 +23,15 @@ final class FaceTrackingHomeViewController: UIViewController {
     }
 
     @IBAction func CameraOpen(_ sender: Any) {
-        // TODO: Camera起動できるように
-        // Simlatorのときは押せないようにするとかが解決策かも
+        // SimlatorではCrashを防ぐためにカメラ起動しないように
+        #if targetEnvironment(simulator)
+        #else
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = .camera
         pickerController.cameraCaptureMode = .photo
         present(pickerController, animated: true)
+        #endif
     }
 
     @IBAction func PhotoLibraryOpen(_ sender: Any) {
