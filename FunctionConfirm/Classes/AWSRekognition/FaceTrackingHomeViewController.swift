@@ -15,7 +15,6 @@ final class FaceTrackingHomeViewController: UIViewController {
     @IBOutlet private weak var celebImageView: UIImageView!
 
     var infoLinksMap: [Int: String] = [1000: ""]
-    var rekognitionObject: AWSRekognition?
 
     var navigationItemTitle: String? {
         didSet {
@@ -45,9 +44,55 @@ final class FaceTrackingHomeViewController: UIViewController {
         navigationItemTitle = "AWS 顔認識"
     }
 
+    private func sendImageToRekognition(celebImageData: Data) {
+        //Delete older labels or buttons
+        DispatchQueue.main.async { [weak self] in
+            guard let subViews = self?.celebImageView.subviews else {
+                return
+            }
+            for subView in subViews {
+                subView.removeFromSuperview()
+            }
+        }
+
+        let rekognitionObject = AWSRekognition.default()
+        let celebImageAWS = AWSRekognitionImage()
+        celebImageAWS?.bytes = celebImageData
+        guard let celebRequest = AWSRekognitionRecognizeCelebritiesRequest() else {
+            return
+        }
+        celebRequest.image = celebImageAWS
+
+        rekognitionObject.recognizeCelebrities(celebRequest) { result, error in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+
+            guard let celebrityFaces = result?.celebrityFaces else {
+                return
+            }
+
+            if celebrityFaces.count > 0 { // もし有名人なら
+                for (index, celebFace) in celebrityFaces.enumerated() { // 識別した有名人の数だけ繰り返す
+                    guard let value = celebFace.matchConfidence?.intValue, value > 50 else { // 有名人の信頼値が50以上か確認
+                        return
+                    }
+                    DispatchQueue.main.async { [weak self] in
+                        self?.displayCelebrityImage(index: index, celebFace: celebFace)
+                    }
+                }
+            } else if let count = result?.unrecognizedFaces?.count, count > 0 {
+                // 画像は存在している。画像内でそれをポインティングする（演習用）
+            } else {
+                print("No faces in this pic")
+            }
+        }
+    }
+
     private func displayCelebrityImage(index: Int, celebFace: AWSRekognitionCelebrity) {
         let celebrityInImage = Celebrity()
-        celebrityInImage.celebrityImageView = celebImageView!
+        celebrityInImage.celebrityImageView = celebImageView
         // 認識した顔の座標を取得
         celebrityInImage.boundingBox = CGRect(x: celebFace.face?.boundingBox?.left?.doubleValue ?? 0.0,
                                               y: celebFace.face?.boundingBox?.top?.doubleValue ?? 0.0,
@@ -67,17 +112,6 @@ final class FaceTrackingHomeViewController: UIViewController {
     }
 }
 
-extension FaceTrackingHomeViewController: SFSafariViewControllerDelegate {
-
-    @objc func handleTap(sender: UIButton) {
-        print("tap recognized")
-        let celebURL = URL(string: self.infoLinksMap[sender.tag]!)
-        let safariController = SFSafariViewController(url: celebURL!)
-        safariController.delegate = self
-        self.present(safariController, animated: true)
-    }
-}
-
 // MARK: UIImagePickerControllerDelegate
 extension FaceTrackingHomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -86,54 +120,22 @@ extension FaceTrackingHomeViewController: UIImagePickerControllerDelegate, UINav
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             fatalError("couldn't load image from Photos")
         }
-
         celebImageView.image = image
-        let celebImage: Data = image.jpegData(compressionQuality: 0.2)!
 
-        //Demo Line
+        guard let celebImage: Data = image.jpegData(compressionQuality: 0.2) else {
+            fatalError("optional convert error")
+        }
+
         sendImageToRekognition(celebImageData: celebImage)
     }
 }
 
-// MARK: AWS Methods
-extension FaceTrackingHomeViewController {
-    func sendImageToRekognition(celebImageData: Data) {
-        //Delete older labels or buttons
-        DispatchQueue.main.async { [weak self] in
-            for subView in (self?.celebImageView.subviews)! {
-                subView.removeFromSuperview()
-            }
-        }
-
-        rekognitionObject = AWSRekognition.default()
-        let celebImageAWS = AWSRekognitionImage()
-        celebImageAWS?.bytes = celebImageData
-        let celebRequest = AWSRekognitionRecognizeCelebritiesRequest()
-        celebRequest?.image = celebImageAWS
-
-        rekognitionObject?.recognizeCelebrities(celebRequest!) { result, error in
-            if error != nil {
-                print(error!)
-                return
-            }
-
-            guard let celebrityFaces = result?.celebrityFaces else {
-                return
-            }
-            if celebrityFaces.count > 0 { // もし有名人なら
-                for (index, celebFace) in celebrityFaces.enumerated() { // 識別した有名人の数だけ繰り返す
-                    guard let value = celebFace.matchConfidence?.intValue, value > 50 else { // 有名人の信頼値が50以上か確認
-                        return
-                    }
-                    DispatchQueue.main.async { [weak self] in
-                        self?.displayCelebrityImage(index: index, celebFace: celebFace)
-                    }
-                }
-            } else if let count = result?.unrecognizedFaces?.count, count > 0 {
-                // 画像は存在している。画像内でそれをポインティングする（演習用）
-            } else {
-                print("No faces in this pic")
-            }
-        }
+extension FaceTrackingHomeViewController: SFSafariViewControllerDelegate {
+    @objc func handleTap(sender: UIButton) {
+        print("tap recognized")
+        let celebURL = URL(string: infoLinksMap[sender.tag]!)!
+        let safariController = SFSafariViewController(url: celebURL)
+        safariController.delegate = self
+        self.present(safariController, animated: true)
     }
 }
