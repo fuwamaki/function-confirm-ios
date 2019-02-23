@@ -122,7 +122,7 @@ extension FaceTrackingHomeViewController {
                         self?.celebImageView.addSubview(infoButton)
                     }
                 }
-            } else if let count = result!.unrecognizedFaces?.count, count > 0 {
+            } else if let count = result?.unrecognizedFaces?.count, count > 0 {
                 //Faces are present. Point them out in the Image (left as an exercise for the reader)
             } else {
                 print("No faces in this pic")
