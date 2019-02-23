@@ -12,17 +12,17 @@ import AWSRekognition
 
 final class FaceTrackingHomeViewController: UIViewController {
 
-    @IBOutlet weak var celebImageView: UIImageView!
+    @IBOutlet private weak var celebImageView: UIImageView!
 
     var infoLinksMap: [Int: String] = [1000: ""]
     var rekognitionObject: AWSRekognition?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "AWS 顔認識"
+    var navigationItemTitle: String? {
+        didSet {
+            navigationItem.title = navigationItemTitle
+        }
     }
 
-    // MARK: Button Actions
     @IBAction func CameraOpen(_ sender: Any) {
         // TODO: Camera起動できるように
         // Simlatorのときは押せないようにするとかが解決策かも
@@ -38,6 +38,11 @@ final class FaceTrackingHomeViewController: UIViewController {
         pickerController.delegate = self
         pickerController.sourceType = .savedPhotosAlbum
         present(pickerController, animated: true)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItemTitle = "AWS 顔認識"
     }
 }
 
@@ -97,87 +102,38 @@ extension FaceTrackingHomeViewController {
                 return
             }
 
-            if celebrityFaces.count > 0 {
-                for (index, celebFace) in celebrityFaces.enumerated() {
-                    guard let value = celebFace.matchConfidence?.intValue, value > 50 else {
+            if celebrityFaces.count > 0 { // もし有名人なら
+                for (index, celebFace) in celebrityFaces.enumerated() { // 識別した有名人の数だけ繰り返す
+                    guard let value = celebFace.matchConfidence?.intValue, value > 50 else { // 有名人の信頼値が50以上か確認
                         return
                     }
+                    // 有名人であることを表示
                     DispatchQueue.main.async { [weak self] in
                         let celebrityInImage = Celebrity()
-                        celebrityInImage.scene = (self?.celebImageView)!
-                        celebrityInImage.boundingBox = ["height": celebFace.face?.boundingBox?.height,
-                                                        "left": celebFace.face?.boundingBox?.left,
-                                                        "top": celebFace.face?.boundingBox?.top,
-                                                        "width": celebFace.face?.boundingBox?.width] as? [String: CGFloat]
-                        celebrityInImage.name = celebFace.name!
+                        celebrityInImage.celebrityImageView = (self?.celebImageView)!
+                        // 認識した顔の座標を取得
+                        celebrityInImage.boundingBox = CGRect(x: celebFace.face?.boundingBox?.left?.doubleValue ?? 0.0,
+                                                              y: celebFace.face?.boundingBox?.top?.doubleValue ?? 0.0,
+                                                              width: celebFace.face?.boundingBox?.width?.doubleValue ?? 0.0,
+                                                              height: celebFace.face?.boundingBox?.height?.doubleValue ?? 0.0)
+                        celebrityInImage.name = celebFace.name ?? "no name"
                         if let count = celebFace.urls?.count, count > 0 {
                             celebrityInImage.infoLink = celebFace.urls![0]
                         } else {
                             celebrityInImage.infoLink = "https://www.imdb.com/search/name-text?bio=" + celebrityInImage.name
                         }
                         self?.infoLinksMap[index] = "https://" + celebFace.urls![0]
-                        let infoButton: UIButton = celebrityInImage.createInfoButton()
+                        let infoButton: UIButton = celebrityInImage.infoButton
                         infoButton.tag = index
                         infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControl.Event.touchUpInside)
                         self?.celebImageView.addSubview(infoButton)
                     }
                 }
             } else if let count = result?.unrecognizedFaces?.count, count > 0 {
-                //Faces are present. Point them out in the Image (left as an exercise for the reader)
+                // 画像は存在している。画像内でそれをポインティングする（演習用）
             } else {
                 print("No faces in this pic")
             }
-
-//            //1. First we check if there are any celebrities in the response
-//            if ((result!.celebrityFaces?.count)! > 0) {
-//
-//                //2. Celebrities were found. Lets iterate through all of them
-//                for (index, celebFace) in result!.celebrityFaces!.enumerated() {
-//
-//                    //Check the confidence value returned by the API for each celebirty identified
-//                    if(celebFace.matchConfidence!.intValue > 50) { // Adjust the confidence value to whatever you are comfortable with
-//
-//                        //We are confident this is celebrity. Lets point them out in the image using the main thread
-//                        DispatchQueue.main.async { [weak self] in
-//
-//                            //Create an instance of Celebrity. This class is availabe with the starter application you downloaded
-//                            let celebrityInImage = Celebrity()
-//
-//                            celebrityInImage.scene = (self?.celebImageView)!
-//
-//                            //Get the coordinates for where this celebrity face is in the image and pass them to the Celebrity instance
-//                            celebrityInImage.boundingBox = ["height": celebFace.face?.boundingBox?.height, "left": celebFace.face?.boundingBox?.left, "top": celebFace.face?.boundingBox?.top, "width": celebFace.face?.boundingBox?.width] as? [String: CGFloat]
-//
-//                            //Get the celebrity name and pass it along
-//                            celebrityInImage.name = celebFace.name!
-//                            //Get the first url returned by the API for this celebrity. This is going to be an IMDb profile link
-//                            if (celebFace.urls!.count > 0) {
-//                                celebrityInImage.infoLink = celebFace.urls![0]
-//                            }
-//                                //If there are no links direct them to IMDB search page
-//                            else {
-//                                celebrityInImage.infoLink = "https://www.imdb.com/search/name-text?bio="+celebrityInImage.name
-//                            }
-//                            //Update the celebrity links map that we will use next to create buttons
-//                            self?.infoLinksMap[index] = "https://"+celebFace.urls![0]
-//
-//                            //Create a button that will take users to the IMDb link when tapped
-//                            let infoButton: UIButton = celebrityInImage.createInfoButton()
-//                            infoButton.tag = index
-//                            infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControl.Event.touchUpInside)
-//                            self?.celebImageView.addSubview(infoButton)
-//                        }
-//                    }
-//                }
-//            }
-//                //If there were no celebrities in the image, lets check if there were any faces (who, granted, could one day become celebrities)
-//            else if ((result!.unrecognizedFaces?.count)! > 0) {
-//                //Faces are present. Point them out in the Image (left as an exercise for the reader)
-//                /**/
-//            } else {
-//                //No faces were found (presumably no people were found either)
-//                print("No faces in this pic")
-//            }
         }
     }
 }
