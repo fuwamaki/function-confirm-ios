@@ -11,24 +11,24 @@ import SafariServices
 
 class Celebrity {
 
-    var boundingBox: [String:CGFloat]! //= ["height": 0.0,"left": 0.0,"top": 1.0,"width": 0.0]
+    var boundingBox: [String: CGFloat]! //= ["height": 0.0,"left": 0.0,"top": 1.0,"width": 0.0]
 
-    var name:String! //= ""
-    var urls:[String]! //= []
+    var name: String! //= ""
+    var urls: [String]! //= []
 
-    var infoLink:String! //= ""
+    var infoLink: String! //= ""
 
     var infoLabel: UILabel! //= UILabel.init()
 
-    var infoButton:UIButton! //= UIButton.init()
+    var infoButton: UIButton! //= UIButton.init()
 
     var scene: UIImageView! //= UIImageView.init()
 
     //var parentController: UIViewController! //= UIViewController.init()
 
-    func createInfoButton()-> UIButton {
+    func createInfoButton() -> UIButton {
         //Determine position of annotations
-        let size = CGSize(width: self.boundingBox["width"]! * scene.layer.bounds.width, height:self.boundingBox["height"]!*scene.layer.bounds.height)
+        let size = CGSize(width: self.boundingBox["width"]! * scene.layer.bounds.width, height: self.boundingBox["height"]!*scene.layer.bounds.height)
         let origin = CGPoint(x: self.boundingBox["left"]!*scene.layer.bounds.width, y: self.boundingBox["top"]!*scene.layer.bounds.height)
 
         //Create a rectangle layer
@@ -54,6 +54,5 @@ class Celebrity {
         //scene.bringSubview(toFront: self.infoButton)
         //self.infoButton.addTarget(self, action: #selector(handleTap), for: UIControlEvents.touchUpInside)
         return self.infoButton
-        
     }
 }
