@@ -44,6 +44,27 @@ final class FaceTrackingHomeViewController: UIViewController {
         super.viewDidLoad()
         navigationItemTitle = "AWS 顔認識"
     }
+
+    private func displayCelebrityImage(index: Int, celebFace: AWSRekognitionCelebrity) {
+        let celebrityInImage = Celebrity()
+        celebrityInImage.celebrityImageView = celebImageView!
+        // 認識した顔の座標を取得
+        celebrityInImage.boundingBox = CGRect(x: celebFace.face?.boundingBox?.left?.doubleValue ?? 0.0,
+                                              y: celebFace.face?.boundingBox?.top?.doubleValue ?? 0.0,
+                                              width: celebFace.face?.boundingBox?.width?.doubleValue ?? 0.0,
+                                              height: celebFace.face?.boundingBox?.height?.doubleValue ?? 0.0)
+        celebrityInImage.name = celebFace.name ?? "no name"
+        if let count = celebFace.urls?.count, count > 0 {
+            celebrityInImage.infoLink = celebFace.urls![0]
+        } else {
+            celebrityInImage.infoLink = "https://www.imdb.com/search/name-text?bio=" + celebrityInImage.name
+        }
+        infoLinksMap[index] = "https://" + celebFace.urls![0]
+        let infoButton: UIButton = celebrityInImage.infoButton
+        infoButton.tag = index
+        infoButton.addTarget(self, action: #selector(handleTap), for: UIControl.Event.touchUpInside)
+        celebImageView.addSubview(infoButton)
+    }
 }
 
 extension FaceTrackingHomeViewController: SFSafariViewControllerDelegate {
@@ -57,9 +78,8 @@ extension FaceTrackingHomeViewController: SFSafariViewControllerDelegate {
     }
 }
 
+// MARK: UIImagePickerControllerDelegate
 extension FaceTrackingHomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    // MARK: UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         dismiss(animated: true)
 
@@ -79,8 +99,7 @@ extension FaceTrackingHomeViewController: UIImagePickerControllerDelegate, UINav
 extension FaceTrackingHomeViewController {
     func sendImageToRekognition(celebImageData: Data) {
         //Delete older labels or buttons
-        DispatchQueue.main.async {
-            [weak self] in
+        DispatchQueue.main.async { [weak self] in
             for subView in (self?.celebImageView.subviews)! {
                 subView.removeFromSuperview()
             }
@@ -101,32 +120,13 @@ extension FaceTrackingHomeViewController {
             guard let celebrityFaces = result?.celebrityFaces else {
                 return
             }
-
             if celebrityFaces.count > 0 { // もし有名人なら
                 for (index, celebFace) in celebrityFaces.enumerated() { // 識別した有名人の数だけ繰り返す
                     guard let value = celebFace.matchConfidence?.intValue, value > 50 else { // 有名人の信頼値が50以上か確認
                         return
                     }
-                    // 有名人であることを表示
                     DispatchQueue.main.async { [weak self] in
-                        let celebrityInImage = Celebrity()
-                        celebrityInImage.celebrityImageView = (self?.celebImageView)!
-                        // 認識した顔の座標を取得
-                        celebrityInImage.boundingBox = CGRect(x: celebFace.face?.boundingBox?.left?.doubleValue ?? 0.0,
-                                                              y: celebFace.face?.boundingBox?.top?.doubleValue ?? 0.0,
-                                                              width: celebFace.face?.boundingBox?.width?.doubleValue ?? 0.0,
-                                                              height: celebFace.face?.boundingBox?.height?.doubleValue ?? 0.0)
-                        celebrityInImage.name = celebFace.name ?? "no name"
-                        if let count = celebFace.urls?.count, count > 0 {
-                            celebrityInImage.infoLink = celebFace.urls![0]
-                        } else {
-                            celebrityInImage.infoLink = "https://www.imdb.com/search/name-text?bio=" + celebrityInImage.name
-                        }
-                        self?.infoLinksMap[index] = "https://" + celebFace.urls![0]
-                        let infoButton: UIButton = celebrityInImage.infoButton
-                        infoButton.tag = index
-                        infoButton.addTarget(self, action: #selector(self?.handleTap), for: UIControl.Event.touchUpInside)
-                        self?.celebImageView.addSubview(infoButton)
+                        self?.displayCelebrityImage(index: index, celebFace: celebFace)
                     }
                 }
             } else if let count = result?.unrecognizedFaces?.count, count > 0 {
