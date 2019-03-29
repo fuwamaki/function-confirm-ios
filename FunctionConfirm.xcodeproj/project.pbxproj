@@ -105,6 +105,8 @@
 		9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */; };
 		9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB1C712195F6DB00ECF364 /* StackViewController.swift */; };
 		9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA441A221C5C2A00CA07CD /* Celebrity.swift */; };
+		9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE3DE3224E05F900809567 /* Barcode.storyboard */; };
+		9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE3DE5224E060500809567 /* BarcodeViewController.swift */; };
 		9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */; };
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
@@ -235,6 +237,8 @@
 		9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StackView.storyboard; sourceTree = "<group>"; };
 		9CEB1C712195F6DB00ECF364 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		9CFA441A221C5C2A00CA07CD /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
+		9CFE3DE3224E05F900809567 /* Barcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barcode.storyboard; sourceTree = "<group>"; };
+		9CFE3DE5224E060500809567 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerView.swift; sourceTree = "<group>"; };
 		9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CodeOnlyPickerViewController.storyboard; sourceTree = "<group>"; };
 		9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +448,7 @@
 				9C78A29D221493E80036D3FD /* RoundedCorner */,
 				9C78A2A2221498690036D3FD /* Animation */,
 				9C91E4B22209DC470021E1BC /* AWSRekognition */,
+				9CFE3DE2224E05E500809567 /* Barcode */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -637,6 +642,15 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		9CFE3DE2224E05E500809567 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				9CFE3DE3224E05F900809567 /* Barcode.storyboard */,
+				9CFE3DE5224E060500809567 /* BarcodeViewController.swift */,
+			);
+			path = Barcode;
+			sourceTree = "<group>";
+		};
 		9CFF6AB421E4A14F00E4097A /* NibPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +801,7 @@
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
+				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
@@ -970,6 +985,7 @@
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
 				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9CC560C722146478005AD60B /* MVVMListViewModel.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,

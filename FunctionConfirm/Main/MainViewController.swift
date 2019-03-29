@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 14
+        return 15
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -84,9 +84,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "animationCell", for: indexPath)
             cell.textLabel?.text = "Animation"
             return cell
-        } else {
+        } else if indexPath.row == 13 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
             cell.textLabel?.text = "AWS顔認識"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "barcodeCell", for: indexPath)
+            cell.textLabel?.text = "バーコード"
             return cell
         }
     }
@@ -151,9 +155,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationPageViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 13:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "Barcode", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "BarcodeViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
