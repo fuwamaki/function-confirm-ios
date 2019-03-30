@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 14
+        return 16
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -84,9 +84,17 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "animationCell", for: indexPath)
             cell.textLabel?.text = "Animation"
             return cell
-        } else {
+        } else if indexPath.row == 13 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
             cell.textLabel?.text = "AWS顔認識"
+            return cell
+        } else if indexPath.row == 14 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "barcodeCell", for: indexPath)
+            cell.textLabel?.text = "バーコード"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "barcode2Cell", for: indexPath)
+            cell.textLabel?.text = "バーコード2"
             return cell
         }
     }
@@ -151,9 +159,17 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationPageViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 13:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        case 14:
+            let storyBoard = UIStoryboard(name: "Barcode", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "BarcodeViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "Barcode2", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "Barcode2ViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

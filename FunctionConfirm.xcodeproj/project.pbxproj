@@ -84,6 +84,8 @@
 		9CC560CB22146485005AD60B /* MVVMViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC560CA22146485005AD60B /* MVVMViewState.swift */; };
 		9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCC0AF821199EFD007EFE26 /* MVP.storyboard */; };
 		9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */; };
+		9CCCA878224F39DF00FCAB03 /* Barcode2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CCCA877224F39DF00FCAB03 /* Barcode2.storyboard */; };
+		9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCCA879224F39E900FCAB03 /* Barcode2ViewController.swift */; };
 		9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */; };
 		9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7521F6FCDE00D6184A /* StatusBarInNavigationViewController.swift */; };
 		9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C7721F6FCFD00D6184A /* StatusBarInTabBar.storyboard */; };
@@ -105,6 +107,8 @@
 		9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */; };
 		9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB1C712195F6DB00ECF364 /* StackViewController.swift */; };
 		9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA441A221C5C2A00CA07CD /* Celebrity.swift */; };
+		9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE3DE3224E05F900809567 /* Barcode.storyboard */; };
+		9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE3DE5224E060500809567 /* BarcodeViewController.swift */; };
 		9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */; };
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
@@ -214,6 +218,8 @@
 		9CC560CA22146485005AD60B /* MVVMViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewState.swift; path = FunctionConfirm/MVVM/MVVMViewState.swift; sourceTree = SOURCE_ROOT; };
 		9CCC0AF821199EFD007EFE26 /* MVP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVP.storyboard; sourceTree = "<group>"; };
 		9CCC0AFA21199F72007EFE26 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
+		9CCCA877224F39DF00FCAB03 /* Barcode2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barcode2.storyboard; sourceTree = "<group>"; };
+		9CCCA879224F39E900FCAB03 /* Barcode2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode2ViewController.swift; sourceTree = "<group>"; };
 		9CD30C7321F6FCCB00D6184A /* StatusBarInNavigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarInNavigation.storyboard; sourceTree = "<group>"; };
 		9CD30C7521F6FCDE00D6184A /* StatusBarInNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarInNavigationViewController.swift; sourceTree = "<group>"; };
 		9CD30C7721F6FCFD00D6184A /* StatusBarInTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusBarInTabBar.storyboard; sourceTree = "<group>"; };
@@ -235,6 +241,8 @@
 		9CEB1C6F2195F6A200ECF364 /* StackView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StackView.storyboard; sourceTree = "<group>"; };
 		9CEB1C712195F6DB00ECF364 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		9CFA441A221C5C2A00CA07CD /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
+		9CFE3DE3224E05F900809567 /* Barcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Barcode.storyboard; sourceTree = "<group>"; };
+		9CFE3DE5224E060500809567 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerView.swift; sourceTree = "<group>"; };
 		9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CodeOnlyPickerViewController.storyboard; sourceTree = "<group>"; };
 		9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyPickerViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +452,8 @@
 				9C78A29D221493E80036D3FD /* RoundedCorner */,
 				9C78A2A2221498690036D3FD /* Animation */,
 				9C91E4B22209DC470021E1BC /* AWSRekognition */,
+				9CFE3DE2224E05E500809567 /* Barcode */,
+				9CCCA876224F39B400FCAB03 /* Barcode2 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -585,6 +595,15 @@
 			path = MVP;
 			sourceTree = "<group>";
 		};
+		9CCCA876224F39B400FCAB03 /* Barcode2 */ = {
+			isa = PBXGroup;
+			children = (
+				9CCCA877224F39DF00FCAB03 /* Barcode2.storyboard */,
+				9CCCA879224F39E900FCAB03 /* Barcode2ViewController.swift */,
+			);
+			path = Barcode2;
+			sourceTree = "<group>";
+		};
 		9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +654,15 @@
 				9CEB1C712195F6DB00ECF364 /* StackViewController.swift */,
 			);
 			path = StackView;
+			sourceTree = "<group>";
+		};
+		9CFE3DE2224E05E500809567 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				9CFE3DE3224E05F900809567 /* Barcode.storyboard */,
+				9CFE3DE5224E060500809567 /* BarcodeViewController.swift */,
+			);
+			path = Barcode;
 			sourceTree = "<group>";
 		};
 		9CFF6AB421E4A14F00E4097A /* NibPickerView */ = {
@@ -780,6 +808,7 @@
 			files = (
 				9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */,
 				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
+				9CCCA878224F39DF00FCAB03 /* Barcode2.storyboard in Resources */,
 				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
@@ -787,6 +816,7 @@
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
+				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
@@ -949,6 +979,7 @@
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
+				9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */,
 				9CC560C122146478005AD60B /* MVVMSubmitViewModel.swift in Sources */,
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
@@ -970,6 +1001,7 @@
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
 				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9CC560C722146478005AD60B /* MVVMListViewModel.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
@@ -1121,7 +1153,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1175,7 +1207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1190,7 +1222,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98UFL8A7L4;
+				DEVELOPMENT_TEAM = 59L67BD63A;
 				INFOPLIST_FILE = FunctionConfirm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1209,7 +1241,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98UFL8A7L4;
+				DEVELOPMENT_TEAM = 59L67BD63A;
 				INFOPLIST_FILE = FunctionConfirm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
