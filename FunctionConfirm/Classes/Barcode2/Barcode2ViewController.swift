@@ -34,8 +34,15 @@ final class Barcode2ViewController: UIViewController {
     // ビデオデータ出力
     private let metadataOutput = AVCaptureMetadataOutput()
 
+    // プレビューレイヤー
+    private var videoLayer: AVCaptureVideoPreviewLayer?
+
     // webPageURL
-    var webPageUrl: URL?
+    private var webPageUrl: URL?
+
+    // 検出エリアの枠線更新用タイマー&カウント
+    private var timer: Timer?
+    private var counter: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +52,13 @@ final class Barcode2ViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        detectionAreaView.layer.borderColor = UIColor.green.cgColor
-        detectionAreaView.layer.borderWidth = 3
     }
 
     private func setupViews() {
         resultTextLabel.text = ""
         resultUrlStackView.isHidden = true
+        detectionAreaView.layer.borderColor = UIColor.green.cgColor
+        detectionAreaView.layer.borderWidth = 3
     }
 
     private func setupBarcodeCapture() {
@@ -62,6 +69,7 @@ final class Barcode2ViewController: UIViewController {
             setupRectOfInterest()
             setupPreviewLayer()
             startCaptureSession()
+            setupTimer()
         } catch let error as NSError {
             print(error)
         }
@@ -72,8 +80,8 @@ final class Barcode2ViewController: UIViewController {
         captureSession.addOutput(metadataOutput)
         // メタデータを検出した際のデリゲート設定
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        // EAN-13コードの認識を設定
-        metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.ean13, AVMetadataObject.ObjectType.ean8]
+        // janコード(ean13)とqrコード(qr)認識を設定
+        metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.ean13, AVMetadataObject.ObjectType.ean8, AVMetadataObject.ObjectType.qr]
     }
 
     // 検出エリアの設定
@@ -88,35 +96,65 @@ final class Barcode2ViewController: UIViewController {
 
     // プレビューレイヤーの設定
     private func setupPreviewLayer() {
-        let videoLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
-        videoLayer.frame = cameraPreviewView.bounds
-        videoLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        cameraPreviewView.layer.addSublayer(videoLayer)
+        videoLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
+        videoLayer?.frame = cameraPreviewView.bounds
+        videoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        if let videoLayer = videoLayer {
+            cameraPreviewView.layer.addSublayer(videoLayer)
+        }
     }
 
     // セッションの開始
     private func startCaptureSession() {
+        //ユーザアクションに起因する非同期タスクとして実行（優先度high設定）
         DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession.startRunning()
+        }
+    }
+
+    // タイマーの設定
+    private func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateResultOfDetection), userInfo: nil, repeats: true)
+        timer?.fire()
+    }
+
+    // 検出結果の更新
+    @objc private func updateResultOfDetection() {
+        counter += 1
+        if counter > 2 {
+            detectionAreaView.layer.borderColor = UIColor.green.cgColor
+            detectionAreaView.layer.borderWidth = 4
+            resultTextLabel.text = ""
         }
     }
 }
 
 extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
-    // memo: captureOutputではない。
+    // バーコードを検出すると呼び出されるメソッド
+    // memo: captureOutputではないので注意
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        // 複数のメタデータを検出できる
-        for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
-            // EAN-13Qコードのデータかどうかの確認
-            if metadata.type == AVMetadataObject.ObjectType.ean13 || metadata.type == AVMetadataObject.ObjectType.ean8 {
-                if metadata.stringValue != nil {
-                    // 検出データを取得
-                    if resultTextLabel.text != metadata.stringValue! {
-                        resultTextLabel.text = metadata.stringValue!
-                        detectionAreaView.layer.borderColor = UIColor.white.cgColor
-                        detectionAreaView.layer.borderWidth = 5
-                    }
-                }
+        guard let metadataObjects = metadataObjects as? [AVMetadataMachineReadableCodeObject] else { return }
+        // 複数のメタデータ検出
+        loop: for metadata in metadataObjects {
+            switch metadata.type {
+            // janコードを検出した場合
+            case AVMetadataObject.ObjectType.ean8, AVMetadataObject.ObjectType.ean13:
+                guard let metadataValue = metadata.stringValue, resultTextLabel.text != metadataValue else { return }
+                resultTextLabel.text = metadataValue
+                detectionAreaView.layer.borderColor = UIColor.white.cgColor
+                detectionAreaView.layer.borderWidth = 6
+                counter = 0
+                break loop
+            // qrコードを検出した場合
+            case AVMetadataObject.ObjectType.qr:
+                guard let metadataValue = metadata.stringValue, resultTextLabel.text != metadataValue else { return }
+                resultTextLabel.text = metadataValue
+                detectionAreaView.layer.borderColor = UIColor.white.cgColor
+                detectionAreaView.layer.borderWidth = 6
+                counter = 0
+                break loop
+            default:
+                break
             }
         }
     }
