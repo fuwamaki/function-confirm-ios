@@ -53,7 +53,11 @@ final class Barcode2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        #if targetEnvironment(simulator)
+        resultTextLabel.text = "Simulatorではカメラ起動不可"
+        #else
         setupBarcodeCapture()
+        #endif
     }
 
     override func viewDidLayoutSubviews() {
