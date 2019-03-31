@@ -43,6 +43,7 @@ final class Barcode2ViewController: UIViewController {
             guard let url = webPageUrl else { return }
             // memo: button.textLabel.titleでは横幅が可変にならない
             resultUrlButton.setTitle(String(describing: url), for: .normal)
+            if resultUrlButton.isHidden { resultUrlButton.isHidden = false }
         }
     }
 
@@ -138,6 +139,26 @@ final class Barcode2ViewController: UIViewController {
             resultTextLabel.text = ""
         }
     }
+
+    private func convertISBN(value: String) -> String? {
+        let v = NSString(string: value).longLongValue
+        let prefix: Int64 = Int64(v / 10000000000)
+        guard prefix == 978 || prefix == 979 else { return nil }
+        let isbn9: Int64 = (v % 10000000000) / 10
+        var sum: Int64 = 0
+        var tmpISBN = isbn9
+
+        var i = 10
+        while i > 0 && tmpISBN > 0 {
+            let divisor: Int64 = Int64(pow(10, Double(i - 2)))
+            sum += (tmpISBN / divisor) * Int64(i)
+            tmpISBN %= divisor
+            i -= 1
+        }
+
+        let checkdigit = 11 - (sum % 11)
+        return String(format: "%lld%@", isbn9, (checkdigit == 10) ? "X" : String(format: "%lld", checkdigit % 11))
+    }
 }
 
 extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -155,6 +176,9 @@ extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
                 detectionAreaView.layer.borderColor = UIColor.white.cgColor
                 detectionAreaView.layer.borderWidth = 6
                 counter = 0
+                if let isbn = convertISBN(value: metadataValue), let url = URL(string: "http://amazon.co.jp/dp/\(isbn)") {
+                    webPageUrl = url
+                }
                 break loop
             // qrコードを検出した場合
             case AVMetadataObject.ObjectType.qr where counter > 1:
@@ -166,7 +190,6 @@ extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
                 // URL文字列か識別。（ちょっと雑）
                 if metadataValue.contains("http"), let url = URL(string: metadataValue) {
                     webPageUrl = url
-                    if resultUrlButton.isHidden { resultUrlButton.isHidden = false }
                 }
                 break loop
             default:
