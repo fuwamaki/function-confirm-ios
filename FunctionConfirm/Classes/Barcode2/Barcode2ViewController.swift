@@ -34,11 +34,12 @@ final class Barcode2ViewController: UIViewController {
     // ビデオデータ出力
     private let metadataOutput = AVCaptureMetadataOutput()
 
-    var isDetected = false
+    // webPageURL
     var webPageUrl: URL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         setupBarcodeCapture()
     }
 
@@ -48,32 +49,53 @@ final class Barcode2ViewController: UIViewController {
         detectionAreaView.layer.borderWidth = 3
     }
 
+    private func setupViews() {
+        resultTextLabel.text = ""
+        resultUrlStackView.isHidden = true
+    }
+
     private func setupBarcodeCapture() {
-        let videoInput = try! AVCaptureDeviceInput.init(device: videoDevice!)
-        captureSession.addInput(videoInput)
+        do {
+            let videoInput = try AVCaptureDeviceInput.init(device: videoDevice!)
+            captureSession.addInput(videoInput)
+            setupMetadataOutput()
+            setupRectOfInterest()
+            setupPreviewLayer()
+            startCaptureSession()
+        } catch let error as NSError {
+            print(error)
+        }
+    }
 
+    // 出力データの設定
+    private func setupMetadataOutput() {
         captureSession.addOutput(metadataOutput)
-
         // メタデータを検出した際のデリゲート設定
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         // EAN-13コードの認識を設定
         metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.ean13, AVMetadataObject.ObjectType.ean8]
+    }
 
-        // 検出エリアの設定
+    // 検出エリアの設定
+    private func setupRectOfInterest() {
         // memo: 長さではダメだったので、小数値で設定
         let x = (detectionAreaStackView.frame.origin.x + detectionAreaView.frame.origin.x)/cameraPreviewView.bounds.width
         let y = (detectionAreaStackView.frame.origin.y + detectionAreaView.frame.origin.y)/cameraPreviewView.bounds.height
         let width = (detectionAreaView.bounds.width)/cameraPreviewView.bounds.width
         let height = (detectionAreaView.bounds.height)/cameraPreviewView.bounds.height
         metadataOutput.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
+    }
 
-        // プレビュー
+    // プレビューレイヤーの設定
+    private func setupPreviewLayer() {
         let videoLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
         videoLayer.frame = cameraPreviewView.bounds
         videoLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewView.layer.addSublayer(videoLayer)
+    }
 
-        // セッションの開始
+    // セッションの開始
+    private func startCaptureSession() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession.startRunning()
         }
@@ -89,9 +111,7 @@ extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
             if metadata.type == AVMetadataObject.ObjectType.ean13 || metadata.type == AVMetadataObject.ObjectType.ean8 {
                 if metadata.stringValue != nil {
                     // 検出データを取得
-                    if !isDetected || resultTextLabel.text != metadata.stringValue! {
-                        isDetected = true
-                        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate) // バイブレーション
+                    if resultTextLabel.text != metadata.stringValue! {
                         resultTextLabel.text = metadata.stringValue!
                         detectionAreaView.layer.borderColor = UIColor.white.cgColor
                         detectionAreaView.layer.borderWidth = 5
