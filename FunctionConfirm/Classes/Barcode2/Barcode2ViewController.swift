@@ -15,8 +15,6 @@ class Barcode2ViewController: UIViewController {
     @IBOutlet private weak var label: UILabel!
 
     let detectionArea = UIView()
-    var timer: Timer!
-    var counter = 0
     var isDetected = false
 
     override func viewDidLoad() {
@@ -67,19 +65,6 @@ class Barcode2ViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             captureSession.startRunning()
         }
-
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        timer.fire()
-    }
-
-    @objc func update(tm: Timer) {
-        counter += 1
-        print(counter)
-        if 1 < counter {
-            detectionArea.layer.borderColor = UIColor.red.cgColor
-            detectionArea.layer.borderWidth = 3
-            label.text = ""
-        }
     }
 }
 
@@ -92,7 +77,6 @@ extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
             if metadata.type == AVMetadataObject.ObjectType.ean13 || metadata.type == AVMetadataObject.ObjectType.ean8 {
                 if metadata.stringValue != nil {
                     // 検出データを取得
-                    counter = 0
                     if !isDetected || label.text != metadata.stringValue! {
                         isDetected = true
                         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate) // バイブレーション
