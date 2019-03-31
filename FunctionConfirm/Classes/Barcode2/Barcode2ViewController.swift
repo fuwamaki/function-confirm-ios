@@ -17,6 +17,12 @@ class Barcode2ViewController: UIViewController {
     // セッションのインスタンス
     private let captureSession = AVCaptureSession()
 
+    // 背面カメラモード
+    private let videoDevice = AVCaptureDevice.default(for: .video)
+
+    // ビデオデータ出力
+    private let metadataOutput = AVCaptureMetadataOutput()
+
     let detectionArea = UIView()
     var isDetected = false
 
@@ -25,14 +31,15 @@ class Barcode2ViewController: UIViewController {
         setupBarcodeCapture()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
+
     private func setupBarcodeCapture() {
-        // 入力（背面カメラ）
-        let videoDevice = AVCaptureDevice.default(for: .video)
         let videoInput = try! AVCaptureDeviceInput.init(device: videoDevice!)
         captureSession.addInput(videoInput)
 
-        // 出力（ビデオデータ）
-        let metadataOutput = AVCaptureMetadataOutput()
         captureSession.addOutput(metadataOutput)
 
         // メタデータを検出した際のデリゲート設定
