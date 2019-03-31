@@ -14,6 +14,9 @@ class Barcode2ViewController: UIViewController {
     @IBOutlet private weak var previewView: UIView!
     @IBOutlet private weak var label: UILabel!
 
+    // セッションのインスタンス
+    private let captureSession = AVCaptureSession()
+
     let detectionArea = UIView()
     var isDetected = false
 
@@ -23,9 +26,6 @@ class Barcode2ViewController: UIViewController {
     }
 
     private func setupBarcodeCapture() {
-        // セッションのインスタンス生成
-        let captureSession = AVCaptureSession()
-
         // 入力（背面カメラ）
         let videoDevice = AVCaptureDevice.default(for: .video)
         let videoInput = try! AVCaptureDeviceInput.init(device: videoDevice!)
@@ -55,7 +55,6 @@ class Barcode2ViewController: UIViewController {
         metadataOutput.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
 
         // プレビュー
-        // if letとった。
         let videoLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
         videoLayer.frame = previewView.bounds
         videoLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -63,7 +62,7 @@ class Barcode2ViewController: UIViewController {
 
         // セッションの開始
         DispatchQueue.global(qos: .userInitiated).async {
-            captureSession.startRunning()
+            self.captureSession.startRunning()
         }
     }
 }
