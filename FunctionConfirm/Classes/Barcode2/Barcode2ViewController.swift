@@ -43,6 +43,7 @@ final class Barcode2ViewController: UIViewController {
             guard let url = webPageUrl else { return }
             // memo: button.textLabel.titleでは横幅が可変にならない
             resultUrlButton.setTitle(String(describing: url), for: .normal)
+            resultUrlButton.sizeToFit()
             if resultUrlButton.isHidden { resultUrlButton.isHidden = false }
         }
     }
