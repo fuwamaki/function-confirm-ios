@@ -197,3 +197,6 @@ extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 }
+
+// 横向きに対応する方法
+// https://teratail.com/questions/131390
