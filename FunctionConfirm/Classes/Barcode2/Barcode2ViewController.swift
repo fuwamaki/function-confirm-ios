@@ -16,7 +16,7 @@ final class Barcode2ViewController: UIViewController {
     @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var detectionAreaView: UIView!
     @IBOutlet private weak var resultTextLabel: UILabel!
-    @IBOutlet private weak var resultUrlStackView: UIStackView!
+    @IBOutlet private weak var resultUrlButton: UIButton!
 
     @IBAction private func clickWebPageButton(_ sender: Any) {
         if let url = webPageUrl {
@@ -38,7 +38,13 @@ final class Barcode2ViewController: UIViewController {
     private var videoLayer: AVCaptureVideoPreviewLayer?
 
     // webPageURL
-    private var webPageUrl: URL?
+    private var webPageUrl: URL? {
+        didSet {
+            guard let url = webPageUrl else { return }
+            // memo: button.textLabel.titleでは横幅が可変にならない
+            resultUrlButton.setTitle(String(describing: url), for: .normal)
+        }
+    }
 
     // 検出エリアの枠線更新用タイマー&カウント
     private var timer: Timer?
@@ -56,7 +62,8 @@ final class Barcode2ViewController: UIViewController {
 
     private func setupViews() {
         resultTextLabel.text = ""
-        resultUrlStackView.isHidden = true
+        resultUrlButton.titleLabel?.text = ""
+        resultUrlButton.isHidden = true
         detectionAreaView.layer.borderColor = UIColor.green.cgColor
         detectionAreaView.layer.borderWidth = 3
     }
@@ -146,12 +153,17 @@ extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
                 counter = 0
                 break loop
             // qrコードを検出した場合
-            case AVMetadataObject.ObjectType.qr:
+            case AVMetadataObject.ObjectType.qr where counter > 1:
                 guard let metadataValue = metadata.stringValue, resultTextLabel.text != metadataValue else { return }
                 resultTextLabel.text = metadataValue
                 detectionAreaView.layer.borderColor = UIColor.white.cgColor
                 detectionAreaView.layer.borderWidth = 6
                 counter = 0
+                // URL文字列か識別。（ちょっと雑）
+                if metadataValue.contains("http"), let url = URL(string: metadataValue) {
+                    webPageUrl = url
+                    if resultUrlButton.isHidden { resultUrlButton.isHidden = false }
+                }
                 break loop
             default:
                 break
