@@ -104,7 +104,7 @@ final class Barcode2ViewController: UIViewController {
         let y = (detectionAreaStackView.frame.origin.y + detectionAreaView.frame.origin.y)/cameraPreviewView.bounds.height
         let width = (detectionAreaView.bounds.width)/cameraPreviewView.bounds.width
         let height = (detectionAreaView.bounds.height)/cameraPreviewView.bounds.height
-        metadataOutput.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
+        metadataOutput.rectOfInterest = CGRect(x: y, y: 1 - x - width, width: height, height: width)
     }
 
     // プレビューレイヤーの設定
@@ -142,13 +142,12 @@ final class Barcode2ViewController: UIViewController {
     }
 
     private func convertISBN(value: String) -> String? {
-        let v = NSString(string: value).longLongValue
-        let prefix: Int64 = Int64(v / 10000000000)
+        let int64Value = NSString(string: value).longLongValue
+        let prefix: Int64 = Int64(int64Value / 10000000000)
         guard prefix == 978 || prefix == 979 else { return nil }
-        let isbn9: Int64 = (v % 10000000000) / 10
+        let isbn9: Int64 = (int64Value % 10000000000) / 10
         var sum: Int64 = 0
         var tmpISBN = isbn9
-
         var i = 10
         while i > 0 && tmpISBN > 0 {
             let divisor: Int64 = Int64(pow(10, Double(i - 2)))
@@ -156,7 +155,6 @@ final class Barcode2ViewController: UIViewController {
             tmpISBN %= divisor
             i -= 1
         }
-
         let checkdigit = 11 - (sum % 11)
         return String(format: "%lld%@", isbn9, (checkdigit == 10) ? "X" : String(format: "%lld", checkdigit % 11))
     }
