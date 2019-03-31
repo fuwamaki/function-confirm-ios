@@ -9,10 +9,10 @@
 import UIKit
 import AVFoundation
 
-class Barcode2ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class Barcode2ViewController: UIViewController {
 
-    @IBOutlet weak var previewView: UIView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var previewView: UIView!
+    @IBOutlet private weak var label: UILabel!
 
     let detectionArea = UIView()
     var timer: Timer!
@@ -21,7 +21,10 @@ class Barcode2ViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBarcodeCapture()
+    }
 
+    private func setupBarcodeCapture() {
         // セッションのインスタンス生成
         let captureSession = AVCaptureSession()
 
@@ -69,6 +72,19 @@ class Barcode2ViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         timer.fire()
     }
 
+    @objc func update(tm: Timer) {
+        counter += 1
+        print(counter)
+        if 1 < counter {
+            detectionArea.layer.borderColor = UIColor.red.cgColor
+            detectionArea.layer.borderWidth = 3
+            label.text = ""
+        }
+    }
+}
+
+extension Barcode2ViewController: AVCaptureMetadataOutputObjectsDelegate {
+    // memo: captureOutputではない。
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // 複数のメタデータを検出できる
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
@@ -86,36 +102,6 @@ class Barcode2ViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
                     }
                 }
             }
-        }
-    }
-
-//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-//        // 複数のメタデータを検出できる
-//        for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
-//            // EAN-13Qコードのデータかどうかの確認
-//            if metadata.type == AVMetadataObject.ObjectType.ean13 || metadata.type == AVMetadataObject.ObjectType.ean8 {
-//                if metadata.stringValue != nil {
-//                    // 検出データを取得
-//                    counter = 0
-//                    if !isDetected || label.text != metadata.stringValue! {
-//                        isDetected = true
-//                        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate) // バイブレーション
-//                        label.text = metadata.stringValue!
-//                        detectionArea.layer.borderColor = UIColor.white.cgColor
-//                        detectionArea.layer.borderWidth = 5
-//                    }
-//                }
-//            }
-//        }
-//    }
-
-    @objc func update(tm: Timer) {
-        counter += 1
-        print(counter)
-        if 1 < counter {
-            detectionArea.layer.borderColor = UIColor.red.cgColor
-            detectionArea.layer.borderWidth = 3
-            label.text = ""
         }
     }
 }
