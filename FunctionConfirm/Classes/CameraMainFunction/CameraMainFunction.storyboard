@@ -85,7 +85,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-mu-GRl">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1960784314" green="0.76470588240000004" blue="1" alpha="0.49630779109589029" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="j7C-mh-Ec6"/>
                                                     <constraint firstAttribute="height" constant="48" id="jf8-pa-SvO"/>
@@ -99,7 +99,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ov7-DL-ith">
                                                 <rect key="frame" x="80" y="0.0" width="48" height="48"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1960784314" green="0.76470588240000004" blue="1" alpha="0.49630779109589029" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="9Z3-He-BI8"/>
                                                     <constraint firstAttribute="width" constant="48" id="iqh-nm-4kJ"/>
@@ -113,7 +113,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1mx-c2-guB">
                                                 <rect key="frame" x="160" y="0.0" width="48" height="48"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1960784314" green="0.76470588240000004" blue="1" alpha="0.49630779109589029" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="TDi-Ua-Ppi"/>
                                                     <constraint firstAttribute="height" constant="48" id="uoa-tQ-tw6"/>
@@ -127,7 +127,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-EL-wDw">
                                                 <rect key="frame" x="240" y="0.0" width="48" height="48"/>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1960784314" green="0.76470588240000004" blue="1" alpha="0.49630779109589029" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Mtl-3b-nFl"/>
                                                     <constraint firstAttribute="width" constant="48" id="acD-AK-baf"/>

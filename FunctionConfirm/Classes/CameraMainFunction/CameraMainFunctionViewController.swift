@@ -23,21 +23,21 @@ final class CameraMainFunctionViewController: UIViewController {
     @IBOutlet weak var secondImageView: UIImageView! {
         didSet {
             secondImageView.isUserInteractionEnabled = true
-            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickSecondImageView)))
+            secondImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickSecondImageView)))
         }
     }
 
     @IBOutlet weak var thirdImageView: UIImageView! {
         didSet {
             thirdImageView.isUserInteractionEnabled = true
-            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickThirdImageView)))
+            thirdImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickThirdImageView)))
         }
     }
 
     @IBOutlet weak var fourthImageView: UIImageView! {
         didSet {
             fourthImageView.isUserInteractionEnabled = true
-            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickFourthImageView)))
+            fourthImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickFourthImageView)))
         }
     }
 
@@ -79,6 +79,7 @@ final class CameraMainFunctionViewController: UIViewController {
 
     // imageViewの配列
     private var imageViews: [UIImageView] = []
+    private var imageData: [Data] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,12 +103,12 @@ final class CameraMainFunctionViewController: UIViewController {
         }
     }
 
-    private func displayActionSheet(imageView: UIImageView) {
+    private func displayActionSheet(imageIndex: Int) {
         let alert = UIAlertController(title: "アクション", message: nil, preferredStyle: .actionSheet)
         let manufacturingAction = UIAlertAction(title: "加工", style: .default, handler: nil)
-        let deleteAction = UIAlertAction(title: "削除", style: .destructive) { _ in
-            imageView.image = nil
-            imageView.isUserInteractionEnabled = false
+        let deleteAction = UIAlertAction(title: "削除", style: .destructive) { [weak self] _ in
+            self?.imageData.remove(at: imageIndex)
+            self?.reloadImageViews()
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alert.addAction(manufacturingAction)
@@ -117,7 +118,15 @@ final class CameraMainFunctionViewController: UIViewController {
     }
 
     private func reloadImageViews() {
-        
+        imageViews.forEach { imageView in
+            imageView.image = nil
+            imageView.isUserInteractionEnabled = false
+        }
+        imageData.enumerated().forEach { index, data in
+            let image = UIImage(data: data)
+            imageViews[index].image = image
+            imageViews[index].isUserInteractionEnabled = true
+        }
     }
 }
 
@@ -176,19 +185,19 @@ extension CameraMainFunctionViewController {
 // selector
 extension CameraMainFunctionViewController {
     @objc func clickFirstImageView() {
-        displayActionSheet(imageView: firstImageView)
+        displayActionSheet(imageIndex: 0)
     }
 
     @objc func clickSecondImageView() {
-        displayActionSheet(imageView: secondImageView)
+        displayActionSheet(imageIndex: 1)
     }
 
     @objc func clickThirdImageView() {
-        displayActionSheet(imageView: thirdImageView)
+        displayActionSheet(imageIndex: 2)
     }
 
     @objc func clickFourthImageView() {
-        displayActionSheet(imageView: fourthImageView)
+        displayActionSheet(imageIndex: 3)
     }
 }
 
@@ -199,12 +208,8 @@ extension CameraMainFunctionViewController: AVCapturePhotoCaptureDelegate {
             return
         }
         if let photoData = photo.fileDataRepresentation() {
-            let image = UIImage(data: photoData)
-            for imageView in imageViews where imageView.image == nil {
-                imageView.image = image
-                imageView.isUserInteractionEnabled = true
-                break
-            }
+            imageData.append(photoData)
+            reloadImageViews()
         }
     }
 }
