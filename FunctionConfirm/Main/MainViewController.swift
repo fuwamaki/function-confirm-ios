@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 16
+        return 17
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -92,9 +92,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "barcodeCell", for: indexPath)
             cell.textLabel?.text = "バーコード"
             return cell
-        } else {
+        } else if indexPath.row == 15 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "barcode2Cell", for: indexPath)
             cell.textLabel?.text = "バーコード2"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cameraMainFunctionCell", for: indexPath)
+            cell.textLabel?.text = "カメラメイン機能"
             return cell
         }
     }
@@ -167,9 +171,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Barcode", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "BarcodeViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 15:
             let storyBoard = UIStoryboard(name: "Barcode2", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "Barcode2ViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "CameraMainFunction", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "CameraMainFunctionViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

@@ -36,6 +36,8 @@
 		9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */; };
 		9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF921DF5DE3003BF811 /* SubmitButton.swift */; };
 		9C660DFC21DF5E54003BF811 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DFB21DF5E54003BF811 /* UIImage+Color.swift */; };
+		9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69834822700E2F00DC8C93 /* CameraMainFunctionViewController.swift */; };
+		9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C69834A22700E3700DC8C93 /* CameraMainFunction.storyboard */; };
 		9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */; };
 		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
 		9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
@@ -175,6 +177,8 @@
 		9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Name.swift"; sourceTree = "<group>"; };
 		9C660DF921DF5DE3003BF811 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		9C660DFB21DF5E54003BF811 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		9C69834822700E2F00DC8C93 /* CameraMainFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMainFunctionViewController.swift; sourceTree = "<group>"; };
+		9C69834A22700E3700DC8C93 /* CameraMainFunction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraMainFunction.storyboard; sourceTree = "<group>"; };
 		9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewModelText.swift; sourceTree = "<group>"; };
 		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
 		9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +439,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9C69834622700E0300DC8C93 /* CameraMainFunction */ = {
+			isa = PBXGroup;
+			children = (
+				9C69834822700E2F00DC8C93 /* CameraMainFunctionViewController.swift */,
+				9C69834A22700E3700DC8C93 /* CameraMainFunction.storyboard */,
+			);
+			path = CameraMainFunction;
+			sourceTree = "<group>";
+		};
 		9C78A29622147A960036D3FD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +467,7 @@
 				9C91E4B22209DC470021E1BC /* AWSRekognition */,
 				9CFE3DE2224E05E500809567 /* Barcode */,
 				9CCCA876224F39B400FCAB03 /* Barcode2 */,
+				9C69834622700E0300DC8C93 /* CameraMainFunction */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -824,6 +838,7 @@
 				9CC560B72214645A005AD60B /* MVVMViewController.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				9CC560C822146478005AD60B /* MVVMListTableViewCell.xib in Resources */,
+				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
 				9CC560C622146478005AD60B /* MVVMSubmitViewController.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
@@ -1004,6 +1019,7 @@
 				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
 				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9CC560C722146478005AD60B /* MVVMListViewModel.swift in Sources */,
+				9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				9CC560C322146478005AD60B /* ItemAPIRequestRx.swift in Sources */,
