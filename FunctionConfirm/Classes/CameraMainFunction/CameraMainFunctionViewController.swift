@@ -55,6 +55,28 @@ final class CameraMainFunctionViewController: UIViewController {
     }
 
     @IBAction private func clickChangeLightButton(_ sender: Any) {
+        let alert = UIAlertController(title: "LED Mode select", message: nil, preferredStyle: .actionSheet)
+        let onAction = UIAlertAction(title: "on", style: .default) { _ in
+            self.currentDevice?.torchMode = .on
+            self.currentDevice?.unlockForConfiguration()
+        }
+        let offAction = UIAlertAction(title: "off", style: .default) { _ in
+            self.currentDevice?.torchMode = .off
+            self.currentDevice?.unlockForConfiguration()
+        }
+        let autoAction = UIAlertAction(title: "auto", style: .default) { _ in
+            self.currentDevice?.torchMode = .auto
+            self.currentDevice?.unlockForConfiguration()
+        }
+        alert.addAction(onAction)
+        alert.addAction(offAction)
+        alert.addAction(autoAction)
+        do {
+            try currentDevice?.lockForConfiguration()
+            present(alert, animated: true, completion: nil)
+        } catch {
+            print(error)
+        }
     }
 
     @IBAction private func clickShutterButton(_ sender: Any) {
@@ -74,12 +96,6 @@ final class CameraMainFunctionViewController: UIViewController {
 
     // 現在のカメラデバイス
     private var currentDevice: AVCaptureDevice?
-
-    // メインカメラの管理オブジェクトの作成
-    var mainCamera: AVCaptureDevice?
-
-    // インカメの管理オブジェクトの作成
-    var innerCamera: AVCaptureDevice?
 
     // キャプチャーの出力データを受け付けるオブジェクト
     var photoOutput: AVCapturePhotoOutput?
