@@ -11,17 +11,23 @@ import AVFoundation
 
 final class CameraMainFunctionViewController: UIViewController {
 
+    @IBOutlet weak var testImageView: UIImageView!
+
     @IBOutlet private weak var cameraPreviewView: UIView!
 
+    @IBOutlet private weak var image1Button: UIButton!
     @IBAction private func clickImage1Button(_ sender: Any) {
     }
 
+    @IBOutlet private weak var image2Button: UIButton!
     @IBAction private func clickImage2Button(_ sender: Any) {
     }
 
+    @IBOutlet private weak var image3Button: UIButton!
     @IBAction private func clickImage3Button(_ sender: Any) {
     }
 
+    @IBOutlet private weak var image4Button: UIButton!
     @IBAction private func clickImage4Button(_ sender: Any) {
     }
 
@@ -32,6 +38,11 @@ final class CameraMainFunctionViewController: UIViewController {
     }
 
     @IBAction private func clickShutterButton(_ sender: Any) {
+        let settings = AVCapturePhotoSettings()
+        settings.flashMode = .auto
+        settings.isAutoStillImageStabilizationEnabled = true
+        settings.isHighResolutionPhotoEnabled = false
+        photoOutput?.capturePhoto(with: settings, delegate: self)
     }
 
     // セッションのインスタンス
@@ -121,6 +132,20 @@ final class CameraMainFunctionViewController: UIViewController {
         //ユーザアクションに起因する非同期タスクとして実行（優先度high設定）
         DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession.startRunning()
+        }
+    }
+}
+
+extension CameraMainFunctionViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard error == nil else {
+            print("撮影失敗")
+            return
+        }
+        if let photoData = photo.fileDataRepresentation() {
+            let image = UIImage(data: photoData)
+            testImageView.image = image
+            testImageView.contentMode = .scaleToFill
         }
     }
 }
