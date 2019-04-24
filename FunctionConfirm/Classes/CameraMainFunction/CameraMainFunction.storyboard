@@ -17,13 +17,178 @@
                     <view key="view" contentMode="scaleToFill" id="ZzB-6C-aEm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAh-XD-NjE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="363"/>
+                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-Cb-RUH">
+                                <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="DYd-t3-56Z">
+                                        <rect key="frame" x="59.5" y="48" width="256" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdB-OQ-WoG">
+                                                <rect key="frame" x="0.0" y="16" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="aum-C7-oEy"/>
+                                                    <constraint firstAttribute="width" constant="32" id="old-Xx-6j1"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="camera_turnover"/>
+                                                <connections>
+                                                    <action selector="clickTurnOverCamera:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="d9o-j4-OIq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TF-KH-lVX">
+                                                <rect key="frame" x="96" y="0.0" width="64" height="64"/>
+                                                <color key="backgroundColor" red="0.15686274510000001" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="6jk-qg-2og"/>
+                                                    <constraint firstAttribute="height" constant="64" id="A1a-Kc-Lpd"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickShutterButton:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="Jh6-Fn-BLj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq5-iH-NKh">
+                                                <rect key="frame" x="224" y="16" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="rlh-BL-2IR"/>
+                                                    <constraint firstAttribute="height" constant="32" id="s6m-8H-4Y1"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="camera_light"/>
+                                                <connections>
+                                                    <action selector="clickChangeLightButton:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="DIH-f4-J4f"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="DYd-t3-56Z" firstAttribute="centerX" secondItem="DW4-Cb-RUH" secondAttribute="centerX" id="JqP-3h-nk7"/>
+                                    <constraint firstAttribute="height" constant="160" id="MRU-R9-4PZ"/>
+                                    <constraint firstItem="DYd-t3-56Z" firstAttribute="centerY" secondItem="DW4-Cb-RUH" secondAttribute="centerY" id="SH3-Nq-qsa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-nz-3B3">
+                                <rect key="frame" x="0.0" y="427" width="375" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="VAW-4E-bM7">
+                                        <rect key="frame" x="43.5" y="16" width="288" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crH-2o-1Mg">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="II1-OS-WvB"/>
+                                                    <constraint firstAttribute="width" constant="48" id="Qa3-FC-pcM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickImage1Button:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="iif-L4-S6G"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKf-Bs-1Oy">
+                                                <rect key="frame" x="80" y="0.0" width="48" height="48"/>
+                                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="h5f-vI-gGn"/>
+                                                    <constraint firstAttribute="width" constant="48" id="kGF-uR-zPL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickImage2Button:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="pxw-qo-rpM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uih-Ty-wWL">
+                                                <rect key="frame" x="160" y="0.0" width="48" height="48"/>
+                                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="WzB-Ee-A18"/>
+                                                    <constraint firstAttribute="width" constant="48" id="kTR-nv-LxZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickImage3Button:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="8tR-QR-9nG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLF-o4-ZSH">
+                                                <rect key="frame" x="240" y="0.0" width="48" height="48"/>
+                                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="J3Y-Wy-u1w"/>
+                                                    <constraint firstAttribute="height" constant="48" id="bPc-PL-DFv"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clickImage4Button:" destination="mzI-g3-FGZ" eventType="touchUpInside" id="GvJ-Py-CQJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VAW-4E-bM7" firstAttribute="centerY" secondItem="hn6-nz-3B3" secondAttribute="centerY" id="0C9-rX-WXv"/>
+                                    <constraint firstItem="VAW-4E-bM7" firstAttribute="centerX" secondItem="hn6-nz-3B3" secondAttribute="centerX" id="5fd-dQ-yme"/>
+                                    <constraint firstAttribute="height" constant="80" id="X8V-HM-Wxb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lxt-Oh-xpk" firstAttribute="bottom" secondItem="DW4-Cb-RUH" secondAttribute="bottom" id="AAP-2t-Z54"/>
+                            <constraint firstItem="DW4-Cb-RUH" firstAttribute="leading" secondItem="lxt-Oh-xpk" secondAttribute="leading" id="HQH-Ba-Pl4"/>
+                            <constraint firstItem="lxt-Oh-xpk" firstAttribute="trailing" secondItem="tAh-XD-NjE" secondAttribute="trailing" id="MsV-da-8hw"/>
+                            <constraint firstItem="hn6-nz-3B3" firstAttribute="leading" secondItem="lxt-Oh-xpk" secondAttribute="leading" id="NRD-ch-5VM"/>
+                            <constraint firstItem="DW4-Cb-RUH" firstAttribute="top" secondItem="hn6-nz-3B3" secondAttribute="bottom" id="PRV-yq-rVY"/>
+                            <constraint firstItem="tAh-XD-NjE" firstAttribute="top" secondItem="lxt-Oh-xpk" secondAttribute="top" id="RhQ-H1-4cF"/>
+                            <constraint firstItem="lxt-Oh-xpk" firstAttribute="trailing" secondItem="DW4-Cb-RUH" secondAttribute="trailing" id="cyw-ii-UeH"/>
+                            <constraint firstItem="tAh-XD-NjE" firstAttribute="leading" secondItem="lxt-Oh-xpk" secondAttribute="leading" id="ftA-fe-cZW"/>
+                            <constraint firstItem="lxt-Oh-xpk" firstAttribute="trailing" secondItem="hn6-nz-3B3" secondAttribute="trailing" id="gIA-Mb-sNt"/>
+                            <constraint firstItem="hn6-nz-3B3" firstAttribute="top" secondItem="tAh-XD-NjE" secondAttribute="bottom" id="xah-RN-Cq6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lxt-Oh-xpk"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cameraPreviewView" destination="tAh-XD-NjE" id="fWw-5n-eYS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTH-ak-ZOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="153"/>
+            <point key="canvasLocation" x="32.799999999999997" y="152.47376311844079"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera_light" width="64" height="64"/>
+        <image name="camera_turnover" width="64" height="64"/>
+    </resources>
 </document>
