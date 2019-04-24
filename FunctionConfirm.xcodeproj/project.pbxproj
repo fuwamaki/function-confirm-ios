@@ -36,6 +36,8 @@
 		9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */; };
 		9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF921DF5DE3003BF811 /* SubmitButton.swift */; };
 		9C660DFC21DF5E54003BF811 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DFB21DF5E54003BF811 /* UIImage+Color.swift */; };
+		9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69834822700E2F00DC8C93 /* CameraMainFunctionViewController.swift */; };
+		9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C69834A22700E3700DC8C93 /* CameraMainFunction.storyboard */; };
 		9C6ADAB721E1C20400EC4494 /* MVVMListViewModelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */; };
 		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
 		9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
@@ -175,6 +177,8 @@
 		9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Name.swift"; sourceTree = "<group>"; };
 		9C660DF921DF5DE3003BF811 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		9C660DFB21DF5E54003BF811 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		9C69834822700E2F00DC8C93 /* CameraMainFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMainFunctionViewController.swift; sourceTree = "<group>"; };
+		9C69834A22700E3700DC8C93 /* CameraMainFunction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraMainFunction.storyboard; sourceTree = "<group>"; };
 		9C6ADAB621E1C20400EC4494 /* MVVMListViewModelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewModelText.swift; sourceTree = "<group>"; };
 		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
 		9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerViewController.swift; sourceTree = "<group>"; };
@@ -386,9 +390,9 @@
 		7B67231F20E0BEE300D8A5A3 /* ScreenTransition */ = {
 			isa = PBXGroup;
 			children = (
+				7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */,
 				7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */,
 				7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */,
-				7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */,
 			);
 			path = ScreenTransition;
 			sourceTree = "<group>";
@@ -406,10 +410,10 @@
 		7B67232D20E1E12300D8A5A3 /* QiitaList */ = {
 			isa = PBXGroup;
 			children = (
+				7B67233020E1E14700D8A5A3 /* QiitaList.storyboard */,
 				7B67232E20E1E13B00D8A5A3 /* QiitaListViewController.swift */,
 				7B67233220E1E71D00D8A5A3 /* QiitaListViewModel.swift */,
 				7B67233420E1E72800D8A5A3 /* QiitaListModel.swift */,
-				7B67233020E1E14700D8A5A3 /* QiitaList.storyboard */,
 				7B67233620E1EC7C00D8A5A3 /* QiitaListApiRequest.swift */,
 				7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */,
 				7B67233A20E200B500D8A5A3 /* DecodableDataParser.swift */,
@@ -435,6 +439,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9C69834622700E0300DC8C93 /* CameraMainFunction */ = {
+			isa = PBXGroup;
+			children = (
+				9C69834822700E2F00DC8C93 /* CameraMainFunctionViewController.swift */,
+				9C69834A22700E3700DC8C93 /* CameraMainFunction.storyboard */,
+			);
+			path = CameraMainFunction;
+			sourceTree = "<group>";
+		};
 		9C78A29622147A960036D3FD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +467,7 @@
 				9C91E4B22209DC470021E1BC /* AWSRekognition */,
 				9CFE3DE2224E05E500809567 /* Barcode */,
 				9CCCA876224F39B400FCAB03 /* Barcode2 */,
+				9C69834622700E0300DC8C93 /* CameraMainFunction */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -565,14 +579,14 @@
 		9CC560CC2214650D005AD60B /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				9CC560B62214645A005AD60B /* MVVMViewController.storyboard */,
-				9CC560BE22146477005AD60B /* MVVMListViewModel.swift */,
-				9CC560CA22146485005AD60B /* MVVMViewState.swift */,
-				9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */,
 				9CC560BC22146477005AD60B /* ItemRx.swift */,
-				9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */,
 				9CC560BA22146477005AD60B /* ItemAPIRequestRx.swift */,
+				9CC560B62214645A005AD60B /* MVVMViewController.storyboard */,
 				9CC560BB22146477005AD60B /* MVVMListViewController.swift */,
+				9CC560BE22146477005AD60B /* MVVMListViewModel.swift */,
+				9CC560C022146477005AD60B /* MVVMListTableViewCell.swift */,
+				9CC560CA22146485005AD60B /* MVVMViewState.swift */,
+				9CC560BF22146477005AD60B /* MVVMListTableViewCell.xib */,
 				9CC560BD22146477005AD60B /* MVVMSubmitViewController.storyboard */,
 				9CC560B922146477005AD60B /* MVVMSubmitViewController.swift */,
 				9CC560B822146477005AD60B /* MVVMSubmitViewModel.swift */,
@@ -679,9 +693,9 @@
 		9CFF6AB521E4A15D00E4097A /* CodeOnlyPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */,
 				9CFF6AB621E4A19900E4097A /* CodeOnlyPickerViewController.storyboard */,
 				9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */,
+				9CFF6AB221E49AE100E4097A /* CodeOnlyPickerView.swift */,
 			);
 			path = CodeOnlyPickerView;
 			sourceTree = "<group>";
@@ -824,6 +838,7 @@
 				9CC560B72214645A005AD60B /* MVVMViewController.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				9CC560C822146478005AD60B /* MVVMListTableViewCell.xib in Resources */,
+				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
 				9CC560C622146478005AD60B /* MVVMSubmitViewController.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
@@ -1004,6 +1019,7 @@
 				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
 				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9CC560C722146478005AD60B /* MVVMListViewModel.swift in Sources */,
+				9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				9CC560C322146478005AD60B /* ItemAPIRequestRx.swift in Sources */,
