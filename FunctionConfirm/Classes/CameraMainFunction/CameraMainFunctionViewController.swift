@@ -11,24 +11,34 @@ import AVFoundation
 
 final class CameraMainFunctionViewController: UIViewController {
 
-    @IBOutlet weak var testImageView: UIImageView!
-
     @IBOutlet private weak var cameraPreviewView: UIView!
 
-    @IBOutlet private weak var image1Button: UIButton!
-    @IBAction private func clickImage1Button(_ sender: Any) {
+    @IBOutlet weak var firstImageView: UIImageView! {
+        didSet {
+            firstImageView.isUserInteractionEnabled = true
+            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickFirstImageView)))
+        }
     }
 
-    @IBOutlet private weak var image2Button: UIButton!
-    @IBAction private func clickImage2Button(_ sender: Any) {
+    @IBOutlet weak var secondImageView: UIImageView! {
+        didSet {
+            secondImageView.isUserInteractionEnabled = true
+            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickSecondImageView)))
+        }
     }
 
-    @IBOutlet private weak var image3Button: UIButton!
-    @IBAction private func clickImage3Button(_ sender: Any) {
+    @IBOutlet weak var thirdImageView: UIImageView! {
+        didSet {
+            thirdImageView.isUserInteractionEnabled = true
+            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickThirdImageView)))
+        }
     }
 
-    @IBOutlet private weak var image4Button: UIButton!
-    @IBAction private func clickImage4Button(_ sender: Any) {
+    @IBOutlet weak var fourthImageView: UIImageView! {
+        didSet {
+            fourthImageView.isUserInteractionEnabled = true
+            firstImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickFourthImageView)))
+        }
     }
 
     @IBAction private func clickTurnOverCamera(_ sender: Any) {
@@ -64,20 +74,18 @@ final class CameraMainFunctionViewController: UIViewController {
     // キャプチャーの出力データを受け付けるオブジェクト
     var photoOutput: AVCapturePhotoOutput?
 
-    // 背面カメラモード
-//    private let videoDevice = AVCaptureDevice.default(for: .video)
-
-    // ビデオデータ出力
-//    private let metadataOutput = AVCaptureMetadataOutput()
-
     // プレビューレイヤー
     private var videoLayer: AVCaptureVideoPreviewLayer?
+
+    // imageViewの配列
+    private var imageViews: [UIImageView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         #if targetEnvironment(simulator)
         debugPrint("simulatorでは起動不可")
         #else
+        setupImageViews()
         setupDevice()
         setupInputOutput()
         setupPreviewLayer()
@@ -92,6 +100,35 @@ final class CameraMainFunctionViewController: UIViewController {
         if let videoLayer = videoLayer {
             cameraPreviewView.layer.addSublayer(videoLayer)
         }
+    }
+
+    private func displayActionSheet(imageView: UIImageView) {
+        let alert = UIAlertController(title: "アクション", message: nil, preferredStyle: .actionSheet)
+        let manufacturingAction = UIAlertAction(title: "加工", style: .default, handler: nil)
+        let deleteAction = UIAlertAction(title: "削除", style: .destructive) { _ in
+            imageView.image = nil
+            imageView.isUserInteractionEnabled = false
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        alert.addAction(manufacturingAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func reloadImageViews() {
+        
+    }
+}
+
+// MARK: setup
+extension CameraMainFunctionViewController {
+    private func setupImageViews() {
+        imageViews = [firstImageView, secondImageView, thirdImageView, fourthImageView]
+        imageViews.forEach { imageView in
+            imageView.image = nil
+        }
+        // memo: ImageViewにタップできるようButtonで生成してみたら、setImageができなかった。
     }
 
     // デバイスの設定
@@ -136,6 +173,25 @@ final class CameraMainFunctionViewController: UIViewController {
     }
 }
 
+// selector
+extension CameraMainFunctionViewController {
+    @objc func clickFirstImageView() {
+        displayActionSheet(imageView: firstImageView)
+    }
+
+    @objc func clickSecondImageView() {
+        displayActionSheet(imageView: secondImageView)
+    }
+
+    @objc func clickThirdImageView() {
+        displayActionSheet(imageView: thirdImageView)
+    }
+
+    @objc func clickFourthImageView() {
+        displayActionSheet(imageView: fourthImageView)
+    }
+}
+
 extension CameraMainFunctionViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard error == nil else {
@@ -144,8 +200,11 @@ extension CameraMainFunctionViewController: AVCapturePhotoCaptureDelegate {
         }
         if let photoData = photo.fileDataRepresentation() {
             let image = UIImage(data: photoData)
-            testImageView.image = image
-            testImageView.contentMode = .scaleToFill
+            for imageView in imageViews where imageView.image == nil {
+                imageView.image = image
+                imageView.isUserInteractionEnabled = true
+                break
+            }
         }
     }
 }
