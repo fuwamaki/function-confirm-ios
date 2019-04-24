@@ -42,6 +42,16 @@ final class CameraMainFunctionViewController: UIViewController {
     }
 
     @IBAction private func clickTurnOverCamera(_ sender: Any) {
+        // セッションをストップ
+        stopCaptureSession()
+        if currentDevice?.position == .front {
+            setupDevice(devicePosition: .back)
+        } else if currentDevice?.position == .back {
+            setupDevice(devicePosition: .front)
+        }
+        setupInputOutput()
+        startCaptureSession()
+        // memo: currentDevice.positionはget-only
     }
 
     @IBAction private func clickChangeLightButton(_ sender: Any) {
@@ -87,7 +97,7 @@ final class CameraMainFunctionViewController: UIViewController {
         debugPrint("simulatorでは起動不可")
         #else
         setupImageViews()
-        setupDevice()
+        setupDevice(devicePosition: .back)
         setupInputOutput()
         setupPreviewLayer()
         startCaptureSession()
@@ -141,18 +151,8 @@ extension CameraMainFunctionViewController {
     }
 
     // デバイスの設定
-    private func setupDevice() {
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .unspecified)
-        let devices = deviceDiscoverySession.devices
-        for device in devices {
-            if device.position == .back {
-                mainCamera = device
-            } else if device.position == .front {
-                innerCamera = device
-            }
-        }
-        // 起動時のカメラを設定
-        currentDevice = mainCamera
+    private func setupDevice(devicePosition: AVCaptureDevice.Position) {
+        currentDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: devicePosition)
     }
 
     // 入出力データの設定
@@ -179,6 +179,13 @@ extension CameraMainFunctionViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession.startRunning()
         }
+    }
+
+    private func stopCaptureSession() {
+        self.captureSession.stopRunning()
+        // memo: メインスレッドで実行したらエラーった
+        captureSession.inputs.forEach { captureSession.removeInput($0) }
+        captureSession.outputs.forEach { captureSession.removeOutput($0) }
     }
 }
 
