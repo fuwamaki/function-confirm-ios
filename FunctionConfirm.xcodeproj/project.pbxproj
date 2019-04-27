@@ -96,6 +96,8 @@
 		9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */; };
 		9CD30C8021F7100B00D6184A /* UINavigationController+StatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD30C7F21F7100B00D6184A /* UINavigationController+StatusBarStyle.swift */; };
 		9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C8121F7149A00D6184A /* StatusBarPopupViewController.xib */; };
+		9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B4F22749A72004EFB68 /* ReViewController.swift */; };
+		9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644B211A818A00DD178E /* MVPModel.swift */; };
 		9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644D211A85E500DD178E /* MVPTableCell.swift */; };
@@ -232,6 +234,8 @@
 		9CD30C7D21F6FE9A00D6184A /* StatusBarSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarSecondViewController.swift; sourceTree = "<group>"; };
 		9CD30C7F21F7100B00D6184A /* UINavigationController+StatusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBarStyle.swift"; sourceTree = "<group>"; };
 		9CD30C8121F7149A00D6184A /* StatusBarPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusBarPopupViewController.xib; sourceTree = "<group>"; };
+		9CDB1B4F22749A72004EFB68 /* ReViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReViewController.swift; sourceTree = "<group>"; };
+		9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReViewController.storyboard; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		9CE2644B211A818A00DD178E /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
 		9CE2644D211A85E500DD178E /* MVPTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTableCell.swift; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 				7B67231F20E0BEE300D8A5A3 /* ScreenTransition */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
 				9CC560CC2214650D005AD60B /* MVVM */,
+				9CDB1B4E22749A47004EFB68 /* Redux */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
 				9C87B27221F5964A00A50985 /* StatusBar */,
 				9CD30C7121F6FC6000D6184A /* StatusBarInNavigation */,
@@ -638,6 +643,15 @@
 				9CB8083621F8281A00DAD155 /* Forth */,
 			);
 			path = StatusBarInTabBar;
+			sourceTree = "<group>";
+		};
+		9CDB1B4E22749A47004EFB68 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */,
+				9CDB1B4F22749A72004EFB68 /* ReViewController.swift */,
+			);
+			path = Redux;
 			sourceTree = "<group>";
 		};
 		9CE26457211A90D000DD178E /* List */ = {
@@ -830,6 +844,7 @@
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
+				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
@@ -1013,6 +1028,7 @@
 				9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */,
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
+				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,

@@ -32,7 +32,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 17
+        return 18
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -68,38 +68,42 @@ extension MainViewController: UITableViewDataSource {
             cell.textLabel?.text = "MVVMアーキテクチャ"
             return cell
         } else if indexPath.row == 7 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reduxCell", for: indexPath)
+            cell.textLabel?.text = "reduxアーキテクチャ"
+            return cell
+        } else if indexPath.row == 8 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "stackviewCell", for: indexPath)
             cell.textLabel?.text = "StackView練習"
             return cell
-        } else if indexPath.row == 8 {
+        } else if indexPath.row == 9 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarCell", for: indexPath)
             cell.textLabel?.text = "ステータスバーの色:通常"
             return cell
-        } else if indexPath.row == 9 {
+        } else if indexPath.row == 10 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInNavigationCell", for: indexPath)
             cell.textLabel?.text = "ステータスバーの色:NavigationBar"
             return cell
-        } else if indexPath.row == 10 {
+        } else if indexPath.row == 11 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "statusBarInTabBarCell", for: indexPath)
             cell.textLabel?.text = "ステータスバーの色:TabBar"
             return cell
-        } else if indexPath.row == 11 {
+        } else if indexPath.row == 12 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "roundedCornerCell", for: indexPath)
             cell.textLabel?.text = "UIView:角丸"
             return cell
-        } else if indexPath.row == 12 {
+        } else if indexPath.row == 13 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "animationCell", for: indexPath)
             cell.textLabel?.text = "Animation"
             return cell
-        } else if indexPath.row == 13 {
+        } else if indexPath.row == 14 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "awsRekognitionCell", for: indexPath)
             cell.textLabel?.text = "AWS顔認識"
             return cell
-        } else if indexPath.row == 14 {
+        } else if indexPath.row == 15 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "barcodeCell", for: indexPath)
             cell.textLabel?.text = "バーコード"
             return cell
-        } else if indexPath.row == 15 {
+        } else if indexPath.row == 16 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "barcode2Cell", for: indexPath)
             cell.textLabel?.text = "バーコード2"
             return cell
@@ -147,38 +151,42 @@ extension MainViewController: UITableViewDelegate {
             let viewController = storyBoard.instantiateViewController(withIdentifier: "MVVMListViewController")
             navigationController?.pushViewController(viewController, animated: true)
         case 7:
+            let storyBoard = UIStoryboard(name: "ReViewController", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "ReViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        case 8:
             let storyBoard = UIStoryboard(name: "StackView", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "StackViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 8:
+        case 9:
             let storyBoard = UIStoryboard(name: "StatusBar", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 9:
+        case 10:
             let storyBoard = UIStoryboard(name: "StatusBarInNavigation", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarInNavigationViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 10:
+        case 11:
             let storyBoard = UIStoryboard(name: "StatusBarInTabBar", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "StatusBarInTabBarViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 11:
+        case 12:
             let storyBoard = UIStoryboard(name: "RoundedCorner", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "RoundedCornerViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 12:
+        case 13:
             let storyBoard = UIStoryboard(name: "Animation", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "AnimationPageViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 13:
+        case 14:
             let storyBoard = UIStoryboard(name: "AWSRekognition", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "FaceTrackingHomeViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 14:
+        case 15:
             let storyBoard = UIStoryboard(name: "Barcode", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "BarcodeViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 15:
+        case 16:
             let storyBoard = UIStoryboard(name: "Barcode2", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "Barcode2ViewController")
             navigationController?.pushViewController(viewController, animated: true)
