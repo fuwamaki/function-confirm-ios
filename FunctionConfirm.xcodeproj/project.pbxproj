@@ -99,6 +99,10 @@
 		9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B4F22749A72004EFB68 /* ReViewController.swift */; };
 		9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */; };
 		9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5322749D6F004EFB68 /* String+Random.swift */; };
+		9CDB1B5822749E40004EFB68 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5722749E40004EFB68 /* AppState.swift */; };
+		9CDB1B5A22749F69004EFB68 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5922749F69004EFB68 /* CounterReducer.swift */; };
+		9CDB1B5C22749F88004EFB68 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5B22749F88004EFB68 /* Actions.swift */; };
+		9CDB1B5E2274B070004EFB68 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5D2274B070004EFB68 /* Store.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644B211A818A00DD178E /* MVPModel.swift */; };
 		9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644D211A85E500DD178E /* MVPTableCell.swift */; };
@@ -238,6 +242,10 @@
 		9CDB1B4F22749A72004EFB68 /* ReViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReViewController.swift; sourceTree = "<group>"; };
 		9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReViewController.storyboard; sourceTree = "<group>"; };
 		9CDB1B5322749D6F004EFB68 /* String+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Random.swift"; sourceTree = "<group>"; };
+		9CDB1B5722749E40004EFB68 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9CDB1B5922749F69004EFB68 /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
+		9CDB1B5B22749F88004EFB68 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		9CDB1B5D2274B070004EFB68 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		9CE2644B211A818A00DD178E /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
 		9CE2644D211A85E500DD178E /* MVPTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTableCell.swift; sourceTree = "<group>"; };
@@ -653,6 +661,10 @@
 			children = (
 				9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */,
 				9CDB1B4F22749A72004EFB68 /* ReViewController.swift */,
+				9CDB1B5722749E40004EFB68 /* AppState.swift */,
+				9CDB1B5922749F69004EFB68 /* CounterReducer.swift */,
+				9CDB1B5B22749F88004EFB68 /* Actions.swift */,
+				9CDB1B5D2274B070004EFB68 /* Store.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -1023,6 +1035,7 @@
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
 				9CB8084021F8349700DAD155 /* StatusBar3NavigationViewController.swift in Sources */,
 				7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */,
+				9CDB1B5A22749F69004EFB68 /* CounterReducer.swift in Sources */,
 				9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */,
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9C78A2B022194BA60036D3FD /* AnimationFifthViewController.swift in Sources */,
@@ -1032,6 +1045,7 @@
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
+				9CDB1B5822749E40004EFB68 /* AppState.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
 				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
@@ -1041,6 +1055,7 @@
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				9CC560C322146478005AD60B /* ItemAPIRequestRx.swift in Sources */,
+				9CDB1B5E2274B070004EFB68 /* Store.swift in Sources */,
 				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,
 				9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
@@ -1069,6 +1084,7 @@
 				9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */,
 				9CC560C522146478005AD60B /* ItemRx.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
+				9CDB1B5C22749F88004EFB68 /* Actions.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
 				9CB8083521F8236000DAD155 /* StatusBar2Manager.swift in Sources */,
