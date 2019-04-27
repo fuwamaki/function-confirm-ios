@@ -98,6 +98,7 @@
 		9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD30C8121F7149A00D6184A /* StatusBarPopupViewController.xib */; };
 		9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B4F22749A72004EFB68 /* ReViewController.swift */; };
 		9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */; };
+		9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5322749D6F004EFB68 /* String+Random.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644B211A818A00DD178E /* MVPModel.swift */; };
 		9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644D211A85E500DD178E /* MVPTableCell.swift */; };
@@ -236,6 +237,7 @@
 		9CD30C8121F7149A00D6184A /* StatusBarPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusBarPopupViewController.xib; sourceTree = "<group>"; };
 		9CDB1B4F22749A72004EFB68 /* ReViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReViewController.swift; sourceTree = "<group>"; };
 		9CDB1B5122749A80004EFB68 /* ReViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReViewController.storyboard; sourceTree = "<group>"; };
+		9CDB1B5322749D6F004EFB68 /* String+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Random.swift"; sourceTree = "<group>"; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		9CE2644B211A818A00DD178E /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
 		9CE2644D211A85E500DD178E /* MVPTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTableCell.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				9CE26451211A894100DD178E /* UITableViewCell+Addition.swift */,
 				9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */,
 				9CD30C7F21F7100B00D6184A /* UINavigationController+StatusBarStyle.swift */,
+				9CDB1B5322749D6F004EFB68 /* String+Random.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1015,6 +1018,7 @@
 				9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
+				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
 				9CB8084021F8349700DAD155 /* StatusBar3NavigationViewController.swift in Sources */,
