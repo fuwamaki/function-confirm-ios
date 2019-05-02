@@ -71,4 +71,8 @@ extension UIColor {
     class var pink: UIColor {
         return UIColor(hex: "#ff649b")
     }
+
+    class var ocean: UIColor {
+        return UIColor(hex: "#5271ff")
+    }
 }

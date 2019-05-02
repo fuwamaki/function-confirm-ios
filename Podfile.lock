@@ -9,6 +9,7 @@ PODS:
   - KRProgressHUD (3.4.0):
     - KRActivityIndicatorView (= 3.0.0)
   - Result (4.1.0)
+  - ReSwift (4.1.1)
   - RxAtomic (4.4.0)
   - RxBlocking (4.4.0):
     - RxAtomic (~> 4.4)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - AWSRekognition (~> 2.8.4)
   - Cartography (~> 3.1.0)
   - KRProgressHUD (~> 3.4.0)
+  - ReSwift (~> 4.1.1)
   - RxBlocking (~> 4.4.0)
   - RxCocoa (~> 4.4.0)
   - RxSwift (~> 4.4.0)
@@ -42,6 +44,7 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - Result
+    - ReSwift
     - RxAtomic
     - RxBlocking
     - RxCocoa
@@ -57,6 +60,7 @@ SPEC CHECKSUMS:
   KRActivityIndicatorView: c414000730a6f4969eeb354bee4f2aebc89c2c2e
   KRProgressHUD: 79c8703f82179fe34b3602f10b30726f887983fa
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  ReSwift: d925be0033558f55bd73d92869961230dfe19d52
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
 
-PODFILE CHECKSUM: c68413e6b306a97a667fa4a9dd22adb61a540646
+PODFILE CHECKSUM: bf30afda2c111b39998a95503af8517066112599
 
 COCOAPODS: 1.5.3

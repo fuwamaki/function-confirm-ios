@@ -9,6 +9,7 @@ target 'FunctionConfirm' do
   pod 'RxSwift', '~> 4.4.0'
   pod 'RxCocoa', '~> 4.4.0'
   pod 'SwiftLint', '~> 0.30.1'
+  pod 'ReSwift', '~> 4.1.1'
 
   target 'FunctionConfirmTests' do
     inherit! :search_paths

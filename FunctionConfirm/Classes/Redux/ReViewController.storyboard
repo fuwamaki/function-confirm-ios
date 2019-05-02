@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zHX-42-eMN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Redux-->
+        <scene sceneID="OIC-bZ-Xx7">
+            <objects>
+                <viewController storyboardIdentifier="ReViewController" id="zHX-42-eMN" customClass="ReViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X84-SN-LJq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-2q-az2">
+                                <rect key="frame" x="129" y="259.5" width="117" height="148.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyf-mS-eqv">
+                                        <rect key="frame" x="48" y="0.0" width="21.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="81v-G3-DdV">
+                                        <rect key="frame" x="0.0" y="118.5" width="117" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkb-c5-img">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                <state key="normal" title="DOWN"/>
+                                                <connections>
+                                                    <action selector="clickDownButton:" destination="zHX-42-eMN" eventType="touchUpInside" id="Sbv-gS-3yU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wA4-l0-nsg">
+                                                <rect key="frame" x="87" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="UP"/>
+                                                <connections>
+                                                    <action selector="clickUpButton:" destination="zHX-42-eMN" eventType="touchUpInside" id="6Vt-x6-Ep0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w2t-2q-az2" firstAttribute="centerX" secondItem="X84-SN-LJq" secondAttribute="centerX" id="SBO-ue-4DL"/>
+                            <constraint firstItem="w2t-2q-az2" firstAttribute="centerY" secondItem="X84-SN-LJq" secondAttribute="centerY" id="oNq-R0-CZq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="518-k5-F1L"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Redux" id="Jyy-T5-pBR"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="label" destination="Hyf-mS-eqv" id="KsB-UO-bPY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mg2-vv-euw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="151"/>
+        </scene>
+    </scenes>
+</document>
