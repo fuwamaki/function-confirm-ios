@@ -15,15 +15,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "動作確認"
-        navigationController?.navigationBar.barTintColor = UIColor.ocean
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         tableView.delegate = self
         tableView.dataSource = self
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }
 
