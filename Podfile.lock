@@ -1,6 +1,5 @@
 PODS:
-  - APIKit (4.0.0):
-    - Result (~> 4.0)
+  - APIKit (5.0.0)
   - AWSCore (2.8.4)
   - AWSRekognition (2.8.4):
     - AWSCore (= 2.8.4)
@@ -8,31 +7,29 @@ PODS:
   - KRActivityIndicatorView (3.0.0)
   - KRProgressHUD (3.4.0):
     - KRActivityIndicatorView (= 3.0.0)
-  - Result (4.1.0)
   - ReSwift (4.1.1)
-  - RxAtomic (4.4.0)
-  - RxBlocking (4.4.0):
-    - RxAtomic (~> 4.4)
-    - RxSwift (~> 4.0)
-  - RxCocoa (4.4.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
-  - RxTest (4.4.0):
-    - RxAtomic (~> 4.4)
-    - RxSwift (~> 4.0)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
   - SwiftLint (0.30.1)
 
 DEPENDENCIES:
-  - APIKit (~> 4.0.0)
+  - APIKit (~> 5.0.0)
   - AWSRekognition (~> 2.8.4)
   - Cartography (~> 3.1.0)
   - KRProgressHUD (~> 3.4.0)
   - ReSwift (~> 4.1.1)
-  - RxBlocking (~> 4.4.0)
-  - RxCocoa (~> 4.4.0)
-  - RxSwift (~> 4.4.0)
-  - RxTest (~> 4.4.0)
+  - RxBlocking (~> 5.0.0)
+  - RxCocoa (~> 5.0.0)
+  - RxSwift (~> 5.0.0)
+  - RxTest (~> 5.0.0)
   - SwiftLint (~> 0.30.1)
 
 SPEC REPOS:
@@ -43,31 +40,29 @@ SPEC REPOS:
     - Cartography
     - KRActivityIndicatorView
     - KRProgressHUD
-    - Result
     - ReSwift
-    - RxAtomic
     - RxBlocking
     - RxCocoa
+    - RxRelay
     - RxSwift
     - RxTest
     - SwiftLint
 
 SPEC CHECKSUMS:
-  APIKit: 23ddce4be7eccd746d2ab3c62713cd80d5846d5a
+  APIKit: b27d79b022733b2f50e7a092e67c4cb9ea30f968
   AWSCore: 734b0d67c2c77f6edae9e5520431a37310ea4193
   AWSRekognition: fad6467f39d64657a634da4265fb97a4d2349eda
   Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
   KRActivityIndicatorView: c414000730a6f4969eeb354bee4f2aebc89c2c2e
   KRProgressHUD: 79c8703f82179fe34b3602f10b30726f887983fa
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   ReSwift: d925be0033558f55bd73d92869961230dfe19d52
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
 
-PODFILE CHECKSUM: bf30afda2c111b39998a95503af8517066112599
+PODFILE CHECKSUM: b5aa534b6bf8a34a912f8512803fd5b73bafff2b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.2
