@@ -18,7 +18,7 @@ PODS:
   - RxSwift (5.0.0)
   - RxTest (5.0.0):
     - RxSwift (~> 5)
-  - SwiftLint (0.30.1)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
   - APIKit (~> 5.0.0)
@@ -30,7 +30,7 @@ DEPENDENCIES:
   - RxCocoa (~> 5.0.0)
   - RxSwift (~> 5.0.0)
   - RxTest (~> 5.0.0)
-  - SwiftLint (~> 0.30.1)
+  - SwiftLint (~> 0.33.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -61,8 +61,8 @@ SPEC CHECKSUMS:
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
-  SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: 020493b9352ed9a5a5d44f738e97320ec56c2c5d
+PODFILE CHECKSUM: 135c962356e6f2de19e6fae769779b0c84d33120
 
 COCOAPODS: 1.6.2

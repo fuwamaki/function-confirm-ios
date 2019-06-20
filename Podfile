@@ -8,7 +8,7 @@ target 'FunctionConfirm' do
   pod 'AWSRekognition', '~> 2.8.4'
   pod 'RxSwift', '~> 5.0.0'
   pod 'RxCocoa', '~> 5.0.0'
-  pod 'SwiftLint', '~> 0.30.1'
+  pod 'SwiftLint', '~> 0.33.0'
   pod 'ReSwift', '~> 4.1.1'
 
   target 'FunctionConfirmTests' do
