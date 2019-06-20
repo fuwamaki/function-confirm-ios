@@ -3,7 +3,7 @@ PODS:
   - AWSCore (2.8.4)
   - AWSRekognition (2.8.4):
     - AWSCore (= 2.8.4)
-  - Cartography (3.1.0)
+  - Cartography (4.0.0)
   - KRActivityIndicatorView (3.0.0)
   - KRProgressHUD (3.4.0):
     - KRActivityIndicatorView (= 3.0.0)
@@ -23,7 +23,7 @@ PODS:
 DEPENDENCIES:
   - APIKit (~> 5.0.0)
   - AWSRekognition (~> 2.8.4)
-  - Cartography (~> 3.1.0)
+  - Cartography (~> 4.0.0)
   - KRProgressHUD (~> 3.4.0)
   - ReSwift (~> 4.1.1)
   - RxBlocking (~> 5.0.0)
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   APIKit: b27d79b022733b2f50e7a092e67c4cb9ea30f968
   AWSCore: 734b0d67c2c77f6edae9e5520431a37310ea4193
   AWSRekognition: fad6467f39d64657a634da4265fb97a4d2349eda
-  Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
+  Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   KRActivityIndicatorView: c414000730a6f4969eeb354bee4f2aebc89c2c2e
   KRProgressHUD: 79c8703f82179fe34b3602f10b30726f887983fa
   ReSwift: d925be0033558f55bd73d92869961230dfe19d52
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
 
-PODFILE CHECKSUM: b5aa534b6bf8a34a912f8512803fd5b73bafff2b
+PODFILE CHECKSUM: 52bdf964602dc8050728574f4314bf28ff0c850b
 
 COCOAPODS: 1.6.2

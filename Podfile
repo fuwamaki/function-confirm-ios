@@ -3,7 +3,7 @@ platform :ios, '12.0'
 target 'FunctionConfirm' do
   use_frameworks!
   pod 'APIKit', '~> 5.0.0'
-  pod 'Cartography', '~> 3.1.0'
+  pod 'Cartography', '~> 4.0.0'
   pod 'KRProgressHUD', '~> 3.4.0'
   pod 'AWSRekognition', '~> 2.8.4'
   pod 'RxSwift', '~> 5.0.0'
