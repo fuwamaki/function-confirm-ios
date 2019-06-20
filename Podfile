@@ -4,7 +4,7 @@ target 'FunctionConfirm' do
   use_frameworks!
   pod 'APIKit', '~> 5.0.0'
   pod 'Cartography', '~> 4.0.0'
-  pod 'KRProgressHUD', '~> 3.4.0'
+  pod 'KRProgressHUD', '~> 3.4.1'
   pod 'AWSRekognition', '~> 2.8.4'
   pod 'RxSwift', '~> 5.0.0'
   pod 'RxCocoa', '~> 5.0.0'
