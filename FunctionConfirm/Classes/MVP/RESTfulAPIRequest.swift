@@ -7,7 +7,6 @@
 //
 
 import APIKit
-import Result
 
 protocol APIRequest: Request {
 }

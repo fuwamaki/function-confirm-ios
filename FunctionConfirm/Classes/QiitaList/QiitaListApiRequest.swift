@@ -7,7 +7,6 @@
 //
 
 import APIKit
-import Result
 
 struct QiitaLists: QiitaListRequest {
     typealias Response = [QiitaListElement]

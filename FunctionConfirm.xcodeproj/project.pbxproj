@@ -32,6 +32,17 @@
 		9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */; };
 		9C096C45211C26E8008DB26D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C096C44211C26E8008DB26D /* Item.swift */; };
 		9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EBBB9213F6B360085B838 /* ItemRequest.swift */; };
+		9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA2D227C4BA3002DEA7C /* MVVMSubmitViewController.swift */; };
+		9C62DA39227C4BA4002DEA7C /* MVVMListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA2E227C4BA3002DEA7C /* MVVMListTableViewCell.swift */; };
+		9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C62DA2F227C4BA3002DEA7C /* MVVMListTableViewCell.xib */; };
+		9C62DA3B227C4BA4002DEA7C /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA30227C4BA3002DEA7C /* MVVMListViewController.swift */; };
+		9C62DA3C227C4BA4002DEA7C /* MVVMViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C62DA31227C4BA3002DEA7C /* MVVMViewController.storyboard */; };
+		9C62DA3D227C4BA4002DEA7C /* MVVMListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA32227C4BA4002DEA7C /* MVVMListViewModel.swift */; };
+		9C62DA3E227C4BA4002DEA7C /* MVVMSubmitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C62DA33227C4BA4002DEA7C /* MVVMSubmitViewController.storyboard */; };
+		9C62DA3F227C4BA4002DEA7C /* MVVMViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA34227C4BA4002DEA7C /* MVVMViewState.swift */; };
+		9C62DA40227C4BA4002DEA7C /* ItemRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA35227C4BA4002DEA7C /* ItemRx.swift */; };
+		9C62DA41227C4BA4002DEA7C /* ItemAPIRequestRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA36227C4BA4002DEA7C /* ItemAPIRequestRx.swift */; };
+		9C62DA42227C4BA4002DEA7C /* MVVMSubmitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62DA37227C4BA4002DEA7C /* MVVMSubmitViewModel.swift */; };
 		9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */; };
 		9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */; };
 		9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C660DF921DF5DE3003BF811 /* SubmitButton.swift */; };
@@ -92,17 +103,6 @@
 		9CDB1B5A22749F69004EFB68 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5922749F69004EFB68 /* CounterReducer.swift */; };
 		9CDB1B5C22749F88004EFB68 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5B22749F88004EFB68 /* Actions.swift */; };
 		9CDB1B5E2274B070004EFB68 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1B5D2274B070004EFB68 /* Store.swift */; };
-		9CDB1BC9227C15E4004EFB68 /* MVVMSubmitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BBE227C15E3004EFB68 /* MVVMSubmitViewModel.swift */; };
-		9CDB1BCA227C15E4004EFB68 /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BBF227C15E3004EFB68 /* MVVMListViewController.swift */; };
-		9CDB1BCB227C15E4004EFB68 /* MVVMListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC0227C15E3004EFB68 /* MVVMListTableViewCell.xib */; };
-		9CDB1BCC227C15E4004EFB68 /* MVVMViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC1227C15E3004EFB68 /* MVVMViewController.storyboard */; };
-		9CDB1BCD227C15E4004EFB68 /* MVVMListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC2227C15E3004EFB68 /* MVVMListTableViewCell.swift */; };
-		9CDB1BCE227C15E4004EFB68 /* MVVMListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC3227C15E3004EFB68 /* MVVMListViewModel.swift */; };
-		9CDB1BCF227C15E4004EFB68 /* MVVMSubmitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC4227C15E3004EFB68 /* MVVMSubmitViewController.storyboard */; };
-		9CDB1BD0227C15E4004EFB68 /* MVVMViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC5227C15E4004EFB68 /* MVVMViewState.swift */; };
-		9CDB1BD1227C15E4004EFB68 /* ItemRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC6227C15E4004EFB68 /* ItemRx.swift */; };
-		9CDB1BD2227C15E4004EFB68 /* ItemAPIRequestRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC7227C15E4004EFB68 /* ItemAPIRequestRx.swift */; };
-		9CDB1BD3227C15E4004EFB68 /* MVVMSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB1BC8227C15E4004EFB68 /* MVVMSubmitViewController.swift */; };
 		9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE26449211A74D100DD178E /* MVPPresenter.swift */; };
 		9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644B211A818A00DD178E /* MVPModel.swift */; };
 		9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2644D211A85E500DD178E /* MVPTableCell.swift */; };
@@ -180,6 +180,17 @@
 		9C096C42211C26C8008DB26D /* RESTfulAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTfulAPIRequest.swift; sourceTree = "<group>"; };
 		9C096C44211C26E8008DB26D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9C5EBBB9213F6B360085B838 /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
+		9C62DA2D227C4BA3002DEA7C /* MVVMSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewController.swift; sourceTree = "<group>"; };
+		9C62DA2E227C4BA3002DEA7C /* MVVMListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListTableViewCell.swift; sourceTree = "<group>"; };
+		9C62DA2F227C4BA3002DEA7C /* MVVMListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MVVMListTableViewCell.xib; sourceTree = "<group>"; };
+		9C62DA30227C4BA3002DEA7C /* MVVMListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
+		9C62DA31227C4BA3002DEA7C /* MVVMViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVVMViewController.storyboard; sourceTree = "<group>"; };
+		9C62DA32227C4BA4002DEA7C /* MVVMListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListViewModel.swift; sourceTree = "<group>"; };
+		9C62DA33227C4BA4002DEA7C /* MVVMSubmitViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MVVMSubmitViewController.storyboard; sourceTree = "<group>"; };
+		9C62DA34227C4BA4002DEA7C /* MVVMViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMViewState.swift; sourceTree = "<group>"; };
+		9C62DA35227C4BA4002DEA7C /* ItemRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRx.swift; sourceTree = "<group>"; };
+		9C62DA36227C4BA4002DEA7C /* ItemAPIRequestRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemAPIRequestRx.swift; sourceTree = "<group>"; };
+		9C62DA37227C4BA4002DEA7C /* MVVMSubmitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModel.swift; sourceTree = "<group>"; };
 		9C660DEE21DD45B4003BF811 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Name.swift"; sourceTree = "<group>"; };
 		9C660DF921DF5DE3003BF811 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
@@ -235,17 +246,6 @@
 		9CDB1B5922749F69004EFB68 /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
 		9CDB1B5B22749F88004EFB68 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		9CDB1B5D2274B070004EFB68 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		9CDB1BBE227C15E3004EFB68 /* MVVMSubmitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMSubmitViewModel.swift; path = FunctionConfirm/Classes/MVVM/MVVMSubmitViewModel.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BBF227C15E3004EFB68 /* MVVMListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMListViewController.swift; path = FunctionConfirm/Classes/MVVM/MVVMListViewController.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BC0227C15E3004EFB68 /* MVVMListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MVVMListTableViewCell.xib; path = FunctionConfirm/Classes/MVVM/MVVMListTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		9CDB1BC1227C15E3004EFB68 /* MVVMViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MVVMViewController.storyboard; path = FunctionConfirm/Classes/MVVM/MVVMViewController.storyboard; sourceTree = SOURCE_ROOT; };
-		9CDB1BC2227C15E3004EFB68 /* MVVMListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMListTableViewCell.swift; path = FunctionConfirm/Classes/MVVM/MVVMListTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BC3227C15E3004EFB68 /* MVVMListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMListViewModel.swift; path = FunctionConfirm/Classes/MVVM/MVVMListViewModel.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BC4227C15E3004EFB68 /* MVVMSubmitViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MVVMSubmitViewController.storyboard; path = FunctionConfirm/Classes/MVVM/MVVMSubmitViewController.storyboard; sourceTree = SOURCE_ROOT; };
-		9CDB1BC5227C15E4004EFB68 /* MVVMViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewState.swift; path = FunctionConfirm/Classes/MVVM/MVVMViewState.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BC6227C15E4004EFB68 /* ItemRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemRx.swift; path = FunctionConfirm/Classes/MVVM/ItemRx.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BC7227C15E4004EFB68 /* ItemAPIRequestRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemAPIRequestRx.swift; path = FunctionConfirm/Classes/MVVM/ItemAPIRequestRx.swift; sourceTree = SOURCE_ROOT; };
-		9CDB1BC8227C15E4004EFB68 /* MVVMSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMSubmitViewController.swift; path = FunctionConfirm/Classes/MVVM/MVVMSubmitViewController.swift; sourceTree = SOURCE_ROOT; };
 		9CE26449211A74D100DD178E /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		9CE2644B211A818A00DD178E /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
 		9CE2644D211A85E500DD178E /* MVPTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTableCell.swift; sourceTree = "<group>"; };
@@ -446,6 +446,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C62DA16227C4B2D002DEA7C /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				9C62DA36227C4BA4002DEA7C /* ItemAPIRequestRx.swift */,
+				9C62DA35227C4BA4002DEA7C /* ItemRx.swift */,
+				9C62DA2E227C4BA3002DEA7C /* MVVMListTableViewCell.swift */,
+				9C62DA2F227C4BA3002DEA7C /* MVVMListTableViewCell.xib */,
+				9C62DA30227C4BA3002DEA7C /* MVVMListViewController.swift */,
+				9C62DA32227C4BA4002DEA7C /* MVVMListViewModel.swift */,
+				9C62DA33227C4BA4002DEA7C /* MVVMSubmitViewController.storyboard */,
+				9C62DA2D227C4BA3002DEA7C /* MVVMSubmitViewController.swift */,
+				9C62DA37227C4BA4002DEA7C /* MVVMSubmitViewModel.swift */,
+				9C62DA31227C4BA3002DEA7C /* MVVMViewController.storyboard */,
+				9C62DA34227C4BA4002DEA7C /* MVVMViewState.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		9C660DF821DF5DBF003BF811 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,7 +490,7 @@
 				9CFF6AB521E4A15D00E4097A /* CodeOnlyPickerView */,
 				7B67231F20E0BEE300D8A5A3 /* ScreenTransition */,
 				9CCC0AF721199ECA007EFE26 /* MVP */,
-				9CDB1BA7227C1592004EFB68 /* MVVM */,
+				9C62DA16227C4B2D002DEA7C /* MVVM */,
 				9CDB1B4E22749A47004EFB68 /* Redux */,
 				9CEB1C6E2195F68900ECF364 /* StackView */,
 				9C87B27221F5964A00A50985 /* StatusBar */,
@@ -648,25 +666,6 @@
 				9CDB1B5D2274B070004EFB68 /* Store.swift */,
 			);
 			path = Redux;
-			sourceTree = "<group>";
-		};
-		9CDB1BA7227C1592004EFB68 /* MVVM */ = {
-			isa = PBXGroup;
-			children = (
-				9CDB1BC7227C15E4004EFB68 /* ItemAPIRequestRx.swift */,
-				9CDB1BC6227C15E4004EFB68 /* ItemRx.swift */,
-				9CDB1BC2227C15E3004EFB68 /* MVVMListTableViewCell.swift */,
-				9CDB1BC0227C15E3004EFB68 /* MVVMListTableViewCell.xib */,
-				9CDB1BBF227C15E3004EFB68 /* MVVMListViewController.swift */,
-				9CDB1BC3227C15E3004EFB68 /* MVVMListViewModel.swift */,
-				9CDB1BC4227C15E3004EFB68 /* MVVMSubmitViewController.storyboard */,
-				9CDB1BC8227C15E4004EFB68 /* MVVMSubmitViewController.swift */,
-				9CDB1BBE227C15E3004EFB68 /* MVVMSubmitViewModel.swift */,
-				9CDB1BC1227C15E3004EFB68 /* MVVMViewController.storyboard */,
-				9CDB1BC5227C15E4004EFB68 /* MVVMViewState.swift */,
-			);
-			name = MVVM;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		9CE26457211A90D000DD178E /* List */ = {
@@ -863,6 +862,7 @@
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
+				9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
@@ -870,12 +870,11 @@
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
-				9CDB1BCC227C15E4004EFB68 /* MVVMViewController.storyboard in Resources */,
-				9CDB1BCB227C15E4004EFB68 /* MVVMListTableViewCell.xib in Resources */,
 				9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */,
+				9C62DA3E227C4BA4002DEA7C /* MVVMSubmitViewController.storyboard in Resources */,
 				7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */,
 				9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */,
-				9CDB1BCF227C15E4004EFB68 /* MVVMSubmitViewController.storyboard in Resources */,
+				9C62DA3C227C4BA4002DEA7C /* MVVMViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,7 +919,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSRekognition/AWSRekognition.framework",
@@ -928,9 +927,8 @@
 				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -942,14 +940,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9C78A295221471460036D3FD /* ShellScript */ = {
@@ -989,22 +986,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1014,24 +1009,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C62DA3F227C4BA4002DEA7C /* MVVMViewState.swift in Sources */,
 				9C78A2A822149CDC0036D3FD /* AnimationPageViewController.swift in Sources */,
-				9CDB1BD1227C15E4004EFB68 /* ItemRx.swift in Sources */,
 				9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */,
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerViewController.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
+				9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
-				9CDB1BD2227C15E4004EFB68 /* ItemAPIRequestRx.swift in Sources */,
 				9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */,
+				9C62DA41227C4BA4002DEA7C /* ItemAPIRequestRx.swift in Sources */,
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
 				9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
 				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
-				9CDB1BD0227C15E4004EFB68 /* MVVMViewState.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
 				9CB8084021F8349700DAD155 /* StatusBar3NavigationViewController.swift in Sources */,
@@ -1047,12 +1042,10 @@
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				9CDB1B5822749E40004EFB68 /* AppState.swift in Sources */,
-				9CDB1BCE227C15E4004EFB68 /* MVVMListViewModel.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
-				9CDB1BD3227C15E4004EFB68 /* MVVMSubmitViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				9C62DA42227C4BA4002DEA7C /* MVVMSubmitViewModel.swift in Sources */,
 				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
-				9CDB1BCA227C15E4004EFB68 /* MVVMListViewController.swift in Sources */,
 				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
@@ -1066,7 +1059,7 @@
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
 				9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */,
 				9CB8083A21F832BA00DAD155 /* StatusBar3Manager.swift in Sources */,
-				9CDB1BCD227C15E4004EFB68 /* MVVMListTableViewCell.swift in Sources */,
+				9C62DA39227C4BA4002DEA7C /* MVVMListTableViewCell.swift in Sources */,
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */,
 				9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */,
@@ -1085,18 +1078,20 @@
 				9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
 				9CDB1B5C22749F88004EFB68 /* Actions.swift in Sources */,
+				9C62DA3B227C4BA4002DEA7C /* MVVMListViewController.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
 				9CB8083521F8236000DAD155 /* StatusBar2Manager.swift in Sources */,
 				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
+				9C62DA3D227C4BA4002DEA7C /* MVVMListViewModel.swift in Sources */,
 				9C78A2B422194BC50036D3FD /* AnimationSeventhViewController.swift in Sources */,
-				9CDB1BC9227C15E4004EFB68 /* MVVMSubmitViewModel.swift in Sources */,
 				2032A6E120DCC9E50091952F /* FunctionConfirm.xcdatamodeld in Sources */,
 				9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */,
 				9C78A2B622194C060036D3FD /* AnimationEighthViewController.swift in Sources */,
 				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
 				9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */,
+				9C62DA40227C4BA4002DEA7C /* ItemRx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,7 +1275,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maki.FunctionConfirm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1299,7 +1294,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maki.FunctionConfirm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1320,7 +1315,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maki.FunctionConfirmTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FunctionConfirm.app/FunctionConfirm";
 			};
@@ -1342,7 +1337,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.maki.FunctionConfirmTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FunctionConfirm.app/FunctionConfirm";
 			};
