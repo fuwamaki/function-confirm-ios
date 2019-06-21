@@ -53,6 +53,8 @@
 		9C6ADAB921E1C21800EC4494 /* MVVMSubmitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */; };
 		9C6F543022BCAD410004257C /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F542F22BCAD410004257C /* SampleViewController.swift */; };
 		9C6F543222BCAD4D0004257C /* SampleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F543122BCAD4D0004257C /* SampleViewController.storyboard */; };
+		9C6F543422BCAFB80004257C /* SampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C6F543322BCAFB80004257C /* SampleView.xib */; };
+		9C6F543622BCAFC00004257C /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F543522BCAFC00004257C /* SampleView.swift */; };
 		9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67233820E1ECE500D8A5A3 /* QiitaListElement.swift */; };
 		9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232420E0BF5C00D8A5A3 /* ScreenTransition.storyboard */; };
 		9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B67232920E0D43800D8A5A3 /* GitHubRepositoryList.storyboard */; };
@@ -203,6 +205,8 @@
 		9C6ADAB821E1C21800EC4494 /* MVVMSubmitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSubmitViewModelTest.swift; sourceTree = "<group>"; };
 		9C6F542F22BCAD410004257C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		9C6F543122BCAD4D0004257C /* SampleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleViewController.storyboard; sourceTree = "<group>"; };
+		9C6F543322BCAFB80004257C /* SampleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleView.xib; sourceTree = "<group>"; };
+		9C6F543522BCAFC00004257C /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerViewController.swift; sourceTree = "<group>"; };
 		9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoundedCorner.storyboard; sourceTree = "<group>"; };
 		9C78A2A32214990A0036D3FD /* AnimationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFirstViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +494,8 @@
 			children = (
 				9C6F542F22BCAD410004257C /* SampleViewController.swift */,
 				9C6F543122BCAD4D0004257C /* SampleViewController.storyboard */,
+				9C6F543522BCAFC00004257C /* SampleView.swift */,
+				9C6F543322BCAFB80004257C /* SampleView.xib */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -864,6 +870,7 @@
 			files = (
 				9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */,
 				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
+				9C6F543422BCAFB80004257C /* SampleView.xib in Resources */,
 				9CCCA878224F39DF00FCAB03 /* Barcode2.storyboard in Resources */,
 				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
@@ -1034,6 +1041,7 @@
 				9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
+				9C6F543622BCAFC00004257C /* SampleView.swift in Sources */,
 				9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */,
 				9C62DA41227C4BA4002DEA7C /* ItemAPIRequestRx.swift in Sources */,
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,

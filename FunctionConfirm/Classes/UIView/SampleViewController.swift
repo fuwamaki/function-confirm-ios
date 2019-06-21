@@ -24,6 +24,7 @@ final class SampleViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setupViews()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,5 +41,14 @@ final class SampleViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+}
+
+extension SampleViewController {
+
+    private func setupViews() {
+        let sampleView = SampleView.instantiateFromNib()
+        sampleView.frame = CGRect(x: 100, y: 200, width: 150, height: 150)
+        view.addSubview(sampleView)
     }
 }
