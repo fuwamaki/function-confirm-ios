@@ -79,7 +79,8 @@ class MVVMListViewController: UIViewController {
 
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                self?.openMVVMSubmitViewController(submitMode: .update, item: self?.viewModel.selectedItem(indexPath: indexPath))
+                self?.openMVVMSubmitViewController(submitMode: .update,
+                                                   item: self?.viewModel.selectedItem(indexPath: indexPath))
                 self?.tableView.deselectRow(at: indexPath, animated: false)
             })
             .disposed(by: disposeBag)
@@ -87,7 +88,9 @@ class MVVMListViewController: UIViewController {
         tableView.rx.itemDeleted
             .subscribe(onNext: { [weak self] indexPath in
                 if let weakSelf = self {
-                    weakSelf.viewModel.deleteItem(selectedIndexPath: indexPath).subscribe().disposed(by: weakSelf.disposeBag)
+                    weakSelf.viewModel.deleteItem(selectedIndexPath: indexPath)
+                        .subscribe()
+                        .disposed(by: weakSelf.disposeBag)
                 }
             })
             .disposed(by: disposeBag)
