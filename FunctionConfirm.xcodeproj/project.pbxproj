@@ -19,6 +19,8 @@
 		2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032A71120DCDD680091952F /* CustomPickerView.xib */; };
 		2032A71420DCE0180091952F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerViewController.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
+		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
+		20E35066232A29090057A561 /* TimerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35065232A29090057A561 /* TimerView.storyboard */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */; };
 		7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */; };
 		7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232B20E0D78300D8A5A3 /* GitHubRepositoryModel.swift */; };
@@ -161,6 +163,8 @@
 		2032A71120DCDD680091952F /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		2032A71320DCE0180091952F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		20E35065232A29090057A561 /* TimerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerView.storyboard; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
 		7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionViewController.swift; sourceTree = "<group>"; };
 		7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +397,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		20E35062232A28E00057A561 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				20E35063232A28F50057A561 /* TimerViewController.swift */,
+				20E35065232A29090057A561 /* TimerView.storyboard */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		7B67231E20E0BC5700D8A5A3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +515,7 @@
 				9CFE3DE2224E05E500809567 /* Barcode */,
 				9CCCA876224F39B400FCAB03 /* Barcode2 */,
 				9C69834622700E0300DC8C93 /* CameraMainFunction */,
+				20E35062232A28E00057A561 /* Timer */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -867,6 +881,7 @@
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
+				20E35066232A29090057A561 /* TimerView.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
@@ -1061,6 +1076,7 @@
 				9CB8083A21F832BA00DAD155 /* StatusBar3Manager.swift in Sources */,
 				9C62DA39227C4BA4002DEA7C /* MVVMListTableViewCell.swift in Sources */,
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
+				20E35064232A28F50057A561 /* TimerViewController.swift in Sources */,
 				7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */,
 				9C660DFA21DF5DE3003BF811 /* SubmitButton.swift in Sources */,
 				9C78A2AA22149F0F0036D3FD /* AnimationSecondViewController.swift in Sources */,
