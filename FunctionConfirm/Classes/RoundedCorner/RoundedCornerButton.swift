@@ -14,6 +14,8 @@ final class RoundedCornerButton: UIButton {
     @IBInspectable var text: String = ""
     @IBInspectable var iconImage: UIImage = UIImage()
 
+    private(set) var selectedStatus: Bool = false
+
     private lazy var originalX: CGFloat = {
         return self.layer.position.x
     }()
@@ -75,7 +77,7 @@ final class RoundedCornerButton: UIButton {
         self.addSubview(stackView)
         stackView.addArrangedSubview(iconImageView)
         stackView.addArrangedSubview(textLabel)
-        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 
@@ -84,5 +86,16 @@ final class RoundedCornerButton: UIButton {
             layer.position = CGPoint(x: originalX, y: isHighlighted ? originalY+2.0 : originalY)
             layer.shadowOffset = isHighlighted ? CGSize(width: 0.0, height: 0.0) : CGSize(width: 0.0, height: 2.0)
         }
+    }
+}
+
+extension RoundedCornerButton {
+    func setStatus(_ status: Bool) {
+        selectedStatus = status
+        layer.backgroundColor = status ? UIColor(hex: "#EDEDED").cgColor : UIColor(hex: "#FFFFFF").cgColor
+        textLabel.text = status ? "受けたい登録済み" : "受けたい登録をする"
+        layer.shadowColor = status ? UIColor(hex: "#BFBFBF").cgColor : UIColor(hex: "#E84855").cgColor
+        layer.borderColor = status ? UIColor.clear.cgColor : UIColor(hex: "#E84855").cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: status ? 3.0 : 2.0)
     }
 }
