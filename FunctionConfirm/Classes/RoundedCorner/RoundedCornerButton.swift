@@ -14,6 +14,14 @@ final class RoundedCornerButton: UIButton {
     @IBInspectable var text: String = ""
     @IBInspectable var iconImage: UIImage = UIImage()
 
+    private lazy var originalX: CGFloat = {
+        return self.layer.position.x
+    }()
+
+    private lazy var originalY: CGFloat = {
+        return self.layer.position.y
+    }()
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         stackView.translatesAutoresizingMaskIntoConstraints = false // autoLayoutをONに
@@ -73,6 +81,7 @@ final class RoundedCornerButton: UIButton {
 
     override var isHighlighted: Bool {
         didSet {
+            layer.position = CGPoint(x: originalX, y: isHighlighted ? originalY+2.0 : originalY)
             layer.shadowOffset = isHighlighted ? CGSize(width: 0.0, height: 0.0) : CGSize(width: 0.0, height: 2.0)
         }
     }
