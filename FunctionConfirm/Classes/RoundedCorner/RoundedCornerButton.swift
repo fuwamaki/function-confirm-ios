@@ -16,9 +16,16 @@ private struct Text {
 @IBDesignable
 final class RoundedCornerButton: UIButton {
 
+    @IBInspectable var iconImage: UIImage = UIImage()
     @IBInspectable var notSelectedText: String = Text.notSelected
     @IBInspectable var selectedText: String = Text.selected
-    @IBInspectable var iconImage: UIImage = UIImage()
+
+    @IBInspectable var notSelectedBackgroundColor: UIColor = UIColor(hex: "#FFFFFF")
+    @IBInspectable var selectedBackgroundColor: UIColor = UIColor(hex: "#EDEDED")
+    @IBInspectable var notSelectedBorderColor: UIColor = UIColor(hex: "#E84855")
+    @IBInspectable var selectedBorderColor: UIColor = UIColor.clear
+    @IBInspectable var notSelectedShadowColor: UIColor =  UIColor(hex: "#E84855")
+    @IBInspectable var selectedShadowColor: UIColor = UIColor(hex: "#BFBFBF")
 
     private(set) var selectedStatus: Bool = false
 
@@ -100,9 +107,9 @@ final class RoundedCornerButton: UIButton {
 extension RoundedCornerButton {
     func setStatus(_ status: Bool) {
         selectedStatus = status
-        layer.backgroundColor = status ? UIColor(hex: "#EDEDED").cgColor : UIColor(hex: "#FFFFFF").cgColor
-        layer.shadowColor = status ? UIColor(hex: "#BFBFBF").cgColor : UIColor(hex: "#E84855").cgColor
-        layer.borderColor = status ? UIColor.clear.cgColor : UIColor(hex: "#E84855").cgColor
+        layer.backgroundColor = status ? selectedBackgroundColor.cgColor : notSelectedBackgroundColor.cgColor
+        layer.shadowColor = status ? selectedShadowColor.cgColor : notSelectedShadowColor.cgColor
+        layer.borderColor = status ? selectedBorderColor.cgColor : notSelectedBorderColor.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: status ? 3.0 : 2.0) // 影の長さ
         textLabel.text = status ? selectedText : notSelectedText
     }
