@@ -8,10 +8,16 @@
 
 import UIKit
 
+private struct Text {
+    static let notSelected = "未選択"
+    static let selected = "選択済み"
+}
+
 @IBDesignable
 final class RoundedCornerButton: UIButton {
 
-    @IBInspectable var text: String = ""
+    @IBInspectable var notSelectedText: String = Text.notSelected
+    @IBInspectable var selectedText: String = Text.selected
     @IBInspectable var iconImage: UIImage = UIImage()
 
     private(set) var selectedStatus: Bool = false
@@ -46,7 +52,7 @@ final class RoundedCornerButton: UIButton {
     private lazy var textLabel: UILabel = {
         let width = stackView.frame.width - iconImageView.frame.width
         let textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: frame.height))
-        textLabel.text = text
+        textLabel.text = notSelectedText
         textLabel.textAlignment = .center
         textLabel.textColor = UIColor(hex: "#4A4A4A")
         textLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
@@ -93,7 +99,7 @@ extension RoundedCornerButton {
     func setStatus(_ status: Bool) {
         selectedStatus = status
         layer.backgroundColor = status ? UIColor(hex: "#EDEDED").cgColor : UIColor(hex: "#FFFFFF").cgColor
-        textLabel.text = status ? "受けたい登録済み" : "受けたい登録をする"
+        textLabel.text = status ? selectedText : notSelectedText
         layer.shadowColor = status ? UIColor(hex: "#BFBFBF").cgColor : UIColor(hex: "#E84855").cgColor
         layer.borderColor = status ? UIColor.clear.cgColor : UIColor(hex: "#E84855").cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: status ? 3.0 : 2.0)
