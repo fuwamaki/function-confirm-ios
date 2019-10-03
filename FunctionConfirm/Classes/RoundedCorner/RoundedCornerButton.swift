@@ -20,12 +20,12 @@ final class RoundedCornerButton: UIButton {
     @IBInspectable var notSelectedText: String = Text.notSelected
     @IBInspectable var selectedText: String = Text.selected
 
-    @IBInspectable var notSelectedBackgroundColor: UIColor = UIColor(hex: "#FFFFFF")
-    @IBInspectable var selectedBackgroundColor: UIColor = UIColor(hex: "#EDEDED")
-    @IBInspectable var notSelectedBorderColor: UIColor = UIColor(hex: "#E84855")
+    @IBInspectable var notSelectedBackgroundColor: UIColor = UIColor.systemTeal
+    @IBInspectable var notSelectedShadowColor: UIColor =  UIColor.ocean
+    @IBInspectable var notSelectedBorderColor: UIColor = UIColor.clear
+    @IBInspectable var selectedBackgroundColor: UIColor = UIColor.baseGray
+    @IBInspectable var selectedShadowColor: UIColor = UIColor.gray
     @IBInspectable var selectedBorderColor: UIColor = UIColor.clear
-    @IBInspectable var notSelectedShadowColor: UIColor =  UIColor(hex: "#E84855")
-    @IBInspectable var selectedShadowColor: UIColor = UIColor(hex: "#BFBFBF")
 
     private(set) var selectedStatus: Bool = false
 
