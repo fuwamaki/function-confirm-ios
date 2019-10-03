@@ -22,6 +22,7 @@ final class RoundedCornerButton: UIButton {
         stackView.axis = .horizontal
         stackView.spacing = 4.0
         stackView.backgroundColor = UIColor.clear
+        stackView.isUserInteractionEnabled = false // stackView部分をタップしてもボタンが反映するように
         return stackView
     }()
 
@@ -58,7 +59,7 @@ final class RoundedCornerButton: UIButton {
         layer.borderColor = UIColor(hex: "#E84855").cgColor
         layer.borderWidth = 1.0
         layer.cornerRadius = 4.0
-        layer.shadowOpacity = 1.0
+        layer.shadowOpacity = 1.0 // 影を表示する
         layer.shadowRadius = 0.0
         layer.backgroundColor = UIColor(hex: "#FFFFFF").cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -68,24 +69,11 @@ final class RoundedCornerButton: UIButton {
         stackView.addArrangedSubview(textLabel)
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-
-        [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.selected].forEach { state in
-            let image = backgroundImage(for: state)
-            setBackgroundImage(image, for: state)
-        }
     }
 
-    override func backgroundImage(for state: UIControl.State) -> UIImage? {
-        switch state {
-        case .normal:
-//            layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-            return UIColor(hex: "#FFFFFF").image
-        case .highlighted:
-//            layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-            return UIColor(hex: "#000000").image
-        default:
-//            layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-            return UIColor(hex: "#000000").image
+    override var isHighlighted: Bool {
+        didSet {
+            layer.shadowOffset = isHighlighted ? CGSize(width: 0.0, height: 0.0) : CGSize(width: 0.0, height: 2.0)
         }
     }
 }
