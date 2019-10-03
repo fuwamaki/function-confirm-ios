@@ -61,30 +61,15 @@ final class RoundedCornerButton: UIButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
+        setupLayer()
+        setupViews()
     }
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setupView()
+        setupLayer()
+        setupViews()
         setNeedsDisplay()
-    }
-
-    private func setupView() {
-        layer.shadowColor = UIColor(hex: "#E84855").cgColor
-        layer.borderColor = UIColor(hex: "#E84855").cgColor
-        layer.borderWidth = 1.0
-        layer.cornerRadius = 4.0
-        layer.shadowOpacity = 1.0 // 影を表示する
-        layer.shadowRadius = 0.0
-        layer.backgroundColor = UIColor(hex: "#FFFFFF").cgColor
-        layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-
-        self.addSubview(stackView)
-        stackView.addArrangedSubview(iconImageView)
-        stackView.addArrangedSubview(textLabel)
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 
     override var isHighlighted: Bool {
@@ -93,15 +78,32 @@ final class RoundedCornerButton: UIButton {
             layer.shadowOffset = isHighlighted ? CGSize(width: 0.0, height: 0.0) : CGSize(width: 0.0, height: 2.0)
         }
     }
+
+    private func setupLayer() {
+        setStatus(selectedStatus)
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 4.0
+        layer.shadowOpacity = 1.0 // 影を表示する
+        layer.shadowRadius = 0.0 // ぼやけ影を非表示
+    }
+
+    private func setupViews() {
+        self.addSubview(stackView)
+        stackView.addArrangedSubview(iconImageView)
+        stackView.addArrangedSubview(textLabel)
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    }
 }
 
+// MARK: public
 extension RoundedCornerButton {
     func setStatus(_ status: Bool) {
         selectedStatus = status
         layer.backgroundColor = status ? UIColor(hex: "#EDEDED").cgColor : UIColor(hex: "#FFFFFF").cgColor
-        textLabel.text = status ? selectedText : notSelectedText
         layer.shadowColor = status ? UIColor(hex: "#BFBFBF").cgColor : UIColor(hex: "#E84855").cgColor
         layer.borderColor = status ? UIColor.clear.cgColor : UIColor(hex: "#E84855").cgColor
-        layer.shadowOffset = CGSize(width: 0.0, height: status ? 3.0 : 2.0)
+        layer.shadowOffset = CGSize(width: 0.0, height: status ? 3.0 : 2.0) // 影の長さ
+        textLabel.text = status ? selectedText : notSelectedText
     }
 }
