@@ -12,6 +12,10 @@ final class RoundedCornerViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var button: UIButton!
+    @IBOutlet private weak var roundedCornerButton: RoundedCornerButton!
+    @IBAction private func clickRoundedCornerButton(_ sender: Any) {
+        print("test")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

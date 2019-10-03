@@ -18,6 +18,7 @@
 		2032A71020DCDD370091952F /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A70F20DCDD370091952F /* Picker.storyboard */; };
 		2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032A71120DCDD680091952F /* CustomPickerView.xib */; };
 		2032A71420DCE0180091952F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerViewController.swift */; };
+		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
 		20E35066232A29090057A561 /* TimerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35065232A29090057A561 /* TimerView.storyboard */; };
@@ -162,6 +163,7 @@
 		2032A70F20DCDD370091952F /* Picker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
 		2032A71120DCDD680091952F /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		2032A71320DCE0180091952F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		20E35065232A29090057A561 /* TimerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerView.storyboard; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			children = (
 				9C78A2A02214941A0036D3FD /* RoundedCorner.storyboard */,
 				9C78A29E221494090036D3FD /* RoundedCornerViewController.swift */,
+				203AFD472344EA330021FA9A /* RoundedCornerButton.swift */,
 			);
 			path = RoundedCorner;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				9C78A2B622194C060036D3FD /* AnimationEighthViewController.swift in Sources */,
 				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
 				9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */,
+				203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */,
 				9C62DA40227C4BA4002DEA7C /* ItemRx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
