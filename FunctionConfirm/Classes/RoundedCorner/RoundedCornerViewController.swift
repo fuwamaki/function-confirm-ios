@@ -16,6 +16,10 @@ final class RoundedCornerViewController: UIViewController {
     @IBAction private func clickRoundedCornerButton(_ sender: Any) {
         roundedCornerButton.setStatus(!roundedCornerButton.selectedStatus)
     }
+    @IBOutlet private weak var heartButton: ImageButton!
+    @IBAction private func clickHeartButton(_ sender: Any) {
+        heartButton.selectedStatus = !heartButton.selectedStatus
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
