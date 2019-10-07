@@ -56,7 +56,7 @@ final class ImageButton: UIButton {
         self.setImage(self.selectedStatus ? self.selectedImage : self.unselectedImage, for: .normal)
         self.setImage(self.selectedStatus ? self.selectedImage : self.unselectedImage, for: .highlighted)
         let animation = CASpringAnimation(keyPath: "transform.scale")
-        animation.duration = 0.3 // 初速度
+        animation.duration = 0.3 // animation時間
         animation.fromValue = 0.95 // animation前サイズ
         animation.toValue = 1.0 // animation前サイズ
         animation.mass = 0.6 // 質量

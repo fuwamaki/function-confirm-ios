@@ -21,6 +21,11 @@ final class RoundedCornerViewController: UIViewController {
         heartButton.selectedStatus = !heartButton.selectedStatus
     }
 
+    @IBOutlet private weak var likeButton: ImageButton!
+    @IBAction private func clickLikeButton(_ sender: Any) {
+        likeButton.selectedStatus = !likeButton.selectedStatus
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "角丸"

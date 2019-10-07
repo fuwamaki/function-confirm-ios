@@ -86,7 +86,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-iJ-WbT" customClass="ImageButton" customModule="FunctionConfirm" customModuleProvider="target">
-                                <rect key="frame" x="175.5" y="444" width="24" height="24"/>
+                                <rect key="frame" x="175.5" y="388" width="24" height="24"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="unwish_icon">
@@ -100,13 +100,26 @@
                                     <action selector="clickHeartButton:" destination="rbi-TG-SwW" eventType="touchUpInside" id="uDh-ae-Lzo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1of-fa-eRn" customClass="ImageButton" customModule="FunctionConfirm" customModuleProvider="target">
+                                <rect key="frame" x="162.5" y="452" width="50" height="50"/>
+                                <state key="normal" image="heart_gray"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="unselectedImage" value="heart_gray"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="heart"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickLikeButton:" destination="rbi-TG-SwW" eventType="touchUpInside" id="6fV-GI-5jn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UEf-Yh-hPs" firstAttribute="top" secondItem="hkl-1C-QoT" secondAttribute="bottom" constant="40" id="62o-CI-ztV"/>
-                            <constraint firstItem="kdF-iJ-WbT" firstAttribute="top" secondItem="l7Q-eq-r66" secondAttribute="bottom" constant="80" id="6ZG-iB-h1r"/>
+                            <constraint firstItem="kdF-iJ-WbT" firstAttribute="top" secondItem="l7Q-eq-r66" secondAttribute="bottom" constant="24" id="6ZG-iB-h1r"/>
+                            <constraint firstItem="1of-fa-eRn" firstAttribute="top" secondItem="kdF-iJ-WbT" secondAttribute="bottom" constant="40" id="IGs-bX-IwR"/>
                             <constraint firstItem="kdF-iJ-WbT" firstAttribute="centerX" secondItem="xXt-fb-c7j" secondAttribute="centerX" id="Jes-AN-laz"/>
                             <constraint firstItem="hkl-1C-QoT" firstAttribute="top" secondItem="BYf-HC-ETs" secondAttribute="top" constant="80" id="LoC-6Y-TM6"/>
+                            <constraint firstItem="1of-fa-eRn" firstAttribute="centerX" secondItem="xXt-fb-c7j" secondAttribute="centerX" id="MDb-zf-eZ0"/>
                             <constraint firstItem="sve-iw-V0M" firstAttribute="leading" secondItem="BYf-HC-ETs" secondAttribute="leading" id="UgG-lJ-4MM"/>
                             <constraint firstItem="BYf-HC-ETs" firstAttribute="trailing" secondItem="sve-iw-V0M" secondAttribute="trailing" id="YnS-ll-S8H"/>
                             <constraint firstItem="l7Q-eq-r66" firstAttribute="top" secondItem="UEf-Yh-hPs" secondAttribute="bottom" constant="80" id="czI-K3-kIr"/>
@@ -121,6 +134,7 @@
                         <outlet property="button" destination="UEf-Yh-hPs" id="g6L-in-q2f"/>
                         <outlet property="heartButton" destination="kdF-iJ-WbT" id="dfx-zV-OVQ"/>
                         <outlet property="label" destination="hkl-1C-QoT" id="adL-qy-TsM"/>
+                        <outlet property="likeButton" destination="1of-fa-eRn" id="WB3-76-VvX"/>
                         <outlet property="roundedCornerButton" destination="l7Q-eq-r66" id="ho1-pP-np4"/>
                     </connections>
                 </viewController>
@@ -130,6 +144,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" width="50" height="50"/>
+        <image name="heart_gray" width="50" height="50"/>
         <image name="icon-wish" width="24" height="24"/>
         <image name="unwish_icon" width="24" height="24"/>
         <image name="wish_icon" width="24" height="24"/>
