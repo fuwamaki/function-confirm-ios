@@ -12,10 +12,17 @@ final class RoundedCornerViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var button: UIButton!
+
+    @IBOutlet private weak var favoriteButton: RoundedCornerButton!
+    @IBAction private func clickFavoriteButton(_ sender: Any) {
+        favoriteButton.setStatus(!favoriteButton.selectedStatus)
+    }
+
     @IBOutlet private weak var roundedCornerButton: RoundedCornerButton!
     @IBAction private func clickRoundedCornerButton(_ sender: Any) {
         roundedCornerButton.setStatus(!roundedCornerButton.selectedStatus)
     }
+
     @IBOutlet private weak var heartButton: ImageButton!
     @IBAction private func clickHeartButton(_ sender: Any) {
         heartButton.selectedStatus = !heartButton.selectedStatus
