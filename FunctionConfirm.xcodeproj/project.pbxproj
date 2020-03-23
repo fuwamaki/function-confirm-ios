@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		20037F9124290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20037F9024290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift */; };
 		20037F9324290EAC009D5CF5 /* PresentTransitionFromRight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9224290EAC009D5CF5 /* PresentTransitionFromRight.storyboard */; };
+		20037F9524291049009D5CF5 /* TestFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20037F9424291049009D5CF5 /* TestFirstViewController.swift */; };
+		20037F9724291058009D5CF5 /* TestFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9624291058009D5CF5 /* TestFirst.storyboard */; };
+		20037F9924291314009D5CF5 /* TestSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20037F9824291313009D5CF5 /* TestSecondViewController.swift */; };
+		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -151,6 +155,10 @@
 		1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunctionConfirmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20037F9024290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransitionFromRightViewController.swift; sourceTree = "<group>"; };
 		20037F9224290EAC009D5CF5 /* PresentTransitionFromRight.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PresentTransitionFromRight.storyboard; sourceTree = "<group>"; };
+		20037F9424291049009D5CF5 /* TestFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFirstViewController.swift; sourceTree = "<group>"; };
+		20037F9624291058009D5CF5 /* TestFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestFirst.storyboard; sourceTree = "<group>"; };
+		20037F9824291313009D5CF5 /* TestSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecondViewController.swift; sourceTree = "<group>"; };
+		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +321,10 @@
 			children = (
 				20037F9024290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift */,
 				20037F9224290EAC009D5CF5 /* PresentTransitionFromRight.storyboard */,
+				20037F9424291049009D5CF5 /* TestFirstViewController.swift */,
+				20037F9624291058009D5CF5 /* TestFirst.storyboard */,
+				20037F9824291313009D5CF5 /* TestSecondViewController.swift */,
+				20037F9A2429131F009D5CF5 /* TestSecond.storyboard */,
 			);
 			path = PresentTransitionFromRight;
 			sourceTree = "<group>";
@@ -888,8 +900,10 @@
 				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
+				20037F9724291058009D5CF5 /* TestFirst.storyboard in Resources */,
 				9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */,
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
+				20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
 				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
@@ -1052,6 +1066,7 @@
 				2032A71420DCE0180091952F /* PickerViewController.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
+				20037F9524291049009D5CF5 /* TestFirstViewController.swift in Sources */,
 				9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
@@ -1105,6 +1120,7 @@
 				9C78A2AA22149F0F0036D3FD /* AnimationSecondViewController.swift in Sources */,
 				7B67233320E1E71D00D8A5A3 /* QiitaListViewModel.swift in Sources */,
 				7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */,
+				20037F9924291314009D5CF5 /* TestSecondViewController.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
 				9C78A2B222194BB50036D3FD /* AnimationSixthViewController.swift in Sources */,
