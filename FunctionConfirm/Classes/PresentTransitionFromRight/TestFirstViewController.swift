@@ -10,7 +10,7 @@ import UIKit
 
 final class TestFirstViewController: UIViewController {
 
-    @IBAction func clickButton(_ sender: Any) {
+    @IBAction private func clickButton(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "TestSecond", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "TestSecondViewController")
         let navigationController = UINavigationController(rootViewController: viewController)
