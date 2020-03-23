@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 19
+        return 20
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -104,9 +104,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cameraMainFunctionCell", for: indexPath)
             cell.textLabel?.text = "カメラメイン機能"
             return cell
-        } else {
+        } else if indexPath.row == 18 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "timerCell", for: indexPath)
             cell.textLabel?.text = "タイマー"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "transitionCell", for: indexPath)
+            cell.textLabel?.text = "Presentで横遷移"
             return cell
         }
     }
@@ -191,9 +195,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "CameraMainFunction", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "CameraMainFunctionViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 18:
             let storyBoard = UIStoryboard(name: "TimerView", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "TimerViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "PresentTransitionFromRight", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "PresentTransitionFromRightViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

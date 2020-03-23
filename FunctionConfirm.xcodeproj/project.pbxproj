@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20037F9124290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20037F9024290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift */; };
+		20037F9324290EAC009D5CF5 /* PresentTransitionFromRight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9224290EAC009D5CF5 /* PresentTransitionFromRight.storyboard */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -147,6 +149,8 @@
 
 /* Begin PBXFileReference section */
 		1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FunctionConfirmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20037F9024290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransitionFromRightViewController.swift; sourceTree = "<group>"; };
+		20037F9224290EAC009D5CF5 /* PresentTransitionFromRight.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PresentTransitionFromRight.storyboard; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +308,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20037F8F24290E76009D5CF5 /* PresentTransitionFromRight */ = {
+			isa = PBXGroup;
+			children = (
+				20037F9024290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift */,
+				20037F9224290EAC009D5CF5 /* PresentTransitionFromRight.storyboard */,
+			);
+			path = PresentTransitionFromRight;
+			sourceTree = "<group>";
+		};
 		2032A6CC20DCC9E50091952F = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +533,7 @@
 				9CCCA876224F39B400FCAB03 /* Barcode2 */,
 				9C69834622700E0300DC8C93 /* CameraMainFunction */,
 				20E35062232A28E00057A561 /* Timer */,
+				20037F8F24290E76009D5CF5 /* PresentTransitionFromRight */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -889,6 +903,7 @@
 				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
 				20E35066232A29090057A561 /* TimerView.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
+				20037F9324290EAC009D5CF5 /* PresentTransitionFromRight.storyboard in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
 				9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */,
@@ -1055,6 +1070,7 @@
 				7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */,
 				9CDB1B5A22749F69004EFB68 /* CounterReducer.swift in Sources */,
 				9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */,
+				20037F9124290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift in Sources */,
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9C78A2B022194BA60036D3FD /* AnimationFifthViewController.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
