@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ztx-eB-zEn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--セミモーダル遷移-->
+        <scene sceneID="SoR-gv-Z3e">
+            <objects>
+                <viewController storyboardIdentifier="SemiModalViewController" id="Ztx-eB-zEn" customClass="SemiModalViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="45A-qo-ugM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrI-bh-oXj">
+                                <rect key="frame" x="165.5" y="433" width="83" height="30"/>
+                                <state key="normal" title="show modal"/>
+                                <connections>
+                                    <action selector="clickShowModalButton:" destination="Ztx-eB-zEn" eventType="touchUpInside" id="3xg-EP-tCu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PrI-bh-oXj" firstAttribute="centerX" secondItem="45A-qo-ugM" secondAttribute="centerX" id="Al3-6s-CbC"/>
+                            <constraint firstItem="PrI-bh-oXj" firstAttribute="centerY" secondItem="45A-qo-ugM" secondAttribute="centerY" id="tWu-fe-syb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hlV-ow-XHi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="セミモーダル遷移" id="iRg-g2-9Vg"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6n-IT-3c0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-171" y="189"/>
+        </scene>
+    </scenes>
+</document>

@@ -27,6 +27,8 @@
 		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		208CE614234753F60024AE3A /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CE613234753F60024AE3A /* ImageButton.swift */; };
+		20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B015522436FCB4008DA31D /* SemiModalViewController.swift */; };
+		20B015552436FCC1008DA31D /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B015542436FCC1008DA31D /* SemiModal.storyboard */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
 		20E35066232A29090057A561 /* TimerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35065232A29090057A561 /* TimerView.storyboard */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */; };
@@ -179,6 +181,8 @@
 		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		208CE613234753F60024AE3A /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		20B015522436FCB4008DA31D /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
+		20B015542436FCC1008DA31D /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		20E35065232A29090057A561 /* TimerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerView.storyboard; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
@@ -426,6 +430,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		20B015512436FC62008DA31D /* SemiModal */ = {
+			isa = PBXGroup;
+			children = (
+				20B015522436FCB4008DA31D /* SemiModalViewController.swift */,
+				20B015542436FCC1008DA31D /* SemiModal.storyboard */,
+			);
+			path = SemiModal;
+			sourceTree = "<group>";
+		};
 		20E35062232A28E00057A561 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +559,7 @@
 				9C69834622700E0300DC8C93 /* CameraMainFunction */,
 				20E35062232A28E00057A561 /* Timer */,
 				20037F8F24290E76009D5CF5 /* PresentTransitionFromRight */,
+				20B015512436FC62008DA31D /* SemiModal */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -900,6 +914,7 @@
 				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
+				20B015552436FCC1008DA31D /* SemiModal.storyboard in Resources */,
 				20037F9724291058009D5CF5 /* TestFirst.storyboard in Resources */,
 				9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */,
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
@@ -1077,6 +1092,7 @@
 				9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
+				20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */,
 				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				208CE614234753F60024AE3A /* ImageButton.swift in Sources */,
