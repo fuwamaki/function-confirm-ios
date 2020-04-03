@@ -10,6 +10,7 @@ import UIKit
 
 final class SemiModalTestViewController: UIViewController, OverCurrentTransitionable {
 
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -40,10 +41,15 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
         interactor.resetHandler = { [weak self] in
             self?.tableView.bounces = true
         }
+
         headerView.layer.cornerRadius = 8.0
         headerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(headerDidScroll(_:)))
         headerView.addGestureRecognizer(headerGesture)
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTap))
+        backgroundView.addGestureRecognizer(gesture)
+
         let tableViewGesture = UIPanGestureRecognizer(target: self, action: #selector(tableViewDidScroll(_:)))
         tableViewGesture.delegate = self
         tableView.addGestureRecognizer(tableViewGesture)
@@ -56,6 +62,10 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
         /// コールされたと同時にインタラクション開始する。
         interactor.updateStateShouldStartIfNeeded()
         handleTransitionGesture(sender)
+    }
+
+    @objc private func backgroundDidTap() {
+        dismiss(animated: true, completion: nil)
     }
 
     @objc private func tableViewDidScroll(_ sender: UIPanGestureRecognizer) {
