@@ -13,6 +13,7 @@ final class SemiModalViewController: UIViewController {
     @IBAction private func clickShowModalButton(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "SemiModalTest", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "SemiModalTestViewController")
+        viewController.modalPresentationStyle = .custom
         present(viewController, animated: true, completion: nil)
     }
 
