@@ -26,8 +26,8 @@
 		2032A71420DCE0180091952F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerViewController.swift */; };
 		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
-		208A61C6243AE49300A64212 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* ModalPresentationController.swift */; };
-		208A61C8243AE4AC00A64212 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C7243AE4AC00A64212 /* DismissAnimator.swift */; };
+		208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */; };
+		208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */; };
 		208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */; };
 		208CE614234753F60024AE3A /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CE613234753F60024AE3A /* ImageButton.swift */; };
 		20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B015522436FCB4008DA31D /* SemiModalViewController.swift */; };
@@ -187,8 +187,8 @@
 		2032A71320DCE0180091952F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		208A61C5243AE49300A64212 /* ModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
-		208A61C7243AE4AC00A64212 /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
+		208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalDismissAnimationController.swift; sourceTree = "<group>"; };
 		208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverCurrentTransitioningInteractor.swift; sourceTree = "<group>"; };
 		208CE613234753F60024AE3A /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		20B015522436FCB4008DA31D /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
@@ -449,8 +449,8 @@
 			children = (
 				20B015522436FCB4008DA31D /* SemiModalViewController.swift */,
 				20B015542436FCC1008DA31D /* SemiModal.storyboard */,
-				208A61C5243AE49300A64212 /* ModalPresentationController.swift */,
-				208A61C7243AE4AC00A64212 /* DismissAnimator.swift */,
+				208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */,
+				208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */,
 				208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */,
 				20B0155624370032008DA31D /* SemiModalTestViewController.swift */,
 				20B015582437005E008DA31D /* SemiModalTest.storyboard */,
@@ -1143,10 +1143,10 @@
 				9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
-				208A61C6243AE49300A64212 /* ModalPresentationController.swift in Sources */,
+				208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */,
 				9CDB1B5E2274B070004EFB68 /* Store.swift in Sources */,
 				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,
-				208A61C8243AE4AC00A64212 /* DismissAnimator.swift in Sources */,
+				208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */,
 				9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				9CB8082A21F7540E00DAD155 /* StatusBarPopup2ViewController.swift in Sources */,

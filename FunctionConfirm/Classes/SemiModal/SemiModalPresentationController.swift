@@ -1,5 +1,5 @@
 //
-//  ModalPresentationController.swift
+//  SemiModalPresentationController.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/06.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ModalPresentationController: UIPresentationController {
+final class SemiModalPresentationController: UIPresentationController {
 
     private let overlayView = UIView()
 

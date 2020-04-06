@@ -1,5 +1,5 @@
 //
-//  DismissAnimator.swift
+//  SemiModalDismissAnimationController.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/06.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DismissAnimator: NSObject {}
+class SemiModalDismissAnimationController: NSObject {}
 
-extension DismissAnimator: UIViewControllerAnimatedTransitioning {
+extension SemiModalDismissAnimationController: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.4
     }
