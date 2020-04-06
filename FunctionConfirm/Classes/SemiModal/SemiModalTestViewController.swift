@@ -10,14 +10,57 @@ import UIKit
 
 final class SemiModalTestViewController: UIViewController {
 
-    @IBOutlet private weak var backgroundView: UIView!
-    @IBOutlet private weak var headerView: UIView!
+    @IBOutlet private weak var backgroundView: UIView! {
+        didSet {
+            /// handle tap backgroundView
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(handleClickBackgroundView))
+            backgroundView.addGestureRecognizer(gesture)
+        }
+    }
+
+    @IBOutlet private weak var headerView: UIView! {
+        didSet {
+            /// headerViewの上部を角丸に
+            headerView.layer.cornerRadius = 8.0
+            headerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            /// handle swipe headerView
+            let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(handleHeaderViewSwipe(_:)))
+            headerView.addGestureRecognizer(headerGesture)
+        }
+    }
+
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
             tableView.registerForCell(SemiModalTestTableCell.self)
+            tableView.tableFooterView = UIView()
+            /// handle swipe tableView
+            let tableViewGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTableViewSwipe(_:)))
+            tableViewGesture.delegate = self
+            tableView.addGestureRecognizer(tableViewGesture)
         }
+    }
+
+    @objc private func handleClickBackgroundView() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    /// HeaderViewをSwipeした場合の処理。即インタラクションを開始。
+    @objc private func handleHeaderViewSwipe(_ sender: UIPanGestureRecognizer) {
+        interactor.updateStateShouldStartIfNeeded()
+        handleTransitionGesture(sender)
+    }
+
+    /// TableViewをSwipeした場合の処理。TableViewのScrollがTopならインタラクションを開始。
+    @objc private func handleTableViewSwipe(_ sender: UIPanGestureRecognizer) {
+        /// TableViewのScrollがTop位置の場合、interactorの状態を更新
+        if tableViewContentOffsetY <= 0 {
+            interactor.updateStateShouldStartIfNeeded()
+        }
+        /// インタラクション開始位置と、テーブルビュースクロール開始位置が異なるため、インタラクション開始時のY位置を取得している
+        interactor.setStartInteractionTranslationY(sender.translation(in: view).y)
+        handleTransitionGesture(sender)
     }
 
     private var interactor = OverCurrentTransitioningInteractor()
@@ -48,8 +91,6 @@ final class SemiModalTestViewController: UIViewController {
     }
 
     private func setupViews() {
-        tableView.tableFooterView = UIView()
-        transitioningDelegate = self
         interactor.startHandler = { [weak self] in
             /// bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
             self?.tableView.bounces = false
@@ -57,41 +98,6 @@ final class SemiModalTestViewController: UIViewController {
         interactor.resetHandler = { [weak self] in
             self?.tableView.bounces = true
         }
-        /// headerViewの上部を角丸に
-        headerView.layer.cornerRadius = 8.0
-        headerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        /// handle
-        let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(headerDidScroll(_:)))
-        headerView.addGestureRecognizer(headerGesture)
-        /// handle tap backgroundView
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTap))
-        backgroundView.addGestureRecognizer(gesture)
-        /// handle swipe tableView
-        let tableViewGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTableViewSwipe(_:)))
-        tableViewGesture.delegate = self
-        tableView.addGestureRecognizer(tableViewGesture)
-    }
-
-    @objc private func headerDidScroll(_ sender: UIPanGestureRecognizer) {
-        /// ヘッダービューをスワイプした場合の処理
-        /// コールされたと同時にインタラクション開始する。
-        interactor.updateStateShouldStartIfNeeded()
-        handleTransitionGesture(sender)
-    }
-
-    @objc private func backgroundDidTap() {
-        dismiss(animated: true, completion: nil)
-    }
-
-    /// TableViewをSwipeした場合の処理
-    @objc private func handleTableViewSwipe(_ sender: UIPanGestureRecognizer) {
-        /// TableViewのScrollがTop位置の場合、interactorの状態を更新
-        if tableViewContentOffsetY <= 0 {
-            interactor.updateStateShouldStartIfNeeded()
-        }
-        /// インタラクション開始位置と、テーブルビュースクロール開始位置が異なるため、インタラクション開始時のY位置を取得している
-        interactor.setStartInteractionTranslationY(sender.translation(in: view).y)
-        handleTransitionGesture(sender)
     }
 
     private func handleTransitionGesture(_ sender: UIPanGestureRecognizer) {
