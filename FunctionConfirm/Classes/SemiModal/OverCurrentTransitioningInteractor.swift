@@ -17,45 +17,44 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         case shouldFinish // 終了できる（終了していない）
     }
 
-    var state: State = .none
-    var startInteractionTranslationY: CGFloat = 0
-    var startHandler: (() -> Void)?
-    var resetHandler: (() -> Void)?
+    public var state: State = .none
+    public var startInteractionTranslationY: CGFloat = 0
+    public var startHandler: (() -> Void)?
+    public var resetHandler: (() -> Void)?
 
-    /// インタラクションのキャンセル、終了時のAnimation Durationスピードを変更する
-    /// デフォルトのままだと、高速に閉じてしまい、瞬間移動しているように見えるため、ここで調整している。
+    /// interactionのキャンセル時のAnimation Durationスピードを変更。defaultだと高速に閉じてしまうので、スピードを調整。
     override func cancel() {
         completionSpeed = percentComplete
         super.cancel()
     }
 
+    /// interactionの終了時のAnimation Durationスピードを変更。defaultだと高速に閉じてしまうので、スピードを調整。
     override func finish() {
         completionSpeed = 1.0 - percentComplete
         super.finish()
     }
 
-    func setStartInteractionTranslationY(_ translationY: CGFloat) {
+    public func setStartInteractionTranslationY(_ translationY: CGFloat) {
         switch state {
         case .shouldStart:
             /// Interaction開始可能な際にInteraction開始までの間更新し続けることで、開始時のYを保持する
             startInteractionTranslationY = translationY
-        case .hasStarted, .shouldFinish, .none:
+        default:
             break
         }
     }
 
-    func updateStateShouldStartIfNeeded() {
+    public func updateStateShouldStartIfNeeded() {
         switch state {
         case .none:
-            /// .none -> shouldStartへ更新
             state = .shouldStart
             startHandler?()
-        case .shouldStart, .hasStarted, .shouldFinish:
+        default:
             break
         }
     }
 
-    func reset() {
+    public func reset() {
         state = .none
         startInteractionTranslationY = 0
         resetHandler?()

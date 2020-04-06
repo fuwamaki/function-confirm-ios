@@ -20,7 +20,6 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
         }
     }
 
-    var percentThreshold: CGFloat = 0.3
     var interactor = OverCurrentTransitioningInteractor()
 
     private var tableViewContentOffsetY: CGFloat = 0.0
@@ -36,6 +35,7 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
         tableView.tableFooterView = UIView()
         transitioningDelegate = self
         interactor.startHandler = { [weak self] in
+            // bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
             self?.tableView.bounces = false
         }
         interactor.resetHandler = { [weak self] in
@@ -46,15 +46,13 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
         headerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(headerDidScroll(_:)))
         headerView.addGestureRecognizer(headerGesture)
-
+        // handle tap backgroundView
         let gesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTap))
         backgroundView.addGestureRecognizer(gesture)
-
-        let tableViewGesture = UIPanGestureRecognizer(target: self, action: #selector(tableViewDidScroll(_:)))
+        // handle swipe tableView
+        let tableViewGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTableViewSwipe(_:)))
         tableViewGesture.delegate = self
         tableView.addGestureRecognizer(tableViewGesture)
-        tableView.delegate = self
-        tableView.dataSource = self
     }
 
     @objc private func headerDidScroll(_ sender: UIPanGestureRecognizer) {
@@ -68,9 +66,9 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
         dismiss(animated: true, completion: nil)
     }
 
-    @objc private func tableViewDidScroll(_ sender: UIPanGestureRecognizer) {
-        /// テーブルビューをスワイプした場合の処理
-        /// テーブルビューのスクロールがトップ位置にまでスクロールされた場合にインタラクションを開始
+    /// TableViewをSwipeした場合の処理
+    @objc private func handleTableViewSwipe(_ sender: UIPanGestureRecognizer) {
+        /// TableViewのScrollがTop位置の場合、interactorの状態を更新
         if tableViewContentOffsetY <= 0 {
             interactor.updateStateShouldStartIfNeeded()
         }
@@ -80,9 +78,14 @@ final class SemiModalTestViewController: UIViewController, OverCurrentTransition
     }
 }
 
+// MARK: UITableViewDelegate
 extension SemiModalTestViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        tableViewContentOffsetY = scrollView.contentOffset.y
+    }
 }
 
+// MARK: UITableViewDataSource
 extension SemiModalTestViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -93,18 +96,16 @@ extension SemiModalTestViewController: UITableViewDataSource {
         cell.render(text: array[indexPath.row])
         return cell
     }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        tableViewContentOffsetY = scrollView.contentOffset.y
-    }
 }
 
+// MARK: UIGestureRecognizerDelegate
 extension SemiModalTestViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
+// MARK: UIViewControllerTransitioningDelegate
 /// 以下デリゲートメソッドで、セミモーダルの閉じる処理に関する設定している
 extension SemiModalTestViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {

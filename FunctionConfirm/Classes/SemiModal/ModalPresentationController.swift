@@ -9,11 +9,11 @@
 import UIKit
 
 final class ModalPresentationController: UIPresentationController {
+
     private let overlayView = UIView()
 
     override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
-
         overlayView.frame = containerView!.bounds
         overlayView.backgroundColor = .black
         overlayView.alpha = 0.0
@@ -25,7 +25,6 @@ final class ModalPresentationController: UIPresentationController {
 
     override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
-
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [unowned self] _ in
             self.overlayView.alpha = 0.0
         })
@@ -33,7 +32,6 @@ final class ModalPresentationController: UIPresentationController {
 
     override func dismissalTransitionDidEnd(_ completed: Bool) {
         super.dismissalTransitionDidEnd(completed)
-
         if completed {
             overlayView.removeFromSuperview()
         }

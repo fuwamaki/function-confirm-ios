@@ -9,21 +9,12 @@
 import UIKit
 
 protocol OverCurrentTransitionable where Self: UIViewController {
-    var percentThreshold: CGFloat { get }
     var interactor: OverCurrentTransitioningInteractor { get }
 }
 
 extension OverCurrentTransitionable {
-    var shouldFinishVerocityY: CGFloat {
-        return 1200
-    }
-}
-
-extension OverCurrentTransitionable {
     func handleTransitionGesture(_ sender: UIPanGestureRecognizer) {
-
-        ///　TableViewからPanGestureを取得する場合、
-        /// dismiss開始をsender.state.beganで判断できないため、Interactor.stateで判定している
+        ///　TableViewからPanGestureを取得する場合、dismiss開始をsender.state.beganで判断できないため、Interactor.stateで判定している
         switch interactor.state {
         case .shouldStart:
             interactor.state = .hasStarted
@@ -45,7 +36,7 @@ extension OverCurrentTransitionable {
         switch sender.state {
         case .changed:
             /// スクロール量がしきい値を超えたか？　もしくは　スクロール速度がしきい値を超えたか？
-            if progress > percentThreshold || sender.velocity(in: view).y > shouldFinishVerocityY {
+            if progress > 0.3 || sender.velocity(in: view).y > 1200 {
                 interactor.state =  .shouldFinish
             } else {
                 interactor.state =  .hasStarted
@@ -58,7 +49,7 @@ extension OverCurrentTransitionable {
             switch interactor.state {
             case .shouldFinish:
                 interactor.finish()
-            case .hasStarted, .none, .shouldStart:
+            default:
                 interactor.cancel()
             }
             interactor.reset()
