@@ -8,25 +8,30 @@
 
 import UIKit
 
+private struct Constant {
+    static let dismissTransitionDelay: TimeInterval = 0.4
+}
+
 class SemiModalDismissAnimationController: NSObject {}
 
+// MARK: UIViewControllerAnimatedTransitioning
 extension SemiModalDismissAnimationController: UIViewControllerAnimatedTransitioning {
+    /// アニメーション時間を定義
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.4
+        return Constant.dismissTransitionDelay
     }
 
+    /// アニメーションの具体的内容を定義
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromVC = transitionContext.viewController(forKey: .from) else { return }
+        guard let fromViewController = transitionContext.viewController(forKey: .from) else { return }
         let containerView = transitionContext.containerView
-        containerView.addSubview(fromVC.view)
-        let finalFrame = CGRect(origin: CGPoint(x: 0, y: UIScreen.main.bounds.height), size: UIScreen.main.bounds.size)
-        let option: UIView.AnimationOptions = transitionContext.isInteractive ? .curveLinear : .curveEaseIn
+        containerView.addSubview(fromViewController.view)
         UIView.animate(
             withDuration: transitionDuration(using: transitionContext),
             delay: 0,
-            options: [option],
+            options: [transitionContext.isInteractive ? .curveLinear : .curveEaseIn],
             animations: {
-                fromVC.view.frame = finalFrame },
+                fromViewController.view.frame = CGRect(origin: CGPoint(x: 0, y: UIScreen.main.bounds.height), size: UIScreen.main.bounds.size) },
             completion: { _ in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled) })
     }
