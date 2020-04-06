@@ -21,6 +21,7 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
     public var startInteractionTranslationY: CGFloat = 0
     public var startHandler: (() -> Void)?
     public var resetHandler: (() -> Void)?
+    public var dismissHandler: (() -> Void)?
 
     /// interactionのキャンセル時のAnimation Durationスピードを変更。defaultだと高速に閉じてしまうので、スピードを調整。
     override func cancel() {
@@ -54,9 +55,49 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         }
     }
 
-    public func reset() {
+    private func reset() {
         state = .none
         startInteractionTranslationY = 0
         resetHandler?()
+    }
+
+    public func handleTransitionGesture(view: UIView, sender: UIPanGestureRecognizer) {
+        ///　dismiss開始の判定はstateが.shouldStartかどうかで判定(sender.state.beganで判断できないため)
+        switch state {
+        case .shouldStart:
+            state = .hasStarted
+            dismissHandler?()
+        case .hasStarted, .shouldFinish:
+            break
+        case .none:
+            return
+        }
+
+        let translation = sender.translation(in: view)
+        let verticalMovement = (translation.y - startInteractionTranslationY)/view.bounds.height
+        /// SemiModalViewが画面の何割移動したか
+        let movementRatio = CGFloat(fminf(fmaxf(Float(verticalMovement), 0.0), 1.0))
+        /// スクロール量が閾値を超えたか、又はスクロール速度が閾値を超えたか
+        let isShouldFinish = movementRatio > 0.3 || sender.velocity(in: view).y > 1200
+
+        switch (sender.state, isShouldFinish, state) {
+        case (.changed, true, _):
+            state = .shouldFinish
+            update(movementRatio)
+        case (.changed, false, _):
+            state = .hasStarted
+            update(movementRatio)
+        case (.cancelled, _, _):
+            cancel()
+            reset()
+        case (.ended, _, .shouldFinish):
+            finish()
+            reset()
+        case (.ended, _, _):
+            cancel()
+            reset()
+        default:
+            break
+        }
     }
 }
