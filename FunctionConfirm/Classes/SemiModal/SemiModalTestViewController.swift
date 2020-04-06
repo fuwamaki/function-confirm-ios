@@ -10,9 +10,9 @@ import UIKit
 
 final class SemiModalTestViewController: UIViewController {
 
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var headerView: UIView!
+    @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
@@ -20,11 +20,27 @@ final class SemiModalTestViewController: UIViewController {
         }
     }
 
-    var interactor = OverCurrentTransitioningInteractor()
-
+    private var interactor = OverCurrentTransitioningInteractor()
     private var tableViewContentOffsetY: CGFloat = 0.0
+    private var array: [String] = ["1", "2", "3"]
 
-    var array: [String] = ["1", "2", "3"]
+    static func make() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "SemiModalTest", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "SemiModalTestViewController")
+        return viewController
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        transitioningDelegate = self
+        modalPresentationStyle = .custom
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        transitioningDelegate = self
+        modalPresentationStyle = .custom
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,21 +51,22 @@ final class SemiModalTestViewController: UIViewController {
         tableView.tableFooterView = UIView()
         transitioningDelegate = self
         interactor.startHandler = { [weak self] in
-            // bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
+            /// bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
             self?.tableView.bounces = false
         }
         interactor.resetHandler = { [weak self] in
             self?.tableView.bounces = true
         }
-
+        /// headerViewの上部を角丸に
         headerView.layer.cornerRadius = 8.0
         headerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        /// handle
         let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(headerDidScroll(_:)))
         headerView.addGestureRecognizer(headerGesture)
-        // handle tap backgroundView
+        /// handle tap backgroundView
         let gesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTap))
         backgroundView.addGestureRecognizer(gesture)
-        // handle swipe tableView
+        /// handle swipe tableView
         let tableViewGesture = UIPanGestureRecognizer(target: self, action: #selector(handleTableViewSwipe(_:)))
         tableViewGesture.delegate = self
         tableView.addGestureRecognizer(tableViewGesture)
@@ -145,31 +162,31 @@ extension SemiModalTestViewController: UITableViewDataSource {
 
 // MARK: UIGestureRecognizerDelegate
 extension SemiModalTestViewController: UIGestureRecognizerDelegate {
+    /// 2つ以上のgesture認識を可能にするかどうか
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
 // MARK: UIViewControllerTransitioningDelegate
-/// 以下デリゲートメソッドで、セミモーダルの閉じる処理に関する設定している
 extension SemiModalTestViewController: UIViewControllerTransitioningDelegate {
+    /// SemiModalTestViewへの遷移アニメーションを定義
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        ///　セミモーダル遷移時の背景透過アニメーションを行うPresentationControllerを返却
         return ModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 
+    /// SemiModalTestViewを閉じるアニメーションを定義
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        /// dismiss時のアニメーションを定義したクラスを返却
         return DismissAnimator()
     }
 
+    /// SemiModalTestViewを閉じる際に使用するinteractive objectを定義
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        /// インタラクション開始している場合にはinteractorを返却する
-        /// 開始していない場合はnilを返却することでインタラクション無しのdissmissとなる
+        /// インタラクション開始している場合だけinteractorを返す
         switch interactor.state {
         case .hasStarted, .shouldFinish:
             return interactor
-        case .none, .shouldStart:
+        default:
             return nil
         }
     }

@@ -17,7 +17,7 @@ final class ModalPresentationController: UIPresentationController {
         overlayView.frame = containerView!.bounds
         overlayView.backgroundColor = .black
         overlayView.alpha = 0.0
-        containerView!.insertSubview(overlayView, at: 0)
+        containerView?.insertSubview(overlayView, at: 0)
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [unowned self] _ in
             self.overlayView.alpha = 0.5
         })
