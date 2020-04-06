@@ -35,6 +35,12 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         super.finish()
     }
 
+    private func reset() {
+        state = .none
+        startInteractionTranslationY = 0
+        resetHandler?()
+    }
+
     public func setStartInteractionTranslationY(_ translationY: CGFloat) {
         switch state {
         case .shouldStart:
@@ -53,12 +59,6 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         default:
             break
         }
-    }
-
-    private func reset() {
-        state = .none
-        startInteractionTranslationY = 0
-        resetHandler?()
     }
 
     public func handleTransitionGesture(view: UIView, sender: UIPanGestureRecognizer) {

@@ -18,6 +18,10 @@ final class SemiModalTestViewController: UIViewController {
         }
     }
 
+    @objc private func handleClickBackgroundView() {
+        dismiss(animated: true, completion: nil)
+    }
+
     @IBOutlet private weak var headerView: UIView! {
         didSet {
             /// headerViewの上部を角丸に
@@ -27,6 +31,12 @@ final class SemiModalTestViewController: UIViewController {
             let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(handleHeaderViewSwipe(_:)))
             headerView.addGestureRecognizer(headerGesture)
         }
+    }
+
+    /// HeaderViewをSwipeした場合の処理。即インタラクションを開始。
+    @objc private func handleHeaderViewSwipe(_ sender: UIPanGestureRecognizer) {
+        interactor.updateStateShouldStartIfNeeded()
+        interactor.handleTransitionGesture(view: view, sender: sender)
     }
 
     @IBOutlet private weak var tableView: UITableView! {
@@ -40,16 +50,6 @@ final class SemiModalTestViewController: UIViewController {
             tableViewGesture.delegate = self
             tableView.addGestureRecognizer(tableViewGesture)
         }
-    }
-
-    @objc private func handleClickBackgroundView() {
-        dismiss(animated: true, completion: nil)
-    }
-
-    /// HeaderViewをSwipeした場合の処理。即インタラクションを開始。
-    @objc private func handleHeaderViewSwipe(_ sender: UIPanGestureRecognizer) {
-        interactor.updateStateShouldStartIfNeeded()
-        interactor.handleTransitionGesture(view: view, sender: sender)
     }
 
     /// TableViewをSwipeした場合の処理。TableViewのScrollがTopならインタラクションを開始。
