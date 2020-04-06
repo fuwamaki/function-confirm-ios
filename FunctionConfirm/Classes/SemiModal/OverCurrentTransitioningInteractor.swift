@@ -17,11 +17,22 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         case shouldFinish // 終了できる（終了していない）
     }
 
-    public var state: State = .none
-    public var startInteractionTranslationY: CGFloat = 0
+    private var state: State = .none
+    private var startInteractionTranslationY: CGFloat = 0
+
     public var startHandler: (() -> Void)?
     public var resetHandler: (() -> Void)?
     public var dismissHandler: (() -> Void)?
+
+    public var isUseInteractor: Bool {
+        /// インタラクション開始している場合だけinteractorを返す
+        switch state {
+        case .hasStarted, .shouldFinish:
+            return true
+        default:
+            return false
+        }
+    }
 
     /// interactionのキャンセル時のAnimation Durationスピードを変更。defaultだと高速に閉じてしまうので、スピードを調整。
     override func cancel() {

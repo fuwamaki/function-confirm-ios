@@ -17,14 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbR-Ov-t0k">
-                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="408"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="s0A-Jg-L04"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Se-Xv-59E">
-                                <rect key="frame" x="0.0" y="244" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="452" width="414" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-0R-5c4">
                                         <rect key="frame" x="191" y="12" width="32" height="20"/>
@@ -41,7 +38,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RB8-qY-cxh">
-                                <rect key="frame" x="0.0" y="288" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="496" width="414" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="PaI-6l-rvh"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,6 +63,7 @@
                         <outlet property="backgroundView" destination="CbR-Ov-t0k" id="ZuX-xh-c0c"/>
                         <outlet property="headerView" destination="4Se-Xv-59E" id="5br-IC-eqf"/>
                         <outlet property="tableView" destination="RB8-qY-cxh" id="NvR-3W-zBr"/>
+                        <outlet property="tableViewHeightConstraint" destination="PaI-6l-rvh" id="zfR-qH-mWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XmN-Ox-cjr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

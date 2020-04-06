@@ -39,6 +39,7 @@ final class SemiModalTestViewController: UIViewController {
         interactor.handleTransitionGesture(view: view, sender: sender)
     }
 
+    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -63,8 +64,10 @@ final class SemiModalTestViewController: UIViewController {
         interactor.handleTransitionGesture(view: view, sender: sender)
     }
 
-    private var interactor = OverCurrentTransitioningInteractor()
+    /// tableView内のスクロール高さ。通常時が0。
     private var tableViewContentOffsetY: CGFloat = 0.0
+
+    private var interactor = OverCurrentTransitioningInteractor()
     private var array: [String] = ["1", "2", "3"]
 
     static func make() -> UIViewController {
@@ -146,12 +149,6 @@ extension SemiModalTestViewController: UIViewControllerTransitioningDelegate {
 
     /// SemiModalTestViewを閉じる際に使用するinteractive objectを定義
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        /// インタラクション開始している場合だけinteractorを返す
-        switch interactor.state {
-        case .hasStarted, .shouldFinish:
-            return interactor
-        default:
-            return nil
-        }
+        return interactor.isUseInteractor ? interactor : nil
     }
 }
