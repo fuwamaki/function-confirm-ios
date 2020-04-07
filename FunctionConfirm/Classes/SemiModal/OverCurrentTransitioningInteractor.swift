@@ -25,7 +25,7 @@ private enum DisplayState {
 class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
 
     private var swipeState: SwipeState = .normal
-    private var displayState: DisplayState = .all
+    private var displayState: DisplayState = .half
 
     public var startHandler: (() -> Void)?
     public var dismissHandler: (() -> Void)?

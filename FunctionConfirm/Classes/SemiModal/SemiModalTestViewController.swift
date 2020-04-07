@@ -101,9 +101,10 @@ final class SemiModalTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        allHeightConstraint.priority = .defaultHigh
+        tableView.bounces = false
+        allHeightConstraint.priority = .defaultLow
         allHeightConstraint.isActive = true
-        halfHeightConstraint.priority = .defaultLow
+        halfHeightConstraint.priority = .defaultHigh
         halfHeightConstraint.isActive = true
         interactor.startHandler = { [weak self] in
             /// bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
@@ -130,7 +131,6 @@ final class SemiModalTestViewController: UIViewController {
         }
     }
 
-    private var isAll: Bool = false
     // memo: handleSwipeGestureの.end時にも呼び出され、viewOriginYを更新する
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -146,9 +146,7 @@ extension SemiModalTestViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        allHeightConstraint.priority = isAll ? .defaultHigh : .defaultLow
-        halfHeightConstraint.priority = isAll ? .defaultLow : .defaultHigh
-        isAll = !isAll
+        dismiss(animated: true, completion: nil)
     }
 }
 
