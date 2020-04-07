@@ -113,14 +113,21 @@ final class SemiModalTestViewController: UIViewController {
             self?.tableView.bounces = true
             self?.allHeightConstraint.priority = .defaultHigh
             self?.halfHeightConstraint.priority = .defaultLow
+            UIView.animate(withDuration: 1.0) {
+                self?.view.layoutIfNeeded()
+            }
         }
         interactor.halfStateHandler = { [weak self] in
             self?.tableView.bounces = true
             self?.allHeightConstraint.priority = .defaultLow
             self?.halfHeightConstraint.priority = .defaultHigh
+            UIView.animate(withDuration: 1.0) {
+                self?.view.layoutIfNeeded()
+            }
         }
     }
 
+    private var isAll: Bool = false
     // memo: handleSwipeGestureの.end時にも呼び出され、viewOriginYを更新する
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -136,10 +143,9 @@ extension SemiModalTestViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        allHeightConstraint.priority = isAll ? .defaultHigh : .defaultLow
-//        halfHeightConstraint.priority = isAll ? .defaultLow : .defaultHigh
-//        isAll = !isAll
-//        containerStackView.layoutIfNeeded()
+        allHeightConstraint.priority = isAll ? .defaultHigh : .defaultLow
+        halfHeightConstraint.priority = isAll ? .defaultLow : .defaultHigh
+        isAll = !isAll
     }
 }
 
