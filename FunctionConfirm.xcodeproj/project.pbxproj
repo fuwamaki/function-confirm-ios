@@ -36,6 +36,7 @@
 		20B015592437005E008DA31D /* SemiModalTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B015582437005E008DA31D /* SemiModalTest.storyboard */; };
 		20B0155B243702D8008DA31D /* SemiModalTestTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B0155A243702D8008DA31D /* SemiModalTestTableCell.xib */; };
 		20B0155D243702F7008DA31D /* SemiModalTestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B0155C243702F7008DA31D /* SemiModalTestTableCell.swift */; };
+		20BB2C9F243BFEDD00A5CC46 /* SemiModalCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
 		20E35066232A29090057A561 /* TimerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35065232A29090057A561 /* TimerView.storyboard */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */; };
@@ -197,6 +198,7 @@
 		20B015582437005E008DA31D /* SemiModalTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModalTest.storyboard; sourceTree = "<group>"; };
 		20B0155A243702D8008DA31D /* SemiModalTestTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SemiModalTestTableCell.xib; sourceTree = "<group>"; };
 		20B0155C243702F7008DA31D /* SemiModalTestTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTestTableCell.swift; sourceTree = "<group>"; };
+		20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalCustomView.swift; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		20E35065232A29090057A561 /* TimerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerView.storyboard; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */,
 				20B0155624370032008DA31D /* SemiModalTestViewController.swift */,
 				20B015582437005E008DA31D /* SemiModalTest.storyboard */,
+				20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */,
 				20B0155C243702F7008DA31D /* SemiModalTestTableCell.swift */,
 				20B0155A243702D8008DA31D /* SemiModalTestTableCell.xib */,
 			);
@@ -1134,6 +1137,7 @@
 				20B0155D243702F7008DA31D /* SemiModalTestTableCell.swift in Sources */,
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
+				20BB2C9F243BFEDD00A5CC46 /* SemiModalCustomView.swift in Sources */,
 				9CDB1B5822749E40004EFB68 /* AppState.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,

@@ -10,17 +10,18 @@ import UIKit
 
 final class SemiModalTestViewController: UIViewController {
 
-    @IBOutlet private weak var backgroundView: UIView! {
-        didSet {
-            /// handle tap backgroundView
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(handleClickBackgroundView))
-            backgroundView.addGestureRecognizer(gesture)
-        }
-    }
+//    @IBOutlet private weak var backgroundView: SemiModalCustomView! {
+//        didSet {
+//            /// handle tap backgroundView
+//            let gesture = UITapGestureRecognizer(target: self, action: #selector(handleClickBackgroundView))
+//            backgroundView.addGestureRecognizer(gesture)
+//        }
+//    }
+//    @objc private func handleClickBackgroundView() {
+//        dismiss(animated: true, completion: nil)
+//    }
 
-    @objc private func handleClickBackgroundView() {
-        dismiss(animated: true, completion: nil)
-    }
+    @IBOutlet private weak var containerStackView: UIStackView!
 
     @IBOutlet private weak var headerView: UIView! {
         didSet {
@@ -39,7 +40,7 @@ final class SemiModalTestViewController: UIViewController {
         interactor.handleTransitionGesture(view: view, sender: sender)
     }
 
-    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
+//    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -58,6 +59,10 @@ final class SemiModalTestViewController: UIViewController {
         /// TableViewのScrollがTop位置の場合、interactorの状態を更新
         if tableViewContentOffsetY <= 0 {
             interactor.updateStateShouldStartIfNeeded()
+        } else {
+            /// 上に引き上げているとき。
+            allHeightConstraint.priority = .defaultHigh
+            halfHeightConstraint.priority = .defaultLow
         }
         /// インタラクション開始位置と、テーブルビュースクロール開始位置が異なるため、インタラクション開始時のY位置を取得している
         interactor.setStartInteractionTranslationY(sender.translation(in: view).y)
@@ -68,7 +73,7 @@ final class SemiModalTestViewController: UIViewController {
     private var tableViewContentOffsetY: CGFloat = 0.0
 
     private var interactor = OverCurrentTransitioningInteractor()
-    private var array: [String] = ["1", "2", "3"]
+    private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
     static func make() -> UIViewController {
         let storyBoard = UIStoryboard(name: "SemiModalTest", bundle: nil)
@@ -90,27 +95,50 @@ final class SemiModalTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-    }
-
-    private func setupViews() {
         interactor.startHandler = { [weak self] in
             /// bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
             self?.tableView.bounces = false
         }
         interactor.resetHandler = { [weak self] in
-            self?.tableView.bounces = true
+            self?.tableView.bounces = false
+            self?.allHeightConstraint.priority = .defaultLow
+            self?.halfHeightConstraint.priority = .defaultHigh
         }
         interactor.dismissHandler = { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         }
+        allHeightConstraint.priority = .defaultHigh
+        allHeightConstraint.isActive = true
+        halfHeightConstraint.priority = .defaultLow
+        halfHeightConstraint.isActive = true
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        interactor.viewOriginY = headerView.frame.origin.y
+    }
+
+    private var isAll: Bool = false
+    private lazy var allHeightConstraint: NSLayoutConstraint = {
+        return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.9)
+    }()
+    private lazy var halfHeightConstraint: NSLayoutConstraint = {
+        return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.4)
+    }()
 }
 
 // MARK: UITableViewDelegate
 extension SemiModalTestViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         tableViewContentOffsetY = scrollView.contentOffset.y
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        allHeightConstraint.priority = isAll ? .defaultHigh : .defaultLow
+//        halfHeightConstraint.priority = isAll ? .defaultLow : .defaultHigh
+//        isAll = !isAll
+//        containerStackView.layoutIfNeeded()
     }
 }
 

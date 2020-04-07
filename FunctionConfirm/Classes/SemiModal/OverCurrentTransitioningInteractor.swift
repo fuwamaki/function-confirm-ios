@@ -8,6 +8,19 @@
 
 import UIKit
 
+private enum SwipeState {
+    case normal
+    case swiping
+    case canBeAll
+    case canBeHalf
+    case canDismiss
+}
+
+private enum DisplayState {
+    case half
+    case all
+}
+
 class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
 
     enum State {
@@ -17,6 +30,9 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         case shouldFinish // 終了できる（終了していない）
     }
 
+    private var swipeState: SwipeState = .normal
+    private var displayState: DisplayState = .half
+
     private var state: State = .none
     private var startInteractionTranslationY: CGFloat = 0
 
@@ -24,6 +40,8 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
     public var resetHandler: (() -> Void)?
     public var dismissHandler: (() -> Void)?
 
+    // modal表示するviewのy座標。half表示時またはall表示時の値のみが入る
+    public var viewOriginY: CGFloat = 0
     public var isUseInteractor: Bool {
         /// インタラクション開始している場合だけinteractorを返す
         switch state {
@@ -47,7 +65,7 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
     }
 
     private func reset() {
-        state = .none
+//        state = .none
         startInteractionTranslationY = 0
         resetHandler?()
     }
@@ -55,7 +73,7 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
     public func setStartInteractionTranslationY(_ translationY: CGFloat) {
         switch state {
         case .shouldStart:
-            /// Interaction開始可能な際にInteraction開始までの間更新し続けることで、開始時のYを保持する
+            /// Interaction開始直後のy座標を保持する
             startInteractionTranslationY = translationY
         default:
             break
@@ -85,7 +103,26 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         }
 
         let translation = sender.translation(in: view)
-        let verticalMovement = (translation.y - startInteractionTranslationY)/view.bounds.height
+        let verticalMovement = (translation.y - startInteractionTranslationY) / view.bounds.height
+
+        // swipeで更新されたoriginYの値
+        let updatedviewOriginY = viewOriginY + (translation.y - startInteractionTranslationY)
+        let updatedviewRatio = updatedviewOriginY / view.bounds.height
+        switch (displayState, updatedviewRatio) {
+        case (.all, let ratio) where ratio <= 0.2:
+            swipeState = .swiping
+        case (.all, let ratio) where 0.2 < ratio:
+            swipeState = .canBeHalf
+        case (.half, let ratio) where ratio < 0.5:
+            swipeState = .canBeAll
+        case (.half, let ratio) where 0.5 <= ratio && ratio <= 0.7:
+            swipeState = .swiping
+        case (.half, let ratio) where 0.7 < ratio:
+            swipeState = .canDismiss
+        default:
+            break
+        }
+
         /// SemiModalViewが画面の何割移動したか
         let movementRatio = CGFloat(fminf(fmaxf(Float(verticalMovement), 0.0), 1.0))
         /// スクロール量が閾値を超えたか、又はスクロール速度が閾値を超えたか
@@ -94,10 +131,10 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         switch (sender.state, isShouldFinish, state) {
         case (.changed, true, _):
             state = .shouldFinish
-            update(movementRatio)
+            update(verticalMovement)
         case (.changed, false, _):
             state = .hasStarted
-            update(movementRatio)
+            update(verticalMovement)
         case (.cancelled, _, _):
             cancel()
             reset()
@@ -105,8 +142,10 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
             finish()
             reset()
         case (.ended, _, _):
-            cancel()
+//            cancel()
+            state = .shouldStart
             reset()
+            cancel()
         default:
             break
         }
