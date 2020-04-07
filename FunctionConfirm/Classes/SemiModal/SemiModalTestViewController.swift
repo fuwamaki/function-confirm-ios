@@ -36,11 +36,9 @@ final class SemiModalTestViewController: UIViewController {
 
     /// HeaderViewをSwipeした場合の処理。即インタラクションを開始。
     @objc private func handleHeaderViewSwipe(_ sender: UIPanGestureRecognizer) {
-        interactor.updateStateShouldStartIfNeeded()
-        interactor.handleTransitionGesture(view: view, sender: sender)
+        interactor.handleSwipeGesture(view: view, sender: sender)
     }
 
-//    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -58,15 +56,12 @@ final class SemiModalTestViewController: UIViewController {
     @objc private func handleTableViewSwipe(_ sender: UIPanGestureRecognizer) {
         /// TableViewのScrollがTop位置の場合、interactorの状態を更新
         if tableViewContentOffsetY <= 0 {
-            interactor.updateStateShouldStartIfNeeded()
+            interactor.handleSwipeGesture(view: view, sender: sender)
         } else {
             /// 上に引き上げているとき。
             allHeightConstraint.priority = .defaultHigh
             halfHeightConstraint.priority = .defaultLow
         }
-        /// インタラクション開始位置と、テーブルビュースクロール開始位置が異なるため、インタラクション開始時のY位置を取得している
-        interactor.setStartInteractionTranslationY(sender.translation(in: view).y)
-        interactor.handleTransitionGesture(view: view, sender: sender)
     }
 
     /// tableView内のスクロール高さ。通常時が0。
