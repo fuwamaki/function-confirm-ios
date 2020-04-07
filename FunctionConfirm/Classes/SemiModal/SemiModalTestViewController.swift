@@ -110,12 +110,12 @@ final class SemiModalTestViewController: UIViewController {
             self?.dismiss(animated: true, completion: nil)
         }
         interactor.allStateHandler = { [weak self] in
-            self?.tableView.bounces = false
+            self?.tableView.bounces = true
             self?.allHeightConstraint.priority = .defaultHigh
             self?.halfHeightConstraint.priority = .defaultLow
         }
         interactor.halfStateHandler = { [weak self] in
-            self?.tableView.bounces = false
+            self?.tableView.bounces = true
             self?.allHeightConstraint.priority = .defaultLow
             self?.halfHeightConstraint.priority = .defaultHigh
         }
