@@ -31,6 +31,7 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
     public var dismissHandler: (() -> Void)?
     public var allStateHandler: (() -> Void)?
     public var halfStateHandler: (() -> Void)?
+    public var layoutIfNeededHandler: (() -> Void)?
 
     // modal表示するviewのy座標。half表示時またはall表示時の値のみが入る
     public var viewOriginY: CGFloat = 0
@@ -47,7 +48,7 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
 
     /// interactionのキャンセル時のAnimation Durationスピードを変更。defaultだと高速に閉じてしまうので、スピードを調整。
     override func cancel() {
-        completionSpeed = percentComplete
+        completionSpeed = 0.1
         super.cancel()
     }
 
@@ -101,7 +102,15 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
             halfStateHandler?()
             swipeState = .normal
             displayState = .half
-            cancel()
+            update(movedRatio)
+            UIView.animateKeyframes(withDuration: 0.5, delay: 0.0, options: [.overrideInheritedDuration], animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1, animations: {
+                    self.layoutIfNeededHandler?()
+                })
+                UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.01, animations: {
+                    self.cancel()
+                })
+            }, completion: nil)
         default:
             break
         }

@@ -61,6 +61,9 @@ final class SemiModalTestViewController: UIViewController {
             /// 上に引き上げているとき。
             allHeightConstraint.priority = .defaultHigh
             halfHeightConstraint.priority = .defaultLow
+            UIView.animate(withDuration: 0.4) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
 
@@ -110,7 +113,7 @@ final class SemiModalTestViewController: UIViewController {
             self?.dismiss(animated: true, completion: nil)
         }
         interactor.allStateHandler = { [weak self] in
-            self?.tableView.bounces = true
+            self?.tableView.bounces = false
             self?.allHeightConstraint.priority = .defaultHigh
             self?.halfHeightConstraint.priority = .defaultLow
             UIView.animate(withDuration: 1.0) {
@@ -118,12 +121,12 @@ final class SemiModalTestViewController: UIViewController {
             }
         }
         interactor.halfStateHandler = { [weak self] in
-            self?.tableView.bounces = true
+            self?.tableView.bounces = false
             self?.allHeightConstraint.priority = .defaultLow
             self?.halfHeightConstraint.priority = .defaultHigh
-            UIView.animate(withDuration: 1.0) {
-                self?.view.layoutIfNeeded()
-            }
+        }
+        interactor.layoutIfNeededHandler = { [weak self] in
+            self?.view.layoutIfNeeded()
         }
     }
 
