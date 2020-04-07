@@ -25,11 +25,12 @@ private enum DisplayState {
 class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
 
     private var swipeState: SwipeState = .normal
-    private var displayState: DisplayState = .half
+    private var displayState: DisplayState = .all
 
     public var startHandler: (() -> Void)?
-    public var resetHandler: (() -> Void)?
     public var dismissHandler: (() -> Void)?
+    public var allStateHandler: (() -> Void)?
+    public var halfStateHandler: (() -> Void)?
 
     // modal表示するviewのy座標。half表示時またはall表示時の値のみが入る
     public var viewOriginY: CGFloat = 0
@@ -86,17 +87,20 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
             break
         }
         let movedRatio = sender.translation(in: view).y / view.bounds.height
-        switch (sender.state, swipeState) {
-        case (.changed, _):
+        switch (sender.state, swipeState, displayState) {
+        case (.changed, _, _):
             update(movedRatio)
-        case (.cancelled, _):
-            resetHandler?()
-            cancel()
-        case (.ended, .canDismiss):
-            resetHandler?()
+        case (.ended, .canDismiss, _):
             finish()
-        case (.ended, _):
-            resetHandler?()
+        case (.ended, .canBeAll, _), (.ended, .swiping, .all), (.cancelled, .canBeAll, _), (.cancelled, .swiping, .all):
+            allStateHandler?()
+            swipeState = .normal
+            displayState = .all
+            cancel()
+        case (.ended, .canBeHalf, _), (.ended, .swiping, .half), (.cancelled, .canBeHalf, _), (.cancelled, .swiping, .half):
+            halfStateHandler?()
+            swipeState = .normal
+            displayState = .half
             cancel()
         default:
             break

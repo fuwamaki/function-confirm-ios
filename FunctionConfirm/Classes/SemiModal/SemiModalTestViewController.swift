@@ -70,6 +70,14 @@ final class SemiModalTestViewController: UIViewController {
     private var interactor = OverCurrentTransitioningInteractor()
     private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
+    private lazy var allHeightConstraint: NSLayoutConstraint = {
+        return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.9)
+    }()
+
+    private lazy var halfHeightConstraint: NSLayoutConstraint = {
+        return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.4)
+    }()
+
     static func make() -> UIViewController {
         let storyBoard = UIStoryboard(name: "SemiModalTest", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "SemiModalTestViewController")
@@ -90,36 +98,34 @@ final class SemiModalTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.startHandler = { [weak self] in
-            /// bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
-            self?.tableView.bounces = false
-        }
-        interactor.resetHandler = { [weak self] in
-            self?.tableView.bounces = false
-            self?.allHeightConstraint.priority = .defaultLow
-            self?.halfHeightConstraint.priority = .defaultHigh
-        }
-        interactor.dismissHandler = { [weak self] in
-            self?.dismiss(animated: true, completion: nil)
-        }
         allHeightConstraint.priority = .defaultHigh
         allHeightConstraint.isActive = true
         halfHeightConstraint.priority = .defaultLow
         halfHeightConstraint.isActive = true
+        interactor.startHandler = { [weak self] in
+            /// bounces: ScrollViewがコンテンツの端を越えて跳ね返る(bounce)か、また戻るか
+            self?.tableView.bounces = false
+        }
+        interactor.dismissHandler = { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        interactor.allStateHandler = { [weak self] in
+            self?.tableView.bounces = false
+            self?.allHeightConstraint.priority = .defaultHigh
+            self?.halfHeightConstraint.priority = .defaultLow
+        }
+        interactor.halfStateHandler = { [weak self] in
+            self?.tableView.bounces = false
+            self?.allHeightConstraint.priority = .defaultLow
+            self?.halfHeightConstraint.priority = .defaultHigh
+        }
     }
 
+    // memo: handleSwipeGestureの.end時にも呼び出され、viewOriginYを更新する
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        interactor.viewOriginY = headerView.frame.origin.y
+        interactor.viewOriginY = containerStackView.frame.origin.y
     }
-
-    private var isAll: Bool = false
-    private lazy var allHeightConstraint: NSLayoutConstraint = {
-        return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.9)
-    }()
-    private lazy var halfHeightConstraint: NSLayoutConstraint = {
-        return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.4)
-    }()
 }
 
 // MARK: UITableViewDelegate
