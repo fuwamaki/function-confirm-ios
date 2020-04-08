@@ -76,13 +76,13 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         switch (displayState, updatedviewRatio) {
         case (.all, let ratio) where ratio <= 0.2:
             swipeState = .swiping
-        case (.all, let ratio) where 0.2 < ratio:
+        case (.all, let ratio) where 0.2 < ratio && ratio <= 0.7:
             swipeState = .canBeHalf
         case (.half, let ratio) where ratio < 0.5:
             swipeState = .canBeAll
         case (.half, let ratio) where 0.5 <= ratio && ratio <= 0.7:
             swipeState = .swiping
-        case (.half, let ratio) where 0.7 < ratio:
+        case (_, let ratio) where 0.7 < ratio:
             swipeState = .canDismiss
         default:
             break
