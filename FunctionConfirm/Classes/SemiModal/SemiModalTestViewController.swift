@@ -10,17 +10,6 @@ import UIKit
 
 final class SemiModalTestViewController: UIViewController {
 
-//    @IBOutlet private weak var backgroundView: SemiModalCustomView! {
-//        didSet {
-//            /// handle tap backgroundView
-//            let gesture = UITapGestureRecognizer(target: self, action: #selector(handleClickBackgroundView))
-//            backgroundView.addGestureRecognizer(gesture)
-//        }
-//    }
-//    @objc private func handleClickBackgroundView() {
-//        dismiss(animated: true, completion: nil)
-//    }
-
     @IBOutlet private weak var containerStackView: UIStackView!
 
     @IBOutlet private weak var headerView: UIView! {
@@ -32,11 +21,6 @@ final class SemiModalTestViewController: UIViewController {
             let headerGesture = UIPanGestureRecognizer(target: self, action: #selector(handleHeaderViewSwipe(_:)))
             headerView.addGestureRecognizer(headerGesture)
         }
-    }
-
-    /// HeaderViewをSwipeした場合の処理。即インタラクションを開始。
-    @objc private func handleHeaderViewSwipe(_ sender: UIPanGestureRecognizer) {
-        interactor.handleSwipeGesture(view: view, sender: sender)
     }
 
     @IBOutlet private weak var tableView: UITableView! {
@@ -52,26 +36,11 @@ final class SemiModalTestViewController: UIViewController {
         }
     }
 
-    /// TableViewをSwipeした場合の処理。TableViewのScrollがTopならインタラクションを開始。
-    @objc private func handleTableViewSwipe(_ sender: UIPanGestureRecognizer) {
-        /// TableViewのScrollがTop位置の場合、interactorの状態を更新
-        if tableViewContentOffsetY <= 0 {
-            interactor.handleSwipeGesture(view: view, sender: sender)
-        } else {
-            /// 上に引き上げているとき。
-            allHeightConstraint.priority = .defaultHigh
-            halfHeightConstraint.priority = .defaultLow
-            UIView.animate(withDuration: 0.4) {
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-
     /// tableView内のスクロール高さ。通常時が0。
     private var tableViewContentOffsetY: CGFloat = 0.0
 
     private var interactor = OverCurrentTransitioningInteractor()
-    private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
 
     private lazy var allHeightConstraint: NSLayoutConstraint = {
         return containerStackView.heightAnchor.constraint(equalTo: containerStackView.superview!.heightAnchor, multiplier: 0.9)
@@ -129,6 +98,11 @@ final class SemiModalTestViewController: UIViewController {
         interactor.layoutIfNeededHandler = { [weak self] in
             self?.view.layoutIfNeeded()
         }
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapBackground(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.cancelsTouchesInView = false
+        tapGestureRecognizer.delegate = self
     }
 
     // memo: handleSwipeGestureの.end時にも呼び出され、viewOriginYを更新する
@@ -168,6 +142,39 @@ extension SemiModalTestViewController: UIGestureRecognizerDelegate {
     /// 2つ以上のgesture認識を可能にするかどうか
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        switch gestureRecognizer {
+        case is UITapGestureRecognizer:
+            return touch.view?.isDescendant(of: containerStackView) == true ? false : true
+        default:
+            return true
+        }
+    }
+
+    @objc private func tapBackground(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    /// HeaderViewをSwipeした場合の処理。即インタラクションを開始。
+    @objc private func handleHeaderViewSwipe(_ sender: UIPanGestureRecognizer) {
+        interactor.handleSwipeGesture(view: view, sender: sender)
+    }
+
+    /// TableViewをSwipeした場合の処理。TableViewのScrollがTopならインタラクションを開始。
+    @objc private func handleTableViewSwipe(_ sender: UIPanGestureRecognizer) {
+        /// TableViewのScrollがTop位置の場合、interactorの状態を更新
+        if tableViewContentOffsetY <= 0 {
+            interactor.handleSwipeGesture(view: view, sender: sender)
+        } else {
+            /// 上に引き上げているとき。
+            allHeightConstraint.priority = .defaultHigh
+            halfHeightConstraint.priority = .defaultLow
+            UIView.animate(withDuration: 0.4) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 }
 
