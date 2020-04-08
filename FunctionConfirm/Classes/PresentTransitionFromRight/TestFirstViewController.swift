@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PanModal
 
 final class TestFirstViewController: UIViewController {
 
@@ -23,7 +24,31 @@ final class TestFirstViewController: UIViewController {
         present(navigationController, animated: false, completion: nil)
     }
 
+    static func make() -> PanModalPresentable.LayoutType {
+        let storyBoard = UIStoryboard(name: "TestFirst", bundle: nil)
+        let viewController: PanModalPresentable.LayoutType = storyBoard.instantiateViewController(withIdentifier: "TestFirstViewController") as! TestFirstViewController
+        return viewController
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension TestFirstViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(300)
+    }
+
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(40)
+    }
+
+    var anchorModalToLongForm: Bool {
+        return false
     }
 }
