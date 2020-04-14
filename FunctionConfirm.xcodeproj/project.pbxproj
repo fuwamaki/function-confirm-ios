@@ -43,6 +43,16 @@
 		20F7D2D824458A5A0054A935 /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2D724458A5A0054A935 /* HalfModalViewController.swift */; };
 		20F7D2DA24458A7C0054A935 /* HalfModalRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F7D2D924458A7C0054A935 /* HalfModalRoot.storyboard */; };
 		20F7D2DC24458A9A0054A935 /* HalfModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F7D2DB24458A9A0054A935 /* HalfModalViewController.storyboard */; };
+		20F7D2DE244596B30054A935 /* UIViewController+HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */; };
+		20F7D2E0244599310054A935 /* HalfModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2DF244599310054A935 /* HalfModalPresentable.swift */; };
+		20F7D2E224459A560054A935 /* HalfModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E124459A560054A935 /* HalfModalAnimator.swift */; };
+		20F7D2E424459A9E0054A935 /* HalfModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */; };
+		20F7D2E624459BDC0054A935 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */; };
+		20F7D2E824459DF00054A935 /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E724459DF00054A935 /* DimmedView.swift */; };
+		20F7D2EA24459E3F0054A935 /* HalfContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E924459E3F0054A935 /* HalfContainerView.swift */; };
+		20F7D2EC24459F0E0054A935 /* HalfModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2EB24459F0E0054A935 /* HalfModalPresenter.swift */; };
+		20F7D2EE2445A2970054A935 /* HalfModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2ED2445A2970054A935 /* HalfModalHeight.swift */; };
+		20F7D2F02445A3410054A935 /* HalfModalPresentationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2EF2445A3410054A935 /* HalfModalPresentationState.swift */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */; };
 		7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */; };
 		7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232B20E0D78300D8A5A3 /* GitHubRepositoryModel.swift */; };
@@ -209,6 +219,16 @@
 		20F7D2D724458A5A0054A935 /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
 		20F7D2D924458A7C0054A935 /* HalfModalRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HalfModalRoot.storyboard; sourceTree = "<group>"; };
 		20F7D2DB24458A9A0054A935 /* HalfModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HalfModalViewController.storyboard; sourceTree = "<group>"; };
+		20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HalfModal.swift"; sourceTree = "<group>"; };
+		20F7D2DF244599310054A935 /* HalfModalPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentable.swift; sourceTree = "<group>"; };
+		20F7D2E124459A560054A935 /* HalfModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalAnimator.swift; sourceTree = "<group>"; };
+		20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationAnimator.swift; sourceTree = "<group>"; };
+		20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		20F7D2E724459DF00054A935 /* DimmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
+		20F7D2E924459E3F0054A935 /* HalfContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfContainerView.swift; sourceTree = "<group>"; };
+		20F7D2EB24459F0E0054A935 /* HalfModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresenter.swift; sourceTree = "<group>"; };
+		20F7D2ED2445A2970054A935 /* HalfModalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalHeight.swift; sourceTree = "<group>"; };
+		20F7D2EF2445A3410054A935 /* HalfModalPresentationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationState.swift; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
 		7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionViewController.swift; sourceTree = "<group>"; };
 		7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
@@ -487,6 +507,16 @@
 				20F7D2D924458A7C0054A935 /* HalfModalRoot.storyboard */,
 				20F7D2D724458A5A0054A935 /* HalfModalViewController.swift */,
 				20F7D2DB24458A9A0054A935 /* HalfModalViewController.storyboard */,
+				20F7D2DF244599310054A935 /* HalfModalPresentable.swift */,
+				20F7D2ED2445A2970054A935 /* HalfModalHeight.swift */,
+				20F7D2EF2445A3410054A935 /* HalfModalPresentationState.swift */,
+				20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */,
+				20F7D2E124459A560054A935 /* HalfModalAnimator.swift */,
+				20F7D2EB24459F0E0054A935 /* HalfModalPresenter.swift */,
+				20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */,
+				20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */,
+				20F7D2E724459DF00054A935 /* DimmedView.swift */,
+				20F7D2E924459E3F0054A935 /* HalfContainerView.swift */,
 			);
 			path = SemiModal2;
 			sourceTree = "<group>";
@@ -1133,6 +1163,7 @@
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				20037F9524291049009D5CF5 /* TestFirstViewController.swift in Sources */,
 				9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */,
+				20F7D2E424459A9E0054A935 /* HalfModalPresentationAnimator.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
 				9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */,
@@ -1153,11 +1184,14 @@
 				9CDB1B5A22749F69004EFB68 /* CounterReducer.swift in Sources */,
 				9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */,
 				20037F9124290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift in Sources */,
+				20F7D2E824459DF00054A935 /* DimmedView.swift in Sources */,
+				20F7D2EA24459E3F0054A935 /* HalfContainerView.swift in Sources */,
 				2032A70E20DCDD1C0091952F /* CustomePickerView.swift in Sources */,
 				9C78A2B022194BA60036D3FD /* AnimationFifthViewController.swift in Sources */,
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */,
+				20F7D2E624459BDC0054A935 /* HalfModalPresentationController.swift in Sources */,
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				20B0155D243702F7008DA31D /* SemiModalTestTableCell.swift in Sources */,
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
@@ -1168,8 +1202,10 @@
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
 				9C62DA42227C4BA4002DEA7C /* MVVMSubmitViewModel.swift in Sources */,
 				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
+				20F7D2DE244596B30054A935 /* UIViewController+HalfModal.swift in Sources */,
 				9C660DEF21DD45B4003BF811 /* StoryboardLoadable.swift in Sources */,
 				9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */,
+				20F7D2E224459A560054A935 /* HalfModalAnimator.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */,
@@ -1179,8 +1215,10 @@
 				9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				9CB8082A21F7540E00DAD155 /* StatusBarPopup2ViewController.swift in Sources */,
+				20F7D2EC24459F0E0054A935 /* HalfModalPresenter.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
+				20F7D2F02445A3410054A935 /* HalfModalPresentationState.swift in Sources */,
 				9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */,
 				9CB8083A21F832BA00DAD155 /* StatusBar3Manager.swift in Sources */,
 				9C62DA39227C4BA4002DEA7C /* MVVMListTableViewCell.swift in Sources */,
@@ -1212,6 +1250,7 @@
 				9CB8083521F8236000DAD155 /* StatusBar2Manager.swift in Sources */,
 				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
+				20F7D2EE2445A2970054A935 /* HalfModalHeight.swift in Sources */,
 				9C62DA3D227C4BA4002DEA7C /* MVVMListViewModel.swift in Sources */,
 				9C78A2B422194BC50036D3FD /* AnimationSeventhViewController.swift in Sources */,
 				208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */,
@@ -1221,6 +1260,7 @@
 				9CD30C7A21F6FD0F00D6184A /* StatusBarInTabBarViewController.swift in Sources */,
 				9C78A2AC22149F1B0036D3FD /* AnimationThirdViewController.swift in Sources */,
 				203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */,
+				20F7D2E0244599310054A935 /* HalfModalPresentable.swift in Sources */,
 				9C62DA40227C4BA4002DEA7C /* ItemRx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

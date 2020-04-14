@@ -21,14 +21,32 @@ final class HalfModalViewController: UIViewController {
 
     private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
 
-    static func make() -> UIViewController {
+    static func make() -> HalfModalPresentable.LayoutType {
         let storyBoard = UIStoryboard(name: "HalfModalViewController", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "HalfModalViewController") as! HalfModalViewController
+        let viewController: HalfModalPresentable.LayoutType = storyBoard.instantiateViewController(withIdentifier: "HalfModalViewController") as! HalfModalViewController
         return viewController
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension HalfModalViewController: HalfModalPresentable {
+    var halfScrollable: UIScrollView? {
+        return nil
+    }
+
+    var shortFormHeight: HalfModalHeight {
+        return .contentHeight(300)
+    }
+
+    var longFormHeight: HalfModalHeight {
+        return .maxHeightWithTopInset(40)
+    }
+
+    var anchorModalToLongForm: Bool {
+        return false
     }
 }
 

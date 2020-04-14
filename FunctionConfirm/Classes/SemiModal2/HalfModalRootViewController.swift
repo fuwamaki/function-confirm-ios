@@ -12,7 +12,7 @@ final class HalfModalRootViewController: UIViewController {
 
     @IBAction private func clickShowModalButton(_ sender: Any) {
         let viewController = HalfModalViewController.make()
-        present(viewController, animated: true, completion: nil)
+        presentHalfModal(viewController)
     }
 
     override func viewDidLoad() {
