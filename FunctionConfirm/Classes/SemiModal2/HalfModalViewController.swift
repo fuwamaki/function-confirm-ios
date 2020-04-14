@@ -52,6 +52,9 @@ extension HalfModalViewController: HalfModalPresentable {
 }
 
 extension HalfModalViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension HalfModalViewController: UITableViewDataSource {

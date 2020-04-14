@@ -18,15 +18,13 @@ open class HalfModalPresentationController: UIPresentationController {
 
     private var isPresentedViewAnimating = false
     private var extendsHalfScrolling = true
-    private var anchorModalToLongForm = true
     private var scrollViewYOffset: CGFloat = 0.0
     private var scrollObserver: NSKeyValueObservation?
     private var shortFormYPosition: CGFloat = 0
     private var longFormYPosition: CGFloat = 0
 
     private var anchoredYPosition: CGFloat {
-        let defaultTopOffset = presentable?.topOffset ?? 0
-        return anchorModalToLongForm ? longFormYPosition : defaultTopOffset
+        return longFormYPosition
     }
 
     private var presentable: HalfModalPresentable? {
@@ -112,12 +110,11 @@ open class HalfModalPresentationController: UIPresentationController {
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [weak self] _ in
-            guard
-                let self = self,
-                let presentable = self.presentable
-                else { return }
+            guard let self = self else { return }
             self.adjustPresentedViewFrame()
-            if presentable.shouldRoundTopCorners {
+            if
+                let layoutPresentable = self.presentedViewController as? HalfModalPresentable.LayoutType,
+                layoutPresentable.isHalfModalPresented {
                 self.addRoundedCorners(to: self.presentedView)
             }
         })
@@ -165,10 +162,10 @@ private extension HalfModalPresentationController {
     }
 
     func layoutPresentedView(in containerView: UIView) {
-        guard let presentable = presentable else { return }
+        guard let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType else { return }
         containerView.addSubview(presentedView)
         containerView.addGestureRecognizer(panGestureRecognizer)
-        if presentable.shouldRoundTopCorners {
+        if layoutPresentable.isHalfModalPresented {
             addRoundedCorners(to: presentedView)
         }
         setNeedsLayoutUpdate()
@@ -207,18 +204,17 @@ private extension HalfModalPresentationController {
             else { return }
         shortFormYPosition = layoutPresentable.shortFormYPos
         longFormYPosition = layoutPresentable.longFormYPos
-        anchorModalToLongForm = layoutPresentable.anchorModalToLongForm
         extendsHalfScrolling = layoutPresentable.allowsExtendedHalfScrolling
-        containerView?.isUserInteractionEnabled = layoutPresentable.isUserInteractionEnabled
     }
 
     func configureScrollViewInsets() {
         guard
+            let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType,
             let scrollView = presentable?.halfScrollable,
             !scrollView.isScrolling
             else { return }
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.scrollIndicatorInsets = presentable?.scrollIndicatorInsets ?? .zero
+        scrollView.scrollIndicatorInsets = layoutPresentable.scrollIndicatorInsets
         scrollView.contentInset.bottom = presentingViewController.view.safeAreaInsets.bottom
         scrollView.contentInsetAdjustmentBehavior = .never
     }
@@ -244,8 +240,8 @@ private extension HalfModalPresentationController {
             if isVelocityWithinSensitivityRange(velocity.y) {
                 if velocity.y < 0 {
                     transition(to: .longForm)
-                } else if (nearest(to: presentedView.frame.minY, inValues: [longFormYPosition, containerView.bounds.height]) == longFormYPosition
-                    && presentedView.frame.minY < shortFormYPosition) {
+                } else if nearest(to: presentedView.frame.minY, inValues: [longFormYPosition, containerView.bounds.height]) == longFormYPosition
+                    && presentedView.frame.minY < shortFormYPosition {
                     transition(to: .shortForm)
                 } else {
                     presentedViewController.dismiss(animated: true)
@@ -264,14 +260,6 @@ private extension HalfModalPresentationController {
     }
 
     func shouldRespond(to panGestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        guard
-            presentable?.shouldRespond(to: panGestureRecognizer) == true ||
-                !(panGestureRecognizer.state == .began || panGestureRecognizer.state == .cancelled)
-            else {
-                panGestureRecognizer.isEnabled = false
-                panGestureRecognizer.isEnabled = true
-                return false
-        }
         return !shouldFail(panGestureRecognizer: panGestureRecognizer)
     }
 
@@ -286,11 +274,6 @@ private extension HalfModalPresentationController {
     }
 
     func shouldFail(panGestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        guard !shouldPrioritize(panGestureRecognizer: panGestureRecognizer) else {
-            presentable?.halfScrollable?.panGestureRecognizer.isEnabled = false
-            presentable?.halfScrollable?.panGestureRecognizer.isEnabled = true
-            return false
-        }
         guard
             isPresentedViewAnchored,
             let scrollView = presentable?.halfScrollable,
@@ -298,11 +281,6 @@ private extension HalfModalPresentationController {
             else { return false }
         let loc = panGestureRecognizer.location(in: presentedView)
         return (scrollView.frame.contains(loc) || scrollView.isScrolling)
-    }
-
-    func shouldPrioritize(panGestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        return panGestureRecognizer.state == .began &&
-            presentable?.shouldPrioritize(halfModalGestureRecognizer: panGestureRecognizer) == true
     }
 
     func isVelocityWithinSensitivityRange(_ velocity: CGFloat) -> Bool {

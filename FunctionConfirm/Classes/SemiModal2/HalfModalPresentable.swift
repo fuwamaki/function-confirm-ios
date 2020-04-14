@@ -18,15 +18,7 @@ public protocol HalfModalPresentable: AnyObject {
     var transitionDuration: Double { get }
     var transitionAnimationOptions: UIView.AnimationOptions { get }
     var halfModalBackgroundColor: UIColor { get }
-    var scrollIndicatorInsets: UIEdgeInsets { get }
-    var anchorModalToLongForm: Bool { get }
-    var allowsExtendedHalfScrolling: Bool { get }
-    var isUserInteractionEnabled: Bool { get }
-    var isHapticFeedbackEnabled: Bool { get }
-    var shouldRoundTopCorners: Bool { get }
-    func shouldRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool
     func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer)
-    func shouldPrioritize(halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool
     func shouldTransition(to state: HalfModalPresentationState) -> Bool
     func willTransition(to state: HalfModalPresentationState)
     func halfModalViewWillDisappear()
@@ -97,45 +89,6 @@ public extension HalfModalPresentable where Self: UIViewController {
         return UIColor.black.withAlphaComponent(0.7)
     }
 
-    // TODO: 消す
-    // UIScrollViewのスクロール位置を表すIndicatorの位置
-    var scrollIndicatorInsets: UIEdgeInsets {
-        let top = shouldRoundTopCorners ? cornerRadius : 0
-        return UIEdgeInsets(top: CGFloat(top), left: 0, bottom: bottomLayoutOffset, right: 0)
-    }
-
-    // TODO: 消す
-    var anchorModalToLongForm: Bool {
-        return true
-    }
-
-    // TODO: 消す
-    var allowsExtendedHalfScrolling: Bool {
-        guard let scrollView = halfScrollable else { return false }
-        scrollView.layoutIfNeeded()
-        return scrollView.contentSize.height > (scrollView.frame.height - bottomLayoutOffset)
-    }
-
-    // TODO: 消す
-    var isUserInteractionEnabled: Bool {
-        return true
-    }
-
-    // TODO: 消す
-    var isHapticFeedbackEnabled: Bool {
-        return true
-    }
-
-    // TODO: 消す
-    var shouldRoundTopCorners: Bool {
-        return isHalfModalPresented
-    }
-
-    // TODO: 消す defaultでスクロールもできなくなっちゃう
-    func shouldRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        return true
-    }
-
     // ハーフモーダルを上下に操作中に呼び出される
     func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) {
     }
@@ -143,11 +96,6 @@ public extension HalfModalPresentable where Self: UIViewController {
     // falseにすると、ハーフモーダルの高さをカスタムできる
     func shouldTransition(to state: HalfModalPresentationState) -> Bool {
         return true
-    }
-
-    // TODO: 消す
-    func shouldPrioritize(halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
-        return false
     }
 
     // longForm<->shortFormの変更したタイミングでコール
@@ -171,6 +119,18 @@ extension HalfModalPresentable where Self: UIViewController {
 
     var bottomLayoutOffset: CGFloat {
         return rootViewController?.view.safeAreaInsets.bottom ?? 0
+    }
+
+    var allowsExtendedHalfScrolling: Bool {
+        guard let scrollView = halfScrollable else { return false }
+        scrollView.layoutIfNeeded()
+        return scrollView.contentSize.height > (scrollView.frame.height - bottomLayoutOffset)
+    }
+
+    // UIScrollViewのスクロール位置を表すIndicatorの位置
+    var scrollIndicatorInsets: UIEdgeInsets {
+        let top = isHalfModalPresented ? cornerRadius : 0
+        return UIEdgeInsets(top: CGFloat(top), left: 0, bottom: bottomLayoutOffset, right: 0)
     }
 
     var shortFormYPos: CGFloat {

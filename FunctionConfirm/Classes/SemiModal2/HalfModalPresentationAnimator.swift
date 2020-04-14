@@ -16,15 +16,10 @@ public class HalfModalPresentationAnimator: NSObject {
     }
 
     private let transitionStyle: TransitionStyle
-    private var feedbackGenerator: UISelectionFeedbackGenerator?
 
     required public init(transitionStyle: TransitionStyle) {
         self.transitionStyle = transitionStyle
         super.init()
-        if case .presentation = transitionStyle {
-            feedbackGenerator = UISelectionFeedbackGenerator()
-            feedbackGenerator?.prepare()
-        }
     }
 
     private func animatePresentation(transitionContext: UIViewControllerContextTransitioning) {
@@ -38,15 +33,11 @@ public class HalfModalPresentationAnimator: NSObject {
         let halfView: UIView = transitionContext.containerView.halfContainerView ?? toVC.view
         halfView.frame = transitionContext.finalFrame(for: toVC)
         halfView.frame.origin.y = transitionContext.containerView.frame.height
-        if presentable?.isHapticFeedbackEnabled == true {
-            feedbackGenerator?.selectionChanged()
-        }
         HalfModalAnimator.animate({
             halfView.frame.origin.y = yPos
-        }, config: presentable, { [weak self] didComplete in
+        }, config: presentable, { didComplete in
             fromVC.endAppearanceTransition()
             transitionContext.completeTransition(didComplete)
-            self?.feedbackGenerator = nil
         })
     }
 
