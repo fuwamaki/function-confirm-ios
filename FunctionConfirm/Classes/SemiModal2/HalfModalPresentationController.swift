@@ -41,9 +41,7 @@ open class HalfModalPresentationController: UIPresentationController {
             view = DimmedView()
         }
         view.didTap = { [weak self] _ in
-            if self?.presentable?.allowsTapToDismiss == true {
-                self?.presentedViewController.dismiss(animated: true)
-            }
+            self?.presentedViewController.dismiss(animated: true)
         }
         return view
     }()
@@ -51,13 +49,6 @@ open class HalfModalPresentationController: UIPresentationController {
     private lazy var halfContainerView: HalfContainerView = {
         let frame = containerView?.frame ?? .zero
         return HalfContainerView(presentedView: presentedViewController.view, frame: frame)
-    }()
-
-    private lazy var dragIndicatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = presentable?.dragIndicatorBackgroundColor
-        view.layer.cornerRadius = Constants.dragIndicatorSize.height / 2.0
-        return view
     }()
 
     public override var presentedView: UIView {
@@ -108,7 +99,6 @@ open class HalfModalPresentationController: UIPresentationController {
             return
         }
         coordinator.animate(alongsideTransition: { [weak self] _ in
-            self?.dragIndicatorView.alpha = 0.0
             self?.backgroundView.dimState = .off
             self?.presentingViewController.setNeedsStatusBarAppearanceUpdate()
         })
@@ -178,9 +168,6 @@ private extension HalfModalPresentationController {
         guard let presentable = presentable else { return }
         containerView.addSubview(presentedView)
         containerView.addGestureRecognizer(panGestureRecognizer)
-        if presentable.showDragIndicator {
-            addDragIndicatorView(to: presentedView)
-        }
         if presentable.shouldRoundTopCorners {
             addRoundedCorners(to: presentedView)
         }
@@ -213,15 +200,6 @@ private extension HalfModalPresentationController {
         backgroundView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         backgroundView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
         backgroundView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-    }
-
-    func addDragIndicatorView(to view: UIView) {
-        view.addSubview(dragIndicatorView)
-        dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        dragIndicatorView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -Constants.indicatorYOffset).isActive = true
-        dragIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        dragIndicatorView.widthAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.width).isActive = true
-        dragIndicatorView.heightAnchor.constraint(equalToConstant: Constants.dragIndicatorSize.height).isActive = true
     }
 
     func configureViewLayout() {
@@ -267,7 +245,7 @@ private extension HalfModalPresentationController {
                 if velocity.y < 0 {
                     transition(to: .longForm)
                 } else if (nearest(to: presentedView.frame.minY, inValues: [longFormYPosition, containerView.bounds.height]) == longFormYPosition
-                    && presentedView.frame.minY < shortFormYPosition) || presentable?.allowsDragToDismiss == false {
+                    && presentedView.frame.minY < shortFormYPosition) {
                     transition(to: .shortForm)
                 } else {
                     presentedViewController.dismiss(animated: true)
@@ -276,7 +254,7 @@ private extension HalfModalPresentationController {
                 let position = nearest(to: presentedView.frame.minY, inValues: [containerView.bounds.height, shortFormYPosition, longFormYPosition])
                 if position == longFormYPosition {
                     transition(to: .longForm)
-                } else if position == shortFormYPosition || presentable?.allowsDragToDismiss == false {
+                } else if position == shortFormYPosition {
                     transition(to: .shortForm)
                 } else {
                     presentedViewController.dismiss(animated: true)
@@ -427,10 +405,6 @@ private extension HalfModalPresentationController {
         let path = UIBezierPath(roundedRect: view.bounds,
                                 byRoundingCorners: [.topLeft, .topRight],
                                 cornerRadii: CGSize(width: radius, height: radius))
-        if presentable?.showDragIndicator == true {
-            let indicatorLeftEdgeXPos = view.bounds.width/2.0 - Constants.dragIndicatorSize.width/2.0
-            drawAroundDragIndicator(currentPath: path, indicatorLeftEdgeXPos: indicatorLeftEdgeXPos)
-        }
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         view.layer.mask = mask

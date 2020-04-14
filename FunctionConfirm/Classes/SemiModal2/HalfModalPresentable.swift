@@ -18,16 +18,12 @@ public protocol HalfModalPresentable: AnyObject {
     var transitionDuration: Double { get }
     var transitionAnimationOptions: UIView.AnimationOptions { get }
     var halfModalBackgroundColor: UIColor { get }
-    var dragIndicatorBackgroundColor: UIColor { get }
     var scrollIndicatorInsets: UIEdgeInsets { get }
     var anchorModalToLongForm: Bool { get }
     var allowsExtendedHalfScrolling: Bool { get }
-    var allowsDragToDismiss: Bool { get }
-    var allowsTapToDismiss: Bool { get }
     var isUserInteractionEnabled: Bool { get }
     var isHapticFeedbackEnabled: Bool { get }
     var shouldRoundTopCorners: Bool { get }
-    var showDragIndicator: Bool { get }
     func shouldRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool
     func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer)
     func shouldPrioritize(halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool
@@ -102,11 +98,6 @@ public extension HalfModalPresentable where Self: UIViewController {
     }
 
     // TODO: 消す
-    var dragIndicatorBackgroundColor: UIColor {
-        return UIColor.lightGray
-    }
-
-    // TODO: 消す
     // UIScrollViewのスクロール位置を表すIndicatorの位置
     var scrollIndicatorInsets: UIEdgeInsets {
         let top = shouldRoundTopCorners ? cornerRadius : 0
@@ -126,16 +117,6 @@ public extension HalfModalPresentable where Self: UIViewController {
     }
 
     // TODO: 消す
-    var allowsDragToDismiss: Bool {
-        return true
-    }
-
-    // TODO: 消す
-    var allowsTapToDismiss: Bool {
-        return true
-    }
-
-    // TODO: 消す
     var isUserInteractionEnabled: Bool {
         return true
     }
@@ -148,11 +129,6 @@ public extension HalfModalPresentable where Self: UIViewController {
     // TODO: 消す
     var shouldRoundTopCorners: Bool {
         return isHalfModalPresented
-    }
-
-    // TODO: 消す
-    var showDragIndicator: Bool {
-        return shouldRoundTopCorners
     }
 
     // TODO: 消す defaultでスクロールもできなくなっちゃう
