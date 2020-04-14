@@ -1,5 +1,5 @@
 //
-//  SemiModalPresentationController.swift
+//  OldSemiModalPresentationController.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/06.
@@ -13,7 +13,7 @@ private struct Constant {
     static let overlayBackgroundAlpha: CGFloat = 0.5
 }
 
-final class SemiModalPresentationController: UIPresentationController {
+final class OldSemiModalPresentationController: UIPresentationController {
 
     private let overlayView = UIView()
 

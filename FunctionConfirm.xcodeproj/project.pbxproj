@@ -27,7 +27,7 @@
 		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */; };
-		208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */; };
+		208A61C6243AE49300A64212 /* OldSemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */; };
 		208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */; };
 		208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */; };
 		208CE614234753F60024AE3A /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CE613234753F60024AE3A /* ImageButton.swift */; };
@@ -203,7 +203,7 @@
 		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTransitioningDelegate.swift; sourceTree = "<group>"; };
-		208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
+		208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldSemiModalPresentationController.swift; sourceTree = "<group>"; };
 		208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalDismissAnimationController.swift; sourceTree = "<group>"; };
 		208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverCurrentTransitioningInteractor.swift; sourceTree = "<group>"; };
 		208CE613234753F60024AE3A /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
@@ -497,7 +497,7 @@
 			children = (
 				20B015522436FCB4008DA31D /* SemiModalViewController.swift */,
 				20B015542436FCC1008DA31D /* SemiModal.storyboard */,
-				208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */,
+				208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */,
 				208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */,
 				208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */,
 				20B0155624370032008DA31D /* SemiModalTestViewController.swift */,
@@ -1232,7 +1232,7 @@
 				20F7D2E224459A560054A935 /* SemiModalAnimator.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
-				208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */,
+				208A61C6243AE49300A64212 /* OldSemiModalPresentationController.swift in Sources */,
 				2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */,
 				9CDB1B5E2274B070004EFB68 /* Store.swift in Sources */,
 				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,

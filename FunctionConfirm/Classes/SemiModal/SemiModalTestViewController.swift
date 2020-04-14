@@ -182,7 +182,7 @@ extension SemiModalTestViewController: UIGestureRecognizerDelegate {
 extension SemiModalTestViewController: UIViewControllerTransitioningDelegate {
     /// SemiModalTestViewへの遷移アニメーションを定義
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return SemiModalPresentationController(presentedViewController: presented, presenting: presenting)
+        return OldSemiModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 
     /// SemiModalTestViewを閉じるアニメーションを定義
