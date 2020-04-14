@@ -19,11 +19,11 @@ extension SemiModalTransitioningDelegate: UIViewControllerTransitioningDelegate 
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return HalfModalPresentationAnimator(transitionStyle: .presentation)
+        return SemiModalPresentationAnimator(transitionStyle: .presentation)
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return HalfModalPresentationAnimator(transitionStyle: .dismissal)
+        return SemiModalPresentationAnimator(transitionStyle: .dismissal)
     }
 
     func presentationController(forPresented presented: UIViewController,

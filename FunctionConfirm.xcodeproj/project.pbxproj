@@ -47,7 +47,7 @@
 		20F7D2DE244596B30054A935 /* UIViewController+HalfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */; };
 		20F7D2E0244599310054A935 /* HalfModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2DF244599310054A935 /* HalfModalPresentable.swift */; };
 		20F7D2E224459A560054A935 /* SemiModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E124459A560054A935 /* SemiModalAnimator.swift */; };
-		20F7D2E424459A9E0054A935 /* HalfModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */; };
+		20F7D2E424459A9E0054A935 /* SemiModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E324459A9E0054A935 /* SemiModalPresentationAnimator.swift */; };
 		20F7D2E624459BDC0054A935 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */; };
 		20F7D2E824459DF00054A935 /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E724459DF00054A935 /* DimmedView.swift */; };
 		20F7D2EA24459E3F0054A935 /* SemiContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E924459E3F0054A935 /* SemiContainerView.swift */; };
@@ -224,7 +224,7 @@
 		20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HalfModal.swift"; sourceTree = "<group>"; };
 		20F7D2DF244599310054A935 /* HalfModalPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentable.swift; sourceTree = "<group>"; };
 		20F7D2E124459A560054A935 /* SemiModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalAnimator.swift; sourceTree = "<group>"; };
-		20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationAnimator.swift; sourceTree = "<group>"; };
+		20F7D2E324459A9E0054A935 /* SemiModalPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationAnimator.swift; sourceTree = "<group>"; };
 		20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		20F7D2E724459DF00054A935 /* DimmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
 		20F7D2E924459E3F0054A935 /* SemiContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiContainerView.swift; sourceTree = "<group>"; };
@@ -537,11 +537,11 @@
 			children = (
 				20F7D2DF244599310054A935 /* HalfModalPresentable.swift */,
 				20F7D2EB24459F0E0054A935 /* HalfModalPresenter.swift */,
-				20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */,
 				20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */,
 				20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */,
 				2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */,
 				20F7D2E124459A560054A935 /* SemiModalAnimator.swift */,
+				20F7D2E324459A9E0054A935 /* SemiModalPresentationAnimator.swift */,
 				2062B9042445D0CB00B9A171 /* Enum */,
 				2062B9032445D0A200B9A171 /* Views */,
 			);
@@ -1190,7 +1190,7 @@
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				20037F9524291049009D5CF5 /* TestFirstViewController.swift in Sources */,
 				9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */,
-				20F7D2E424459A9E0054A935 /* HalfModalPresentationAnimator.swift in Sources */,
+				20F7D2E424459A9E0054A935 /* SemiModalPresentationAnimator.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
 				9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */,

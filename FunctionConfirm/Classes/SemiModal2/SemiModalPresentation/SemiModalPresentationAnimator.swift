@@ -1,5 +1,5 @@
 //
-//  HalfModalPresentationAnimator.swift
+//  SemiModalPresentationAnimator.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HalfModalPresentationAnimator: NSObject {
+class SemiModalPresentationAnimator: NSObject {
 
     enum TransitionStyle {
         case presentation
@@ -69,7 +69,7 @@ class HalfModalPresentationAnimator: NSObject {
 }
 
 // MARK: UIViewControllerAnimatedTransitioning
-extension HalfModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
+extension SemiModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         guard
             let context = transitionContext,
