@@ -11,60 +11,22 @@ import UIKit
 class SemiModalPresentationAnimator: NSObject {
 
     enum TransitionStyle {
-        case presentation
-        case dismissal
+        case present
+        case dismiss
+
+        func layoutType(context: UIViewControllerContextTransitioning) -> HalfModalPresentable.LayoutType? {
+            switch self {
+            case .present: return context.viewController(forKey: .to) as? HalfModalPresentable.LayoutType
+            case .dismiss: return context.viewController(forKey: .from) as? HalfModalPresentable.LayoutType
+            }
+        }
     }
 
     private let transitionStyle: TransitionStyle
 
-    required public init(transitionStyle: TransitionStyle) {
+    required init(transitionStyle: TransitionStyle) {
         self.transitionStyle = transitionStyle
         super.init()
-    }
-
-    private func animatePresentation(transitionContext: UIViewControllerContextTransitioning) {
-        guard
-            let toVC = transitionContext.viewController(forKey: .to),
-            let fromVC = transitionContext.viewController(forKey: .from)
-            else { return }
-        let presentable = halfModalLayoutType(from: transitionContext)
-        fromVC.beginAppearanceTransition(false, animated: true)
-        let yPos: CGFloat = presentable?.shortFormYPos ?? 0.0
-        let halfView: UIView = transitionContext.containerView.halfContainerView ?? toVC.view
-        halfView.frame = transitionContext.finalFrame(for: toVC)
-        halfView.frame.origin.y = transitionContext.containerView.frame.height
-        SemiModalAnimator.animate({
-            halfView.frame.origin.y = yPos
-        }, config: presentable, { didComplete in
-            fromVC.endAppearanceTransition()
-            transitionContext.completeTransition(didComplete)
-        })
-    }
-
-    private func animateDismissal(transitionContext: UIViewControllerContextTransitioning) {
-        guard
-            let toVC = transitionContext.viewController(forKey: .to),
-            let fromVC = transitionContext.viewController(forKey: .from)
-            else { return }
-        toVC.beginAppearanceTransition(true, animated: true)
-        let presentable = halfModalLayoutType(from: transitionContext)
-        let halfView: UIView = transitionContext.containerView.halfContainerView ?? fromVC.view
-        SemiModalAnimator.animate({
-            halfView.frame.origin.y = transitionContext.containerView.frame.height
-        }, config: presentable, { didComplete in
-            fromVC.view.removeFromSuperview()
-            toVC.endAppearanceTransition()
-            transitionContext.completeTransition(didComplete)
-        })
-    }
-
-    private func halfModalLayoutType(from context: UIViewControllerContextTransitioning) -> HalfModalPresentable.LayoutType? {
-        switch transitionStyle {
-        case .presentation:
-            return context.viewController(forKey: .to) as? HalfModalPresentable.LayoutType
-        case .dismissal:
-            return context.viewController(forKey: .from) as? HalfModalPresentable.LayoutType
-        }
     }
 }
 
@@ -72,18 +34,56 @@ class SemiModalPresentationAnimator: NSObject {
 extension SemiModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         guard
-            let context = transitionContext,
-            let presentable = halfModalLayoutType(from: context)
+            let transitionContext = transitionContext,
+            let presentable = transitionStyle.layoutType(context: transitionContext)
             else { return 0.5 }
         return presentable.transitionDuration
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         switch transitionStyle {
-        case .presentation:
+        case .present:
             animatePresentation(transitionContext: transitionContext)
-        case .dismissal:
-            animateDismissal(transitionContext: transitionContext)
+        case .dismiss:
+            animateDismiss(transitionContext: transitionContext)
         }
+    }
+}
+
+// MARK: private
+extension SemiModalPresentationAnimator {
+    private func animatePresentation(transitionContext: UIViewControllerContextTransitioning) {
+        guard
+            let toViewController = transitionContext.viewController(forKey: .to),
+            let fromViewController = transitionContext.viewController(forKey: .from),
+            let layoutType = transitionStyle.layoutType(context: transitionContext)
+            else { return }
+        fromViewController.beginAppearanceTransition(false, animated: true)
+        let semiView: UIView = transitionContext.containerView.halfContainerView ?? toViewController.view
+        semiView.frame = transitionContext.finalFrame(for: toViewController)
+        semiView.frame.origin.y = transitionContext.containerView.frame.height
+        SemiModalAnimator.animate({
+            semiView.frame.origin.y = layoutType.shortFormYPos
+        }, config: layoutType, { didComplete in
+            fromViewController.endAppearanceTransition()
+            transitionContext.completeTransition(didComplete)
+        })
+    }
+
+    private func animateDismiss(transitionContext: UIViewControllerContextTransitioning) {
+        guard
+            let toViewController = transitionContext.viewController(forKey: .to),
+            let fromViewController = transitionContext.viewController(forKey: .from),
+            let layoutType = transitionStyle.layoutType(context: transitionContext)
+            else { return }
+        toViewController.beginAppearanceTransition(true, animated: true)
+        let semiView: UIView = transitionContext.containerView.halfContainerView ?? fromViewController.view
+        SemiModalAnimator.animate({
+            semiView.frame.origin.y = transitionContext.containerView.frame.height
+        }, config: layoutType, { didComplete in
+            fromViewController.view.removeFromSuperview()
+            toViewController.endAppearanceTransition()
+            transitionContext.completeTransition(didComplete)
+        })
     }
 }
