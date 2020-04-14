@@ -9,9 +9,9 @@
 import UIKit
 
 struct SemiModalAnimator {
-    static func animate(_ animations: @escaping HalfModalPresentable.AnimationBlockType,
-                        config: HalfModalPresentable?,
-                        _ completion: HalfModalPresentable.AnimationCompletionType? = nil) {
+    static func animate(_ animations: @escaping SemiModalDelegate.AnimationBlockType,
+                        config: SemiModalDelegate?,
+                        _ completion: SemiModalDelegate.AnimationCompletionType? = nil) {
         let transitionDuration = config?.transitionDuration ?? 0.5
         let springDamping = config?.springDamping ?? 1.0
         let animationOptions = config?.transitionAnimationOptions ?? []

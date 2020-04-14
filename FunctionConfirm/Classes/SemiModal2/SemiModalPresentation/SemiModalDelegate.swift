@@ -1,5 +1,5 @@
 //
-//  HalfModalPresentable.swift
+//  SemiModalDelegate.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HalfModalPresentable: AnyObject {
+protocol SemiModalDelegate: AnyObject {
     var halfScrollable: UIScrollView? { get }
     var topOffset: CGFloat { get }
     var shortFormHeight: SemiModalHeight { get }
@@ -25,10 +25,10 @@ protocol HalfModalPresentable: AnyObject {
     func halfModalDidDisappear()
 }
 
-extension HalfModalPresentable where Self: UIViewController {
+extension SemiModalDelegate where Self: UIViewController {
     typealias AnimationBlockType = () -> Void
     typealias AnimationCompletionType = (Bool) -> Void
-    typealias LayoutType = UIViewController & HalfModalPresentable
+    typealias LayoutType = UIViewController & SemiModalDelegate
 
     func halfModalTransition(to state: SemiModalPresentationState) {
         presentedVC?.transition(to: state)
@@ -47,7 +47,7 @@ extension HalfModalPresentable where Self: UIViewController {
     }
 }
 
-extension HalfModalPresentable where Self: UIViewController {
+extension SemiModalDelegate where Self: UIViewController {
     // longForm時のtopOffset
     var topOffset: CGFloat {
         return topLayoutOffset + 21.0
@@ -107,7 +107,7 @@ extension HalfModalPresentable where Self: UIViewController {
     func halfModalDidDisappear() {}
 }
 
-extension HalfModalPresentable where Self: UIViewController {
+extension SemiModalDelegate where Self: UIViewController {
     var presentedVC: HalfModalPresentationController? {
         return presentationController as? HalfModalPresentationController
     }

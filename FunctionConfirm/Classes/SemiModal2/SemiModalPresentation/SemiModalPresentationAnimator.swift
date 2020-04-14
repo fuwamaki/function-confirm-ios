@@ -14,10 +14,10 @@ class SemiModalPresentationAnimator: NSObject {
         case present
         case dismiss
 
-        func layoutType(context: UIViewControllerContextTransitioning) -> HalfModalPresentable.LayoutType? {
+        func layoutType(context: UIViewControllerContextTransitioning) -> SemiModalDelegate.LayoutType? {
             switch self {
-            case .present: return context.viewController(forKey: .to) as? HalfModalPresentable.LayoutType
-            case .dismiss: return context.viewController(forKey: .from) as? HalfModalPresentable.LayoutType
+            case .present: return context.viewController(forKey: .to) as? SemiModalDelegate.LayoutType
+            case .dismiss: return context.viewController(forKey: .from) as? SemiModalDelegate.LayoutType
             }
         }
     }

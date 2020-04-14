@@ -13,7 +13,7 @@ extension UIViewController {
         return (transitioningDelegate as? SemiModalTransitioningDelegate) != nil
     }
 
-    func presentSemiModal(_ viewController: HalfModalPresentable.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
+    func presentSemiModal(_ viewController: SemiModalDelegate.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
         viewController.modalPresentationStyle = .custom
         viewController.modalPresentationCapturesStatusBarAppearance = true
         viewController.transitioningDelegate = SemiModalTransitioningDelegate.default

@@ -17,8 +17,8 @@ class HalfModalPresentationController: UIPresentationController {
     private var shortFormYPosition: CGFloat = 0
     private var longFormYPosition: CGFloat = 0
 
-    private var presentable: HalfModalPresentable? {
-        return presentedViewController as? HalfModalPresentable
+    private var presentable: SemiModalDelegate? {
+        return presentedViewController as? SemiModalDelegate
     }
 
     private var isPresentedViewAnchored: Bool {
@@ -108,7 +108,7 @@ extension HalfModalPresentationController {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { _ in
             self.adjustPresentedViewFrame()
-            if let layoutPresentable = self.presentedViewController as? HalfModalPresentable.LayoutType,
+            if let layoutPresentable = self.presentedViewController as? SemiModalDelegate.LayoutType,
                 layoutPresentable.isSemiModalPresented {
                 self.addRoundedCorners(to: self.presentedView)
             }
@@ -147,7 +147,7 @@ extension HalfModalPresentationController {
 
 extension HalfModalPresentationController {
     private func layoutPresentedView(in containerView: UIView) {
-        guard let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType else { return }
+        guard let layoutPresentable = presentedViewController as? SemiModalDelegate.LayoutType else { return }
         containerView.addSubview(presentedView)
         containerView.addGestureRecognizer(panGestureRecognizer)
         if layoutPresentable.isSemiModalPresented {
@@ -183,7 +183,7 @@ extension HalfModalPresentationController {
     }
 
     private func configureViewLayout() {
-        guard let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType else { return }
+        guard let layoutPresentable = presentedViewController as? SemiModalDelegate.LayoutType else { return }
         shortFormYPosition = layoutPresentable.shortFormYPos
         longFormYPosition = layoutPresentable.longFormYPos
         extendsHalfScrolling = layoutPresentable.allowsExtendedHalfScrolling
@@ -191,7 +191,7 @@ extension HalfModalPresentationController {
 
     private func configureScrollViewInsets() {
         guard
-            let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType,
+            let layoutPresentable = presentedViewController as? SemiModalDelegate.LayoutType,
             let scrollView = presentable?.halfScrollable,
             !scrollView.isScrolling else { return }
         scrollView.showsVerticalScrollIndicator = false

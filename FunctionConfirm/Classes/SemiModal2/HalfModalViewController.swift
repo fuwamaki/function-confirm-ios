@@ -21,9 +21,9 @@ final class HalfModalViewController: UIViewController {
 
     private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
 
-    static func make() -> HalfModalPresentable.LayoutType {
+    static func make() -> SemiModalDelegate.LayoutType {
         let storyBoard = UIStoryboard(name: "HalfModalViewController", bundle: nil)
-        let viewController: HalfModalPresentable.LayoutType = storyBoard.instantiateViewController(withIdentifier: "HalfModalViewController") as! HalfModalViewController
+        let viewController: SemiModalDelegate.LayoutType = storyBoard.instantiateViewController(withIdentifier: "HalfModalViewController") as! HalfModalViewController
         return viewController
     }
 
@@ -32,7 +32,7 @@ final class HalfModalViewController: UIViewController {
     }
 }
 
-extension HalfModalViewController: HalfModalPresentable {
+extension HalfModalViewController: SemiModalDelegate {
     // HalfModalで表示させるViewのUIScrollViewがあれば登録
     var halfScrollable: UIScrollView? {
         return tableView
