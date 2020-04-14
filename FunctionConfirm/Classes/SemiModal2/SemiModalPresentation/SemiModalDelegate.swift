@@ -26,28 +26,6 @@ protocol SemiModalDelegate: AnyObject {
 }
 
 extension SemiModalDelegate where Self: UIViewController {
-    typealias AnimationBlockType = () -> Void
-    typealias AnimationCompletionType = (Bool) -> Void
-    typealias LayoutType = UIViewController & SemiModalDelegate
-
-    func halfModalTransition(to state: SemiModalPresentationState) {
-        presentedVC?.transition(to: state)
-    }
-
-    func halfModalSetNeedsLayoutUpdate() {
-        presentedVC?.setNeedsLayoutUpdate()
-    }
-
-    func halfModalPerformUpdates(_ updates: () -> Void) {
-        presentedVC?.performUpdates(updates)
-    }
-
-    func halfModalAnimate(_ animationBlock: @escaping AnimationBlockType, _ completion: AnimationCompletionType? = nil) {
-        SemiModalAnimator.animate(animationBlock, config: self, completion)
-    }
-}
-
-extension SemiModalDelegate where Self: UIViewController {
     // longForm時のtopOffset
     var topOffset: CGFloat {
         return topLayoutOffset + 21.0
@@ -108,16 +86,27 @@ extension SemiModalDelegate where Self: UIViewController {
 }
 
 extension SemiModalDelegate where Self: UIViewController {
-    var presentedVC: HalfModalPresentationController? {
-        return presentationController as? HalfModalPresentationController
+    typealias AnimationBlockType = () -> Void
+    typealias AnimationCompletionType = (Bool) -> Void
+    typealias LayoutType = UIViewController & SemiModalDelegate
+
+    private var rootViewController: UIViewController? {
+        guard let application = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared)) as? UIApplication else { return nil }
+        return application.keyWindow?.rootViewController
     }
 
-    var topLayoutOffset: CGFloat {
+    private var topLayoutOffset: CGFloat {
         return rootViewController?.view.safeAreaInsets.top ?? 0
     }
 
-    var bottomLayoutOffset: CGFloat {
+    private var bottomLayoutOffset: CGFloat {
         return rootViewController?.view.safeAreaInsets.bottom ?? 0
+    }
+}
+
+extension SemiModalDelegate where Self: UIViewController {
+    var presentedVC: HalfModalPresentationController? {
+        return presentationController as? HalfModalPresentationController
     }
 
     var allowsExtendedHalfScrolling: Bool {
@@ -164,10 +153,5 @@ extension SemiModalDelegate where Self: UIViewController {
             let intrinsicHeight = view.systemLayoutSizeFitting(targetSize).height
             return bottomYPos - (intrinsicHeight + bottomLayoutOffset)
         }
-    }
-
-    private var rootViewController: UIViewController? {
-        guard let application = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared)) as? UIApplication else { return nil }
-        return application.keyWindow?.rootViewController
     }
 }
