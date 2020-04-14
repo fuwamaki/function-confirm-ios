@@ -10,9 +10,39 @@ import UIKit
 
 final class HalfModalViewController: UIViewController {
 
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.registerForCell(SemiModalTestTableCell.self)
+            tableView.tableFooterView = UIView()
+        }
+    }
+
+    private var array: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+
+    static func make() -> UIViewController {
+        let storyBoard = UIStoryboard(name: "HalfModalViewController", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "HalfModalViewController") as! HalfModalViewController
+        return viewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension HalfModalViewController: UITableViewDelegate {
+}
+
+extension HalfModalViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueCellForIndexPath(indexPath) as SemiModalTestTableCell
+        cell.render(text: array[indexPath.row])
+        return cell
     }
 }

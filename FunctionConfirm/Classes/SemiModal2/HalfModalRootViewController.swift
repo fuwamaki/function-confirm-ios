@@ -10,6 +10,11 @@ import UIKit
 
 final class HalfModalRootViewController: UIViewController {
 
+    @IBAction private func clickShowModalButton(_ sender: Any) {
+        let viewController = HalfModalViewController.make()
+        present(viewController, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

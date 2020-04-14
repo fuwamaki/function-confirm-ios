@@ -20,6 +20,9 @@
                                 <rect key="frame" x="163.5" y="432" width="87" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="show modal"/>
+                                <connections>
+                                    <action selector="clickShowModalButton:" destination="TtX-u4-FxF" eventType="touchUpInside" id="7j6-TQ-Seu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
