@@ -26,7 +26,7 @@
 		2032A71420DCE0180091952F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerViewController.swift */; };
 		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
-		2062B9062445E98200B9A171 /* HalfModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062B9052445E98200B9A171 /* HalfModalPresentationDelegate.swift */; };
+		2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */; };
 		208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */; };
 		208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */; };
 		208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */; };
@@ -203,7 +203,7 @@
 		2032A71320DCE0180091952F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		2062B9052445E98200B9A171 /* HalfModalPresentationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationDelegate.swift; sourceTree = "<group>"; };
+		2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTransitioningDelegate.swift; sourceTree = "<group>"; };
 		208A61C5243AE49300A64212 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
 		208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalDismissAnimationController.swift; sourceTree = "<group>"; };
 		208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverCurrentTransitioningInteractor.swift; sourceTree = "<group>"; };
@@ -536,12 +536,12 @@
 			isa = PBXGroup;
 			children = (
 				20F7D2DF244599310054A935 /* HalfModalPresentable.swift */,
-				20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */,
-				2062B9052445E98200B9A171 /* HalfModalPresentationDelegate.swift */,
 				20F7D2E124459A560054A935 /* HalfModalAnimator.swift */,
 				20F7D2EB24459F0E0054A935 /* HalfModalPresenter.swift */,
 				20F7D2E324459A9E0054A935 /* HalfModalPresentationAnimator.swift */,
 				20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */,
+				20F7D2DD244596B30054A935 /* UIViewController+HalfModal.swift */,
+				2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */,
 				2062B9042445D0CB00B9A171 /* Enum */,
 				2062B9032445D0A200B9A171 /* Views */,
 			);
@@ -1236,7 +1236,7 @@
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				208A61C6243AE49300A64212 /* SemiModalPresentationController.swift in Sources */,
-				2062B9062445E98200B9A171 /* HalfModalPresentationDelegate.swift in Sources */,
+				2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */,
 				9CDB1B5E2274B070004EFB68 /* Store.swift in Sources */,
 				9CD30C7E21F6FE9A00D6184A /* StatusBarSecondViewController.swift in Sources */,
 				208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */,

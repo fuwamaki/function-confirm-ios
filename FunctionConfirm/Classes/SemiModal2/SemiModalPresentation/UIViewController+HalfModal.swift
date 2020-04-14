@@ -10,13 +10,13 @@ import UIKit
 
 extension UIViewController: HalfModalPresenter {
     var isHalfModalPresented: Bool {
-        return (transitioningDelegate as? HalfModalPresentationDelegate) != nil
+        return (transitioningDelegate as? SemiModalTransitioningDelegate) != nil
     }
 
     func presentHalfModal(_ viewController: HalfModalPresentable.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
         viewController.modalPresentationStyle = .custom
         viewController.modalPresentationCapturesStatusBarAppearance = true
-        viewController.transitioningDelegate = HalfModalPresentationDelegate.default
+        viewController.transitioningDelegate = SemiModalTransitioningDelegate.default
         present(viewController, animated: true, completion: nil)
     }
 }

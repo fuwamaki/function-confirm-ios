@@ -1,5 +1,5 @@
 //
-//  HalfModalPresentationDelegate.swift
+//  HalfModalTransitioningDelegate.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class HalfModalPresentationDelegate: NSObject, UIPopoverPresentationControllerDelegate {
-    static var `default`: HalfModalPresentationDelegate = {
-        return HalfModalPresentationDelegate()
+class SemiModalTransitioningDelegate: NSObject, UIPopoverPresentationControllerDelegate {
+    static var `default`: SemiModalTransitioningDelegate = {
+        return SemiModalTransitioningDelegate()
     }()
 }
 
-extension HalfModalPresentationDelegate: UIViewControllerTransitioningDelegate {
+extension SemiModalTransitioningDelegate: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -34,7 +34,7 @@ extension HalfModalPresentationDelegate: UIViewControllerTransitioningDelegate {
     }
 }
 
-extension HalfModalPresentationDelegate: UIAdaptivePresentationControllerDelegate {
+extension SemiModalTransitioningDelegate: UIAdaptivePresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController,
                                    traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
