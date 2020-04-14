@@ -10,16 +10,13 @@ import UIKit
 
 struct SemiModalAnimator {
     static func animate(_ animations: @escaping SemiModalDelegate.AnimationBlockType,
-                        config: SemiModalDelegate?,
+                        semiModalDelegate: SemiModalDelegate,
                         _ completion: SemiModalDelegate.AnimationCompletionType? = nil) {
-        let transitionDuration = config?.transitionDuration ?? 0.5
-        let springDamping = config?.springDamping ?? 1.0
-        let animationOptions = config?.transitionAnimationOptions ?? []
-        UIView.animate(withDuration: transitionDuration,
+        UIView.animate(withDuration: semiModalDelegate.transitionDuration,
                        delay: 0,
-                       usingSpringWithDamping: springDamping,
+                       usingSpringWithDamping: semiModalDelegate.springDamping,
                        initialSpringVelocity: 0,
-                       options: animationOptions,
+                       options: semiModalDelegate.transitionAnimationOptions,
                        animations: animations,
                        completion: completion)
     }

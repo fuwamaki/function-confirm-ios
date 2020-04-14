@@ -255,8 +255,8 @@ extension HalfModalPresentationController {
         SemiModalAnimator.animate({ [weak self] in
             self?.adjust(toYPosition: yPos)
             self?.isPresentedViewAnimating = true
-        }, config: semiModalDelegate, { [weak self] didComplete in
-            self?.isPresentedViewAnimating = !didComplete
+            }, semiModalDelegate: semiModalDelegate, { [weak self] didComplete in
+                self?.isPresentedViewAnimating = !didComplete
         })
     }
 

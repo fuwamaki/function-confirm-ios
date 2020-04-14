@@ -64,7 +64,7 @@ extension SemiModalPresentationAnimator {
         semiView.frame.origin.y = transitionContext.containerView.frame.height
         SemiModalAnimator.animate({
             semiView.frame.origin.y = layoutType.shortFormYPos
-        }, config: layoutType, { didComplete in
+        }, semiModalDelegate: layoutType, { didComplete in
             fromViewController.endAppearanceTransition()
             transitionContext.completeTransition(didComplete)
         })
@@ -80,7 +80,7 @@ extension SemiModalPresentationAnimator {
         let semiView: UIView = transitionContext.containerView.halfContainerView ?? fromViewController.view
         SemiModalAnimator.animate({
             semiView.frame.origin.y = transitionContext.containerView.frame.height
-        }, config: layoutType, { didComplete in
+        }, semiModalDelegate: layoutType, { didComplete in
             fromViewController.view.removeFromSuperview()
             toViewController.endAppearanceTransition()
             transitionContext.completeTransition(didComplete)
