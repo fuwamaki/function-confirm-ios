@@ -25,6 +25,7 @@ protocol SemiModalDelegate: AnyObject {
     func halfModalDidDisappear()
 }
 
+// MARK: protocol functions
 extension SemiModalDelegate where Self: UIViewController {
     // longForm時のtopOffset
     var topOffset: CGFloat {
@@ -41,50 +42,40 @@ extension SemiModalDelegate where Self: UIViewController {
         return .contentHeight(scrollView.contentSize.height)
     }
 
-    // ハーフモーダル上辺の角丸
     var cornerRadius: CGFloat {
         return 8.0
     }
 
-    // ハーフモーダル表示時のバウンドアニメーション。振幅大0-1振幅小
     var springDamping: CGFloat {
         return 0.8
     }
 
-    // ハーフモーダル表示時のアニメーションの時間
     var transitionDuration: Double {
         return 0.5
     }
 
-    // ハーフモーダル表示時のアニメーションOption
     var transitionAnimationOptions: UIView.AnimationOptions {
         return [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState]
     }
 
-    // ハーフモーダル暗背景の色
     var halfModalBackgroundColor: UIColor {
         return UIColor.black.withAlphaComponent(0.7)
     }
 
-    // ハーフモーダルを上下に操作中に呼び出される
-    func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) {
-    }
+    func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) {}
 
-    // falseにすると、ハーフモーダルの高さをカスタムできる
     func shouldTransition(to state: SemiModalPresentationState) -> Bool {
         return true
     }
 
-    // longForm<->shortFormの変更したタイミングでコール
     func willTransition(to state: SemiModalPresentationState) {}
 
-    // viewWillDisappear
     func halfModalViewWillDisappear() {}
 
-    // viewDidDisappear
     func halfModalDidDisappear() {}
 }
 
+// MARK: typealias, private
 extension SemiModalDelegate where Self: UIViewController {
     typealias AnimationBlockType = () -> Void
     typealias AnimationCompletionType = (Bool) -> Void
