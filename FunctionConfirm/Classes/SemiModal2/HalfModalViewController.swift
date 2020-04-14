@@ -34,7 +34,7 @@ final class HalfModalViewController: UIViewController {
 
 extension HalfModalViewController: HalfModalPresentable {
     var halfScrollable: UIScrollView? {
-        return nil
+        return tableView
     }
 
     var shortFormHeight: HalfModalHeight {
