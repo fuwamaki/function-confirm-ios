@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 21
+        return 22
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -112,9 +112,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "transitionCell", for: indexPath)
             cell.textLabel?.text = "Presentで横遷移"
             return cell
-        } else {
+        } else if indexPath.row == 20 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "semiModalCell", for: indexPath)
             cell.textLabel?.text = "セミモーダル遷移"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "halfModalCell", for: indexPath)
+            cell.textLabel?.text = "セミモーダル遷移2"
             return cell
         }
     }
@@ -207,9 +211,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "PresentTransitionFromRight", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "PresentTransitionFromRightViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 20:
             let storyBoard = UIStoryboard(name: "SemiModal", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SemiModalViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "HalfModalRoot", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "HalfModalRootViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
