@@ -48,7 +48,7 @@
 		20F7D2E0244599310054A935 /* SemiModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2DF244599310054A935 /* SemiModalDelegate.swift */; };
 		20F7D2E224459A560054A935 /* SemiModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E124459A560054A935 /* SemiModalAnimator.swift */; };
 		20F7D2E424459A9E0054A935 /* SemiModalPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E324459A9E0054A935 /* SemiModalPresentationAnimator.swift */; };
-		20F7D2E624459BDC0054A935 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */; };
+		20F7D2E624459BDC0054A935 /* SemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E524459BDC0054A935 /* SemiModalPresentationController.swift */; };
 		20F7D2E824459DF00054A935 /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E724459DF00054A935 /* DimmedView.swift */; };
 		20F7D2EA24459E3F0054A935 /* SemiContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E924459E3F0054A935 /* SemiContainerView.swift */; };
 		20F7D2EE2445A2970054A935 /* SemiModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2ED2445A2970054A935 /* SemiModalHeight.swift */; };
@@ -224,7 +224,7 @@
 		20F7D2DF244599310054A935 /* SemiModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalDelegate.swift; sourceTree = "<group>"; };
 		20F7D2E124459A560054A935 /* SemiModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalAnimator.swift; sourceTree = "<group>"; };
 		20F7D2E324459A9E0054A935 /* SemiModalPresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationAnimator.swift; sourceTree = "<group>"; };
-		20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		20F7D2E524459BDC0054A935 /* SemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationController.swift; sourceTree = "<group>"; };
 		20F7D2E724459DF00054A935 /* DimmedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
 		20F7D2E924459E3F0054A935 /* SemiContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiContainerView.swift; sourceTree = "<group>"; };
 		20F7D2ED2445A2970054A935 /* SemiModalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalHeight.swift; sourceTree = "<group>"; };
@@ -534,7 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				20F7D2DF244599310054A935 /* SemiModalDelegate.swift */,
-				20F7D2E524459BDC0054A935 /* HalfModalPresentationController.swift */,
+				20F7D2E524459BDC0054A935 /* SemiModalPresentationController.swift */,
 				20F7D2DD244596B30054A935 /* UIViewController+SemiModal.swift */,
 				2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */,
 				20F7D2E124459A560054A935 /* SemiModalAnimator.swift */,
@@ -1215,7 +1215,7 @@
 				9CE26454211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift in Sources */,
 				9C91E4B62209DD6D0021E1BC /* FaceTrackingHomeViewController.swift in Sources */,
 				2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */,
-				20F7D2E624459BDC0054A935 /* HalfModalPresentationController.swift in Sources */,
+				20F7D2E624459BDC0054A935 /* SemiModalPresentationController.swift in Sources */,
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				20B0155D243702F7008DA31D /* SemiModalTestTableCell.swift in Sources */,
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,

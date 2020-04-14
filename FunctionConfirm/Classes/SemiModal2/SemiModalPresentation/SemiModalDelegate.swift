@@ -96,8 +96,8 @@ extension SemiModalDelegate where Self: UIViewController {
 }
 
 extension SemiModalDelegate where Self: UIViewController {
-    var presentedVC: HalfModalPresentationController? {
-        return presentationController as? HalfModalPresentationController
+    var presentedVC: SemiModalPresentationController? {
+        return presentationController as? SemiModalPresentationController
     }
 
     var allowsExtendedHalfScrolling: Bool {

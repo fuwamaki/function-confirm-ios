@@ -1,5 +1,5 @@
 //
-//  HalfModalPresentationController.swift
+//  SemiModalPresentationController.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HalfModalPresentationController: UIPresentationController {
+class SemiModalPresentationController: UIPresentationController {
 
     private var isPresentedViewAnimating = false
     private var extendsHalfScrolling = true
@@ -51,7 +51,7 @@ class HalfModalPresentationController: UIPresentationController {
 }
 
 // MARK: UIPresentationController
-extension HalfModalPresentationController {
+extension SemiModalPresentationController {
     override var presentedView: UIView {
         return halfContainerView
     }
@@ -109,7 +109,7 @@ extension HalfModalPresentationController {
     }
 }
 
-extension HalfModalPresentationController {
+extension SemiModalPresentationController {
     func transition(to state: SemiModalPresentationState) {
         guard semiModalDelegate.shouldTransition(to: state) == true else { return }
         semiModalDelegate.willTransition(to: state)
@@ -138,7 +138,7 @@ extension HalfModalPresentationController {
     }
 }
 
-extension HalfModalPresentationController {
+extension SemiModalPresentationController {
     private func layoutPresentedView(in containerView: UIView) {
         containerView.addSubview(presentedView)
         containerView.addGestureRecognizer(panGestureRecognizer)
@@ -337,7 +337,7 @@ extension HalfModalPresentationController {
 }
 
 // MARK: UIGestureRecognizerDelegate
-extension HalfModalPresentationController: UIGestureRecognizerDelegate {
+extension SemiModalPresentationController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return false
     }

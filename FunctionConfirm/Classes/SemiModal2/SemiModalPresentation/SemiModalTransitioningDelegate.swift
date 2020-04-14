@@ -29,7 +29,7 @@ extension SemiModalTransitioningDelegate: UIViewControllerTransitioningDelegate 
     func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
-        let controller = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+        let controller = SemiModalPresentationController(presentedViewController: presented, presenting: presenting)
         controller.delegate = self
         return controller
     }
