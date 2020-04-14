@@ -17,8 +17,8 @@ class HalfModalPresentationController: UIPresentationController {
     private var shortFormYPosition: CGFloat = 0
     private var longFormYPosition: CGFloat = 0
 
-    private var presentable: SemiModalDelegate? {
-        return presentedViewController as? SemiModalDelegate
+    private var semiModalDelegate: SemiModalDelegate.LayoutType {
+        return presentedViewController as! SemiModalDelegate.LayoutType
     }
 
     private var isPresentedViewAnchored: Bool {
@@ -26,21 +26,15 @@ class HalfModalPresentationController: UIPresentationController {
     }
 
     private lazy var backgroundView: DimmedView = {
-        let view: DimmedView
-        if let color = presentable?.halfModalBackgroundColor {
-            view = DimmedView(dimColor: color)
-        } else {
-            view = DimmedView()
-        }
+        let view = DimmedView(dimColor: semiModalDelegate.halfModalBackgroundColor)
         view.didTap = { [weak self] _ in
-            self?.presentedViewController.dismiss(animated: true)
+            self?.semiModalDelegate.dismiss(animated: true)
         }
         return view
     }()
 
     private lazy var halfContainerView: SemiContainerView = {
-        let frame = containerView?.frame ?? .zero
-        return SemiContainerView(presentedView: presentedViewController.view, frame: frame)
+        return SemiContainerView(presentedView: semiModalDelegate.view, frame: containerView?.frame ?? .zero)
     }()
 
     private lazy var panGestureRecognizer: UIPanGestureRecognizer = {
@@ -72,13 +66,13 @@ extension HalfModalPresentationController {
         layoutBackgroundView(in: containerView)
         layoutPresentedView(in: containerView)
         configureScrollViewInsets()
-        guard let coordinator = presentedViewController.transitionCoordinator else {
+        guard let coordinator = semiModalDelegate.transitionCoordinator else {
             backgroundView.dimState = .max
             return
         }
         coordinator.animate(alongsideTransition: { _ in
             self.backgroundView.dimState = .max
-            self.presentedViewController.setNeedsStatusBarAppearanceUpdate()
+            self.semiModalDelegate.setNeedsStatusBarAppearanceUpdate()
         })
     }
 
@@ -88,8 +82,8 @@ extension HalfModalPresentationController {
     }
 
     override func dismissalTransitionWillBegin() {
-        presentable?.halfModalViewWillDisappear()
-        guard let coordinator = presentedViewController.transitionCoordinator else {
+        semiModalDelegate.halfModalViewWillDisappear()
+        guard let coordinator = semiModalDelegate.transitionCoordinator else {
             backgroundView.dimState = .off
             return
         }
@@ -101,15 +95,14 @@ extension HalfModalPresentationController {
 
     override func dismissalTransitionDidEnd(_ completed: Bool) {
         guard completed else { return }
-        presentable?.halfModalDidDisappear()
+        semiModalDelegate.halfModalDidDisappear()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { _ in
             self.adjustPresentedViewFrame()
-            if let layoutPresentable = self.presentedViewController as? SemiModalDelegate.LayoutType,
-                layoutPresentable.isSemiModalPresented {
+            if self.semiModalDelegate.isSemiModalPresented {
                 self.addRoundedCorners(to: self.presentedView)
             }
         })
@@ -118,8 +111,8 @@ extension HalfModalPresentationController {
 
 extension HalfModalPresentationController {
     func transition(to state: SemiModalPresentationState) {
-        guard presentable?.shouldTransition(to: state) == true else { return }
-        presentable?.willTransition(to: state)
+        guard semiModalDelegate.shouldTransition(to: state) == true else { return }
+        semiModalDelegate.willTransition(to: state)
         switch state {
         case .shortForm:
             snap(toYPosition: shortFormYPosition)
@@ -129,7 +122,7 @@ extension HalfModalPresentationController {
     }
 
     func performUpdates(_ updates: () -> Void) {
-        guard let scrollView = presentable?.halfScrollable else { return }
+        guard let scrollView = semiModalDelegate.halfScrollable else { return }
         scrollObserver?.invalidate()
         scrollObserver = nil
         updates()
@@ -140,17 +133,16 @@ extension HalfModalPresentationController {
     func setNeedsLayoutUpdate() {
         configureViewLayout()
         adjustPresentedViewFrame()
-        observe(scrollView: presentable?.halfScrollable)
+        observe(scrollView: semiModalDelegate.halfScrollable)
         configureScrollViewInsets()
     }
 }
 
 extension HalfModalPresentationController {
     private func layoutPresentedView(in containerView: UIView) {
-        guard let layoutPresentable = presentedViewController as? SemiModalDelegate.LayoutType else { return }
         containerView.addSubview(presentedView)
         containerView.addGestureRecognizer(panGestureRecognizer)
-        if layoutPresentable.isSemiModalPresented {
+        if semiModalDelegate.isSemiModalPresented {
             addRoundedCorners(to: presentedView)
         }
         setNeedsLayoutUpdate()
@@ -166,11 +158,11 @@ extension HalfModalPresentationController {
             presentedView.frame.origin.y = max(yPosition, longFormYPosition)
         }
         halfContainerView.frame.origin.x = frame.origin.x
-        presentedViewController.view.frame = CGRect(origin: .zero, size: adjustedSize)
+        semiModalDelegate.view.frame = CGRect(origin: .zero, size: adjustedSize)
     }
 
     private func adjustHalfContainerBackgroundColor() {
-        halfContainerView.backgroundColor = presentedViewController.view.backgroundColor ?? presentable?.halfScrollable?.backgroundColor
+        halfContainerView.backgroundColor = semiModalDelegate.view.backgroundColor ?? semiModalDelegate.halfScrollable?.backgroundColor
     }
 
     private func layoutBackgroundView(in containerView: UIView) {
@@ -183,19 +175,17 @@ extension HalfModalPresentationController {
     }
 
     private func configureViewLayout() {
-        guard let layoutPresentable = presentedViewController as? SemiModalDelegate.LayoutType else { return }
-        shortFormYPosition = layoutPresentable.shortFormYPos
-        longFormYPosition = layoutPresentable.longFormYPos
-        extendsHalfScrolling = layoutPresentable.allowsExtendedHalfScrolling
+        shortFormYPosition = semiModalDelegate.shortFormYPos
+        longFormYPosition = semiModalDelegate.longFormYPos
+        extendsHalfScrolling = semiModalDelegate.allowsExtendedHalfScrolling
     }
 
     private func configureScrollViewInsets() {
         guard
-            let layoutPresentable = presentedViewController as? SemiModalDelegate.LayoutType,
-            let scrollView = presentable?.halfScrollable,
+            let scrollView = semiModalDelegate.halfScrollable,
             !scrollView.isScrolling else { return }
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.scrollIndicatorInsets = layoutPresentable.scrollIndicatorInsets
+        scrollView.scrollIndicatorInsets = semiModalDelegate.scrollIndicatorInsets
         scrollView.contentInset.bottom = presentingViewController.view.safeAreaInsets.bottom
         scrollView.contentInsetAdjustmentBehavior = .never
     }
@@ -212,7 +202,7 @@ extension HalfModalPresentationController {
         case (.began, _, _), (.changed, _, _):
             respond(to: recognizer)
             if presentedView.frame.origin.y == longFormYPosition && extendsHalfScrolling {
-                presentable?.willTransition(to: .longForm)
+                semiModalDelegate.willTransition(to: .longForm)
             }
         case (_, true, let y) where y < 0:
             transition(to: .longForm)
@@ -221,7 +211,7 @@ extension HalfModalPresentationController {
                                                    containerView.bounds.height]) == longFormYPosition && presentedView.frame.minY < shortFormYPosition:
             transition(to: .shortForm)
         case (_, true, _):
-            presentedViewController.dismiss(animated: true)
+            semiModalDelegate.dismiss(animated: true)
         default:
             switch nearest(to: presentedView.frame.minY, inValues: [containerView.bounds.height, shortFormYPosition, longFormYPosition]) {
             case longFormYPosition:
@@ -229,7 +219,7 @@ extension HalfModalPresentationController {
             case shortFormYPosition:
                 transition(to: .shortForm)
             default:
-                presentedViewController.dismiss(animated: true)
+                semiModalDelegate.dismiss(animated: true)
             }
         }
     }
@@ -239,7 +229,7 @@ extension HalfModalPresentationController {
     }
 
     private func respond(to panGestureRecognizer: UIPanGestureRecognizer) {
-        presentable?.willRespond(to: panGestureRecognizer)
+        semiModalDelegate.willRespond(to: panGestureRecognizer)
         var yDisplacement = panGestureRecognizer.translation(in: presentedView).y
         if presentedView.frame.origin.y < longFormYPosition {
             yDisplacement /= 2.0
@@ -251,7 +241,7 @@ extension HalfModalPresentationController {
     private func shouldFail(panGestureRecognizer: UIPanGestureRecognizer) -> Bool {
         guard
             isPresentedViewAnchored,
-            let scrollView = presentable?.halfScrollable,
+            let scrollView = semiModalDelegate.halfScrollable,
             scrollView.contentOffset.y > 0 else { return false }
         let loc = panGestureRecognizer.location(in: presentedView)
         return (scrollView.frame.contains(loc) || scrollView.isScrolling)
@@ -265,7 +255,7 @@ extension HalfModalPresentationController {
         SemiModalAnimator.animate({ [weak self] in
             self?.adjust(toYPosition: yPos)
             self?.isPresentedViewAnimating = true
-        }, config: presentable, { [weak self] didComplete in
+        }, config: semiModalDelegate, { [weak self] didComplete in
             self?.isPresentedViewAnimating = !didComplete
         })
     }
@@ -295,18 +285,14 @@ extension HalfModalPresentationController {
 
     private func didHalfOnScrollView(_ scrollView: UIScrollView, change: NSKeyValueObservedChange<CGPoint>) {
         guard
-            !presentedViewController.isBeingDismissed,
-            !presentedViewController.isBeingPresented
+            !semiModalDelegate.isBeingDismissed,
+            !semiModalDelegate.isBeingPresented
             else { return }
         if !isPresentedViewAnchored && scrollView.contentOffset.y > 0 {
             haltScrolling(scrollView)
         } else if scrollView.isScrolling || isPresentedViewAnimating {
-            if isPresentedViewAnchored {
-                trackScrolling(scrollView)
-            } else {
-                haltScrolling(scrollView)
-            }
-        } else if presentedViewController.view.isKind(of: UIScrollView.self) && !isPresentedViewAnimating && scrollView.contentOffset.y <= 0 {
+            isPresentedViewAnchored ? trackScrolling(scrollView) : haltScrolling(scrollView)
+        } else if semiModalDelegate.view.isKind(of: UIScrollView.self) && !isPresentedViewAnimating && scrollView.contentOffset.y <= 0 {
             handleScrollViewTopBounce(scrollView: scrollView, change: change)
         } else {
             trackScrolling(scrollView)
@@ -338,7 +324,7 @@ extension HalfModalPresentationController {
     }
 
     private func addRoundedCorners(to view: UIView) {
-        let radius = presentable?.cornerRadius ?? 0
+        let radius = semiModalDelegate.cornerRadius
         let path = UIBezierPath(roundedRect: view.bounds,
                                 byRoundingCorners: [.topLeft, .topRight],
                                 cornerRadii: CGSize(width: radius, height: radius))
@@ -357,7 +343,7 @@ extension HalfModalPresentationController: UIGestureRecognizerDelegate {
     }
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return otherGestureRecognizer.view == presentable?.halfScrollable
+        return otherGestureRecognizer.view == semiModalDelegate.halfScrollable
     }
 }
 
