@@ -492,6 +492,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		20685CDE24460D2800B422F2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				20F7D2DD244596B30054A935 /* UIViewController+SemiModal.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		20B015512436FC62008DA31D /* SemiModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,12 +543,12 @@
 			children = (
 				20F7D2DF244599310054A935 /* SemiModalDelegate.swift */,
 				20F7D2E524459BDC0054A935 /* SemiModalPresentationController.swift */,
-				20F7D2DD244596B30054A935 /* UIViewController+SemiModal.swift */,
 				2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */,
 				20F7D2E124459A560054A935 /* SemiModalAnimator.swift */,
 				20F7D2E324459A9E0054A935 /* SemiModalPresentationAnimator.swift */,
 				2062B9042445D0CB00B9A171 /* Enum */,
 				2062B9032445D0A200B9A171 /* Views */,
+				20685CDE24460D2800B422F2 /* Extension */,
 			);
 			path = SemiModalPresentation;
 			sourceTree = "<group>";

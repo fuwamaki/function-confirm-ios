@@ -27,9 +27,8 @@ protocol SemiModalDelegate: AnyObject {
 
 // MARK: protocol functions
 extension SemiModalDelegate where Self: UIViewController {
-    // longForm時のtopOffset
     var topOffset: CGFloat {
-        return topLayoutOffset + 21.0
+        return topLayoutOffset + 24.0
     }
 
     var shortFormHeight: SemiModalHeight {
