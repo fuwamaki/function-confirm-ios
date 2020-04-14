@@ -1,5 +1,5 @@
 //
-//  UIViewController+HalfModal.swift
+//  UIViewController+SemiModal.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension UIViewController: HalfModalPresenter {
-    var isHalfModalPresented: Bool {
+extension UIViewController {
+    var isSemiModalPresented: Bool {
         return (transitioningDelegate as? SemiModalTransitioningDelegate) != nil
     }
 
-    func presentHalfModal(_ viewController: HalfModalPresentable.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
+    func presentSemiModal(_ viewController: HalfModalPresentable.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
         viewController.modalPresentationStyle = .custom
         viewController.modalPresentationCapturesStatusBarAppearance = true
         viewController.transitioningDelegate = SemiModalTransitioningDelegate.default

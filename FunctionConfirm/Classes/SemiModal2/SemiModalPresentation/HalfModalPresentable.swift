@@ -128,7 +128,7 @@ extension HalfModalPresentable where Self: UIViewController {
 
     // UIScrollViewのスクロール位置を表すIndicatorの位置
     var scrollIndicatorInsets: UIEdgeInsets {
-        let top = isHalfModalPresented ? cornerRadius : 0
+        let top = isSemiModalPresented ? cornerRadius : 0
         return UIEdgeInsets(top: CGFloat(top), left: 0, bottom: bottomLayoutOffset, right: 0)
     }
 

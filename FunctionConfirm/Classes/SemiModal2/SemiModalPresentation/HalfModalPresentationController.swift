@@ -114,7 +114,7 @@ class HalfModalPresentationController: UIPresentationController {
             self.adjustPresentedViewFrame()
             if
                 let layoutPresentable = self.presentedViewController as? HalfModalPresentable.LayoutType,
-                layoutPresentable.isHalfModalPresented {
+                layoutPresentable.isSemiModalPresented {
                 self.addRoundedCorners(to: self.presentedView)
             }
         })
@@ -163,7 +163,7 @@ private extension HalfModalPresentationController {
         guard let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType else { return }
         containerView.addSubview(presentedView)
         containerView.addGestureRecognizer(panGestureRecognizer)
-        if layoutPresentable.isHalfModalPresented {
+        if layoutPresentable.isSemiModalPresented {
             addRoundedCorners(to: presentedView)
         }
         setNeedsLayoutUpdate()
