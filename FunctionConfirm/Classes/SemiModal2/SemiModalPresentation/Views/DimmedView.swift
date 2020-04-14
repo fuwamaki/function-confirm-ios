@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DimmedView: UIView {
+class DimmedView: UIView {
 
     enum DimState {
         case max

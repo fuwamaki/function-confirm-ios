@@ -8,30 +8,30 @@
 
 import UIKit
 
-public protocol HalfModalPresentable: AnyObject {
+protocol HalfModalPresentable: AnyObject {
     var halfScrollable: UIScrollView? { get }
     var topOffset: CGFloat { get }
-    var shortFormHeight: HalfModalHeight { get }
-    var longFormHeight: HalfModalHeight { get }
+    var shortFormHeight: SemiModalHeight { get }
+    var longFormHeight: SemiModalHeight { get }
     var cornerRadius: CGFloat { get }
     var springDamping: CGFloat { get }
     var transitionDuration: Double { get }
     var transitionAnimationOptions: UIView.AnimationOptions { get }
     var halfModalBackgroundColor: UIColor { get }
     func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer)
-    func shouldTransition(to state: HalfModalPresentationState) -> Bool
-    func willTransition(to state: HalfModalPresentationState)
+    func shouldTransition(to state: SemiModalPresentationState) -> Bool
+    func willTransition(to state: SemiModalPresentationState)
     func halfModalViewWillDisappear()
     func halfModalDidDisappear()
 }
 
-public extension HalfModalPresentable where Self: UIViewController {
+extension HalfModalPresentable where Self: UIViewController {
 
     typealias AnimationBlockType = () -> Void
     typealias AnimationCompletionType = (Bool) -> Void
     typealias LayoutType = UIViewController & HalfModalPresentable
 
-    func halfModalTransition(to state: HalfModalPresentationState) {
+    func halfModalTransition(to state: SemiModalPresentationState) {
         presentedVC?.transition(to: state)
     }
 
@@ -48,17 +48,17 @@ public extension HalfModalPresentable where Self: UIViewController {
     }
 }
 
-public extension HalfModalPresentable where Self: UIViewController {
+extension HalfModalPresentable where Self: UIViewController {
     // longForm時のtopOffset
     var topOffset: CGFloat {
         return topLayoutOffset + 21.0
     }
 
-    var shortFormHeight: HalfModalHeight {
+    var shortFormHeight: SemiModalHeight {
         return longFormHeight
     }
 
-    var longFormHeight: HalfModalHeight {
+    var longFormHeight: SemiModalHeight {
         guard let scrollView = halfScrollable else { return .maxHeight }
         scrollView.layoutIfNeeded()
         return .contentHeight(scrollView.contentSize.height)
@@ -94,12 +94,12 @@ public extension HalfModalPresentable where Self: UIViewController {
     }
 
     // falseにすると、ハーフモーダルの高さをカスタムできる
-    func shouldTransition(to state: HalfModalPresentationState) -> Bool {
+    func shouldTransition(to state: SemiModalPresentationState) -> Bool {
         return true
     }
 
     // longForm<->shortFormの変更したタイミングでコール
-    func willTransition(to state: HalfModalPresentationState) {}
+    func willTransition(to state: SemiModalPresentationState) {}
 
     // viewWillDisappear
     func halfModalViewWillDisappear() {}
@@ -148,7 +148,7 @@ extension HalfModalPresentable where Self: UIViewController {
         return container.bounds.size.height - topOffset
     }
 
-    func topMargin(from: HalfModalHeight) -> CGFloat {
+    func topMargin(from: SemiModalHeight) -> CGFloat {
         switch from {
         case .maxHeight:
             return 0.0

@@ -1,5 +1,5 @@
 //
-//  HalfModalHeight.swift
+//  SemiModalHeight.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum HalfModalHeight: Equatable {
+enum SemiModalHeight: Equatable {
     case maxHeight
     case maxHeightWithTopInset(CGFloat)
     case contentHeight(CGFloat)

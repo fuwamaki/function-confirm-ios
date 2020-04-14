@@ -38,11 +38,11 @@ extension HalfModalViewController: HalfModalPresentable {
         return tableView
     }
 
-    var shortFormHeight: HalfModalHeight {
+    var shortFormHeight: SemiModalHeight {
         return .contentHeight(300)
     }
 
-    var longFormHeight: HalfModalHeight {
+    var longFormHeight: SemiModalHeight {
         return .maxHeightWithTopInset(40)
     }
 

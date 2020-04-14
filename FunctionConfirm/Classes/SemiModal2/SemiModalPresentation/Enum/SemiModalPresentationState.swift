@@ -1,5 +1,5 @@
 //
-//  HalfModalPresentationState.swift
+//  SemiModalPresentationState.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum HalfModalPresentationState {
+enum SemiModalPresentationState {
     case shortForm
     case longForm
 }

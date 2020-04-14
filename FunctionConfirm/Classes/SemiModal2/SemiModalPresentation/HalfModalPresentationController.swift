@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class HalfModalPresentationController: UIPresentationController {
+class HalfModalPresentationController: UIPresentationController {
 
     struct Constants {
         static let indicatorYOffset = CGFloat(8.0)
@@ -44,9 +44,9 @@ open class HalfModalPresentationController: UIPresentationController {
         return view
     }()
 
-    private lazy var halfContainerView: HalfContainerView = {
+    private lazy var halfContainerView: SemiContainerView = {
         let frame = containerView?.frame ?? .zero
-        return HalfContainerView(presentedView: presentedViewController.view, frame: frame)
+        return SemiContainerView(presentedView: presentedViewController.view, frame: frame)
     }()
 
     public override var presentedView: UIView {
@@ -121,8 +121,8 @@ open class HalfModalPresentationController: UIPresentationController {
     }
 }
 
-public extension HalfModalPresentationController {
-    func transition(to state: HalfModalPresentationState) {
+extension HalfModalPresentationController {
+    func transition(to state: SemiModalPresentationState) {
         guard presentable?.shouldTransition(to: state) == true else { return }
         presentable?.willTransition(to: state)
         switch state {

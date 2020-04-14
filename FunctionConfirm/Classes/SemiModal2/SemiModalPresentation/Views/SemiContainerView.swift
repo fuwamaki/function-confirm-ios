@@ -1,5 +1,5 @@
 //
-//  HalfContainerView.swift
+//  SemiContainerView.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HalfContainerView: UIView {
+class SemiContainerView: UIView {
 
     init(presentedView: UIView, frame: CGRect) {
         super.init(frame: frame)
@@ -22,9 +22,9 @@ class HalfContainerView: UIView {
 }
 
 extension UIView {
-    var halfContainerView: HalfContainerView? {
+    var halfContainerView: SemiContainerView? {
         return subviews.first(where: { view -> Bool in
-            view is HalfContainerView
-        }) as? HalfContainerView
+            view is SemiContainerView
+        }) as? SemiContainerView
     }
 }

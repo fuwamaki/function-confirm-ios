@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIViewController: HalfModalPresenter {
-    public var isHalfModalPresented: Bool {
+    var isHalfModalPresented: Bool {
         return (transitioningDelegate as? HalfModalPresentationDelegate) != nil
     }
 
-    public func presentHalfModal(_ viewController: HalfModalPresentable.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
+    func presentHalfModal(_ viewController: HalfModalPresentable.LayoutType, sourceView: UIView? = nil, sourceRect: CGRect = .zero) {
         viewController.modalPresentationStyle = .custom
         viewController.modalPresentationCapturesStatusBarAppearance = true
         viewController.transitioningDelegate = HalfModalPresentationDelegate.default
@@ -21,7 +21,7 @@ extension UIViewController: HalfModalPresenter {
     }
 }
 
-public class HalfModalPresentationDelegate: NSObject {
+class HalfModalPresentationDelegate: NSObject {
     public static var `default`: HalfModalPresentationDelegate = {
         return HalfModalPresentationDelegate()
     }()
