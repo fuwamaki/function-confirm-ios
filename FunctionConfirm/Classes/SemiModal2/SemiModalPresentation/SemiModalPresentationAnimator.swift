@@ -59,7 +59,7 @@ extension SemiModalPresentationAnimator {
             let layoutType = transitionStyle.layoutType(context: transitionContext)
             else { return }
         fromViewController.beginAppearanceTransition(false, animated: true)
-        let semiView: UIView = transitionContext.containerView.halfContainerView ?? toViewController.view
+        let semiView: UIView = transitionContext.containerView.semiContainerView ?? toViewController.view
         semiView.frame = transitionContext.finalFrame(for: toViewController)
         semiView.frame.origin.y = transitionContext.containerView.frame.height
         SemiModalAnimator.animate({
@@ -77,7 +77,7 @@ extension SemiModalPresentationAnimator {
             let layoutType = transitionStyle.layoutType(context: transitionContext)
             else { return }
         toViewController.beginAppearanceTransition(true, animated: true)
-        let semiView: UIView = transitionContext.containerView.halfContainerView ?? fromViewController.view
+        let semiView: UIView = transitionContext.containerView.semiContainerView ?? fromViewController.view
         SemiModalAnimator.animate({
             semiView.frame.origin.y = transitionContext.containerView.frame.height
         }, semiModalDelegate: layoutType, { didComplete in

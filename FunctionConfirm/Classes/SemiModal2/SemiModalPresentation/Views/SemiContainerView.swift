@@ -22,7 +22,7 @@ class SemiContainerView: UIView {
 }
 
 extension UIView {
-    var halfContainerView: SemiContainerView? {
+    var semiContainerView: SemiContainerView? {
         return subviews.first(where: { view -> Bool in
             view is SemiContainerView
         }) as? SemiContainerView

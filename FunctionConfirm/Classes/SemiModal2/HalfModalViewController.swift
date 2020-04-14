@@ -33,21 +33,8 @@ final class HalfModalViewController: UIViewController {
 }
 
 extension HalfModalViewController: SemiModalDelegate {
-    // HalfModalで表示させるViewのUIScrollViewがあれば登録
-    var halfScrollable: UIScrollView? {
+    var semiScrollable: UIScrollView? {
         return tableView
-    }
-
-    var shortFormHeight: SemiModalHeight {
-        return .contentHeight(300)
-    }
-
-    var longFormHeight: SemiModalHeight {
-        return .maxHeightWithTopInset(40)
-    }
-
-    var anchorModalToLongForm: Bool {
-        return false
     }
 }
 

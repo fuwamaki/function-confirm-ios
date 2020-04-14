@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SemiModalDelegate: AnyObject {
-    var halfScrollable: UIScrollView? { get }
+    var semiScrollable: UIScrollView? { get }
     var topOffset: CGFloat { get }
     var shortFormHeight: SemiModalHeight { get }
     var longFormHeight: SemiModalHeight { get }
@@ -17,28 +17,30 @@ protocol SemiModalDelegate: AnyObject {
     var springDamping: CGFloat { get }
     var transitionDuration: Double { get }
     var transitionAnimationOptions: UIView.AnimationOptions { get }
-    var halfModalBackgroundColor: UIColor { get }
-    func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer)
+    var semiModalBackgroundColor: UIColor { get }
+    func willRespond(to semiModalGestureRecognizer: UIPanGestureRecognizer)
     func shouldTransition(to state: SemiModalPresentationState) -> Bool
     func willTransition(to state: SemiModalPresentationState)
-    func halfModalViewWillDisappear()
-    func halfModalDidDisappear()
+    func semiModalViewWillDisappear()
+    func semiModalDidDisappear()
 }
 
 // MARK: protocol functions
 extension SemiModalDelegate where Self: UIViewController {
+    var semiScrollable: UIScrollView? {
+        return nil
+    }
+
     var topOffset: CGFloat {
         return topLayoutOffset + 24.0
     }
 
     var shortFormHeight: SemiModalHeight {
-        return longFormHeight
+        return .contentHeight(300)
     }
 
     var longFormHeight: SemiModalHeight {
-        guard let scrollView = halfScrollable else { return .maxHeight }
-        scrollView.layoutIfNeeded()
-        return .contentHeight(scrollView.contentSize.height)
+        return .maxHeightWithTopInset(40)
     }
 
     var cornerRadius: CGFloat {
@@ -57,11 +59,11 @@ extension SemiModalDelegate where Self: UIViewController {
         return [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState]
     }
 
-    var halfModalBackgroundColor: UIColor {
+    var semiModalBackgroundColor: UIColor {
         return UIColor.black.withAlphaComponent(0.7)
     }
 
-    func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) {}
+    func willRespond(to semiModalGestureRecognizer: UIPanGestureRecognizer) {}
 
     func shouldTransition(to state: SemiModalPresentationState) -> Bool {
         return true
@@ -69,9 +71,9 @@ extension SemiModalDelegate where Self: UIViewController {
 
     func willTransition(to state: SemiModalPresentationState) {}
 
-    func halfModalViewWillDisappear() {}
+    func semiModalViewWillDisappear() {}
 
-    func halfModalDidDisappear() {}
+    func semiModalDidDisappear() {}
 }
 
 // MARK: typealias, private
@@ -99,8 +101,8 @@ extension SemiModalDelegate where Self: UIViewController {
         return presentationController as? SemiModalPresentationController
     }
 
-    var allowsExtendedHalfScrolling: Bool {
-        guard let scrollView = halfScrollable else { return false }
+    var allowsExtendedSemiScrolling: Bool {
+        guard let scrollView = semiScrollable else { return false }
         scrollView.layoutIfNeeded()
         return scrollView.contentSize.height > (scrollView.frame.height - bottomLayoutOffset)
     }
