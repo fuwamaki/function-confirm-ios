@@ -33,8 +33,8 @@ public protocol HalfModalPresentable: AnyObject {
     func shouldPrioritize(halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool
     func shouldTransition(to state: HalfModalPresentationState) -> Bool
     func willTransition(to state: HalfModalPresentationState)
-    func halfModalWillDismiss()
-    func halfModalDidDismiss()
+    func halfModalViewWillDisappear()
+    func halfModalDidDisappear()
 }
 
 public extension HalfModalPresentable where Self: UIViewController {
@@ -61,7 +61,7 @@ public extension HalfModalPresentable where Self: UIViewController {
 }
 
 public extension HalfModalPresentable where Self: UIViewController {
-
+    // longForm時のtopOffset
     var topOffset: CGFloat {
         return topLayoutOffset + 21.0
     }
@@ -71,97 +71,117 @@ public extension HalfModalPresentable where Self: UIViewController {
     }
 
     var longFormHeight: HalfModalHeight {
-
-        guard let scrollView = halfScrollable
-            else { return .maxHeight }
-
-        // called once during presentation and stored
+        guard let scrollView = halfScrollable else { return .maxHeight }
         scrollView.layoutIfNeeded()
         return .contentHeight(scrollView.contentSize.height)
     }
 
+    // ハーフモーダル上辺の角丸
     var cornerRadius: CGFloat {
         return 8.0
     }
 
+    // ハーフモーダル表示時のバウンドアニメーション。振幅大0-1振幅小
     var springDamping: CGFloat {
         return 0.8
     }
 
+    // ハーフモーダル表示時のアニメーションの時間
     var transitionDuration: Double {
         return 0.5
     }
 
+    // ハーフモーダル表示時のアニメーションOption
     var transitionAnimationOptions: UIView.AnimationOptions {
         return [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState]
     }
 
+    // ハーフモーダル暗背景の色
     var halfModalBackgroundColor: UIColor {
         return UIColor.black.withAlphaComponent(0.7)
     }
 
+    // TODO: 消す
     var dragIndicatorBackgroundColor: UIColor {
         return UIColor.lightGray
     }
 
+    // TODO: 消す
+    // UIScrollViewのスクロール位置を表すIndicatorの位置
     var scrollIndicatorInsets: UIEdgeInsets {
         let top = shouldRoundTopCorners ? cornerRadius : 0
         return UIEdgeInsets(top: CGFloat(top), left: 0, bottom: bottomLayoutOffset, right: 0)
     }
 
+    // TODO: 消す
     var anchorModalToLongForm: Bool {
         return true
     }
 
+    // TODO: 消す
     var allowsExtendedHalfScrolling: Bool {
         guard let scrollView = halfScrollable else { return false }
         scrollView.layoutIfNeeded()
         return scrollView.contentSize.height > (scrollView.frame.height - bottomLayoutOffset)
     }
 
+    // TODO: 消す
     var allowsDragToDismiss: Bool {
         return true
     }
 
+    // TODO: 消す
     var allowsTapToDismiss: Bool {
         return true
     }
 
+    // TODO: 消す
     var isUserInteractionEnabled: Bool {
         return true
     }
 
+    // TODO: 消す
     var isHapticFeedbackEnabled: Bool {
         return true
     }
 
+    // TODO: 消す
     var shouldRoundTopCorners: Bool {
         return isHalfModalPresented
     }
 
+    // TODO: 消す
     var showDragIndicator: Bool {
         return shouldRoundTopCorners
     }
 
+    // TODO: 消す defaultでスクロールもできなくなっちゃう
     func shouldRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
         return true
     }
 
-    func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) {}
+    // ハーフモーダルを上下に操作中に呼び出される
+    func willRespond(to halfModalGestureRecognizer: UIPanGestureRecognizer) {
+    }
 
+    // falseにすると、ハーフモーダルの高さをカスタムできる
     func shouldTransition(to state: HalfModalPresentationState) -> Bool {
         return true
     }
 
+    // TODO: 消す
     func shouldPrioritize(halfModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
         return false
     }
 
+    // longForm<->shortFormの変更したタイミングでコール
     func willTransition(to state: HalfModalPresentationState) {}
 
-    func halfModalWillDismiss() {}
+    // viewWillDisappear
+    func halfModalViewWillDisappear() {}
 
-    func halfModalDidDismiss() {}
+    // viewDidDisappear
+    func halfModalDidDisappear() {}
 }
 
 extension HalfModalPresentable where Self: UIViewController {
@@ -170,14 +190,11 @@ extension HalfModalPresentable where Self: UIViewController {
     }
 
     var topLayoutOffset: CGFloat {
-        guard let rootVC = rootViewController else { return 0 }
-        if #available(iOS 11.0, *) { return rootVC.view.safeAreaInsets.top } else { return rootVC.topLayoutGuide.length }
+        return rootViewController?.view.safeAreaInsets.top ?? 0
     }
 
     var bottomLayoutOffset: CGFloat {
-       guard let rootVC = rootViewController else { return 0 }
-
-        if #available(iOS 11.0, *) { return rootVC.view.safeAreaInsets.bottom } else { return rootVC.bottomLayoutGuide.length }
+        return rootViewController?.view.safeAreaInsets.bottom ?? 0
     }
 
     var shortFormYPos: CGFloat {

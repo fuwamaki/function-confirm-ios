@@ -33,6 +33,7 @@ final class HalfModalViewController: UIViewController {
 }
 
 extension HalfModalViewController: HalfModalPresentable {
+    // HalfModalで表示させるViewのUIScrollViewがあれば登録
     var halfScrollable: UIScrollView? {
         return tableView
     }

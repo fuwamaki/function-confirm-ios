@@ -102,7 +102,7 @@ open class HalfModalPresentationController: UIPresentationController {
     }
 
     override public func dismissalTransitionWillBegin() {
-        presentable?.halfModalWillDismiss()
+        presentable?.halfModalViewWillDisappear()
         guard let coordinator = presentedViewController.transitionCoordinator else {
             backgroundView.dimState = .off
             return
@@ -116,7 +116,7 @@ open class HalfModalPresentationController: UIPresentationController {
 
     override public func dismissalTransitionDidEnd(_ completed: Bool) {
         if !completed { return }
-        presentable?.halfModalDidDismiss()
+        presentable?.halfModalDidDisappear()
     }
 
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
