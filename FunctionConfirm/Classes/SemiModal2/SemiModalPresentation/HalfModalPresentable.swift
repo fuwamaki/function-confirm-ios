@@ -43,7 +43,7 @@ extension HalfModalPresentable where Self: UIViewController {
     }
 
     func halfModalAnimate(_ animationBlock: @escaping AnimationBlockType, _ completion: AnimationCompletionType? = nil) {
-        HalfModalAnimator.animate(animationBlock, config: self, completion)
+        SemiModalAnimator.animate(animationBlock, config: self, completion)
     }
 }
 

@@ -281,7 +281,7 @@ private extension HalfModalPresentationController {
     }
 
     func snap(toYPosition yPos: CGFloat) {
-        HalfModalAnimator.animate({ [weak self] in
+        SemiModalAnimator.animate({ [weak self] in
             self?.adjust(toYPosition: yPos)
             self?.isPresentedViewAnimating = true
         }, config: presentable, { [weak self] didComplete in

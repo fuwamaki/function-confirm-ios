@@ -1,5 +1,5 @@
 //
-//  HalfModalAnimator.swift
+//  SemiModalAnimator.swift
 //  FunctionConfirm
 //
 //  Created by yusaku maki on 2020/04/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct HalfModalAnimator {
+struct SemiModalAnimator {
     static func animate(_ animations: @escaping HalfModalPresentable.AnimationBlockType,
                         config: HalfModalPresentable?,
                         _ completion: HalfModalPresentable.AnimationCompletionType? = nil) {

@@ -33,7 +33,7 @@ class HalfModalPresentationAnimator: NSObject {
         let halfView: UIView = transitionContext.containerView.halfContainerView ?? toVC.view
         halfView.frame = transitionContext.finalFrame(for: toVC)
         halfView.frame.origin.y = transitionContext.containerView.frame.height
-        HalfModalAnimator.animate({
+        SemiModalAnimator.animate({
             halfView.frame.origin.y = yPos
         }, config: presentable, { didComplete in
             fromVC.endAppearanceTransition()
@@ -49,7 +49,7 @@ class HalfModalPresentationAnimator: NSObject {
         toVC.beginAppearanceTransition(true, animated: true)
         let presentable = halfModalLayoutType(from: transitionContext)
         let halfView: UIView = transitionContext.containerView.halfContainerView ?? fromVC.view
-        HalfModalAnimator.animate({
+        SemiModalAnimator.animate({
             halfView.frame.origin.y = transitionContext.containerView.frame.height
         }, config: presentable, { didComplete in
             fromVC.view.removeFromSuperview()
