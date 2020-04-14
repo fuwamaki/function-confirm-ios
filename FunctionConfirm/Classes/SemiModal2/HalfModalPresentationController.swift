@@ -241,10 +241,8 @@ private extension HalfModalPresentationController {
             else { return }
         scrollView.showsVerticalScrollIndicator = false
         scrollView.scrollIndicatorInsets = presentable?.scrollIndicatorInsets ?? .zero
-        scrollView.contentInset.bottom = presentingViewController.bottomLayoutGuide.length
-        if #available(iOS 11.0, *) {
-            scrollView.contentInsetAdjustmentBehavior = .never
-        }
+        scrollView.contentInset.bottom = presentingViewController.view.safeAreaInsets.bottom
+        scrollView.contentInsetAdjustmentBehavior = .never
     }
 }
 

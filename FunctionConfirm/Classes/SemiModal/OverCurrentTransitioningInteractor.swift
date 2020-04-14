@@ -58,6 +58,8 @@ class OverCurrentTransitioningInteractor: UIPercentDrivenInteractiveTransition {
         super.finish()
     }
 
+    // swiftlint:disable function_body_length
+    // swiftlint:disable cyclomatic_complexity
     public func handleSwipeGesture(view: UIView, sender: UIPanGestureRecognizer) {
         guard swipeState != .normal else {
             swipeState = .startMoving

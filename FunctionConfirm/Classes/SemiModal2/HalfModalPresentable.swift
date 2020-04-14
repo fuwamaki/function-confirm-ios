@@ -89,7 +89,7 @@ public extension HalfModalPresentable where Self: UIViewController {
     }
 
     var transitionDuration: Double {
-        return HalfModalAnimator.Constants.defaultTransitionDuration
+        return 0.5
     }
 
     var transitionAnimationOptions: UIView.AnimationOptions {

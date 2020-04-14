@@ -32,19 +32,15 @@ public class HalfModalPresentationAnimator: NSObject {
             let toVC = transitionContext.viewController(forKey: .to),
             let fromVC = transitionContext.viewController(forKey: .from)
             else { return }
-
         let presentable = halfModalLayoutType(from: transitionContext)
         fromVC.beginAppearanceTransition(false, animated: true)
         let yPos: CGFloat = presentable?.shortFormYPos ?? 0.0
         let halfView: UIView = transitionContext.containerView.halfContainerView ?? toVC.view
-
         halfView.frame = transitionContext.finalFrame(for: toVC)
         halfView.frame.origin.y = transitionContext.containerView.frame.height
-
         if presentable?.isHapticFeedbackEnabled == true {
             feedbackGenerator?.selectionChanged()
         }
-
         HalfModalAnimator.animate({
             halfView.frame.origin.y = yPos
         }, config: presentable, { [weak self] didComplete in
@@ -55,7 +51,6 @@ public class HalfModalPresentationAnimator: NSObject {
     }
 
     private func animateDismissal(transitionContext: UIViewControllerContextTransitioning) {
-
         guard
             let toVC = transitionContext.viewController(forKey: .to),
             let fromVC = transitionContext.viewController(forKey: .from)
@@ -84,13 +79,11 @@ public class HalfModalPresentationAnimator: NSObject {
 
 // MARK: - UIViewControllerAnimatedTransitioning Delegate
 extension HalfModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
-
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         guard
             let context = transitionContext,
             let presentable = halfModalLayoutType(from: context)
-            else { return HalfModalAnimator.Constants.defaultTransitionDuration }
-
+            else { return 0.5 }
         return presentable.transitionDuration
     }
 
