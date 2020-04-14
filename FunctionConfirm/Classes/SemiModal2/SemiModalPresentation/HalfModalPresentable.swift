@@ -26,7 +26,6 @@ protocol HalfModalPresentable: AnyObject {
 }
 
 extension HalfModalPresentable where Self: UIViewController {
-
     typealias AnimationBlockType = () -> Void
     typealias AnimationCompletionType = (Bool) -> Void
     typealias LayoutType = UIViewController & HalfModalPresentable

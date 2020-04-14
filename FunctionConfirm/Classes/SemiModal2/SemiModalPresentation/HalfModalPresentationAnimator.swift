@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class HalfModalPresentationAnimator: NSObject {
+class HalfModalPresentationAnimator: NSObject {
 
-    public enum TransitionStyle {
+    enum TransitionStyle {
         case presentation
         case dismissal
     }
@@ -68,9 +68,9 @@ public class HalfModalPresentationAnimator: NSObject {
     }
 }
 
-// MARK: - UIViewControllerAnimatedTransitioning Delegate
+// MARK: UIViewControllerAnimatedTransitioning
 extension HalfModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         guard
             let context = transitionContext,
             let presentable = halfModalLayoutType(from: context)
@@ -78,7 +78,7 @@ extension HalfModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
         return presentable.transitionDuration
     }
 
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         switch transitionStyle {
         case .presentation:
             animatePresentation(transitionContext: transitionContext)

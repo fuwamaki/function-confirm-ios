@@ -49,7 +49,7 @@ class HalfModalPresentationController: UIPresentationController {
         return SemiContainerView(presentedView: presentedViewController.view, frame: frame)
     }()
 
-    public override var presentedView: UIView {
+    override var presentedView: UIView {
         return halfContainerView
     }
 
@@ -153,9 +153,7 @@ extension HalfModalPresentationController {
 // MARK: - Presented View Layout Configuration
 private extension HalfModalPresentationController {
     var isPresentedViewAnchored: Bool {
-        if !isPresentedViewAnimating
-            && extendsHalfScrolling
-            && presentedView.frame.minY.rounded() <= anchoredYPosition.rounded() {
+        if !isPresentedViewAnimating && extendsHalfScrolling && presentedView.frame.minY.rounded() <= anchoredYPosition.rounded() {
             return true
         }
         return false
@@ -186,8 +184,7 @@ private extension HalfModalPresentationController {
     }
 
     func adjustHalfContainerBackgroundColor() {
-        halfContainerView.backgroundColor = presentedViewController.view.backgroundColor
-            ?? presentable?.halfScrollable?.backgroundColor
+        halfContainerView.backgroundColor = presentedViewController.view.backgroundColor ?? presentable?.halfScrollable?.backgroundColor
     }
 
     func layoutBackgroundView(in containerView: UIView) {
@@ -200,8 +197,7 @@ private extension HalfModalPresentationController {
     }
 
     func configureViewLayout() {
-        guard let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType
-            else { return }
+        guard let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType else { return }
         shortFormYPosition = layoutPresentable.shortFormYPos
         longFormYPosition = layoutPresentable.longFormYPos
         extendsHalfScrolling = layoutPresentable.allowsExtendedHalfScrolling
@@ -211,8 +207,7 @@ private extension HalfModalPresentationController {
         guard
             let layoutPresentable = presentedViewController as? HalfModalPresentable.LayoutType,
             let scrollView = presentable?.halfScrollable,
-            !scrollView.isScrolling
-            else { return }
+            !scrollView.isScrolling else { return }
         scrollView.showsVerticalScrollIndicator = false
         scrollView.scrollIndicatorInsets = layoutPresentable.scrollIndicatorInsets
         scrollView.contentInset.bottom = presentingViewController.view.safeAreaInsets.bottom
@@ -224,8 +219,7 @@ private extension HalfModalPresentationController {
     @objc func didHalfOnPresentedView(_ recognizer: UIPanGestureRecognizer) {
         guard
             shouldRespond(to: recognizer),
-            let containerView = containerView
-            else {
+            let containerView = containerView else {
                 recognizer.setTranslation(.zero, in: recognizer.view)
                 return
         }
@@ -277,8 +271,7 @@ private extension HalfModalPresentationController {
         guard
             isPresentedViewAnchored,
             let scrollView = presentable?.halfScrollable,
-            scrollView.contentOffset.y > 0
-            else { return false }
+            scrollView.contentOffset.y > 0 else { return false }
         let loc = panGestureRecognizer.location(in: presentedView)
         return (scrollView.frame.contains(loc) || scrollView.isScrolling)
     }
@@ -334,8 +327,7 @@ private extension HalfModalPresentationController {
             } else {
                 haltScrolling(scrollView)
             }
-        } else if presentedViewController.view.isKind(of: UIScrollView.self)
-            && !isPresentedViewAnimating && scrollView.contentOffset.y <= 0 {
+        } else if presentedViewController.view.isKind(of: UIScrollView.self) && !isPresentedViewAnimating && scrollView.contentOffset.y <= 0 {
             handleScrollViewTopBounce(scrollView: scrollView, change: change)
         } else {
             trackScrolling(scrollView)
@@ -399,7 +391,6 @@ private extension HalfModalPresentationController {
     }
 }
 
-// MARK: - Helper Extensions
 private extension UIScrollView {
     var isScrolling: Bool {
         return isDragging && !isDecelerating || isTracking

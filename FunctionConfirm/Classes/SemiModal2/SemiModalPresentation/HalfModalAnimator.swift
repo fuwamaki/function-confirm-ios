@@ -9,7 +9,6 @@
 import UIKit
 
 struct HalfModalAnimator {
-
     static func animate(_ animations: @escaping HalfModalPresentable.AnimationBlockType,
                         config: HalfModalPresentable?,
                         _ completion: HalfModalPresentable.AnimationCompletionType? = nil) {
