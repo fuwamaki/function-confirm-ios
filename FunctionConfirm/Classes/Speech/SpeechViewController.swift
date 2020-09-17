@@ -23,7 +23,8 @@ final class SpeechViewController: UIViewController {
     }
 
     private func requestRecognizerAuthorization() {
-        SFSpeechRecognizer.requestAuthorization { (authStatus) in
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            print(authStatus)
         }
     }
 
@@ -46,6 +47,7 @@ final class SpeechViewController: UIViewController {
             var isFinal = false
 
             if let result = result {
+                // 音声文字列
                 print(result.bestTranscription.formattedString)
                 isFinal = result.isFinal
             }
@@ -59,8 +61,11 @@ final class SpeechViewController: UIViewController {
         }
 
         let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
-        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
-            self.recognitionRequest?.append(buffer)
+        audioEngine.inputNode.installTap(
+            onBus: 0,
+            bufferSize: 1024,
+            format: recordingFormat) { buffer, _ in
+                self.recognitionRequest?.append(buffer)
         }
 
         audioEngine.prepare()
