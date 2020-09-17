@@ -12,12 +12,27 @@ final class AlarmViewController: UIViewController {
 
     @IBOutlet weak var dateTextField: UITextField!
 
+    @IBAction func clickAlarmButton(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let todayDateFormatter = DateFormatter()
+        todayDateFormatter.dateFormat = "yyyy/MM/dd"
+        let aaa = todayDateFormatter.string(from: Date())
+        alarm.selectedWakeUpTime = dateFormatter.date(from: aaa + " " + dateTextField.text!)
+        alarm.runTimer()
+    }
+
+    private var alarm = Alarm()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
         setupDoneToolBar()
     }
+}
 
+// MARK: DatePicker
+extension AlarmViewController {
     func setupDatePicker() {
         let datePickerView = AlarmPickerView()
         dateTextField.inputView = datePickerView

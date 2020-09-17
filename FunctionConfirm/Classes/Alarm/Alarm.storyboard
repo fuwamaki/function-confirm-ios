@@ -17,14 +17,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBn-Rf-doV">
-                                <rect key="frame" x="141.5" y="188" width="131" height="58"/>
+                                <rect key="frame" x="137" y="188" width="140" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="mxY-n5-6WW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmY-j9-Bzn">
+                                <rect key="frame" x="95" y="306" width="224" height="44"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="PKo-VX-Wbn"/>
+                                    <constraint firstAttribute="height" constant="44" id="b8M-Z3-cE1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="アラーム">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickAlarmButton:" destination="2AB-5D-WEE" eventType="touchUpInside" id="JrG-Rh-CGn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qBn-Rf-doV" firstAttribute="centerX" secondItem="SwX-0n-kYJ" secondAttribute="centerX" id="75U-aw-KEM"/>
+                            <constraint firstItem="wmY-j9-Bzn" firstAttribute="top" secondItem="qBn-Rf-doV" secondAttribute="bottom" constant="60" id="7h9-Sb-Inu"/>
+                            <constraint firstItem="wmY-j9-Bzn" firstAttribute="centerX" secondItem="SwX-0n-kYJ" secondAttribute="centerX" id="SqJ-8n-cwX"/>
                             <constraint firstItem="qBn-Rf-doV" firstAttribute="top" secondItem="w0I-HC-dnX" secondAttribute="top" constant="100" id="i86-a3-aF0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w0I-HC-dnX"/>

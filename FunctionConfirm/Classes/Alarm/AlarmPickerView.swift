@@ -25,7 +25,6 @@ final class AlarmPickerView: UIView {
     func setupDatePicker() {
         datePicker.datePickerMode = .time
         datePicker.locale = Locale(identifier: "ja")
-        datePicker.maximumDate = Date()
         datePicker.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 216)
         addSubview(datePicker)
         datePicker.topAnchor.constraint(equalTo: self.topAnchor, constant: 0.0).isActive = true

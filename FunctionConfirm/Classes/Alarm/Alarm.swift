@@ -9,13 +9,14 @@
 import AVFoundation
 
 class Alarm {
-    var selectedWakeUpTime:Date?
+
+    var selectedWakeUpTime: Date?
     var audioPlayer: AVAudioPlayer!
     var sleepTimer: Timer?
     var seconds = 0
 
     //アラーム/タイマーを開始
-    func runTimer(){
+    func runTimer() {
         //calculateIntervalにユーザーが入力した日付を渡す、返り値をsecondsに代入
         seconds = calculateInterval(userAwakeTime: selectedWakeUpTime!)
         if sleepTimer == nil {
@@ -35,17 +36,17 @@ class Alarm {
             //secondsから-1する
             seconds -= 1
         } else {
-            //タイマーを止める
+            // タイマーを止める
             sleepTimer?.invalidate()
-            //タイマーにnil代入
+            // タイマーにnil代入
             sleepTimer = nil
-            //音源のパス
+            // TODO: 音源のパス
             let soundFilePath = Bundle.main.path(forResource: "", ofType: "")!
-            //パスのURL
-            let sound:URL = URL(fileURLWithPath: soundFilePath)
+            // パスのURL
+            let sound: URL = URL(fileURLWithPath: soundFilePath)
             do {
                 //AVAudioPlayerを作成
-                audioPlayer = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+                audioPlayer = try AVAudioPlayer(contentsOf: sound, fileTypeHint: nil)
             } catch {
                 print("Could not load file")
             }
@@ -73,7 +74,7 @@ class Alarm {
             sleepTimer?.invalidate()
             //タイマーにnil代入
             sleepTimer = nil
-        }else{
+        } else {
             //タイマーを止める
             audioPlayer.stop()
         }
