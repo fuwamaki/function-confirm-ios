@@ -15,6 +15,8 @@
 		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
 		2009FE2D25133472000D81FB /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2009FE2C25133472000D81FB /* Speech.storyboard */; };
 		2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009FE2E2513349E000D81FB /* SpeechViewController.swift */; };
+		201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D4251357DA00C9917C /* AlarmViewController.swift */; };
+		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -187,6 +189,8 @@
 		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
 		2009FE2C25133472000D81FB /* Speech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		2009FE2E2513349E000D81FB /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		201E42D4251357DA00C9917C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -388,6 +392,15 @@
 				2009FE2E2513349E000D81FB /* SpeechViewController.swift */,
 			);
 			path = Speech;
+			sourceTree = "<group>";
+		};
+		201E42D3251357C100C9917C /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				201E42D6251357DF00C9917C /* Alarm.storyboard */,
+				201E42D4251357DA00C9917C /* AlarmViewController.swift */,
+			);
+			path = Alarm;
 			sourceTree = "<group>";
 		};
 		2032A6CC20DCC9E50091952F = {
@@ -680,6 +693,7 @@
 				20B015512436FC62008DA31D /* SemiModal */,
 				20F7D2D424458A010054A935 /* SemiModal2 */,
 				2009FE2B2513345B000D81FB /* Speech */,
+				201E42D3251357C100C9917C /* Alarm */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1042,6 +1056,7 @@
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
 				20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
+				201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
 				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
@@ -1201,6 +1216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */,
 				9C62DA3F227C4BA4002DEA7C /* MVVMViewState.swift in Sources */,
 				9C78A2A822149CDC0036D3FD /* AnimationPageViewController.swift in Sources */,
 				9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */,
