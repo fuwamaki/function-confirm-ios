@@ -13,6 +13,8 @@
 		20037F9724291058009D5CF5 /* TestFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9624291058009D5CF5 /* TestFirst.storyboard */; };
 		20037F9924291314009D5CF5 /* TestSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20037F9824291313009D5CF5 /* TestSecondViewController.swift */; };
 		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
+		2009FE2D25133472000D81FB /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2009FE2C25133472000D81FB /* Speech.storyboard */; };
+		2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009FE2E2513349E000D81FB /* SpeechViewController.swift */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -183,6 +185,8 @@
 		20037F9624291058009D5CF5 /* TestFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestFirst.storyboard; sourceTree = "<group>"; };
 		20037F9824291313009D5CF5 /* TestSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecondViewController.swift; sourceTree = "<group>"; };
 		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
+		2009FE2C25133472000D81FB /* Speech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
+		2009FE2E2513349E000D81FB /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -375,6 +379,15 @@
 				20037F9A2429131F009D5CF5 /* TestSecond.storyboard */,
 			);
 			path = PresentTransitionFromRight;
+			sourceTree = "<group>";
+		};
+		2009FE2B2513345B000D81FB /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				2009FE2C25133472000D81FB /* Speech.storyboard */,
+				2009FE2E2513349E000D81FB /* SpeechViewController.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 		2032A6CC20DCC9E50091952F = {
@@ -666,6 +679,7 @@
 				20037F8F24290E76009D5CF5 /* PresentTransitionFromRight */,
 				20B015512436FC62008DA31D /* SemiModal */,
 				20F7D2D424458A010054A935 /* SemiModal2 */,
+				2009FE2B2513345B000D81FB /* Speech */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1040,6 +1054,7 @@
 				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
 				20E35066232A29090057A561 /* TimerView.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
+				2009FE2D25133472000D81FB /* Speech.storyboard in Resources */,
 				20037F9324290EAC009D5CF5 /* PresentTransitionFromRight.storyboard in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
@@ -1239,6 +1254,7 @@
 				9C69834922700E2F00DC8C93 /* CameraMainFunctionViewController.swift in Sources */,
 				20F7D2E224459A560054A935 /* SemiModalAnimator.swift in Sources */,
 				7B67233720E1EC7C00D8A5A3 /* QiitaListApiRequest.swift in Sources */,
+				2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */,
 				9CB8083021F8229600DAD155 /* UIApplication+topViewController.swift in Sources */,
 				208A61C6243AE49300A64212 /* OldSemiModalPresentationController.swift in Sources */,
 				2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */,
