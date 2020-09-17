@@ -22,13 +22,13 @@ final class CodeOnlyPickerViewController: UIViewController {
     func setupDatePicker() {
         let datePickerView = CodeOnlyPickerView()
         textField.inputView = datePickerView
-        datePickerView.datePicker.addTarget(self, action: #selector(PickerViewController.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        datePickerView.datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
     }
 
     func setupDoneToolBar() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(PickerViewController.doneButtonAction))
+        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(doneButtonAction))
         toolBar.items = [toolBarBtn]
         textField.inputAccessoryView = toolBar
     }

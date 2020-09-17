@@ -1,14 +1,14 @@
 //
-//  CodeOnlyPickerView.swift
+//  AlarmPickerView.swift
 //  FunctionConfirm
 //
-//  Created by Maki, Yusaku | Mackey | ECID on 2019/01/08.
-//  Copyright © 2019年 牧宥作. All rights reserved.
+//  Created by yusaku maki on 2020/09/17.
+//  Copyright © 2020 牧宥作. All rights reserved.
 //
 
 import UIKit
 
-final class CodeOnlyPickerView: UIView {
+final class AlarmPickerView: UIView {
 
     var datePicker: UIDatePicker = UIDatePicker()
 
@@ -23,7 +23,7 @@ final class CodeOnlyPickerView: UIView {
     }
 
     func setupDatePicker() {
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .time
         datePicker.locale = Locale(identifier: "ja")
         datePicker.maximumDate = Date()
         datePicker.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 216)

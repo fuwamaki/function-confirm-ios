@@ -18,6 +18,7 @@
 		201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D4251357DA00C9917C /* AlarmViewController.swift */; };
 		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
 		201E42D92513590D00C9917C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D82513590D00C9917C /* Alarm.swift */; };
+		201E42DB251361D200C9917C /* AlarmPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42DA251361D200C9917C /* AlarmPickerView.swift */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -193,6 +194,7 @@
 		201E42D4251357DA00C9917C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		201E42D82513590D00C9917C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		201E42DA251361D200C9917C /* AlarmPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPickerView.swift; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				201E42D6251357DF00C9917C /* Alarm.storyboard */,
 				201E42D4251357DA00C9917C /* AlarmViewController.swift */,
 				201E42D82513590D00C9917C /* Alarm.swift */,
+				201E42DA251361D200C9917C /* AlarmPickerView.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -1241,6 +1244,7 @@
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
 				20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */,
 				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
+				201E42DB251361D200C9917C /* AlarmPickerView.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				201E42D92513590D00C9917C /* Alarm.swift in Sources */,
 				20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */,
