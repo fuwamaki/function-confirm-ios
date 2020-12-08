@@ -1,48 +1,49 @@
 PODS:
-  - APIKit (5.0.0)
-  - AWSCore (2.8.4)
-  - AWSRekognition (2.8.4):
-    - AWSCore (= 2.8.4)
+  - APIKit (5.1.0)
+  - AWSCore (2.19.1)
+  - AWSRekognition (2.19.1):
+    - AWSCore (= 2.19.1)
   - Cartography (4.0.0)
   - KRActivityIndicatorView (3.0.4)
   - KRProgressHUD (3.4.4):
     - KRActivityIndicatorView (= 3.0.4)
   - PanModal (1.2.5)
-  - ReSwift (5.0.0)
-  - RxBlocking (5.0.0):
+  - ReSwift (6.0.0)
+  - RxBlocking (5.1.1):
     - RxSwift (~> 5)
-  - RxCocoa (5.0.0):
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.0.0):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - RxTest (5.0.0):
+  - RxSwift (5.1.1)
+  - RxTest (5.1.1):
     - RxSwift (~> 5)
-  - SwiftLint (0.33.0)
+  - SwiftLint (0.41.0)
 
 DEPENDENCIES:
-  - APIKit (~> 5.0.0)
-  - AWSRekognition (~> 2.8.4)
+  - APIKit (~> 5.1.0)
+  - AWSRekognition (~> 2.19.1)
   - Cartography (~> 4.0.0)
   - KRProgressHUD (~> 3.4.4)
   - PanModal
-  - ReSwift (~> 5.0.0)
-  - RxBlocking (~> 5.0.0)
-  - RxCocoa (~> 5.0.0)
-  - RxSwift (~> 5.0.0)
-  - RxTest (~> 5.0.0)
-  - SwiftLint (~> 0.33.0)
+  - ReSwift (~> 6.0.0)
+  - RxBlocking (~> 5.1.1)
+  - RxCocoa (~> 5.1.1)
+  - RxSwift (~> 5.1.1)
+  - RxTest (~> 5.1.1)
+  - SwiftLint (~> 0.41.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - APIKit
-    - AWSCore
-    - AWSRekognition
+  https://github.com/CocoaPods/Specs.git:
     - Cartography
     - KRActivityIndicatorView
     - KRProgressHUD
     - PanModal
+  trunk:
+    - APIKit
+    - AWSCore
+    - AWSRekognition
     - ReSwift
     - RxBlocking
     - RxCocoa
@@ -52,21 +53,21 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  APIKit: b27d79b022733b2f50e7a092e67c4cb9ea30f968
-  AWSCore: 734b0d67c2c77f6edae9e5520431a37310ea4193
-  AWSRekognition: fad6467f39d64657a634da4265fb97a4d2349eda
+  APIKit: 9e1a4069608bf0ae5238811e6cfc26928ad4d01e
+  AWSCore: 55c154ae27efc5c98bdc30a0eeea5a35d10a2ab5
+  AWSRekognition: 5450c553bdb0e42168b78669818127a5a0312a15
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   KRActivityIndicatorView: 549db10b9578d58bac73db063d8b544e8970f7f2
   KRProgressHUD: c3b9a48a0ee4824ea13212ac3f1efa50dca021e3
   PanModal: 7c5af3ad4fe22b91508040965bebffb89fb607ae
-  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
-  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
-  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
+  ReSwift: 14e6f9409fe6bdc635e588208296a01f43b959c9
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
+  SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: 11cd452de6df80f91248f5d10bbbc3735b16aa33
+PODFILE CHECKSUM: e1fd0bd39c9fa4b5dfa5c0c0c92f904e1d366cb6
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.10.0

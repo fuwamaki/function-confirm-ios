@@ -10,7 +10,7 @@ import Foundation
 
 struct Item: Codable {
     var id: Int = 0
-    let item_id: String? = "99"
+    var itemId: String? = "99"
     let name: String
     let category: String
     let price: Int
