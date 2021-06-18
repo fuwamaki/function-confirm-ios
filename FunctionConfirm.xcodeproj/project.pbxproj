@@ -46,6 +46,8 @@
 		20BB2C9F243BFEDD00A5CC46 /* SemiModalCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
 		20E35066232A29090057A561 /* TimerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35065232A29090057A561 /* TimerView.storyboard */; };
+		20E45821267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */; };
+		20E45823267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */; };
 		20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2D524458A490054A935 /* HalfModalRootViewController.swift */; };
 		20F7D2D824458A5A0054A935 /* HalfModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2D724458A5A0054A935 /* HalfModalViewController.swift */; };
 		20F7D2DA24458A7C0054A935 /* HalfModalRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F7D2D924458A7C0054A935 /* HalfModalRoot.storyboard */; };
@@ -227,6 +229,8 @@
 		20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalCustomView.swift; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		20E35065232A29090057A561 /* TimerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerView.storyboard; sourceTree = "<group>"; };
+		20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleKeyboardLayoutGuide.storyboard; sourceTree = "<group>"; };
+		20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleKeyboardLayoutGuideViewController.swift; sourceTree = "<group>"; };
 		20F7D2D524458A490054A935 /* HalfModalRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalRootViewController.swift; sourceTree = "<group>"; };
 		20F7D2D724458A5A0054A935 /* HalfModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalViewController.swift; sourceTree = "<group>"; };
 		20F7D2D924458A7C0054A935 /* HalfModalRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HalfModalRoot.storyboard; sourceTree = "<group>"; };
@@ -555,6 +559,15 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
+		20E4581F267C450D008FA5C5 /* SampleKeyboardLayoutGuide */ = {
+			isa = PBXGroup;
+			children = (
+				20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */,
+				20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */,
+			);
+			path = SampleKeyboardLayoutGuide;
+			sourceTree = "<group>";
+		};
 		20F7D2D424458A010054A935 /* SemiModal2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +710,7 @@
 				20F7D2D424458A010054A935 /* SemiModal2 */,
 				2009FE2B2513345B000D81FB /* Speech */,
 				201E42D3251357C100C9917C /* Alarm */,
+				20E4581F267C450D008FA5C5 /* SampleKeyboardLayoutGuide */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1061,6 +1075,7 @@
 				20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
 				201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */,
+				20E45821267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
 				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
@@ -1264,6 +1279,7 @@
 				20F7D2F02445A3410054A935 /* SemiModalPresentationState.swift in Sources */,
 				9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */,
 				9CB8083A21F832BA00DAD155 /* StatusBar3Manager.swift in Sources */,
+				20E45823267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift in Sources */,
 				9C62DA39227C4BA4002DEA7C /* MVVMListTableViewCell.swift in Sources */,
 				9CE2645A211A917C00DD178E /* MVPRegistViewController.swift in Sources */,
 				20E35064232A28F50057A561 /* TimerViewController.swift in Sources */,

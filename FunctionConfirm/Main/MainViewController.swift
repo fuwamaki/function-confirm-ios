@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 24
+        return 25
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -124,9 +124,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "speechCell", for: indexPath)
             cell.textLabel?.text = "音声認識"
             return cell
-        } else {
+        }else if indexPath.row == 23 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
             cell.textLabel?.text = "アラーム"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "keyboardLayoutGuideCell", for: indexPath)
+            cell.textLabel?.text = "New KeyboardLayoutGuide"
             return cell
         }
     }
@@ -231,9 +235,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Speech", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SpeechViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 23:
             let storyBoard = UIStoryboard(name: "Alarm", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "AlarmViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "SampleKeyboardLayoutGuide", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleKeyboardLayoutGuideViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
