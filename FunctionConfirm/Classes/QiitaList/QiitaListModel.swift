@@ -12,7 +12,7 @@ protocol QiitaListInteractable {
     func getQiitaList()
 }
 
-protocol QiitaListDelegate: class {
+protocol QiitaListDelegate: AnyObject {
     func setQiitaList(_ elements: [QiitaListElement])
 }
 

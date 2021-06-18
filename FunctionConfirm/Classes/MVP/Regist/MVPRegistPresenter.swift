@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MVPRegistPresentable: class {
+protocol MVPRegistPresentable: AnyObject {
     init(_ view: MVPRegistView)
     func registerItem(_ item: Item)
 }

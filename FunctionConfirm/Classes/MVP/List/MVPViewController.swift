@@ -9,7 +9,7 @@
 import UIKit
 import KRProgressHUD
 
-protocol MVPView: class {
+protocol MVPView: AnyObject {
     func reloadData()
 }
 

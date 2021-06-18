@@ -10,7 +10,7 @@ import UIKit
 import Cartography
 import KRProgressHUD
 
-protocol MVPRegistView: class {
+protocol MVPRegistView: AnyObject {
     func close()
 }
 

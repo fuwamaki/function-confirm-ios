@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MVPNotify: class {
+protocol MVPNotify: AnyObject {
     func addObserver(_ observer: Any, selector: Selector)
     func removeObserver(_ observer: Any)
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MVPPresentable: class {
+protocol MVPPresentable: AnyObject {
     init(_ view: MVPView)
     var numberOfItems: Int { get }
     func updateItems()
