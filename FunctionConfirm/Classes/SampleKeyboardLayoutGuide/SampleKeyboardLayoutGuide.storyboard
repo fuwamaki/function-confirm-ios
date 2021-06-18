@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-hT-tuF">
-                                <rect key="frame" x="0.0" y="88" width="414" height="538"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhX-YO-a38">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="538"/>
@@ -71,7 +71,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="OhX-YO-a38" secondAttribute="trailing" id="1CN-fm-pN3"/>
-                                    <constraint firstItem="OhX-YO-a38" firstAttribute="height" secondItem="0Ev-hT-tuF" secondAttribute="height" id="5h6-Hd-I0x"/>
                                     <constraint firstAttribute="bottom" secondItem="OhX-YO-a38" secondAttribute="bottom" id="9sa-rF-b7J"/>
                                     <constraint firstItem="OhX-YO-a38" firstAttribute="top" secondItem="0Ev-hT-tuF" secondAttribute="top" id="MMG-mI-8nI"/>
                                     <constraint firstItem="OhX-YO-a38" firstAttribute="leading" secondItem="0Ev-hT-tuF" secondAttribute="leading" id="T0i-WB-wFz"/>
@@ -81,6 +80,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0Ev-hT-tuF" secondAttribute="bottom" priority="250" id="Aas-6p-jth"/>
                             <constraint firstItem="0Ev-hT-tuF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="J4t-3Z-Jzq"/>
                             <constraint firstItem="OhX-YO-a38" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Y2e-Gc-7E3"/>
                             <constraint firstItem="0Ev-hT-tuF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ZnC-3V-55N"/>
