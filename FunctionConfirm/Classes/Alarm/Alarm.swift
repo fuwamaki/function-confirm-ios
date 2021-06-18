@@ -40,7 +40,7 @@ class Alarm {
             sleepTimer?.invalidate()
             // タイマーにnil代入
             sleepTimer = nil
-            // TODO: 音源のパス
+            // memoTODO: 音源のパス
             let soundFilePath = Bundle.main.path(forResource: "", ofType: "")!
             // パスのURL
             let sound: URL = URL(fileURLWithPath: soundFilePath)

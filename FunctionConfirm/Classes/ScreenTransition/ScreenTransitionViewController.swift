@@ -16,7 +16,8 @@ class ScreenTransitionViewController: UIViewController {
         super.viewDidLoad()
         // MEMO: 3DTouch対応端末かどうか判定して、Peek&Popを有効化
         if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
-            self.registerForPreviewing(with: self, sourceView: self.view)
+            let interaction = UIContextMenuInteraction(delegate: self)
+            self.view.addInteraction(interaction)
         }
     }
 
@@ -51,5 +52,13 @@ extension ScreenTransitionViewController: UIViewControllerPreviewingDelegate {
     // pop action
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         transitionToSecondViewController()
+    }
+}
+
+extension ScreenTransitionViewController: UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(
+        _ interaction: UIContextMenuInteraction,
+        configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        return nil
     }
 }

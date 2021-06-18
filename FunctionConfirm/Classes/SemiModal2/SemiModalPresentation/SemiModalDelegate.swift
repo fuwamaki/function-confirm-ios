@@ -83,8 +83,13 @@ extension SemiModalDelegate where Self: UIViewController {
     typealias LayoutType = UIViewController & SemiModalDelegate
 
     private var rootViewController: UIViewController? {
-        guard let application = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared)) as? UIApplication else { return nil }
-        return application.keyWindow?.rootViewController
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+        return keyWindow?.rootViewController
     }
 
     private var topLayoutOffset: CGFloat {

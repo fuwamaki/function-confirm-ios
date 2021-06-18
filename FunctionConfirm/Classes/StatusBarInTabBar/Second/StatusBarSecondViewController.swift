@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol StatusBarSecondDelegate: class {
+protocol StatusBarSecondDelegate: AnyObject {
     func setStatusBarStyle(style: UIStatusBarStyle)
 }
 

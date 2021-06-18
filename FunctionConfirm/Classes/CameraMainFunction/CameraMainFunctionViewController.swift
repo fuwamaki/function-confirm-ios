@@ -82,7 +82,6 @@ final class CameraMainFunctionViewController: UIViewController {
     @IBAction private func clickShutterButton(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
         settings.flashMode = .auto
-        settings.isAutoStillImageStabilizationEnabled = true
         settings.isHighResolutionPhotoEnabled = false
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
