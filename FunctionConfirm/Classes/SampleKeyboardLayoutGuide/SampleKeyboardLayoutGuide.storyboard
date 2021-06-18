@@ -90,6 +90,7 @@
                     <navigationItem key="navigationItem" title="KeyboardLayoutGuide" id="lJR-Yw-IWr"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="contentView" destination="OhX-YO-a38" id="O3X-TU-4iQ"/>
                         <outlet property="scrollView" destination="0Ev-hT-tuF" id="ags-hK-3ep"/>
                         <outlet property="textField" destination="Ze0-tW-fCy" id="Qlf-JI-ELn"/>
                     </connections>

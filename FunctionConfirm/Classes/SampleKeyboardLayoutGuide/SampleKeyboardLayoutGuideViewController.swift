@@ -11,6 +11,7 @@ import UIKit
 final class SampleKeyboardLayoutGuideViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
@@ -18,5 +19,45 @@ final class SampleKeyboardLayoutGuideViewController: UIViewController {
         view.keyboardLayoutGuide.topAnchor
             .constraint(equalToSystemSpacingBelow: scrollView.bottomAnchor, multiplier: 1.0)
             .isActive = true
+
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(self.showKeyboard(_:)),
+//            name: UIResponder.keyboardWillShowNotification,
+//            object: nil)
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(self.hideKeyboard(_:)),
+//            name: UIResponder.keyboardWillHideNotification,
+//            object: nil)
+
+        let tapGestureRecognizer = UITapGestureRecognizer(
+            target: self, action: #selector(tapBackground(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.cancelsTouchesInView = false
+        tapGestureRecognizer.delegate = self
+    }
+}
+
+// MARK: UIGestureRecognizerDelegate
+extension SampleKeyboardLayoutGuideViewController: UIGestureRecognizerDelegate {
+    @objc private func tapBackground(_ sender: AnyObject) {
+        view.endEditing(true)
+    }
+}
+
+// MARK: Keyboard
+extension SampleKeyboardLayoutGuideViewController {
+    @objc private func showKeyboard(_ notification: Foundation.Notification) {
+        guard let userInfo = (notification as NSNotification).userInfo,
+              let keyboard = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+                as? NSValue else { return }
+        let keyboardHeight = keyboard.cgRectValue.height
+        scrollView.contentInset.bottom = keyboardHeight
+    }
+
+    @objc private func hideKeyboard(_ notification: Foundation.Notification) {
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
     }
 }
