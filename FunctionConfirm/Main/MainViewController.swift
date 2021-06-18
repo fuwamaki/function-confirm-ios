@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return 26
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -121,10 +121,14 @@ extension MainViewController: UITableViewDataSource {
             cell.textLabel?.text = "ハーフモーダル遷移"
             return cell
         } else if indexPath.row == 22 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mediumModalCell", for: indexPath)
+            cell.textLabel?.text = "Mediumモーダル遷移"
+            return cell
+        } else if indexPath.row == 23 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "speechCell", for: indexPath)
             cell.textLabel?.text = "音声認識"
             return cell
-        } else if indexPath.row == 23 {
+        } else if indexPath.row == 24 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
             cell.textLabel?.text = "アラーム"
             return cell
@@ -232,10 +236,14 @@ extension MainViewController: UITableViewDelegate {
             let viewController = storyBoard.instantiateViewController(withIdentifier: "HalfModalRootViewController")
             navigationController?.pushViewController(viewController, animated: true)
         case 22:
+            let storyBoard = UIStoryboard(name: "Medium", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "MediumRootViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        case 23:
             let storyBoard = UIStoryboard(name: "Speech", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SpeechViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        case 23:
+        case 24:
             let storyBoard = UIStoryboard(name: "Alarm", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "AlarmViewController")
             navigationController?.pushViewController(viewController, animated: true)
