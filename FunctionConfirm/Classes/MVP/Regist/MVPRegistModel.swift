@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MVPRegisterNotify: class {
+protocol MVPRegisterNotify: AnyObject {
     func addObserver(_ observer: Any, selector: Selector)
     func removeObserver(_ observer: Any)
 }
