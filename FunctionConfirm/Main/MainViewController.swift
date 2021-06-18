@@ -124,7 +124,7 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "speechCell", for: indexPath)
             cell.textLabel?.text = "音声認識"
             return cell
-        }else if indexPath.row == 23 {
+        } else if indexPath.row == 23 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
             cell.textLabel?.text = "アラーム"
             return cell

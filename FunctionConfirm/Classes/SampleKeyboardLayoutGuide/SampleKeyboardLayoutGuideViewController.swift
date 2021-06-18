@@ -10,9 +10,13 @@ import UIKit
 
 final class SampleKeyboardLayoutGuideViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.keyboardLayoutGuide.topAnchor
+            .constraint(equalToSystemSpacingBelow: scrollView.bottomAnchor, multiplier: 1.0)
+            .isActive = true
     }
 }
