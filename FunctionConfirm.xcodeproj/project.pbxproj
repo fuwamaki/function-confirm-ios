@@ -37,6 +37,8 @@
 		208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */; };
 		208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */; };
 		208CE614234753F60024AE3A /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CE613234753F60024AE3A /* ImageButton.swift */; };
+		20A5142826ABC91200658C03 /* ClearNav.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A5142726ABC91200658C03 /* ClearNav.storyboard */; };
+		20A5142A26ABC91F00658C03 /* ClearNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5142926ABC91F00658C03 /* ClearNavViewController.swift */; };
 		20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B015522436FCB4008DA31D /* SemiModalViewController.swift */; };
 		20B015552436FCC1008DA31D /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B015542436FCC1008DA31D /* SemiModal.storyboard */; };
 		20B0155724370032008DA31D /* SemiModalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B0155624370032008DA31D /* SemiModalTestViewController.swift */; };
@@ -222,6 +224,8 @@
 		208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalDismissAnimationController.swift; sourceTree = "<group>"; };
 		208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverCurrentTransitioningInteractor.swift; sourceTree = "<group>"; };
 		208CE613234753F60024AE3A /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		20A5142726ABC91200658C03 /* ClearNav.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClearNav.storyboard; sourceTree = "<group>"; };
+		20A5142926ABC91F00658C03 /* ClearNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavViewController.swift; sourceTree = "<group>"; };
 		20B015522436FCB4008DA31D /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
 		20B015542436FCC1008DA31D /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
 		20B0155624370032008DA31D /* SemiModalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTestViewController.swift; sourceTree = "<group>"; };
@@ -537,6 +541,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		20A5142626ABC8F900658C03 /* ClearNav */ = {
+			isa = PBXGroup;
+			children = (
+				20A5142726ABC91200658C03 /* ClearNav.storyboard */,
+				20A5142926ABC91F00658C03 /* ClearNavViewController.swift */,
+			);
+			path = ClearNav;
+			sourceTree = "<group>";
+		};
 		20B015512436FC62008DA31D /* SemiModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +738,7 @@
 				2009FE2B2513345B000D81FB /* Speech */,
 				201E42D3251357C100C9917C /* Alarm */,
 				20E4581F267C450D008FA5C5 /* SampleKeyboardLayoutGuide */,
+				20A5142626ABC8F900658C03 /* ClearNav */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1100,6 +1114,7 @@
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
+				20A5142826ABC91200658C03 /* ClearNav.storyboard in Resources */,
 				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
 				20E35066232A29090057A561 /* TimerView.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
@@ -1250,6 +1265,7 @@
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				201E42D92513590D00C9917C /* Alarm.swift in Sources */,
 				20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */,
+				20A5142A26ABC91F00658C03 /* ClearNavViewController.swift in Sources */,
 				208CE614234753F60024AE3A /* ImageButton.swift in Sources */,
 				9CE26452211A894100DD178E /* UITableViewCell+Addition.swift in Sources */,
 				9CB8084021F8349700DAD155 /* StatusBar3NavigationViewController.swift in Sources */,

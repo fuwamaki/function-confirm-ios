@@ -25,7 +25,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 26
+        return 27
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -132,9 +132,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
             cell.textLabel?.text = "アラーム"
             return cell
-        } else {
+        } else if indexPath.row == 25 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "keyboardLayoutGuideCell", for: indexPath)
             cell.textLabel?.text = "New KeyboardLayoutGuide"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "clearNavCell", for: indexPath)
+            cell.textLabel?.text = "透明なNavigationBar"
             return cell
         }
     }
@@ -247,9 +251,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Alarm", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "AlarmViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 25:
             let storyBoard = UIStoryboard(name: "SampleKeyboardLayoutGuide", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleKeyboardLayoutGuideViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "ClearNav", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "ClearNavViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
