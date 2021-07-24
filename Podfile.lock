@@ -4,10 +4,10 @@ PODS:
   - AWSRekognition (2.19.1):
     - AWSCore (= 2.19.1)
   - Cartography (4.0.0)
-  - KRActivityIndicatorView (3.0.4)
-  - KRProgressHUD (3.4.4):
-    - KRActivityIndicatorView (= 3.0.4)
-  - PanModal (1.2.5)
+  - KRActivityIndicatorView (3.0.7)
+  - KRProgressHUD (3.4.7):
+    - KRActivityIndicatorView (= 3.0.7)
+  - PanModal (1.2.7)
   - ReSwift (6.0.0)
   - RxBlocking (5.1.1):
     - RxSwift (~> 5)
@@ -16,8 +16,8 @@ PODS:
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.1.1)
-  - RxTest (5.1.1):
+  - RxSwift (5.1.2)
+  - RxTest (5.1.2):
     - RxSwift (~> 5)
   - SwiftLint (0.41.0)
 
@@ -35,15 +35,14 @@ DEPENDENCIES:
   - SwiftLint (~> 0.41.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Cartography
-    - KRActivityIndicatorView
-    - KRProgressHUD
-    - PanModal
   trunk:
     - APIKit
     - AWSCore
     - AWSRekognition
+    - Cartography
+    - KRActivityIndicatorView
+    - KRProgressHUD
+    - PanModal
     - ReSwift
     - RxBlocking
     - RxCocoa
@@ -57,15 +56,15 @@ SPEC CHECKSUMS:
   AWSCore: 55c154ae27efc5c98bdc30a0eeea5a35d10a2ab5
   AWSRekognition: 5450c553bdb0e42168b78669818127a5a0312a15
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
-  KRActivityIndicatorView: 549db10b9578d58bac73db063d8b544e8970f7f2
-  KRProgressHUD: c3b9a48a0ee4824ea13212ac3f1efa50dca021e3
-  PanModal: 7c5af3ad4fe22b91508040965bebffb89fb607ae
+  KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
+  KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   ReSwift: 14e6f9409fe6bdc635e588208296a01f43b959c9
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
 PODFILE CHECKSUM: de46724b6c19c8e3879359fc9a6b0c2b71ccefb4
