@@ -15,6 +15,7 @@
 		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
 		2009FE2D25133472000D81FB /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2009FE2C25133472000D81FB /* Speech.storyboard */; };
 		2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009FE2E2513349E000D81FB /* SpeechViewController.swift */; };
+		201619DE26B7DAC8003F4EE3 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */; };
 		201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D4251357DA00C9917C /* AlarmViewController.swift */; };
 		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
 		201E42D92513590D00C9917C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D82513590D00C9917C /* Alarm.swift */; };
@@ -196,6 +197,7 @@
 		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
 		2009FE2C25133472000D81FB /* Speech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		2009FE2E2513349E000D81FB /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		201E42D4251357DA00C9917C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		201E42D82513590D00C9917C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */,
 				9CD30C7F21F7100B00D6184A /* UINavigationController+StatusBarStyle.swift */,
 				9CDB1B5322749D6F004EFB68 /* String+Random.swift */,
+				201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1259,6 +1262,7 @@
 				9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
+				201619DE26B7DAC8003F4EE3 /* UIViewController+Addition.swift in Sources */,
 				20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */,
 				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
 				201E42DB251361D200C9917C /* AlarmPickerView.swift in Sources */,
