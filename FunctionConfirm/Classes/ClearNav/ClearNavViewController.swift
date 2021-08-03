@@ -42,6 +42,8 @@ final class ClearNavViewController: UIViewController {
         navigationItem.setLeftBarButtonItems(
             [backBarButtonItem],
             animated: false)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     @objc private func clickBack() {
@@ -54,3 +56,5 @@ final class ClearNavViewController: UIViewController {
     @objc private func clickTriangle() {
     }
 }
+
+extension ClearNavViewController: UIGestureRecognizerDelegate {}
