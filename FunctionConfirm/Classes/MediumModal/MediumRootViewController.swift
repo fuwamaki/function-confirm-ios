@@ -24,10 +24,9 @@ final class MediumRootViewController: UIViewController {
         let configuration = PHPickerConfiguration()
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
-//        picker.sheet
-//        if let sheet = picker.sheetPresentationController {
-//            sheet.detents = [.medium(), .large()]
-//        }
+        if let sheet = picker.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+        }
         present(picker, animated: true)
     }
 }
