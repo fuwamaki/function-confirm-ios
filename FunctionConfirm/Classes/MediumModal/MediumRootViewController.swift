@@ -12,22 +12,22 @@ import PhotosUI
 final class MediumRootViewController: UIViewController {
 
     @IBAction func clickButton(_ sender: Any) {
-        showImagePicker()
+        if let sheet = phpickerViewController.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = true
+        }
+        present(phpickerViewController, animated: true)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    // TODO: Xcode13 betaでは実装できないよう。更新まで待つ。
-    func showImagePicker() {
+    private lazy var phpickerViewController: PHPickerViewController = {
         let configuration = PHPickerConfiguration()
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
-        if let sheet = picker.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-        }
-        present(picker, animated: true)
+        return picker
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
 
