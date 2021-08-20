@@ -48,7 +48,7 @@ final class HorizontalPageViewController: UIViewController {
                 UIImage(named: "img_technology")!]
     }
     private lazy var imageList: [UIImage] = {
-        return fixedImages + fixedImages
+        return fixedImages + fixedImages + fixedImages + fixedImages
     }()
 
     override func viewDidLoad() {
