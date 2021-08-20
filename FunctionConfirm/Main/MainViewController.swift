@@ -26,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 27
+        return 28
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -137,9 +137,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "keyboardLayoutGuideCell", for: indexPath)
             cell.textLabel?.text = "New KeyboardLayoutGuide"
             return cell
-        } else {
+        } else if indexPath.row == 26 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "clearNavCell", for: indexPath)
             cell.textLabel?.text = "透明なNavigationBar"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "horizontalPageCell", for: indexPath)
+            cell.textLabel?.text = "横スクロールPaging"
             return cell
         }
     }
@@ -256,9 +260,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "SampleKeyboardLayoutGuide", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleKeyboardLayoutGuideViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 26:
             let storyBoard = UIStoryboard(name: "ClearNav", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "ClearNavViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "HorizontalPage", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "HorizontalPageViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
