@@ -42,10 +42,13 @@ final class HorizontalPageViewController: UIViewController {
     private let scrollHeight: CGFloat = 200.0
     private let imageWidth: CGFloat = UIScreen.main.bounds.width
 
-    private lazy var images: [UIImage] = {
+    private var fixedImages: [UIImage] {
         return [UIImage(named: "img_entertainment")!,
                 UIImage(named: "img_service")!,
                 UIImage(named: "img_technology")!]
+    }
+    private lazy var imageList: [UIImage] = {
+        return fixedImages + fixedImages
     }()
 
     override func viewDidLoad() {
@@ -57,7 +60,7 @@ final class HorizontalPageViewController: UIViewController {
         sampleScrollView.subviews.forEach {
             $0.removeFromSuperview()
         }
-        images.enumerated().forEach { index, image in
+        imageList.enumerated().forEach { index, image in
             let imageView = UIImageView(
                 frame: CGRect(
                     x: imageWidth * CGFloat(index),
@@ -69,15 +72,38 @@ final class HorizontalPageViewController: UIViewController {
             sampleScrollView.addSubview(imageView)
         }
         sampleScrollView.contentSize = CGSize(
-            width: imageWidth * CGFloat(images.count),
+            width: imageWidth * CGFloat(imageList.count),
             height: scrollHeight)
-        samplePageControl.numberOfPages = images.count
+        samplePageControl.numberOfPages = fixedImages.count
     }
 }
 
 // MARK: UIScrollViewDelegate
 extension HorizontalPageViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        samplePageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        if scrollView.contentOffset.x > imageWidth * 1.5 {
+            // 先頭要素を末尾に。再描画。
+            if let first = self.imageList.first {
+                self.imageList.append(first)
+                self.imageList.removeFirst()
+            }
+            setupImages()
+            // contentOffsetの調整
+            self.sampleScrollView.contentOffset.x -= imageWidth
+            // pageControlのcurrent更新
+            samplePageControl.currentPage = fixedImages.firstIndex(of: imageList[1])!
+        }
+        if sampleScrollView.contentOffset.x < imageWidth * 0.5 {
+            // 末尾要素を先頭に。再描画。
+            if let last = self.imageList.last {
+                self.imageList.insert(last, at: 0)
+                self.imageList.removeLast()
+            }
+            setupImages()
+            // contentOffsetの調整
+            self.sampleScrollView.contentOffset.x += imageWidth
+            // pageControlのcurrent更新
+            samplePageControl.currentPage = fixedImages.firstIndex(of: imageList[1])!
+        }
     }
 }
