@@ -39,6 +39,9 @@ final class HorizontalPageViewController: UIViewController {
         }
     }
 
+    private let scrollHeight: CGFloat = 200.0
+    private let imageWidth: CGFloat = UIScreen.main.bounds.width
+
     private lazy var images: [UIImage] = {
         return [UIImage(named: "img_entertainment")!,
                 UIImage(named: "img_service")!,
@@ -57,17 +60,17 @@ final class HorizontalPageViewController: UIViewController {
         images.enumerated().forEach { index, image in
             let imageView = UIImageView(
                 frame: CGRect(
-                    x: UIScreen.main.bounds.width * CGFloat(index),
+                    x: imageWidth * CGFloat(index),
                     y: 0,
-                    width: UIScreen.main.bounds.width,
-                    height: 200))
+                    width: imageWidth,
+                    height: scrollHeight))
             imageView.image = image
             imageView.contentMode = .scaleAspectFill
             sampleScrollView.addSubview(imageView)
         }
         sampleScrollView.contentSize = CGSize(
-            width: UIScreen.main.bounds.width * CGFloat(images.count),
-            height: 200)
+            width: imageWidth * CGFloat(images.count),
+            height: scrollHeight)
         samplePageControl.numberOfPages = images.count
     }
 }
