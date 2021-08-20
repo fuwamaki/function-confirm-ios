@@ -11,6 +11,7 @@ import UIKit
 final class HorizontalPageViewController: UIViewController {
 
     @IBOutlet private weak var sampleScrollView: UIScrollView!
+    @IBOutlet private weak var samplePageControl: UIPageControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
