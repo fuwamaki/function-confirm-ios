@@ -11,7 +11,7 @@ import UIKit
 final class HorizontalPageViewController: UIViewController {
 
     @IBAction func clickBackButton(_ sender: Any) {
-        if (sampleScrollView.contentOffset.x - UIScreen.main.bounds.width) > 0 {
+        if (sampleScrollView.contentOffset.x - imageWidth) >= 0 {
             UIView.animate(withDuration: 0.4) {
                 self.sampleScrollView.contentOffset.x -= UIScreen.main.bounds.width
             }
@@ -19,7 +19,7 @@ final class HorizontalPageViewController: UIViewController {
     }
 
     @IBAction func clickForwardButton(_ sender: Any) {
-        if (sampleScrollView.contentOffset.x + UIScreen.main.bounds.width) < sampleScrollView.contentSize.width {
+        if (sampleScrollView.contentOffset.x + imageWidth) < sampleScrollView.contentSize.width {
             UIView.animate(withDuration: 0.4) {
                 self.sampleScrollView.contentOffset.x += UIScreen.main.bounds.width
             }
