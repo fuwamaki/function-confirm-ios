@@ -10,6 +10,22 @@ import UIKit
 
 final class HorizontalPageViewController: UIViewController {
 
+    @IBAction func clickBackButton(_ sender: Any) {
+        if (sampleScrollView.contentOffset.x - UIScreen.main.bounds.width) > 0 {
+            UIView.animate(withDuration: 0.4) {
+                self.sampleScrollView.contentOffset.x -= UIScreen.main.bounds.width
+            }
+        }
+    }
+
+    @IBAction func clickForwardButton(_ sender: Any) {
+        if (sampleScrollView.contentOffset.x + UIScreen.main.bounds.width) < sampleScrollView.contentSize.width {
+            UIView.animate(withDuration: 0.4) {
+                self.sampleScrollView.contentOffset.x += UIScreen.main.bounds.width
+            }
+        }
+    }
+
     @IBOutlet private weak var sampleScrollView: UIScrollView! {
         didSet {
             sampleScrollView.delegate = self
@@ -31,10 +47,10 @@ final class HorizontalPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCoverImages()
+        setupImages()
     }
 
-    private func setupCoverImages() {
+    private func setupImages() {
         sampleScrollView.subviews.forEach {
             $0.removeFromSuperview()
         }
