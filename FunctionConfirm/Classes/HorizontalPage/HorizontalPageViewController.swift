@@ -10,22 +10,6 @@ import UIKit
 
 final class HorizontalPageViewController: UIViewController {
 
-    @IBAction func clickBackButton(_ sender: Any) {
-        if (sampleScrollView.contentOffset.x - imageWidth) >= 0 {
-            UIView.animate(withDuration: 0.4) {
-                self.sampleScrollView.contentOffset.x -= UIScreen.main.bounds.width
-            }
-        }
-    }
-
-    @IBAction func clickForwardButton(_ sender: Any) {
-        if (sampleScrollView.contentOffset.x + imageWidth) < sampleScrollView.contentSize.width {
-            UIView.animate(withDuration: 0.4) {
-                self.sampleScrollView.contentOffset.x += UIScreen.main.bounds.width
-            }
-        }
-    }
-
     @IBOutlet private weak var sampleScrollView: UIScrollView! {
         didSet {
             sampleScrollView.delegate = self
@@ -61,19 +45,16 @@ final class HorizontalPageViewController: UIViewController {
             $0.removeFromSuperview()
         }
         imageList.enumerated().forEach { index, image in
-            let imageView = UIImageView(
-                frame: CGRect(
-                    x: imageWidth * CGFloat(index),
-                    y: 0,
-                    width: imageWidth,
-                    height: scrollHeight))
+            let imageView = UIImageView(frame: CGRect(x: imageWidth * CGFloat(index),
+                                                      y: 0,
+                                                      width: imageWidth,
+                                                      height: scrollHeight))
             imageView.image = image
             imageView.contentMode = .scaleAspectFill
             sampleScrollView.addSubview(imageView)
         }
-        sampleScrollView.contentSize = CGSize(
-            width: imageWidth * CGFloat(imageList.count),
-            height: scrollHeight)
+        sampleScrollView.contentSize = CGSize(width: imageWidth * CGFloat(imageList.count),
+                                              height: scrollHeight)
         samplePageControl.numberOfPages = fixedImages.count
     }
 }
@@ -82,11 +63,12 @@ final class HorizontalPageViewController: UIViewController {
 extension HorizontalPageViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x > imageWidth * 1.5 {
-            // 先頭要素を末尾に。再描画。
+            // 先頭要素を末尾に
             if let first = self.imageList.first {
                 self.imageList.append(first)
                 self.imageList.removeFirst()
             }
+            // 再描画
             setupImages()
             // contentOffsetの調整
             self.sampleScrollView.contentOffset.x -= imageWidth
@@ -94,11 +76,12 @@ extension HorizontalPageViewController: UIScrollViewDelegate {
             samplePageControl.currentPage = fixedImages.firstIndex(of: imageList[1])!
         }
         if sampleScrollView.contentOffset.x < imageWidth * 0.5 {
-            // 末尾要素を先頭に。再描画。
+            // 末尾要素を先頭に
             if let last = self.imageList.last {
                 self.imageList.insert(last, at: 0)
                 self.imageList.removeLast()
             }
+            // 再描画
             setupImages()
             // contentOffsetの調整
             self.sampleScrollView.contentOffset.x += imageWidth
