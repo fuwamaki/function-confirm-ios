@@ -26,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 28
+        return 29
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -141,9 +141,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "clearNavCell", for: indexPath)
             cell.textLabel?.text = "透明なNavigationBar"
             return cell
-        } else {
+        } else if indexPath.row == 27 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "horizontalPageCell", for: indexPath)
             cell.textLabel?.text = "横スクロールPaging"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "moveObjectCell", for: indexPath)
+            cell.textLabel?.text = "物体ドラッグ移動"
             return cell
         }
     }
@@ -264,9 +268,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "ClearNav", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "ClearNavViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 27:
             let storyBoard = UIStoryboard(name: "HorizontalPage", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "HorizontalPageViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "MoveObject", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "MoveObjectViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

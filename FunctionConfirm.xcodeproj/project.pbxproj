@@ -15,6 +15,8 @@
 		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
 		2009FE2D25133472000D81FB /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2009FE2C25133472000D81FB /* Speech.storyboard */; };
 		2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009FE2E2513349E000D81FB /* SpeechViewController.swift */; };
+		2014E88627092690000DD97E /* MoveObject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2014E88527092690000DD97E /* MoveObject.storyboard */; };
+		2014E8882709269C000DD97E /* MoveObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2014E8872709269C000DD97E /* MoveObjectViewController.swift */; };
 		201619DE26B7DAC8003F4EE3 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */; };
 		201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D4251357DA00C9917C /* AlarmViewController.swift */; };
 		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
@@ -199,6 +201,8 @@
 		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
 		2009FE2C25133472000D81FB /* Speech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		2009FE2E2513349E000D81FB /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		2014E88527092690000DD97E /* MoveObject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoveObject.storyboard; sourceTree = "<group>"; };
+		2014E8872709269C000DD97E /* MoveObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveObjectViewController.swift; sourceTree = "<group>"; };
 		201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		201E42D4251357DA00C9917C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
@@ -412,6 +416,15 @@
 				2009FE2E2513349E000D81FB /* SpeechViewController.swift */,
 			);
 			path = Speech;
+			sourceTree = "<group>";
+		};
+		2014E88427092680000DD97E /* MoveObject */ = {
+			isa = PBXGroup;
+			children = (
+				2014E88527092690000DD97E /* MoveObject.storyboard */,
+				2014E8872709269C000DD97E /* MoveObjectViewController.swift */,
+			);
+			path = MoveObject;
 			sourceTree = "<group>";
 		};
 		201E42D3251357C100C9917C /* Alarm */ = {
@@ -756,6 +769,7 @@
 				20E4581F267C450D008FA5C5 /* SampleKeyboardLayoutGuide */,
 				20A5142626ABC8F900658C03 /* ClearNav */,
 				20E109A226CF8447004ABA4A /* HorizontalPage */,
+				2014E88427092680000DD97E /* MoveObject */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1125,6 +1139,7 @@
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
 				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
+				2014E88627092690000DD97E /* MoveObject.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */,
@@ -1345,6 +1360,7 @@
 				20037F9924291314009D5CF5 /* TestSecondViewController.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
+				2014E8882709269C000DD97E /* MoveObjectViewController.swift in Sources */,
 				9C78A2B222194BB50036D3FD /* AnimationSixthViewController.swift in Sources */,
 				9CB8082621F751A900DAD155 /* StatusBarThirdViewController.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
