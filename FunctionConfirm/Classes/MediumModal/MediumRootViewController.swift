@@ -14,11 +14,11 @@ final class MediumRootViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
 
     @IBAction func clickButton(_ sender: Any) {
-        if let sheet = phpickerViewController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
-            sheet.largestUndimmedDetentIdentifier = .medium
-        }
+//        if let sheet = phpickerViewController.sheetPresentationController {
+//            sheet.detents = [.medium(), .large()]
+//            sheet.prefersGrabberVisible = true
+//            sheet.largestUndimmedDetentIdentifier = .medium
+//        }
         present(phpickerViewController, animated: true)
     }
 

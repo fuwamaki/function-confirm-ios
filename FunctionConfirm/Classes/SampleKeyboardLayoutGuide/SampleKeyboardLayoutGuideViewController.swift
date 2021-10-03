@@ -16,9 +16,9 @@ final class SampleKeyboardLayoutGuideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.keyboardLayoutGuide.topAnchor
-            .constraint(equalTo: scrollView.bottomAnchor)
-            .isActive = true
+//        view.keyboardLayoutGuide.topAnchor
+//            .constraint(equalTo: scrollView.bottomAnchor)
+//            .isActive = true
 
 //        NotificationCenter.default.addObserver(
 //            self,
