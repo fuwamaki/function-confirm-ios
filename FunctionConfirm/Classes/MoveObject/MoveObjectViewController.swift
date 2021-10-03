@@ -12,12 +12,12 @@ final class MoveObjectViewController: UIViewController {
 
     private lazy var objectLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        label.backgroundColor = .red
+        label.backgroundColor = .cyan
         label.text = "maru"
         label.textAlignment = .center
         label.center = view.center
-//        label.clipsToBounds = true
-//        label.layer.cornerRadius = 40.0
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 40.0
         return label
     }()
 

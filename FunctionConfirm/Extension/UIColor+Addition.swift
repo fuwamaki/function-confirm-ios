@@ -18,50 +18,50 @@ extension UIColor {
         self.init(red: r, green: g, blue: b, alpha: min(max(alpha, 0), 1))
     }
 
-    class var white: UIColor {
-        return UIColor(hex: "#ffffff")
-    }
-
+//    class var white: UIColor {
+//        return UIColor(hex: "#ffffff")
+//    }
+//
     class var baseGray: UIColor {
         return UIColor(hex: "#EFEFF4")
     }
-
-    class var gray: UIColor {
-        return UIColor(hex: "#c5c5c5")
-    }
-
-    class var black: UIColor {
-        return UIColor(hex: "#212121")
-    }
-
-    class var red: UIColor {
-        return UIColor(hex: "#fa4141")
-    }
-
-    class var orange: UIColor {
-        return UIColor(hex: "#ff7f00")
-    }
-
-    class var yellow: UIColor {
-        return UIColor(hex: "#facd00")
-    }
-
-    class var green: UIColor {
-        return UIColor(hex: "#41c823")
-    }
-
-    class var blue: UIColor {
-        return UIColor(hex: "#2891ff")
-    }
-
-    class var purple: UIColor {
-        return UIColor(hex: "#915aff")
-    }
-
-    class var pink: UIColor {
-        return UIColor(hex: "#ff649b")
-    }
-
+//
+//    class var gray: UIColor {
+//        return UIColor(hex: "#c5c5c5")
+//    }
+//
+//    class var black: UIColor {
+//        return UIColor(hex: "#212121")
+//    }
+//
+//    class var red: UIColor {
+//        return UIColor(hex: "#fa4141")
+//    }
+//
+//    class var orange: UIColor {
+//        return UIColor(hex: "#ff7f00")
+//    }
+//
+//    class var yellow: UIColor {
+//        return UIColor(hex: "#facd00")
+//    }
+//
+//    class var green: UIColor {
+//        return UIColor(hex: "#41c823")
+//    }
+//
+//    class var blue: UIColor {
+//        return UIColor(hex: "#2891ff")
+//    }
+//
+//    class var purple: UIColor {
+//        return UIColor(hex: "#915aff")
+//    }
+//
+//    class var pink: UIColor {
+//        return UIColor(hex: "#ff649b")
+//    }
+//
     class var ocean: UIColor {
         return UIColor(hex: "#5271ff")
     }
