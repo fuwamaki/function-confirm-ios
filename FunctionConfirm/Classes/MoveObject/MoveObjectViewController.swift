@@ -87,5 +87,6 @@ extension MoveObjectViewController: PKCanvasViewDelegate {
     func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
 //        print("canvasViewDidEndUsingTool")
         isPencilMode = false
+        print("一筆書き終了")
     }
 }
