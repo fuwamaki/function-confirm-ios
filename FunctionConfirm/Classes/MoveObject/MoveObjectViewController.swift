@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PencilKit
 
 final class MoveObjectViewController: UIViewController {
 
@@ -23,9 +24,17 @@ final class MoveObjectViewController: UIViewController {
 
     private var isObjectMoving: Bool = false
 
+    private lazy var canvasView: CustomCanvasView = {
+        let canvasView = CustomCanvasView(frame: view.frame)
+        canvasView.drawingPolicy = .anyInput
+        canvasView.tool = PKInkingTool(.pen, color: .orange, width: 30)
+        return canvasView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(objectLabel)
+        view.addSubview(canvasView)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

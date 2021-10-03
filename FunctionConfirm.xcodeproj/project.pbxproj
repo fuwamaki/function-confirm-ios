@@ -15,6 +15,7 @@
 		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
 		2009FE2D25133472000D81FB /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2009FE2C25133472000D81FB /* Speech.storyboard */; };
 		2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009FE2E2513349E000D81FB /* SpeechViewController.swift */; };
+		200CD86827096F0D00E4F33A /* CustomCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CD86727096F0D00E4F33A /* CustomCanvasView.swift */; };
 		2014E88627092690000DD97E /* MoveObject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2014E88527092690000DD97E /* MoveObject.storyboard */; };
 		2014E8882709269C000DD97E /* MoveObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2014E8872709269C000DD97E /* MoveObjectViewController.swift */; };
 		201619DE26B7DAC8003F4EE3 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */; };
@@ -201,6 +202,7 @@
 		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
 		2009FE2C25133472000D81FB /* Speech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		2009FE2E2513349E000D81FB /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		200CD86727096F0D00E4F33A /* CustomCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCanvasView.swift; sourceTree = "<group>"; };
 		2014E88527092690000DD97E /* MoveObject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoveObject.storyboard; sourceTree = "<group>"; };
 		2014E8872709269C000DD97E /* MoveObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveObjectViewController.swift; sourceTree = "<group>"; };
 		201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			children = (
 				2014E88527092690000DD97E /* MoveObject.storyboard */,
 				2014E8872709269C000DD97E /* MoveObjectViewController.swift */,
+				200CD86727096F0D00E4F33A /* CustomCanvasView.swift */,
 			);
 			path = MoveObject;
 			sourceTree = "<group>";
@@ -1281,6 +1284,7 @@
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				20037F9524291049009D5CF5 /* TestFirstViewController.swift in Sources */,
+				200CD86827096F0D00E4F33A /* CustomCanvasView.swift in Sources */,
 				9C62DA38227C4BA4002DEA7C /* MVVMSubmitViewController.swift in Sources */,
 				20F7D2E424459A9E0054A935 /* SemiModalPresentationAnimator.swift in Sources */,
 				9CCC0AFB21199F72007EFE26 /* MVPViewController.swift in Sources */,
