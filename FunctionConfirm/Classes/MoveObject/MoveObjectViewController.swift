@@ -11,11 +11,11 @@ import PencilKit
 
 final class MoveObjectViewController: UIViewController {
 
-    private lazy var objectLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 40, y: 200, width: 80, height: 80))
-        label.backgroundColor = .cyan
-        label.text = "maru"
-        label.textAlignment = .center
+    private lazy var objectLabel: UIView = {
+        let label = UIView(frame: CGRect(x: 40, y: 200, width: 80, height: 80))
+        label.layer.borderColor = UIColor.red.cgColor
+        label.layer.borderWidth = 10.0
+        label.backgroundColor = .clear
         label.clipsToBounds = true
         label.layer.cornerRadius = 40.0
         return label
@@ -47,10 +47,9 @@ final class MoveObjectViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan")
+//        print("touchesBegan")
         let aTouch: UITouch = touches.first!
         let touchPoint = aTouch.location(in: view) // view上におけるタッチ位置
-        print(touchPoint)
         isObjectMoving = objectLabel.frame.minX < touchPoint.x
             && touchPoint.x < objectLabel.frame.maxX
             && objectLabel.frame.minY < touchPoint.y
@@ -63,7 +62,7 @@ final class MoveObjectViewController: UIViewController {
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard isObjectMoving else { return }
-        print("touchesMoved")
+//        print("touchesMoved")
         let aTouch: UITouch = touches.first!
         let location = aTouch.location(in: objectLabel) // objectLabelの移動後位置
         let prevLocation = aTouch.previousLocation(in: objectLabel) // objectLabelの移動前位置
@@ -72,7 +71,7 @@ final class MoveObjectViewController: UIViewController {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesEnded")
+//        print("touchesEnded")
         isObjectMoving = false
         UIView.animate(withDuration: 0.1) {
             // 拡大用アフィン行列を作成する.
@@ -86,7 +85,7 @@ final class MoveObjectViewController: UIViewController {
 // MARK: PKCanvasViewDelegate
 extension MoveObjectViewController: PKCanvasViewDelegate {
     func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
-        print("canvasViewDidEndUsingTool")
+//        print("canvasViewDidEndUsingTool")
         isPencilMode = false
     }
 }

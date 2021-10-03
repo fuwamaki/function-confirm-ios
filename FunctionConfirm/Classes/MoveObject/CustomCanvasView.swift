@@ -20,7 +20,7 @@ final class CustomCanvasView: PKCanvasView {
             let time = CGFloat(eventTime - prev)
             let distance = sqrt(pow((location.x-prevLocation.x), 2)
                                     + pow((location.y-prevLocation.y), 2))
-            print(distance/time)
+            print("velocity: \(distance/time)")
         }
         prevEventTime = event?.timestamp
     }
