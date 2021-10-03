@@ -12,28 +12,37 @@ import PencilKit
 final class MoveObjectViewController: UIViewController {
 
     private lazy var objectLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        let label = UILabel(frame: CGRect(x: 40, y: 200, width: 80, height: 80))
         label.backgroundColor = .cyan
         label.text = "maru"
         label.textAlignment = .center
-        label.center = view.center
         label.clipsToBounds = true
         label.layer.cornerRadius = 40.0
         return label
     }()
 
+    // 物体を動かせるかどうか
     private var isObjectMoving: Bool = false
+    // ペンを書けるかどうか（一筆書き）
+    private var isPencilMode: Bool = true {
+        didSet {
+            if !isPencilMode {
+                view.addSubview(objectLabel)
+                canvasView.isUserInteractionEnabled = false
+            }
+        }
+    }
 
     private lazy var canvasView: CustomCanvasView = {
         let canvasView = CustomCanvasView(frame: view.frame)
         canvasView.drawingPolicy = .anyInput
-        canvasView.tool = PKInkingTool(.pen, color: .orange, width: 30)
+        canvasView.delegate = self
+        canvasView.tool = PKInkingTool(.pen, color: .orange, width: 5)
         return canvasView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(objectLabel)
         view.addSubview(canvasView)
     }
 
@@ -71,5 +80,13 @@ final class MoveObjectViewController: UIViewController {
             // 縮小用アフィン行列を作成する.
             self.objectLabel.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
+    }
+}
+
+// MARK: PKCanvasViewDelegate
+extension MoveObjectViewController: PKCanvasViewDelegate {
+    func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+        print("canvasViewDidEndUsingTool")
+        isPencilMode = false
     }
 }
