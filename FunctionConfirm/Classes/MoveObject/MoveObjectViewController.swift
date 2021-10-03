@@ -36,22 +36,11 @@ final class MoveObjectViewController: UIViewController {
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesMoved")
-        // タッチイベントを取得.
         let aTouch: UITouch = touches.first!
-        // 移動した先の座標を取得.
-        let location = aTouch.location(in: self.objectLabel)
-        // 移動する前の座標を取得.
-        let prevLocation = aTouch.previousLocation(in: self.objectLabel)
-        // CGRect生成.
-        var myFrame: CGRect = self.objectLabel.frame
-        // ドラッグで移動したx, y距離をとる.
-        let deltaX: CGFloat = location.x - prevLocation.x
-        let deltaY: CGFloat = location.y - prevLocation.y
-        // 移動した分の距離をmyFrameの座標にプラスする.
-        myFrame.origin.x += deltaX
-        myFrame.origin.y += deltaY
-        // frameにmyFrameを追加.
-        self.objectLabel.frame = myFrame
+        let location = aTouch.location(in: objectLabel)
+        let prevLocation = aTouch.previousLocation(in: objectLabel)
+        objectLabel.frame.origin.x += (location.x - prevLocation.x)
+        objectLabel.frame.origin.y += (location.y - prevLocation.y)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
