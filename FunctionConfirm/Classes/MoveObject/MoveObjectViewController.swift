@@ -21,6 +21,8 @@ final class MoveObjectViewController: UIViewController {
         return label
     }()
 
+    private var isObjectMoving: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(objectLabel)
@@ -28,6 +30,13 @@ final class MoveObjectViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesBegan")
+        let aTouch: UITouch = touches.first!
+        let touchPoint = aTouch.location(in: view) // view上におけるタッチ位置
+        print(touchPoint)
+        isObjectMoving = objectLabel.frame.minX < touchPoint.x
+            && touchPoint.x < objectLabel.frame.maxX
+            && objectLabel.frame.minY < touchPoint.y
+            && touchPoint.y < objectLabel.frame.maxY
         // Labelアニメーション.
         UIView.animate(withDuration: 0.06) {
             self.objectLabel.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
@@ -35,16 +44,18 @@ final class MoveObjectViewController: UIViewController {
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard isObjectMoving else { return }
         print("touchesMoved")
         let aTouch: UITouch = touches.first!
-        let location = aTouch.location(in: objectLabel)
-        let prevLocation = aTouch.previousLocation(in: objectLabel)
+        let location = aTouch.location(in: objectLabel) // objectLabelの移動後位置
+        let prevLocation = aTouch.previousLocation(in: objectLabel) // objectLabelの移動前位置
         objectLabel.frame.origin.x += (location.x - prevLocation.x)
         objectLabel.frame.origin.y += (location.y - prevLocation.y)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesEnded")
+        isObjectMoving = false
         UIView.animate(withDuration: 0.1) {
             // 拡大用アフィン行列を作成する.
             self.objectLabel.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
