@@ -558,7 +558,9 @@
                             <constraint firstItem="h9L-gZ-gkq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tqW-Cd-UtO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mgo-j3-8dY"/>
+                    <navigationItem key="navigationItem" id="mgo-j3-8dY">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="YJ5-lv-gfh"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="tableView" destination="h9L-gZ-gkq" id="o3t-bi-P0T"/>

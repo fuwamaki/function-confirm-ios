@@ -13,6 +13,38 @@ import AWSCore
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private lazy var scrollEdgeAppearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .yellow
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        return appearance
+    }()
+
+    private lazy var standardAppearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .orange
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        return appearance
+    }()
+
+    private lazy var compactAppearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .cyan
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        return appearance
+    }()
+
+    private lazy var compactScrollEdgeAppearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .blue
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        return appearance
+    }()
+
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -26,6 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             credentialsProvider: credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
 
+//        UINavigationBar.appearance().standardAppearance = UINavigationBarAppearance()
+//        UINavigationBar.appearance().scrollEdgeAppearance = UINavigationBarAppearance()
+//        UINavigationBar.appearance().compactAppearance = UINavigationBarAppearance()
+//        if #available(iOS 15.0, *) {
+//            UINavigationBar.appearance().compactScrollEdgeAppearance = UINavigationBarAppearance()
+//        }
         return true
     }
 

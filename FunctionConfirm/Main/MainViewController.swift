@@ -12,9 +12,18 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "動作確認"
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        UINavigationBar.appearance().standardAppearance = standardAppearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = scrollEdgeAppearance
+//        UINavigationBar.appearance().compactAppearance = compactAppearance
+//        if #available(iOS 15.0, *) {
+//            UINavigationBar.appearance().compactScrollEdgeAppearance = compactScrollEdgeAppearance
+//        }
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableView.delegate = self
         tableView.dataSource = self

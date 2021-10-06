@@ -9,58 +9,70 @@
 import UIKit
 
 final class BottomTabViewController: UITabBarController {
-    // 下にスクロールした時だった
-    private lazy var standardAppearance: UINavigationBarAppearance = {
-        let appearance = UINavigationBarAppearance()
-        // 背景と影をリセットして、テーマに適した不透明な色を表示
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .red
-        appearance.titleTextAttributes = [
-            .font: UIFont.boldSystemFont(ofSize: 20.0),
-            .foregroundColor: UIColor.blue]
-        return appearance
-    }()
-
-    private lazy var compactAppearance: UINavigationBarAppearance = {
-        let appearance = UINavigationBarAppearance()
-        // 背景と影をリセットして、テーマに適した不透明な色を表示
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .blue
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        return appearance
-    }()
-
-    // 通常の状態
     private lazy var scrollEdgeAppearance: UINavigationBarAppearance = {
         let appearance = UINavigationBarAppearance()
-        // 背景と影をリセットして、テーマに適した不透明な色を表示
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .yellow
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
         return appearance
     }()
 
+    private lazy var standardAppearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .orange
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        return appearance
+    }()
+
+    private lazy var compactAppearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .cyan
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        return appearance
+    }()
+
     private lazy var compactScrollEdgeAppearance: UINavigationBarAppearance = {
         let appearance = UINavigationBarAppearance()
-        // 背景と影をリセットして、テーマに適した不透明な色を表示
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .black
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.red]
+        appearance.backgroundColor = .blue
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         return appearance
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.standardAppearance = standardAppearance
-        navigationController?.navigationBar.compactAppearance = compactAppearance
+        // CoverView法
+//        navigationController?.navigationBar.setBackgroundImage(UIColor.yellow.image, for: .default)
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        // RootView法
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.backgroundColor = .yellow
+//        navigationController?.navigationBar.barTintColor = .white
+//        navigationController?.navigationBar.tintColor = .yellow
+        // AppearanceView法
+//        navigationController?.navigationBar.standardAppearance = standardAppearance
 //        navigationController?.navigationBar.scrollEdgeAppearance = scrollEdgeAppearance
-        if #available(iOS 15.0, *) {
-            navigationController?.navigationBar.compactScrollEdgeAppearance = compactScrollEdgeAppearance
-        }
+//        navigationController?.navigationBar.compactAppearance = compactAppearance
+//        if #available(iOS 15.0, *) {
+//            navigationController?.navigationBar.compactScrollEdgeAppearance = compactScrollEdgeAppearance
+//        }
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        appearance.backgroundColor = .orange
+//        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+//        navigationController?.navigationBar.standardAppearance = appearance
+//        navigationController?.navigationBar.standardAppearance = UINavigationBarAppearance()
+//        navigationController?.navigationBar.scrollEdgeAppearance = nil
+//        navigationController?.navigationBar.compactAppearance = nil
+//        if #available(iOS 15.0, *) {
+//            navigationController?.navigationBar.compactScrollEdgeAppearance = nil
+//        }
 //        navigationController?.navigationBar.standardAppearance = nil
     }
 }
