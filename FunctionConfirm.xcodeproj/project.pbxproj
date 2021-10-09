@@ -21,6 +21,8 @@
 		201619DE26B7DAC8003F4EE3 /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */; };
 		201A4967270BE45100563A1E /* BottomTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201A4966270BE45100563A1E /* BottomTab.storyboard */; };
 		201A4969270BE45F00563A1E /* BottomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A4968270BE45F00563A1E /* BottomTabViewController.swift */; };
+		201D871D2711235400D44C4D /* SampleMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D871C2711235400D44C4D /* SampleMessage.storyboard */; };
+		201D871F2711236B00D44C4D /* SampleMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D871E2711236B00D44C4D /* SampleMessageViewController.swift */; };
 		201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D4251357DA00C9917C /* AlarmViewController.swift */; };
 		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
 		201E42D92513590D00C9917C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D82513590D00C9917C /* Alarm.swift */; };
@@ -210,6 +212,8 @@
 		201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		201A4966270BE45100563A1E /* BottomTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomTab.storyboard; sourceTree = "<group>"; };
 		201A4968270BE45F00563A1E /* BottomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabViewController.swift; sourceTree = "<group>"; };
+		201D871C2711235400D44C4D /* SampleMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleMessage.storyboard; sourceTree = "<group>"; };
+		201D871E2711236B00D44C4D /* SampleMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessageViewController.swift; sourceTree = "<group>"; };
 		201E42D4251357DA00C9917C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		201E42D82513590D00C9917C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
@@ -441,6 +445,15 @@
 				201A4966270BE45100563A1E /* BottomTab.storyboard */,
 			);
 			path = BottomTab;
+			sourceTree = "<group>";
+		};
+		201D871B2711233200D44C4D /* SampleMessage */ = {
+			isa = PBXGroup;
+			children = (
+				201D871C2711235400D44C4D /* SampleMessage.storyboard */,
+				201D871E2711236B00D44C4D /* SampleMessageViewController.swift */,
+			);
+			path = SampleMessage;
 			sourceTree = "<group>";
 		};
 		201E42D3251357C100C9917C /* Alarm */ = {
@@ -787,6 +800,7 @@
 				20E109A226CF8447004ABA4A /* HorizontalPage */,
 				2014E88427092680000DD97E /* MoveObject */,
 				201A4965270BE42F00563A1E /* BottomTab */,
+				201D871B2711233200D44C4D /* SampleMessage */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1158,6 +1172,7 @@
 				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
 				2014E88627092690000DD97E /* MoveObject.storyboard in Resources */,
+				201D871D2711235400D44C4D /* SampleMessage.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */,
@@ -1344,6 +1359,7 @@
 				9CDB1B5822749E40004EFB68 /* AppState.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
+				201D871F2711236B00D44C4D /* SampleMessageViewController.swift in Sources */,
 				9C62DA42227C4BA4002DEA7C /* MVVMSubmitViewModel.swift in Sources */,
 				9CFE3DE6224E060600809567 /* BarcodeViewController.swift in Sources */,
 				20F7D2DE244596B30054A935 /* UIViewController+SemiModal.swift in Sources */,

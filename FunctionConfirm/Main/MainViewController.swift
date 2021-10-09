@@ -12,18 +12,9 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "動作確認"
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        UINavigationBar.appearance().standardAppearance = standardAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = scrollEdgeAppearance
-//        UINavigationBar.appearance().compactAppearance = compactAppearance
-//        if #available(iOS 15.0, *) {
-//            UINavigationBar.appearance().compactScrollEdgeAppearance = compactScrollEdgeAppearance
-//        }
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableView.delegate = self
         tableView.dataSource = self
@@ -35,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 31
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -158,9 +149,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "moveObjectCell", for: indexPath)
             cell.textLabel?.text = "物体ドラッグ移動"
             return cell
-        } else {
+        } else if indexPath.row == 29 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bottomTabCell", for: indexPath)
             cell.textLabel?.text = "BottomTab表示"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "messageKitCell", for: indexPath)
+            cell.textLabel?.text = "MessageKit"
             return cell
         }
     }
@@ -289,9 +284,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "MoveObject", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "MoveObjectViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 29:
             let storyBoard = UIStoryboard(name: "BottomTab", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "BottomTabViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "SampleMessage", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleMessageViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
