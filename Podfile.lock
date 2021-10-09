@@ -4,10 +4,30 @@ PODS:
   - AWSRekognition (2.19.1):
     - AWSCore (= 2.19.1)
   - Cartography (4.0.0)
+  - InputBarAccessoryView (5.4.0):
+    - InputBarAccessoryView/Core (= 5.4.0)
+  - InputBarAccessoryView/Core (5.4.0)
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
+  - MessageKit (3.7.0):
+    - InputBarAccessoryView (~> 5.4.0)
   - PanModal (1.2.7)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - PINRemoteImage (3.0.3):
+    - PINRemoteImage/PINCache (= 3.0.3)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
   - ReSwift (6.0.0)
   - RxBlocking (5.1.1):
     - RxSwift (~> 5)
@@ -26,7 +46,9 @@ DEPENDENCIES:
   - AWSRekognition (~> 2.19.1)
   - Cartography (~> 4.0.0)
   - KRProgressHUD (~> 3.4.4)
+  - MessageKit (~> 3.7.0)
   - PanModal
+  - PINRemoteImage (~> 3.0)
   - ReSwift (~> 6.0.0)
   - RxBlocking (~> 5.1.1)
   - RxCocoa (~> 5.1.1)
@@ -40,9 +62,14 @@ SPEC REPOS:
     - AWSCore
     - AWSRekognition
     - Cartography
+    - InputBarAccessoryView
     - KRActivityIndicatorView
     - KRProgressHUD
+    - MessageKit
     - PanModal
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
     - ReSwift
     - RxBlocking
     - RxCocoa
@@ -56,9 +83,14 @@ SPEC CHECKSUMS:
   AWSCore: 55c154ae27efc5c98bdc30a0eeea5a35d10a2ab5
   AWSRekognition: 5450c553bdb0e42168b78669818127a5a0312a15
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  InputBarAccessoryView: 74d471ab1fa1736806be50328df79257e52865a9
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
+  MessageKit: 8e76dd8d65ad44b49e1651c673497146416461e9
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   ReSwift: 14e6f9409fe6bdc635e588208296a01f43b959c9
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -67,6 +99,6 @@ SPEC CHECKSUMS:
   RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: de46724b6c19c8e3879359fc9a6b0c2b71ccefb4
+PODFILE CHECKSUM: f1e493dee5b42c457da300d7372f8a9b091142cb
 
 COCOAPODS: 1.10.1

@@ -22,6 +22,8 @@ target 'FunctionConfirm' do
   pod 'SwiftLint', '~> 0.41.0'
   pod 'ReSwift', '~> 6.0.0'
   pod 'PanModal'
+  pod 'MessageKit', '~> 3.7.0'
+  pod 'PINRemoteImage', '~> 3.0'
 
   target 'FunctionConfirmTests' do
     inherit! :search_paths

@@ -23,6 +23,12 @@
 		201A4969270BE45F00563A1E /* BottomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A4968270BE45F00563A1E /* BottomTabViewController.swift */; };
 		201D871D2711235400D44C4D /* SampleMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D871C2711235400D44C4D /* SampleMessage.storyboard */; };
 		201D871F2711236B00D44C4D /* SampleMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D871E2711236B00D44C4D /* SampleMessageViewController.swift */; };
+		201D8721271126DC00D44C4D /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D8720271126DC00D44C4D /* MessageEntity.swift */; };
+		201D87232711278B00D44C4D /* MessageSenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D87222711278B00D44C4D /* MessageSenderType.swift */; };
+		201D87252711299900D44C4D /* Date+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D87242711299900D44C4D /* Date+Addition.swift */; };
+		201D872727112D2900D44C4D /* DateFormatter+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D872627112D2900D44C4D /* DateFormatter+Addition.swift */; };
+		201D8729271132E300D44C4D /* MessageHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D8728271132E300D44C4D /* MessageHeaderReusableView.swift */; };
+		201D872B2711611C00D44C4D /* UIImageView+PinRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201D872A2711611C00D44C4D /* UIImageView+PinRemoteImage.swift */; };
 		201E42D5251357DA00C9917C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D4251357DA00C9917C /* AlarmViewController.swift */; };
 		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
 		201E42D92513590D00C9917C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D82513590D00C9917C /* Alarm.swift */; };
@@ -214,6 +220,12 @@
 		201A4968270BE45F00563A1E /* BottomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabViewController.swift; sourceTree = "<group>"; };
 		201D871C2711235400D44C4D /* SampleMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleMessage.storyboard; sourceTree = "<group>"; };
 		201D871E2711236B00D44C4D /* SampleMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessageViewController.swift; sourceTree = "<group>"; };
+		201D8720271126DC00D44C4D /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
+		201D87222711278B00D44C4D /* MessageSenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderType.swift; sourceTree = "<group>"; };
+		201D87242711299900D44C4D /* Date+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Addition.swift"; sourceTree = "<group>"; };
+		201D872627112D2900D44C4D /* DateFormatter+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Addition.swift"; sourceTree = "<group>"; };
+		201D8728271132E300D44C4D /* MessageHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeaderReusableView.swift; sourceTree = "<group>"; };
+		201D872A2711611C00D44C4D /* UIImageView+PinRemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+PinRemoteImage.swift"; sourceTree = "<group>"; };
 		201E42D4251357DA00C9917C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		201E42D82513590D00C9917C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
@@ -452,6 +464,9 @@
 			children = (
 				201D871C2711235400D44C4D /* SampleMessage.storyboard */,
 				201D871E2711236B00D44C4D /* SampleMessageViewController.swift */,
+				201D8728271132E300D44C4D /* MessageHeaderReusableView.swift */,
+				201D8720271126DC00D44C4D /* MessageEntity.swift */,
+				201D87222711278B00D44C4D /* MessageSenderType.swift */,
 			);
 			path = SampleMessage;
 			sourceTree = "<group>";
@@ -559,7 +574,10 @@
 				9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */,
 				9CD30C7F21F7100B00D6184A /* UINavigationController+StatusBarStyle.swift */,
 				9CDB1B5322749D6F004EFB68 /* String+Random.swift */,
+				201D87242711299900D44C4D /* Date+Addition.swift */,
+				201D872627112D2900D44C4D /* DateFormatter+Addition.swift */,
 				201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */,
+				201D872A2711611C00D44C4D /* UIImageView+PinRemoteImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1329,10 +1347,12 @@
 				201619DE26B7DAC8003F4EE3 /* UIViewController+Addition.swift in Sources */,
 				20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */,
 				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
+				201D87252711299900D44C4D /* Date+Addition.swift in Sources */,
 				201E42DB251361D200C9917C /* AlarmPickerView.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				201E42D92513590D00C9917C /* Alarm.swift in Sources */,
 				20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */,
+				201D87232711278B00D44C4D /* MessageSenderType.swift in Sources */,
 				20E109A626CF8475004ABA4A /* HorizontalPageViewController.swift in Sources */,
 				20A5142A26ABC91F00658C03 /* ClearNavViewController.swift in Sources */,
 				208CE614234753F60024AE3A /* ImageButton.swift in Sources */,
@@ -1377,7 +1397,9 @@
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				9CB8082A21F7540E00DAD155 /* StatusBarPopup2ViewController.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
+				201D8721271126DC00D44C4D /* MessageEntity.swift in Sources */,
 				201A4969270BE45F00563A1E /* BottomTabViewController.swift in Sources */,
+				201D8729271132E300D44C4D /* MessageHeaderReusableView.swift in Sources */,
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
 				20F7D2F02445A3410054A935 /* SemiModalPresentationState.swift in Sources */,
 				9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */,
@@ -1406,12 +1428,14 @@
 				9CD30C8021F7100B00D6184A /* UINavigationController+StatusBarStyle.swift in Sources */,
 				9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
+				201D872727112D2900D44C4D /* DateFormatter+Addition.swift in Sources */,
 				9CDB1B5C22749F88004EFB68 /* Actions.swift in Sources */,
 				9C62DA3B227C4BA4002DEA7C /* MVVMListViewController.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
 				9CB8083521F8236000DAD155 /* StatusBar2Manager.swift in Sources */,
 				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
+				201D872B2711611C00D44C4D /* UIImageView+PinRemoteImage.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				20F7D2EE2445A2970054A935 /* SemiModalHeight.swift in Sources */,
 				9C62DA3D227C4BA4002DEA7C /* MVVMListViewModel.swift in Sources */,
