@@ -27,93 +27,80 @@ extension Date {
 extension Date {
     // ◯秒後
     func secondAfter(_ second: Int) -> Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .second, value: second, to: self)
+        let day = Calendar.current.date(byAdding: .second, value: second, to: self)
         return day!
     }
 
     // ◯分後
     func minuteAfter(_ minute: Int) -> Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .minute, value: minute, to: self)
+        let day = Calendar.current.date(byAdding: .minute, value: minute, to: self)
         return day!
     }
 
     // ◯時間後
     func hourAfter(_ hour: Int) -> Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .hour, value: hour, to: self)
+        let day = Calendar.current.date(byAdding: .hour, value: hour, to: self)
         return day!
     }
 
     // その日の0時00分
     var startTime: Date {
-        return Calendar(identifier: .gregorian).startOfDay(for: self)
+        return Calendar.current.startOfDay(for: self)
     }
 }
 
 // MARK: Other Day
 extension Date {
     var yesterday: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .day, value: -1, to: self)
+        let day = Calendar.current.date(byAdding: .day, value: -1, to: self)
         return day!
     }
 
     var tomorrow: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .day, value: 1, to: self)
+        let day = Calendar.current.date(byAdding: .day, value: 1, to: self)
         return day!
     }
 
     var oneMonthBefore: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .month, value: -1, to: self)
+        let day = Calendar.current.date(byAdding: .month, value: -1, to: self)
         return day!
     }
 
     var oneMonthAfter: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .month, value: 1, to: self)
+        let day = Calendar.current.date(byAdding: .month, value: 1, to: self)
         return day!
     }
 
     var oneYearBefore: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .year, value: -1, to: self)
+        let day = Calendar.current.date(byAdding: .year, value: -1, to: self)
         return day!
     }
 
     var oneYearAfter: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .year, value: 1, to: self)
+        let day = Calendar.current.date(byAdding: .year, value: 1, to: self)
         return day!
     }
 
     var beginningOfTheMonth: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let component = calendar.dateComponents([.year, .month], from: self)
-        return calendar.date(from: component)!
+        let component = Calendar.current.dateComponents([.year, .month], from: self)
+        return Calendar.current.date(from: component)!
     }
 
     var endOfTheMonth: Date {
-        let calendar = Calendar(identifier: .gregorian)
         let beginningOfTheMonth = self.beginningOfTheMonth
         let add = DateComponents(month: 1, day: -1)
-        return calendar.date(byAdding: add, to: beginningOfTheMonth)!
+        return Calendar.current.date(byAdding: add, to: beginningOfTheMonth)!
     }
 
     var beginningOfTheYear: Date {
-        let calendar = Calendar(identifier: .gregorian)
-        let component = calendar.dateComponents([.year], from: self)
-        return calendar.date(from: component)!
+        let component = Calendar.current.dateComponents([.year], from: self)
+        return Calendar.current.date(from: component)!
     }
 
     var endOfTheYear: Date {
-        let calendar = Calendar(identifier: .gregorian)
         let beginningOfTheYear = self.beginningOfTheYear
         let add = DateComponents(year: 1, day: -1)
-        return calendar.date(byAdding: add, to: beginningOfTheYear)!
+        return Calendar.current.date(byAdding: add, to: beginningOfTheYear)!
     }
 }
 

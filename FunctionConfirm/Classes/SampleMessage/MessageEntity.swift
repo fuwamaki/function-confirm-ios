@@ -27,7 +27,7 @@ struct MessageEntity: MessageType {
             attributes: [.font: UIFont.systemFont(ofSize: 14.0),
                          .foregroundColor: isMe
                             ? UIColor.white
-                            : UIColor.black]
+                            : UIColor.label]
         ))
     }
 

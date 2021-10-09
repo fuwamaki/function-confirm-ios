@@ -42,11 +42,11 @@ final class SampleMessageViewController: MessagesViewController {
         messageInputBar.delegate = self
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
-        messageInputBar.sendButton.tintColor = .darkGray
+        messageInputBar.sendButton.tintColor = .gray
         messageInputBar.sendButton.setSize(CGSize(width: 24.0, height: 36.0), animated: false)
         messageInputBar.sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         messageInputBar.inputTextView.font = UIFont.systemFont(ofSize: 14.0)
-        messageInputBar.inputTextView.textColor = UIColor.black
+        messageInputBar.inputTextView.textColor = UIColor.label
         messageInputBar.backgroundView.backgroundColor = UIColor.secondarySystemBackground
         messageInputBar.inputTextView.backgroundColor = UIColor.systemBackground
         messageInputBar.inputTextView.layer.cornerRadius = 10.0
@@ -279,7 +279,7 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
         inputBar.sendButton.image = UIImage(systemName: "paperplane")
         inputBar.sendButton.tintColor = inputBar.sendButton.isEnabled
             ? .systemBlue
-            : .darkGray
+            : .gray
     }
 }
 
