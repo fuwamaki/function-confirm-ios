@@ -85,6 +85,7 @@ extension DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy年MM月dd日(E)"
         dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale(identifier: "ja_JP")
         return dateFormatter
     }
 }
