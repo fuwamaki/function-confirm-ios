@@ -45,43 +45,48 @@ extension Date {
         let day = calendar.date(byAdding: .hour, value: hour, to: self)
         return day!
     }
+
+    // その日の0時00分
+    var startTime: Date {
+        return Calendar(identifier: .gregorian).startOfDay(for: self)
+    }
 }
 
 // MARK: Other Day
 extension Date {
     var yesterday: Date {
         let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .day, value: -1, to: calendar.startOfDay(for: self))
+        let day = calendar.date(byAdding: .day, value: -1, to: self)
         return day!
     }
 
     var tomorrow: Date {
         let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: self))
+        let day = calendar.date(byAdding: .day, value: 1, to: self)
         return day!
     }
 
     var oneMonthBefore: Date {
         let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .month, value: -1, to: calendar.startOfDay(for: self))
+        let day = calendar.date(byAdding: .month, value: -1, to: self)
         return day!
     }
 
     var oneMonthAfter: Date {
         let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .month, value: 1, to: calendar.startOfDay(for: self))
+        let day = calendar.date(byAdding: .month, value: 1, to: self)
         return day!
     }
 
     var oneYearBefore: Date {
         let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .year, value: -1, to: calendar.startOfDay(for: self))
+        let day = calendar.date(byAdding: .year, value: -1, to: self)
         return day!
     }
 
     var oneYearAfter: Date {
         let calendar = Calendar(identifier: .gregorian)
-        let day = calendar.date(byAdding: .year, value: 1, to: calendar.startOfDay(for: self))
+        let day = calendar.date(byAdding: .year, value: 1, to: self)
         return day!
     }
 
