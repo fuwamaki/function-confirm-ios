@@ -39,7 +39,7 @@ struct MessageEntity: MessageType {
         return sentDate.yyyyMMddHHmm + " " + (isMarkAsRead ? "既読" : "未読")
     }
 
-    static func new(my message: String, date: Date) -> MessageEntity {
+    static func new(my message: String, date: Date, isMarkAsRead: Bool = false) -> MessageEntity {
         return MessageEntity(
             messageId: UUID().uuidString,
             userId: 0,
@@ -47,7 +47,7 @@ struct MessageEntity: MessageType {
             iconImageUrl: myIconImageUrl,
             sentDate: date,
             message: message,
-            isMarkAsRead: false)
+            isMarkAsRead: isMarkAsRead)
     }
 
     static func new(other message: String, date: Date) -> MessageEntity {
@@ -58,7 +58,7 @@ struct MessageEntity: MessageType {
             iconImageUrl: otherIconImageUrl,
             sentDate: date,
             message: message,
-            isMarkAsRead: false)
+            isMarkAsRead: true)
     }
 
     // MARK: MockData
@@ -67,9 +67,9 @@ struct MessageEntity: MessageType {
 
     static var mockMessages: [MessageEntity] {
         return [MessageEntity.new(other: "赤は英語で？", date: Date().oneMonthBefore),
-                MessageEntity.new(my: "Red!", date: Date().oneMonthBefore.tomorrow),
+                MessageEntity.new(my: "Red!", date: Date().oneMonthBefore.tomorrow, isMarkAsRead: true),
                 MessageEntity.new(other: "青は英語で？", date: Date().yesterday),
-                MessageEntity.new(my: "Blue!", date: Date().yesterday.hourAfter(1)),
+                MessageEntity.new(my: "Blue!", date: Date().yesterday.hourAfter(1), isMarkAsRead: true),
                 MessageEntity.new(other: "黄色は英語で？", date: Date())]
     }
 }

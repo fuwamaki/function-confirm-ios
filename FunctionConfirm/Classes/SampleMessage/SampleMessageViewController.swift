@@ -31,6 +31,10 @@ final class SampleMessageViewController: MessagesViewController {
     }
 
     private func setupViews() {
+        title = messageList
+            .filter { !$0.isMe }
+            .first?
+            .userName
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -38,12 +42,13 @@ final class SampleMessageViewController: MessagesViewController {
         messageInputBar.delegate = self
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
+        messageInputBar.sendButton.tintColor = .darkGray
         messageInputBar.sendButton.setSize(CGSize(width: 24.0, height: 36.0), animated: false)
         messageInputBar.sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         messageInputBar.inputTextView.font = UIFont.systemFont(ofSize: 14.0)
         messageInputBar.inputTextView.textColor = UIColor.black
-        messageInputBar.backgroundView.backgroundColor = UIColor.systemBackground
-        messageInputBar.inputTextView.backgroundColor = UIColor.white
+        messageInputBar.backgroundView.backgroundColor = UIColor.secondarySystemBackground
+        messageInputBar.inputTextView.backgroundColor = UIColor.systemBackground
         messageInputBar.inputTextView.layer.cornerRadius = 10.0
         messageInputBar.inputTextView.layer.masksToBounds = true
         let clipBarButtonItem = InputBarButtonItem()
@@ -128,7 +133,7 @@ extension SampleMessageViewController: MessagesDataSource {
         return NSAttributedString(
             string: message.bottomText,
             attributes: [.font: UIFont.systemFont(ofSize: 12.0),
-                         .foregroundColor: UIColor.lightText])
+                         .foregroundColor: UIColor.secondaryLabel])
     }
 }
 
@@ -260,7 +265,7 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
         _ inputBar: InputBarAccessoryView,
         didPressSendButtonWith text: String
     ) {
-        // Send
+        // TODO: Send
         messageInputBar.inputTextView.text = String()
         messageInputBar.invalidatePlugins()
         messagesCollectionView.scrollToLastItem()
@@ -271,9 +276,10 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
         _ inputBar: InputBarAccessoryView,
         textViewTextDidChangeTo text: String
     ) {
-        inputBar.sendButton.image = inputBar.sendButton.isEnabled
-            ? UIImage(systemName: "paperclip")?.withTintColor(.systemBlue)
-            : UIImage(systemName: "paperplane")?.withTintColor(.darkGray)
+        inputBar.sendButton.image = UIImage(systemName: "paperplane")
+        inputBar.sendButton.tintColor = inputBar.sendButton.isEnabled
+            ? .systemBlue
+            : .darkGray
     }
 }
 

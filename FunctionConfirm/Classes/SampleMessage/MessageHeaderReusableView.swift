@@ -39,7 +39,7 @@ class MessageHeaderReusableView: MessageReusableView {
         label.numberOfLines = 1
         label.textAlignment = .center
         label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        label.backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.5)
+        label.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
         label.layer.cornerRadius = 12
         label.clipsToBounds = true
         return label
