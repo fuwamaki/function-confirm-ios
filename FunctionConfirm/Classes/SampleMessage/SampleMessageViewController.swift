@@ -85,7 +85,15 @@ extension SampleMessageViewController: UIImagePickerControllerDelegate {
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
     ) {
         picker.dismiss(animated: true, completion: nil)
-        // TODO
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("couldn't load image from Photos")
+        }
+        let entity = MessageEntity.new(my: image)
+        messageList.append(entity)
+        messageInputBar.inputTextView.text = String()
+        messageInputBar.invalidatePlugins()
+        messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToLastItem()
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

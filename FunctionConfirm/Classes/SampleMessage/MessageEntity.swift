@@ -9,59 +9,84 @@
 import MessageKit
 
 struct MessageEntity: MessageType {
-    var messageId: String
     var userId: Int
     var userName: String
     var iconImageUrl: URL?
+    var message: String?
+    var isMarkAsRead: Bool
+    // MARK: Media
+    var mediaItem: MessageMediaEntity?
+    // MARK: MessageType
+    var messageId: String
     var sentDate: Date
-    var message: String
-    let isMarkAsRead: Bool
-
-    var isMe: Bool {
-        userId == 0
-    }
 
     var kind: MessageKind {
-        return .attributedText(NSAttributedString(
-            string: message,
-            attributes: [.font: UIFont.systemFont(ofSize: 14.0),
-                         .foregroundColor: isMe
-                            ? UIColor.white
-                            : UIColor.label]
-        ))
+        if let mediaItem = mediaItem {
+            return .photo(mediaItem)
+        } else {
+            return .attributedText(NSAttributedString(
+                string: message!,
+                attributes: [.font: UIFont.systemFont(ofSize: 14.0),
+                             .foregroundColor: isMe
+                                ? UIColor.white
+                                : UIColor.label]
+            ))
+        }
     }
 
     var sender: SenderType {
         return isMe ? MessageSenderType.me : MessageSenderType.other
     }
 
+    // MARK: Other
+    var isMe: Bool {
+        userId == 0
+    }
+
     var bottomText: String {
         return sentDate.yyyyMMddHHmm + " " + (isMarkAsRead ? "既読" : "未読")
     }
 
+    // MARK: static new
     static func new(my message: String,
                     date: Date = Date(),
                     isMarkAsRead: Bool = false) -> MessageEntity {
         return MessageEntity(
-            messageId: UUID().uuidString,
             userId: 0,
             userName: "自分",
             iconImageUrl: myIconImageUrl,
-            sentDate: date,
             message: message,
-            isMarkAsRead: isMarkAsRead)
+            isMarkAsRead: isMarkAsRead,
+            mediaItem: nil,
+            messageId: UUID().uuidString,
+            sentDate: date)
+    }
+
+    static func new(my media: UIImage,
+                    date: Date = Date(),
+                    isMarkAsRead: Bool = false) -> MessageEntity {
+        return MessageEntity(
+            userId: 0,
+            userName: "自分",
+            iconImageUrl: myIconImageUrl,
+            message: nil,
+            isMarkAsRead: isMarkAsRead,
+            mediaItem: MessageMediaEntity.new(image: media),
+            messageId: UUID().uuidString,
+            sentDate: date)
     }
 
     static func new(other message: String,
                     date: Date = Date()) -> MessageEntity {
         return MessageEntity(
-            messageId: UUID().uuidString,
             userId: 1,
             userName: "相手",
             iconImageUrl: otherIconImageUrl,
-            sentDate: date,
             message: message,
-            isMarkAsRead: true)
+            isMarkAsRead: true,
+            mediaItem: nil,
+            messageId: UUID().uuidString,
+            sentDate: date)
     }
 
     // MARK: MockData
@@ -78,5 +103,26 @@ struct MessageEntity: MessageType {
                 MessageEntity.new(other: "青は英語で？", date: Date().yesterday),
                 MessageEntity.new(my: "Blue!", date: Date().yesterday.hourAfter(1), isMarkAsRead: true),
                 MessageEntity.new(other: "黄色は英語で？", date: Date())]
+    }
+}
+
+struct MessageMediaEntity: MediaItem {
+    var url: URL?
+    var image: UIImage?
+
+    var placeholderImage: UIImage {
+        return UIColor.gray.image!
+    }
+    var size: CGSize {
+        return CGSize(width: 640, height: 640)
+    }
+
+    // MARK: static new
+    static func new(url: URL?) -> MessageMediaEntity {
+        MessageMediaEntity(url: url, image: nil)
+    }
+
+    static func new(image: UIImage?) -> MessageMediaEntity {
+        MessageMediaEntity(url: nil, image: image)
     }
 }
