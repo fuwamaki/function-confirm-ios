@@ -12,6 +12,15 @@ import MessageKit
 import InputBarAccessoryView
 import ImageViewer
 
+final class SampleMessageContainerViewController: UIViewController {
+
+    @IBAction private func clickBarButtonItem(_ sender: Any) {}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
 final class SampleMessageViewController: MessagesViewController {
 
     private lazy var photoLibraryPicker: UIImagePickerController = {
@@ -28,6 +37,11 @@ final class SampleMessageViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.becomeFirstResponder()
     }
 
     private func setupViews() {

@@ -294,7 +294,7 @@ extension MainViewController: UITableViewDelegate {
             navigationController?.pushViewController(viewController, animated: true)
         case 30:
             let storyBoard = UIStoryboard(name: "SampleMessage", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleMessageViewController")
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleMessageContainerViewController")
             navigationController?.pushViewController(viewController, animated: true)
         default:
             let storyBoard = UIStoryboard(name: "SampleImageViewer", bundle: nil)
