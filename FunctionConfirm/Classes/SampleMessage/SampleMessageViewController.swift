@@ -176,6 +176,10 @@ extension SampleMessageViewController: MessagesDisplayDelegate {
     ) -> MessageReusableView {
         let header = messagesCollectionView.dequeueReusableHeaderView(
             MessageHeaderReusableView.self, for: indexPath)
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(didTapMessageHeaderView(_:)))
+        header.addGestureRecognizer(tapGesture)
         let message = messageList[indexPath.section]
         header.render(text: message.sentDate.kanjiyyyyMMddE)
         return header
@@ -259,6 +263,19 @@ extension SampleMessageViewController: MessageCellDelegate {
     }
 }
 
+// MARK: MessageLabelDelegate(MessageCellDelegate)
+extension SampleMessageViewController {
+    func didSelectURL(_ url: URL) {
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true, completion: nil)
+    }
+
+    func didSelectPhoneNumber(_ phoneNumber: String) {
+        let url = URL(string: phoneNumber)!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+}
+
 // MARK: InputBarAccessoryViewDelegate
 extension SampleMessageViewController: InputBarAccessoryViewDelegate {
     func inputBar(
@@ -284,14 +301,9 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
     }
 }
 
+// MARK: UITapGestureRecognizer
 extension SampleMessageViewController {
-    func didSelectURL(_ url: URL) {
-        let viewController = SFSafariViewController(url: url)
-        present(viewController, animated: true, completion: nil)
-    }
-
-    func didSelectPhoneNumber(_ phoneNumber: String) {
-        let url = URL(string: phoneNumber)!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    @objc private func didTapMessageHeaderView(_ sender: UITapGestureRecognizer) {
+        messageInputBar.inputTextView.resignFirstResponder()
     }
 }
