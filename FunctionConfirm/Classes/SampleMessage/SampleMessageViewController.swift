@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import MessageKit
 import InputBarAccessoryView
-import ImageViewer_swift
+import ImageViewer
 
 final class SampleMessageViewController: MessagesViewController {
 
@@ -25,6 +25,8 @@ final class SampleMessageViewController: MessagesViewController {
     private lazy var messageList: [MessageEntity] = {
         return MessageEntity.mockMessages
     }()
+
+    private var displaceableImageView: UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,9 +160,14 @@ extension SampleMessageViewController: MessagesDisplayDelegate {
         at indexPath: IndexPath,
         in messagesCollectionView: MessagesCollectionView
     ) -> UIColor {
-        return isFromCurrentSender(message: message)
-            ? UIColor.systemBlue
-            : UIColor.systemBackground
+        switch message.kind {
+        case .photo:
+            return UIColor.systemBackground
+        default:
+            return isFromCurrentSender(message: message)
+                ? UIColor.systemBlue
+                : UIColor.systemBackground
+        }
     }
 
     func messageStyle(
@@ -267,8 +274,12 @@ extension SampleMessageViewController: MessageCellDelegate {
     func didTapImage(in cell: MessageCollectionViewCell) {
         if let containerView = cell.contentView.subviews.filter({ $0 is MessageContainerView }).first as? MessageContainerView,
            let imageView = containerView.subviews.filter({ $0 is UIImageView }).first as? UIImageView {
-            containerView.image = imageView.image
-            containerView.setupImageViewer()
+            displaceableImageView = imageView
+            let viewController = GalleryViewController(
+                startIndex: 0,
+                itemsDataSource: self,
+                displacedViewsDataSource: self)
+            presentImageGallery(viewController)
         }
         messageInputBar.inputTextView.resignFirstResponder()
     }
@@ -283,6 +294,24 @@ extension SampleMessageViewController: MessageCellDelegate {
 
     func didTapMessageBottomLabel(in cell: MessageCollectionViewCell) {
         messageInputBar.inputTextView.resignFirstResponder()
+    }
+}
+
+// MARK: GalleryItemsDataSource
+extension SampleMessageViewController: GalleryItemsDataSource {
+    func itemCount() -> Int {
+        return 1
+    }
+
+    func provideGalleryItem(_ index: Int) -> GalleryItem {
+        return GalleryItem.image { $0(self.displaceableImageView?.image!) }
+    }
+}
+
+// MARK: GalleryDisplacedViewsDataSource
+extension SampleMessageViewController: GalleryDisplacedViewsDataSource {
+    func provideDisplacementItem(atIndex index: Int) -> DisplaceableView? {
+        return displaceableImageView
     }
 }
 

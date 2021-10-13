@@ -66,6 +66,7 @@
 		20E35066232A29090057A561 /* TimerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35065232A29090057A561 /* TimerView.storyboard */; };
 		20E45821267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */; };
 		20E45823267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */; };
+		20ECC6D62716F005006EC3FD /* UIImageView+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ECC6D52716F005006EC3FD /* UIImageView+ImageViewer.swift */; };
 		20EE95AA267C8641007270FD /* MediumRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE95A9267C8641007270FD /* MediumRootViewController.swift */; };
 		20EE95AC267C864D007270FD /* Medium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EE95AB267C864D007270FD /* Medium.storyboard */; };
 		20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2D524458A490054A935 /* HalfModalRootViewController.swift */; };
@@ -269,6 +270,7 @@
 		20E35065232A29090057A561 /* TimerView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerView.storyboard; sourceTree = "<group>"; };
 		20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleKeyboardLayoutGuide.storyboard; sourceTree = "<group>"; };
 		20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleKeyboardLayoutGuideViewController.swift; sourceTree = "<group>"; };
+		20ECC6D52716F005006EC3FD /* UIImageView+ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageViewer.swift"; sourceTree = "<group>"; };
 		20EE95A9267C8641007270FD /* MediumRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumRootViewController.swift; sourceTree = "<group>"; };
 		20EE95AB267C864D007270FD /* Medium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medium.storyboard; sourceTree = "<group>"; };
 		20F7D2D524458A490054A935 /* HalfModalRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalRootViewController.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				201D872627112D2900D44C4D /* DateFormatter+Addition.swift */,
 				201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */,
 				201D872A2711611C00D44C4D /* UIImageView+PinRemoteImage.swift */,
+				20ECC6D52716F005006EC3FD /* UIImageView+ImageViewer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1349,6 +1352,7 @@
 				9CDB1B5422749D6F004EFB68 /* String+Random.swift in Sources */,
 				201D87252711299900D44C4D /* Date+Addition.swift in Sources */,
 				201E42DB251361D200C9917C /* AlarmPickerView.swift in Sources */,
+				20ECC6D62716F005006EC3FD /* UIImageView+ImageViewer.swift in Sources */,
 				9CE2644A211A74D100DD178E /* MVPPresenter.swift in Sources */,
 				201E42D92513590D00C9917C /* Alarm.swift in Sources */,
 				20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */,

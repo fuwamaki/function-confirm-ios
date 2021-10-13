@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import ImageViewer_swift
+import ImageViewer
 
 final class AlarmViewController: UIViewController {
-
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
 
@@ -36,8 +35,14 @@ final class AlarmViewController: UIViewController {
         imageView.addGestureRecognizer(tapGesture)
         imageView.isUserInteractionEnabled = true
     }
+
     @objc private func didTap(_ sender: UITapGestureRecognizer) {
-        imageView.setupImageViewer()
+//        imageView.setupImageViewer()
+        let viewController = GalleryViewController(
+            startIndex: 0,
+            itemsDataSource: self,
+            displacedViewsDataSource: self)
+        presentImageGallery(viewController)
     }
 }
 
@@ -65,5 +70,23 @@ extension AlarmViewController {
 
     @objc func doneButtonAction() {
         dateTextField.resignFirstResponder()
+    }
+}
+
+// MARK: GalleryItemsDataSource
+extension AlarmViewController: GalleryItemsDataSource {
+    func itemCount() -> Int {
+        return 1
+    }
+
+    func provideGalleryItem(_ index: Int) -> GalleryItem {
+        return GalleryItem.image { $0(self.imageView.image!) }
+    }
+}
+
+// MARK: GalleryDisplacedViewsDataSource
+extension AlarmViewController: GalleryDisplacedViewsDataSource {
+    func provideDisplacementItem(atIndex index: Int) -> DisplaceableView? {
+        return imageView
     }
 }
