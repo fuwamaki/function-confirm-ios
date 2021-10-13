@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_entertainment" translatesAutoresizingMaskIntoConstraints="NO" id="iEG-iH-ChF">
-                                <rect key="frame" x="24" y="328" width="366" height="240"/>
+                                <rect key="frame" x="24" y="112" width="366" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="XiJ-ga-NnM"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                         <constraints>
                             <constraint firstItem="iEG-iH-ChF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Buo-Uc-63i"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iEG-iH-ChF" secondAttribute="trailing" constant="24" id="Gx2-Tz-1HD"/>
-                            <constraint firstItem="iEG-iH-ChF" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="RJf-cI-79x"/>
+                            <constraint firstItem="iEG-iH-ChF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="gbF-ha-ZP1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ImageViewer" id="FDe-Hu-6ZJ"/>
