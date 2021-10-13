@@ -266,7 +266,7 @@ extension SampleMessageViewController: MessageCellDelegate {
 
     func didTapImage(in cell: MessageCollectionViewCell) {
         if let containerView = cell.contentView.subviews.filter({ $0 is MessageContainerView }).first as? MessageContainerView,
-           let imageView = containerView.subviews.first as? UIImageView {
+           let imageView = containerView.subviews.filter({ $0 is UIImageView }).first as? UIImageView {
             containerView.image = imageView.image
             containerView.setupImageViewer()
         }
