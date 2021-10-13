@@ -10,6 +10,8 @@ import UIKit
 
 final class SampleImageViewerViewController: UIViewController {
 
+    @IBOutlet private weak var imageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
