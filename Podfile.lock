@@ -46,7 +46,7 @@ DEPENDENCIES:
   - APIKit (~> 5.1.0)
   - AWSRekognition (~> 2.19.1)
   - Cartography (~> 4.0.0)
-  - ImageViewer (from `https://github.com/Krisiacik/ImageViewer.git`, branch `master`)
+  - ImageViewer (~> 6.0)
   - KRProgressHUD (~> 3.4.4)
   - MessageKit (~> 3.7.0)
   - PanModal
@@ -64,6 +64,7 @@ SPEC REPOS:
     - AWSCore
     - AWSRekognition
     - Cartography
+    - ImageViewer
     - InputBarAccessoryView
     - KRActivityIndicatorView
     - KRProgressHUD
@@ -79,16 +80,6 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SwiftLint
-
-EXTERNAL SOURCES:
-  ImageViewer:
-    :branch: master
-    :git: https://github.com/Krisiacik/ImageViewer.git
-
-CHECKOUT OPTIONS:
-  ImageViewer:
-    :commit: 519fbdb57b4ad83de50ecd09b7182ed9d190f3ee
-    :git: https://github.com/Krisiacik/ImageViewer.git
 
 SPEC CHECKSUMS:
   APIKit: 9e1a4069608bf0ae5238811e6cfc26928ad4d01e
@@ -112,6 +103,6 @@ SPEC CHECKSUMS:
   RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: 6ae02b9518f68f39e52987844a96ad7e21ae163f
+PODFILE CHECKSUM: c357dd0074d8f255db3801435b965f7576320c78
 
 COCOAPODS: 1.10.1

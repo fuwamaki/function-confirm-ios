@@ -24,7 +24,7 @@ target 'FunctionConfirm' do
   pod 'PanModal'
   pod 'MessageKit', '~> 3.7.0'
   pod 'PINRemoteImage', '~> 3.0'
-  pod 'ImageViewer', git: 'https://github.com/Krisiacik/ImageViewer.git', branch: 'master'
+  pod 'ImageViewer', '~> 6.0'
 
   target 'FunctionConfirmTests' do
     inherit! :search_paths
