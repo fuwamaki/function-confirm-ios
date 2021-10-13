@@ -114,7 +114,8 @@ struct MessageMediaEntity: MediaItem {
         return UIColor.gray.image!
     }
     var size: CGSize {
-        return CGSize(width: 640, height: 640)
+        return CGSize(width: UIScreen.main.bounds.width/2,
+                      height: UIScreen.main.bounds.width/2)
     }
 
     // MARK: static new
