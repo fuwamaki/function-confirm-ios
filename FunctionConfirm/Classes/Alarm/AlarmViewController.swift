@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import ImageViewer_swift
 
 final class AlarmViewController: UIViewController {
 
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
 
     @IBAction func clickAlarmButton(_ sender: Any) {
         let dateFormatter = DateFormatter()
@@ -28,6 +30,14 @@ final class AlarmViewController: UIViewController {
         super.viewDidLoad()
         setupDatePicker()
         setupDoneToolBar()
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(didTap(_:)))
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
+    }
+    @objc private func didTap(_ sender: UITapGestureRecognizer) {
+        imageView.setupImageViewer()
     }
 }
 

@@ -4,6 +4,7 @@ PODS:
   - AWSRekognition (2.19.1):
     - AWSCore (= 2.19.1)
   - Cartography (4.0.0)
+  - ImageViewer.swift (3.3.3)
   - InputBarAccessoryView (5.4.0):
     - InputBarAccessoryView/Core (= 5.4.0)
   - InputBarAccessoryView/Core (5.4.0)
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - APIKit (~> 5.1.0)
   - AWSRekognition (~> 2.19.1)
   - Cartography (~> 4.0.0)
+  - ImageViewer.swift (~> 3.0)
   - KRProgressHUD (~> 3.4.4)
   - MessageKit (~> 3.7.0)
   - PanModal
@@ -62,6 +64,7 @@ SPEC REPOS:
     - AWSCore
     - AWSRekognition
     - Cartography
+    - ImageViewer.swift
     - InputBarAccessoryView
     - KRActivityIndicatorView
     - KRProgressHUD
@@ -83,6 +86,7 @@ SPEC CHECKSUMS:
   AWSCore: 55c154ae27efc5c98bdc30a0eeea5a35d10a2ab5
   AWSRekognition: 5450c553bdb0e42168b78669818127a5a0312a15
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  ImageViewer.swift: 3dbb74a68ac4bdd6cdd585b3128dae17ccd733e5
   InputBarAccessoryView: 74d471ab1fa1736806be50328df79257e52865a9
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
@@ -99,6 +103,6 @@ SPEC CHECKSUMS:
   RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: f1e493dee5b42c457da300d7372f8a9b091142cb
+PODFILE CHECKSUM: f9d8958f81b1f0dea30043e70eeeee613c22f89c
 
 COCOAPODS: 1.10.1
