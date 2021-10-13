@@ -30,6 +30,11 @@ final class SampleMessageViewController: MessagesViewController {
         setupViews()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        messagesCollectionView.scrollToLastItem(at: .bottom, animated: false)
+    }
+
     private func setupViews() {
         title = messageList
             .filter { !$0.isMe }

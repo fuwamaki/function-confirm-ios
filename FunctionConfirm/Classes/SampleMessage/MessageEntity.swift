@@ -69,8 +69,12 @@ struct MessageEntity: MessageType {
     static var otherIconImageUrl: URL = URL(string: "https://i.imgur.com/jPy7dt5.png")!
 
     static var mockMessages: [MessageEntity] {
-        return [MessageEntity.new(other: "赤は英語で？", date: Date().oneMonthBefore),
-                MessageEntity.new(my: "Red!", date: Date().oneMonthBefore.tomorrow, isMarkAsRead: true),
+        return [MessageEntity.new(other: "黒は英語で？", date: Date().oneMonthBefore.oneMonthBefore.yesterday),
+                MessageEntity.new(my: "Black!", date: Date().oneMonthBefore.oneMonthBefore, isMarkAsRead: true),
+                MessageEntity.new(other: "白は英語で？", date: Date().oneMonthBefore.beginningOfTheMonth.yesterday),
+                MessageEntity.new(my: "White!", date: Date().oneMonthBefore.beginningOfTheMonth, isMarkAsRead: true),
+                MessageEntity.new(other: "赤は英語で？", date: Date().oneMonthBefore.yesterday),
+                MessageEntity.new(my: "Red!", date: Date().oneMonthBefore, isMarkAsRead: true),
                 MessageEntity.new(other: "青は英語で？", date: Date().yesterday),
                 MessageEntity.new(my: "Blue!", date: Date().yesterday.hourAfter(1), isMarkAsRead: true),
                 MessageEntity.new(other: "黄色は英語で？", date: Date())]
