@@ -265,11 +265,12 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
         _ inputBar: InputBarAccessoryView,
         didPressSendButtonWith text: String
     ) {
-        // TODO: Send
+        let entity = MessageEntity.new(my: text)
+        messageList.append(entity)
         messageInputBar.inputTextView.text = String()
         messageInputBar.invalidatePlugins()
-        messagesCollectionView.scrollToLastItem()
         messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToLastItem()
     }
 
     func inputBar(
@@ -283,7 +284,6 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
     }
 }
 
-// MARK: MessageLabelDelegate
 extension SampleMessageViewController {
     func didSelectURL(_ url: URL) {
         let viewController = SFSafariViewController(url: url)

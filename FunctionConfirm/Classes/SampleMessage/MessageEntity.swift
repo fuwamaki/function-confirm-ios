@@ -39,7 +39,9 @@ struct MessageEntity: MessageType {
         return sentDate.yyyyMMddHHmm + " " + (isMarkAsRead ? "既読" : "未読")
     }
 
-    static func new(my message: String, date: Date, isMarkAsRead: Bool = false) -> MessageEntity {
+    static func new(my message: String,
+                    date: Date = Date(),
+                    isMarkAsRead: Bool = false) -> MessageEntity {
         return MessageEntity(
             messageId: UUID().uuidString,
             userId: 0,
@@ -50,7 +52,8 @@ struct MessageEntity: MessageType {
             isMarkAsRead: isMarkAsRead)
     }
 
-    static func new(other message: String, date: Date) -> MessageEntity {
+    static func new(other message: String,
+                    date: Date = Date()) -> MessageEntity {
         return MessageEntity(
             messageId: UUID().uuidString,
             userId: 1,
