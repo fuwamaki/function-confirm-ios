@@ -22,10 +22,7 @@ final class SampleMessageViewController: MessagesViewController {
         return imagePicker
     }()
 
-    private lazy var messageList: [MessageEntity] = {
-        return MessageEntity.mockMessages
-    }()
-
+    private var messageList: [MessageEntity] = []
     private var displaceableImageView: UIImageView?
 
     override func viewDidLoad() {
@@ -33,16 +30,16 @@ final class SampleMessageViewController: MessagesViewController {
         setupViews()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        messagesCollectionView.scrollToLastItem(at: .bottom, animated: false)
-    }
-
     private func setupViews() {
-        title = messageList
-            .filter { !$0.isMe }
-            .first?
-            .userName
+        DispatchQueue.main.async {
+            self.messageList = MessageEntity.mockMessages
+            self.title = self.messageList
+                .filter { !$0.isMe }
+                .first?
+                .userName
+            self.messagesCollectionView.reloadData()
+            self.messagesCollectionView.scrollToLastItem(at: .bottom, animated: false)
+        }
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -78,6 +75,11 @@ final class SampleMessageViewController: MessagesViewController {
         let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout
         layout?.setMessageOutgoingAvatarPosition(AvatarPosition(vertical: .messageLabelTop))
         layout?.setMessageIncomingAvatarPosition(AvatarPosition(vertical: .messageLabelTop))
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.showKeyboard(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
     }
 }
 
@@ -357,5 +359,16 @@ extension SampleMessageViewController: InputBarAccessoryViewDelegate {
 extension SampleMessageViewController {
     @objc private func didTapMessageHeaderView(_ sender: UITapGestureRecognizer) {
         messageInputBar.inputTextView.resignFirstResponder()
+    }
+}
+
+// MARK: Keyboard
+extension SampleMessageViewController {
+    @objc private func showKeyboard(_ notification: Foundation.Notification) {
+        if (messagesCollectionView.contentSize.height
+                - messagesCollectionView.frame.height)
+            < messagesCollectionView.contentOffset.y {
+            messagesCollectionView.scrollToLastItem(at: .bottom, animated: false)
+        }
     }
 }
