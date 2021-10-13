@@ -26,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 31
+        return 32
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -153,9 +153,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bottomTabCell", for: indexPath)
             cell.textLabel?.text = "BottomTab表示"
             return cell
-        } else {
+        } else if indexPath.row == 30 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "messageKitCell", for: indexPath)
             cell.textLabel?.text = "MessageKit"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageViewerCell", for: indexPath)
+            cell.textLabel?.text = "ImageViewer"
             return cell
         }
     }
@@ -288,9 +292,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "BottomTab", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "BottomTabViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 30:
             let storyBoard = UIStoryboard(name: "SampleMessage", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleMessageViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "SampleImageViewer", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleImageViewerViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

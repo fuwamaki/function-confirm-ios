@@ -67,6 +67,8 @@
 		20E45821267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */; };
 		20E45823267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */; };
 		20ECC6D62716F005006EC3FD /* UIImageView+ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ECC6D52716F005006EC3FD /* UIImageView+ImageViewer.swift */; };
+		20ECC6D927170B51006EC3FD /* SampleImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ECC6D827170B51006EC3FD /* SampleImageViewerViewController.swift */; };
+		20ECC6DB27170B75006EC3FD /* SampleImageViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20ECC6DA27170B75006EC3FD /* SampleImageViewer.storyboard */; };
 		20EE95AA267C8641007270FD /* MediumRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE95A9267C8641007270FD /* MediumRootViewController.swift */; };
 		20EE95AC267C864D007270FD /* Medium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EE95AB267C864D007270FD /* Medium.storyboard */; };
 		20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2D524458A490054A935 /* HalfModalRootViewController.swift */; };
@@ -271,6 +273,8 @@
 		20E45820267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleKeyboardLayoutGuide.storyboard; sourceTree = "<group>"; };
 		20E45822267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleKeyboardLayoutGuideViewController.swift; sourceTree = "<group>"; };
 		20ECC6D52716F005006EC3FD /* UIImageView+ImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageViewer.swift"; sourceTree = "<group>"; };
+		20ECC6D827170B51006EC3FD /* SampleImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleImageViewerViewController.swift; sourceTree = "<group>"; };
+		20ECC6DA27170B75006EC3FD /* SampleImageViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleImageViewer.storyboard; sourceTree = "<group>"; };
 		20EE95A9267C8641007270FD /* MediumRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumRootViewController.swift; sourceTree = "<group>"; };
 		20EE95AB267C864D007270FD /* Medium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medium.storyboard; sourceTree = "<group>"; };
 		20F7D2D524458A490054A935 /* HalfModalRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalRootViewController.swift; sourceTree = "<group>"; };
@@ -664,6 +668,15 @@
 			path = SampleKeyboardLayoutGuide;
 			sourceTree = "<group>";
 		};
+		20ECC6D727170B33006EC3FD /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				20ECC6D827170B51006EC3FD /* SampleImageViewerViewController.swift */,
+				20ECC6DA27170B75006EC3FD /* SampleImageViewer.storyboard */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
 		20EE95A8267C8626007270FD /* MediumModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,6 +835,7 @@
 				2014E88427092680000DD97E /* MoveObject */,
 				201A4965270BE42F00563A1E /* BottomTab */,
 				201D871B2711233200D44C4D /* SampleMessage */,
+				20ECC6D727170B33006EC3FD /* ImageViewer */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1177,6 +1191,7 @@
 				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
 				9CCCA878224F39DF00FCAB03 /* Barcode2.storyboard in Resources */,
 				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
+				20ECC6DB27170B75006EC3FD /* SampleImageViewer.storyboard in Resources */,
 				9C78A299221481620036D3FD /* ScreenTransition.storyboard in Resources */,
 				9CB8082821F753C900DAD155 /* StatusBarPopup2ViewController.xib in Resources */,
 				20B015552436FCC1008DA31D /* SemiModal.storyboard in Resources */,
@@ -1380,6 +1395,7 @@
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				20BB2C9F243BFEDD00A5CC46 /* SemiModalCustomView.swift in Sources */,
+				20ECC6D927170B51006EC3FD /* SampleImageViewerViewController.swift in Sources */,
 				9CDB1B5822749E40004EFB68 /* AppState.swift in Sources */,
 				9CEB1C722195F6DB00ECF364 /* StackViewController.swift in Sources */,
 				20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */,
