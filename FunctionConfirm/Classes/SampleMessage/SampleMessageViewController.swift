@@ -263,6 +263,25 @@ extension SampleMessageViewController: MessageCellDelegate {
         messageInputBar.inputTextView.resignFirstResponder()
     }
 
+    func didTapImage(in cell: MessageCollectionViewCell) {
+        messageInputBar.inputTextView.resignFirstResponder()
+        guard let indexPath = messagesCollectionView.indexPath(for: cell),
+              let dataSource = messagesCollectionView.messagesDataSource,
+              let entity = dataSource.messageForItem(at: indexPath, in: messagesCollectionView) as? MessageEntity,
+              let image = entity.mediaItem?.image else { return }
+        let newImageView = UIImageView(image: image)
+        newImageView.frame = UIScreen.main.bounds
+        newImageView.backgroundColor = .black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+    }
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
+
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         messageInputBar.inputTextView.resignFirstResponder()
     }
