@@ -45,6 +45,8 @@
 		2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2032A71120DCDD680091952F /* CustomPickerView.xib */; };
 		2032A71420DCE0180091952F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A71320DCE0180091952F /* PickerViewController.swift */; };
 		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
+		2046257227174E2F00DD9564 /* SampleMessage2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2046257127174E2F00DD9564 /* SampleMessage2.storyboard */; };
+		2046257427174E4700DD9564 /* SampleMessage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046257327174E4700DD9564 /* SampleMessage2ViewController.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */; };
 		208A61C6243AE49300A64212 /* OldSemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */; };
@@ -251,6 +253,8 @@
 		2032A71120DCDD680091952F /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		2032A71320DCE0180091952F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		2046257127174E2F00DD9564 /* SampleMessage2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleMessage2.storyboard; sourceTree = "<group>"; };
+		2046257327174E4700DD9564 /* SampleMessage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessage2ViewController.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTransitioningDelegate.swift; sourceTree = "<group>"; };
 		208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldSemiModalPresentationController.swift; sourceTree = "<group>"; };
@@ -569,6 +573,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		2046257027174E1D00DD9564 /* SampleMessage2 */ = {
+			isa = PBXGroup;
+			children = (
+				2046257127174E2F00DD9564 /* SampleMessage2.storyboard */,
+				2046257327174E4700DD9564 /* SampleMessage2ViewController.swift */,
+			);
+			path = SampleMessage2;
+			sourceTree = "<group>";
+		};
 		20521A5020DF50A500621136 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,6 +848,7 @@
 				2014E88427092680000DD97E /* MoveObject */,
 				201A4965270BE42F00563A1E /* BottomTab */,
 				201D871B2711233200D44C4D /* SampleMessage */,
+				2046257027174E1D00DD9564 /* SampleMessage2 */,
 				20ECC6D727170B33006EC3FD /* ImageViewer */,
 			);
 			path = Classes;
@@ -1214,6 +1228,7 @@
 				9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
+				2046257227174E2F00DD9564 /* SampleMessage2.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				20A5142826ABC91200658C03 /* ClearNav.storyboard in Resources */,
 				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
@@ -1416,6 +1431,7 @@
 				9C78A29F221494090036D3FD /* RoundedCornerViewController.swift in Sources */,
 				9CE26456211A8FB300DD178E /* UIColor+Addition.swift in Sources */,
 				9CB8082A21F7540E00DAD155 /* StatusBarPopup2ViewController.swift in Sources */,
+				2046257427174E4700DD9564 /* SampleMessage2ViewController.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
 				201D8721271126DC00D44C4D /* MessageEntity.swift in Sources */,
 				201A4969270BE45F00563A1E /* BottomTabViewController.swift in Sources */,

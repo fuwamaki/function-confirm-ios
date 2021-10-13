@@ -26,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 32
+        return 33
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -156,6 +156,10 @@ extension MainViewController: UITableViewDataSource {
         } else if indexPath.row == 30 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "messageKitCell", for: indexPath)
             cell.textLabel?.text = "MessageKit"
+            return cell
+        } else if indexPath.row == 31 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "messageKit2Cell", for: indexPath)
+            cell.textLabel?.text = "MessageKit2"
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageViewerCell", for: indexPath)
@@ -295,6 +299,10 @@ extension MainViewController: UITableViewDelegate {
         case 30:
             let storyBoard = UIStoryboard(name: "SampleMessage", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleMessageContainerViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        case 31:
+            let storyBoard = UIStoryboard(name: "SampleMessage2", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleMessage2ViewController")
             navigationController?.pushViewController(viewController, animated: true)
         default:
             let storyBoard = UIStoryboard(name: "SampleImageViewer", bundle: nil)
