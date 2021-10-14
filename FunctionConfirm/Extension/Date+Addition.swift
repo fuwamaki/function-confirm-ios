@@ -22,12 +22,17 @@ extension Date {
     }
 }
 
-// TODO: 動作確認
 // MARK: Other Time
 extension Date {
     // ◯秒後
     func secondAfter(_ second: Int) -> Date {
         let day = Calendar.current.date(byAdding: .second, value: second, to: self)
+        return day!
+    }
+
+    // ◯秒前
+    func secondBefore(_ second: Int) -> Date {
+        let day = Calendar.current.date(byAdding: .second, value: -second, to: self)
         return day!
     }
 
@@ -37,9 +42,21 @@ extension Date {
         return day!
     }
 
+    // ◯分前
+    func minuteBefore(_ minute: Int) -> Date {
+        let day = Calendar.current.date(byAdding: .minute, value: -minute, to: self)
+        return day!
+    }
+
     // ◯時間後
     func hourAfter(_ hour: Int) -> Date {
         let day = Calendar.current.date(byAdding: .hour, value: hour, to: self)
+        return day!
+    }
+
+    // ◯時間前
+    func hourBefore(_ hour: Int) -> Date {
+        let day = Calendar.current.date(byAdding: .hour, value: -hour, to: self)
         return day!
     }
 
@@ -58,6 +75,16 @@ extension Date {
 
     var tomorrow: Date {
         let day = Calendar.current.date(byAdding: .day, value: 1, to: self)
+        return day!
+    }
+
+    var oneWeekBefore: Date {
+        let day = Calendar.current.date(byAdding: .day, value: -7, to: self)
+        return day!
+    }
+
+    var oneWeekAfter: Date {
+        let day = Calendar.current.date(byAdding: .day, value: 7, to: self)
         return day!
     }
 
