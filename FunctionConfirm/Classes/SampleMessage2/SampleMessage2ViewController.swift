@@ -11,16 +11,17 @@ import SafariServices
 import MessageKit
 import InputBarAccessoryView
 import ImageViewer
+import PhotosUI
 
 final class SampleMessage2ViewController: MessagesViewController {
 
-    private lazy var photoLibraryPicker: UIImagePickerController = {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        return imagePicker
-    }()
+//    private lazy var photoLibraryPicker: UIImagePickerController = {
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = .photoLibrary
+//        imagePicker.allowsEditing = true
+//        imagePicker.delegate = self
+//        return imagePicker
+//    }()
 
     private var displaceableImageView: UIImageView?
     private var messageList: [MessageEntity] = [] {
@@ -85,7 +86,11 @@ final class SampleMessage2ViewController: MessagesViewController {
                 $0.image = UIImage(systemName: "paperclip")
                 $0.setSize(CGSize(width: 24.0, height: 36.0), animated: false)
                 $0.onTouchUpInside { [unowned self] _ in
-                    self.present(photoLibraryPicker, animated: true, completion: nil)
+//                    self.present(photoLibraryPicker, animated: true, completion: nil)
+                    let configuration = PHPickerConfiguration(photoLibrary: .shared())
+                    let picker = PHPickerViewController(configuration: configuration)
+                    picker.delegate = self
+                    self.present(picker, animated: true)
                 }
             }
         messageInputBar.setStackViewItems([clipBarButtonItem, .flexibleSpace], forStack: .left, animated: false)
@@ -94,24 +99,44 @@ final class SampleMessage2ViewController: MessagesViewController {
     }
 }
 
-// MARK: UIImagePickerControllerDelegate
-extension SampleMessage2ViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(
-        _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
-    ) {
+// MARK: PHPickerViewControllerDelegate
+extension SampleMessage2ViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("couldn't load image from Photos")
+        results.forEach {
+            guard $0.itemProvider.canLoadObject(ofClass: UIImage.self) else { return }
+            $0.itemProvider.loadObject(ofClass: UIImage.self) {  [weak self] newImage, error in
+                if let error = error {
+                    debugPrint(error.localizedDescription)
+                } else if let image = newImage as? UIImage {
+                    DispatchQueue.main.async {
+                        let entity = MessageEntity.new(my: image)
+                        self?.messageList.append(entity)
+                    }
+                }
+            }
         }
-        let entity = MessageEntity.new(my: image)
-        messageList.append(entity)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }
+
+// MARK: UIImagePickerControllerDelegate
+//extension SampleMessage2ViewController: UIImagePickerControllerDelegate {
+//    func imagePickerController(
+//        _ picker: UIImagePickerController,
+//        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+//    ) {
+//        picker.dismiss(animated: true, completion: nil)
+//        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+//            fatalError("couldn't load image from Photos")
+//        }
+//        let entity = MessageEntity.new(my: image)
+//        messageList.append(entity)
+//    }
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//}
 
 // MARK: UINavigationControllerDelegate
 extension SampleMessage2ViewController: UINavigationControllerDelegate {}

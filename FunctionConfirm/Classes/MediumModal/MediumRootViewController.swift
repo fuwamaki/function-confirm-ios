@@ -23,7 +23,9 @@ final class MediumRootViewController: UIViewController {
     }
 
     private lazy var phpickerViewController: PHPickerViewController = {
-        let configuration = PHPickerConfiguration()
+        var configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+        configuration.filter = .images
+        configuration.selectionLimit = 1
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         return picker
@@ -36,7 +38,11 @@ final class MediumRootViewController: UIViewController {
 
 // MARK: PHPickerViewControllerDelegate
 extension MediumRootViewController: PHPickerViewControllerDelegate {
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+    func picker(
+        _ picker: PHPickerViewController,
+        didFinishPicking results: [PHPickerResult]
+    ) {
+        picker.dismiss(animated: true, completion: nil)
         results.forEach { result in
             result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] item, error in
                 if let error = error {
