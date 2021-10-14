@@ -244,7 +244,7 @@ extension SampleMessage2ViewController: MessagesDisplayDelegate {
         at indexPath: IndexPath
     ) -> [NSAttributedString.Key: Any] {
         switch detector {
-        case .url:
+        case .url, .phoneNumber:
             return [.foregroundColor: UIColor.systemYellow]
         default:
             return MessageLabel.defaultAttributes
@@ -256,7 +256,7 @@ extension SampleMessage2ViewController: MessagesDisplayDelegate {
         at indexPath: IndexPath,
         in messagesCollectionView: MessagesCollectionView
     ) -> [DetectorType] {
-        return [.url]
+        return [.url, .phoneNumber]
     }
 }
 
