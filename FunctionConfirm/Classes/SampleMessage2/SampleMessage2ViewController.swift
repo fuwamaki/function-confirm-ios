@@ -22,8 +22,13 @@ final class SampleMessage2ViewController: MessagesViewController {
         return imagePicker
     }()
 
-    private var messageList: [MessageEntity] = []
     private var displaceableImageView: UIImageView?
+    private var messageList: [MessageEntity] = [] {
+        didSet {
+            messagesCollectionView.reloadData()
+            messagesCollectionView.scrollToLastItem(at: .bottom, animated: true)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +48,6 @@ final class SampleMessage2ViewController: MessagesViewController {
                 .filter { !$0.isMe }
                 .first?
                 .userName
-            self.messagesCollectionView.reloadData()
-            self.messagesCollectionView.scrollToLastItem(at: .bottom, animated: false)
         }
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -103,8 +106,6 @@ extension SampleMessage2ViewController: UIImagePickerControllerDelegate {
         }
         let entity = MessageEntity.new(my: image)
         messageList.append(entity)
-        messagesCollectionView.reloadData()
-        messagesCollectionView.scrollToLastItem()
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -354,8 +355,6 @@ extension SampleMessage2ViewController: InputBarAccessoryViewDelegate {
         let entity = MessageEntity.new(my: text)
         messageList.append(entity)
         messageInputBar.inputTextView.text = String()
-        messagesCollectionView.reloadData()
-        messagesCollectionView.scrollToLastItem()
     }
 
     func inputBar(
