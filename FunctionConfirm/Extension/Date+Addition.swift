@@ -117,7 +117,11 @@ extension Date {
     }
 
     var weekDayIndex: Int {
-        return (Calendar.current as NSCalendar).components( .weekday, from: self).weekday!
+        let weekday = (Calendar.current as NSCalendar)
+            .components( .weekday, from: self)
+            .weekday!
+        // index値を1-7から0-6に変換
+        return weekday - 1
     }
 
     var weekDay: WeekDay {
