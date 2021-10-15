@@ -58,6 +58,21 @@ final class SampleMessageViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.register(
+            MessageHeaderReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
+        messagesCollectionView.backgroundColor = UIColor.secondarySystemBackground
+        let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout
+        layout?.setMessageOutgoingAvatarPosition(AvatarPosition(vertical: .messageLabelTop))
+        layout?.setMessageIncomingAvatarPosition(AvatarPosition(vertical: .messageLabelTop))
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.showKeyboard(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+    }
+
+    private func setupMessageInputBar() {
         messageInputBar.delegate = self
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
@@ -81,19 +96,6 @@ final class SampleMessageViewController: MessagesViewController {
         messageInputBar.setStackViewItems([clipBarButtonItem, .flexibleSpace], forStack: .left, animated: false)
         messageInputBar.setLeftStackViewWidthConstant(to: 36.0, animated: false)
         messageInputBar.setRightStackViewWidthConstant(to: 36.0, animated: false)
-
-        messagesCollectionView.register(
-            MessageHeaderReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
-        messagesCollectionView.backgroundColor = UIColor.secondarySystemBackground
-        let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout
-        layout?.setMessageOutgoingAvatarPosition(AvatarPosition(vertical: .messageLabelTop))
-        layout?.setMessageIncomingAvatarPosition(AvatarPosition(vertical: .messageLabelTop))
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.showKeyboard(_:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
     }
 }
 
