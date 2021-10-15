@@ -37,6 +37,7 @@ final class SampleMessageViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupMessageInputBar()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -47,10 +48,12 @@ final class SampleMessageViewController: MessagesViewController {
     private func setupViews() {
         DispatchQueue.main.async {
             self.messageList = MessageEntity.mockMessages
-            self.title = self.messageList
-                .filter { !$0.isMe }
-                .first?
-                .userName
+            if let parent = self.parent as? SampleMessageContainerViewController {
+                parent.title = self.messageList
+                    .filter { !$0.isMe }
+                    .first?
+                    .userName
+            }
             self.messagesCollectionView.reloadData()
             self.messagesCollectionView.scrollToLastItem(at: .bottom, animated: false)
         }
