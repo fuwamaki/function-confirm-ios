@@ -8,29 +8,30 @@
 
 import MessageKit
 
+enum MessageKindType {
+    case text(message: String)
+    case image(mediaItem: MessageMediaEntity)
+}
+
 struct MessageEntity: MessageType {
     var userId: Int
     var userName: String
     var iconImageUrl: URL?
-    var message: String?
     var isMarkAsRead: Bool
-    // MARK: Media
-    var mediaItem: MessageMediaEntity?
-    // MARK: MessageType
     var messageId: String
     var sentDate: Date
+    var kindType: MessageKindType
 
     var kind: MessageKind {
-        if let mediaItem = mediaItem {
-            return .photo(mediaItem)
-        } else {
+        switch kindType {
+        case .text(let message):
             return .attributedText(NSAttributedString(
-                string: message!,
+                string: message,
                 attributes: [.font: UIFont.systemFont(ofSize: 14.0),
-                             .foregroundColor: isMe
-                                ? UIColor.white
-                                : UIColor.label]
+                             .foregroundColor: isMe ? UIColor.white : UIColor.label]
             ))
+        case .image(let mediaItem):
+            return .photo(mediaItem)
         }
     }
 
@@ -55,11 +56,10 @@ struct MessageEntity: MessageType {
             userId: 0,
             userName: "自分",
             iconImageUrl: myIconImageUrl,
-            message: message,
             isMarkAsRead: isMarkAsRead,
-            mediaItem: nil,
             messageId: UUID().uuidString,
-            sentDate: date)
+            sentDate: date,
+            kindType: .text(message: message))
     }
 
     static func new(my media: UIImage,
@@ -69,11 +69,10 @@ struct MessageEntity: MessageType {
             userId: 0,
             userName: "自分",
             iconImageUrl: myIconImageUrl,
-            message: nil,
             isMarkAsRead: isMarkAsRead,
-            mediaItem: MessageMediaEntity.new(image: media),
             messageId: UUID().uuidString,
-            sentDate: date)
+            sentDate: date,
+            kindType: .image(mediaItem: MessageMediaEntity.new(image: media)))
     }
 
     static func new(other message: String,
@@ -82,11 +81,10 @@ struct MessageEntity: MessageType {
             userId: 1,
             userName: "相手",
             iconImageUrl: otherIconImageUrl,
-            message: message,
             isMarkAsRead: true,
-            mediaItem: nil,
             messageId: UUID().uuidString,
-            sentDate: date)
+            sentDate: date,
+            kindType: .text(message: message))
     }
 
     // MARK: MockData
