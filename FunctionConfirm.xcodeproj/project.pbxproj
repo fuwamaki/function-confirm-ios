@@ -33,6 +33,10 @@
 		201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201E42D6251357DF00C9917C /* Alarm.storyboard */; };
 		201E42D92513590D00C9917C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42D82513590D00C9917C /* Alarm.swift */; };
 		201E42DB251361D200C9917C /* AlarmPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E42DA251361D200C9917C /* AlarmPickerView.swift */; };
+		20236CA2271FD1E500B4AA43 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20236CA1271FD1E500B4AA43 /* SegueViewController.swift */; };
+		20236CA4271FD1F500B4AA43 /* Segue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20236CA3271FD1F500B4AA43 /* Segue.storyboard */; };
+		20236CA6271FD90900B4AA43 /* SegueAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20236CA5271FD90900B4AA43 /* SegueAViewController.swift */; };
+		20236CA8271FD98600B4AA43 /* SegueA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20236CA7271FD98600B4AA43 /* SegueA.storyboard */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -235,6 +239,10 @@
 		201E42D6251357DF00C9917C /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		201E42D82513590D00C9917C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		201E42DA251361D200C9917C /* AlarmPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPickerView.swift; sourceTree = "<group>"; };
+		20236CA1271FD1E500B4AA43 /* SegueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
+		20236CA3271FD1F500B4AA43 /* Segue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Segue.storyboard; sourceTree = "<group>"; };
+		20236CA5271FD90900B4AA43 /* SegueAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueAViewController.swift; sourceTree = "<group>"; };
+		20236CA7271FD98600B4AA43 /* SegueA.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SegueA.storyboard; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +498,17 @@
 				201E42DA251361D200C9917C /* AlarmPickerView.swift */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		20236CA0271FD1BB00B4AA43 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				20236CA1271FD1E500B4AA43 /* SegueViewController.swift */,
+				20236CA3271FD1F500B4AA43 /* Segue.storyboard */,
+				20236CA5271FD90900B4AA43 /* SegueAViewController.swift */,
+				20236CA7271FD98600B4AA43 /* SegueA.storyboard */,
+			);
+			path = Segue;
 			sourceTree = "<group>";
 		};
 		2032A6CC20DCC9E50091952F = {
@@ -850,6 +869,7 @@
 				201D871B2711233200D44C4D /* SampleMessage */,
 				2046257027174E1D00DD9564 /* SampleMessage2 */,
 				20ECC6D727170B33006EC3FD /* ImageViewer */,
+				20236CA0271FD1BB00B4AA43 /* Segue */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1231,6 +1251,7 @@
 				2046257227174E2F00DD9564 /* SampleMessage2.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				20A5142826ABC91200658C03 /* ClearNav.storyboard in Resources */,
+				20236CA4271FD1F500B4AA43 /* Segue.storyboard in Resources */,
 				9C69834B22700E3700DC8C93 /* CameraMainFunction.storyboard in Resources */,
 				20E35066232A29090057A561 /* TimerView.storyboard in Resources */,
 				2032A6E320DCC9E70091952F /* Assets.xcassets in Resources */,
@@ -1246,6 +1267,7 @@
 				20F7D2DA24458A7C0054A935 /* HalfModalRoot.storyboard in Resources */,
 				9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */,
 				9C62DA3C227C4BA4002DEA7C /* MVVMViewController.storyboard in Resources */,
+				20236CA8271FD98600B4AA43 /* SegueA.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1374,6 +1396,7 @@
 				9C62DA41227C4BA4002DEA7C /* ItemAPIRequestRx.swift in Sources */,
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
+				20236CA2271FD1E500B4AA43 /* SegueViewController.swift in Sources */,
 				9C78A2AE22152C5F0036D3FD /* AnimationFourthViewController.swift in Sources */,
 				9C5EBBBA213F6B360085B838 /* ItemRequest.swift in Sources */,
 				9C78A2A42214990A0036D3FD /* AnimationFirstViewController.swift in Sources */,
@@ -1474,6 +1497,7 @@
 				201D872B2711611C00D44C4D /* UIImageView+PinRemoteImage.swift in Sources */,
 				9C096C43211C26C8008DB26D /* RESTfulAPIRequest.swift in Sources */,
 				20F7D2EE2445A2970054A935 /* SemiModalHeight.swift in Sources */,
+				20236CA6271FD90900B4AA43 /* SegueAViewController.swift in Sources */,
 				9C62DA3D227C4BA4002DEA7C /* MVVMListViewModel.swift in Sources */,
 				9C78A2B422194BC50036D3FD /* AnimationSeventhViewController.swift in Sources */,
 				208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */,
