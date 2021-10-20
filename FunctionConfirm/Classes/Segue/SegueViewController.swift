@@ -21,7 +21,15 @@ final class SegueViewController: UIViewController {
         present(navigationController, animated: true, completion: nil)
     }
 
+    @IBOutlet weak var textLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension SegueViewController {
+    func testSample(text: String?) {
+        textLabel.text = text
     }
 }

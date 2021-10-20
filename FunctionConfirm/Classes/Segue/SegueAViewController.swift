@@ -20,5 +20,25 @@ final class SegueAViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
+    }
+
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if let viewController = self.presentingViewController as? SegueViewController {
+//            viewController.testSample(text: inputTextField.text)
+//        }
+//    }
+}
+
+extension SegueAViewController: UINavigationControllerDelegate {
+    func navigationController(
+        _ navigationController: UINavigationController,
+        willShow viewController: UIViewController,
+        animated: Bool
+    ) {
+        if let viewController = viewController as? SegueViewController {
+            viewController.testSample(text: inputTextField.text)
+        }
     }
 }
