@@ -13,7 +13,7 @@ final class PresentTransitionFromRightViewController: UIViewController {
 
     @IBAction private func clickShowModalButton(_ sender: Any) {
         let viewController = TestFirstViewController.make()
-        presentPanModal(viewController)
+        present(viewController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
