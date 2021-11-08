@@ -192,6 +192,8 @@
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
 		CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */; };
+		DDE191752738A75400366BC1 /* Math.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE191742738A75400366BC1 /* Math.storyboard */; };
+		DDE191772738A75F00366BC1 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191762738A75F00366BC1 /* MathViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,6 +409,8 @@
 		9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.release.xcconfig"; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
 		BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DDE191742738A75400366BC1 /* Math.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Math.storyboard; sourceTree = "<group>"; };
+		DDE191762738A75F00366BC1 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -870,6 +874,7 @@
 				2046257027174E1D00DD9564 /* SampleMessage2 */,
 				20ECC6D727170B33006EC3FD /* ImageViewer */,
 				20236CA0271FD1BB00B4AA43 /* Segue */,
+				DDE191732738A73F00366BC1 /* Math */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1098,6 +1103,15 @@
 			path = CodeOnlyPickerView;
 			sourceTree = "<group>";
 		};
+		DDE191732738A73F00366BC1 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				DDE191762738A75F00366BC1 /* MathViewController.swift */,
+				DDE191742738A75400366BC1 /* Math.storyboard */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 		F7CFB3FF5DBC8E92B546F54E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1247,7 @@
 				20037F9724291058009D5CF5 /* TestFirst.storyboard in Resources */,
 				201A4967270BE45100563A1E /* BottomTab.storyboard in Resources */,
 				9CD30C8221F7149A00D6184A /* StatusBarPopupViewController.xib in Resources */,
+				DDE191752738A75400366BC1 /* Math.storyboard in Resources */,
 				9C91E4B42209DD490021E1BC /* AWSRekognition.storyboard in Resources */,
 				20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */,
 				9CCC0AF921199EFD007EFE26 /* MVP.storyboard in Resources */,
@@ -1430,6 +1445,7 @@
 				20F7D2E624459BDC0054A935 /* SemiModalPresentationController.swift in Sources */,
 				9CFF6AB321E49AE100E4097A /* CodeOnlyPickerView.swift in Sources */,
 				20B0155D243702F7008DA31D /* SemiModalTestTableCell.swift in Sources */,
+				DDE191772738A75F00366BC1 /* MathViewController.swift in Sources */,
 				9CDB1B5022749A72004EFB68 /* ReViewController.swift in Sources */,
 				9C096C45211C26E8008DB26D /* Item.swift in Sources */,
 				20BB2C9F243BFEDD00A5CC46 /* SemiModalCustomView.swift in Sources */,
