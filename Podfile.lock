@@ -8,6 +8,7 @@ PODS:
   - InputBarAccessoryView (5.4.0):
     - InputBarAccessoryView/Core (= 5.4.0)
   - InputBarAccessoryView/Core (5.4.0)
+  - iosMath (0.9.4)
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - AWSRekognition (~> 2.19.1)
   - Cartography (~> 4.0.0)
   - ImageViewer (~> 6.0)
+  - iosMath (~> 0.9.4)
   - KRProgressHUD (~> 3.4.4)
   - MessageKit (~> 3.7.0)
   - PanModal
@@ -66,6 +68,7 @@ SPEC REPOS:
     - Cartography
     - ImageViewer
     - InputBarAccessoryView
+    - iosMath
     - KRActivityIndicatorView
     - KRProgressHUD
     - MessageKit
@@ -88,6 +91,7 @@ SPEC CHECKSUMS:
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   ImageViewer: cb88ef1c0ba19161bc10702adfdcebc116a7a59d
   InputBarAccessoryView: 74d471ab1fa1736806be50328df79257e52865a9
+  iosMath: f7a6cbadf9d836d2149c2a84c435b1effc244cba
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   MessageKit: 8e76dd8d65ad44b49e1651c673497146416461e9
@@ -103,6 +107,6 @@ SPEC CHECKSUMS:
   RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: c357dd0074d8f255db3801435b965f7576320c78
+PODFILE CHECKSUM: 274ddddf6f7341afa4533ddcddc673855b5aee35
 
 COCOAPODS: 1.11.2

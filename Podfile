@@ -25,6 +25,7 @@ target 'FunctionConfirm' do
   pod 'MessageKit', '~> 3.7.0'
   pod 'PINRemoteImage', '~> 3.0'
   pod 'ImageViewer', '~> 6.0'
+  pod 'iosMath', '~> 0.9.4'
 
   target 'FunctionConfirmTests' do
     inherit! :search_paths
