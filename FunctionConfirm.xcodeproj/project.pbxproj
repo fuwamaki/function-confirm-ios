@@ -195,7 +195,7 @@
 		DDE191752738A75400366BC1 /* Math.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE191742738A75400366BC1 /* Math.storyboard */; };
 		DDE191772738A75F00366BC1 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191762738A75F00366BC1 /* MathViewController.swift */; };
 		DDE191792738ED6C00366BC1 /* KatexMathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191782738ED6C00366BC1 /* KatexMathView.swift */; };
-		DDE1917B2738F16700366BC1 /* katex in Resources */ = {isa = PBXBuildFile; fileRef = DDE1917A2738F16700366BC1 /* katex */; };
+		DDE1917D2738F86600366BC1 /* katex in Resources */ = {isa = PBXBuildFile; fileRef = DDE1917C2738F86600366BC1 /* katex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -414,7 +414,7 @@
 		DDE191742738A75400366BC1 /* Math.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Math.storyboard; sourceTree = "<group>"; };
 		DDE191762738A75F00366BC1 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		DDE191782738ED6C00366BC1 /* KatexMathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexMathView.swift; sourceTree = "<group>"; };
-		DDE1917A2738F16700366BC1 /* katex */ = {isa = PBXFileReference; lastKnownFileType = folder; name = katex; path = "../../../../../Downloads/KaTeX-MathView-Swift-master/katex"; sourceTree = "<group>"; };
+		DDE1917C2738F86600366BC1 /* katex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = katex; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1110,7 +1110,7 @@
 		DDE191732738A73F00366BC1 /* Math */ = {
 			isa = PBXGroup;
 			children = (
-				DDE1917A2738F16700366BC1 /* katex */,
+				DDE1917C2738F86600366BC1 /* katex */,
 				DDE191762738A75F00366BC1 /* MathViewController.swift */,
 				DDE191782738ED6C00366BC1 /* KatexMathView.swift */,
 				DDE191742738A75400366BC1 /* Math.storyboard */,
@@ -1266,7 +1266,7 @@
 				201D871D2711235400D44C4D /* SampleMessage.storyboard in Resources */,
 				9CEB1C702195F6A200ECF364 /* StackView.storyboard in Resources */,
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
-				DDE1917B2738F16700366BC1 /* katex in Resources */,
+				DDE1917D2738F86600366BC1 /* katex in Resources */,
 				9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
