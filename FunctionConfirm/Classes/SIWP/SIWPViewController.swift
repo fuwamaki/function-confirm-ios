@@ -95,18 +95,18 @@ extension SIWPViewController: ASAuthorizationControllerDelegate {
         controller: ASAuthorizationController,
         didCompleteWithAuthorization authorization: ASAuthorization
     ) {
-        guard let nonce = appleAuthNonce else {
-            fatalError("Invalid state: A login callback was received, but no login request was sent.")
-        }
-        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
-              let appleIDToken = appleIDCredential.identityToken else {
-            print("Unable to fetch identity token")
-            return
-        }
-        guard let idToken = String(data: appleIDToken, encoding: .utf8) else {
-            print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
-            return
-        }
+//        guard let nonce = appleAuthNonce else {
+//            fatalError("Invalid state: A login callback was received, but no login request was sent.")
+//        }
+//        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
+//              let appleIDToken = appleIDCredential.identityToken else {
+//            print("Unable to fetch identity token")
+//            return
+//        }
+//        guard let idToken = String(data: appleIDToken, encoding: .utf8) else {
+//            print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+//            return
+//        }
         // idTokenとnonceを用いてサーバにAuth情報を保存
     }
 
