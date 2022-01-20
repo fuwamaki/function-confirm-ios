@@ -194,6 +194,8 @@
 		CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */; };
 		DD27A44C2798F7E1008FBD84 /* SIWPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27A44B2798F7E1008FBD84 /* SIWPViewController.swift */; };
 		DD27A44E2798F7EC008FBD84 /* SIWP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD27A44D2798F7EC008FBD84 /* SIWP.storyboard */; };
+		DD27A4502798FBFF008FBD84 /* UIView+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27A44F2798FBFF008FBD84 /* UIView+Addition.swift */; };
+		DD27A4522799088E008FBD84 /* UITraitCollection+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27A4512799088E008FBD84 /* UITraitCollection+Addition.swift */; };
 		DDE191752738A75400366BC1 /* Math.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE191742738A75400366BC1 /* Math.storyboard */; };
 		DDE191772738A75F00366BC1 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191762738A75F00366BC1 /* MathViewController.swift */; };
 		DDE191792738ED6C00366BC1 /* KatexMathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191782738ED6C00366BC1 /* KatexMathView.swift */; };
@@ -415,6 +417,9 @@
 		BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD27A44B2798F7E1008FBD84 /* SIWPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIWPViewController.swift; sourceTree = "<group>"; };
 		DD27A44D2798F7EC008FBD84 /* SIWP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SIWP.storyboard; sourceTree = "<group>"; };
+		DD27A44F2798FBFF008FBD84 /* UIView+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Addition.swift"; sourceTree = "<group>"; };
+		DD27A4512799088E008FBD84 /* UITraitCollection+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITraitCollection+Addition.swift"; sourceTree = "<group>"; };
+		DD27A45327990FB8008FBD84 /* FunctionConfirm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FunctionConfirm.entitlements; sourceTree = "<group>"; };
 		DDE191742738A75400366BC1 /* Math.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Math.storyboard; sourceTree = "<group>"; };
 		DDE191762738A75F00366BC1 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		DDE191782738ED6C00366BC1 /* KatexMathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexMathView.swift; sourceTree = "<group>"; };
@@ -548,6 +553,7 @@
 		2032A6D720DCC9E50091952F /* FunctionConfirm */ = {
 			isa = PBXGroup;
 			children = (
+				DD27A45327990FB8008FBD84 /* FunctionConfirm.entitlements */,
 				2032A6E720DCC9E70091952F /* Info.plist */,
 				2032A70920DCCA5D0091952F /* AppDelegate */,
 				2032A70A20DCCA750091952F /* Main */,
@@ -619,6 +625,7 @@
 				9CE26455211A8FB300DD178E /* UIColor+Addition.swift */,
 				9C660DFB21DF5E54003BF811 /* UIImage+Color.swift */,
 				9C660DF021DD45F3003BF811 /* UIStoryboard+Name.swift */,
+				DD27A4512799088E008FBD84 /* UITraitCollection+Addition.swift */,
 				9CE2644F211A890900DD178E /* UITableView+Addition.swift */,
 				9CE26451211A894100DD178E /* UITableViewCell+Addition.swift */,
 				9CE26453211A896C00DD178E /* UITableViewHeaderFooterView+Addition.swift */,
@@ -627,6 +634,7 @@
 				201D87242711299900D44C4D /* Date+Addition.swift */,
 				201D872627112D2900D44C4D /* DateFormatter+Addition.swift */,
 				201619DD26B7DAC8003F4EE3 /* UIViewController+Addition.swift */,
+				DD27A44F2798FBFF008FBD84 /* UIView+Addition.swift */,
 				201D872A2711611C00D44C4D /* UIImageView+PinRemoteImage.swift */,
 				20ECC6D52716F005006EC3FD /* UIImageView+ImageViewer.swift */,
 			);
@@ -1431,6 +1439,7 @@
 				7B67233520E1E72800D8A5A3 /* QiitaListModel.swift in Sources */,
 				9CCCA87A224F39E900FCAB03 /* Barcode2ViewController.swift in Sources */,
 				9C62DA41227C4BA4002DEA7C /* ItemAPIRequestRx.swift in Sources */,
+				DD27A4522799088E008FBD84 /* UITraitCollection+Addition.swift in Sources */,
 				9CD30C7621F6FCDE00D6184A /* StatusBarInNavigationViewController.swift in Sources */,
 				9CD30C7C21F6FE8E00D6184A /* StatusBarFirstViewController.swift in Sources */,
 				20236CA2271FD1E500B4AA43 /* SegueViewController.swift in Sources */,
@@ -1525,6 +1534,7 @@
 				9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */,
 				9C660DFC21DF5E54003BF811 /* UIImage+Color.swift in Sources */,
 				9CD30C8021F7100B00D6184A /* UINavigationController+StatusBarStyle.swift in Sources */,
+				DD27A4502798FBFF008FBD84 /* UIView+Addition.swift in Sources */,
 				9CB8082421F716AB00DAD155 /* StatusBarPopupViewController.swift in Sources */,
 				2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */,
 				201D872727112D2900D44C4D /* DateFormatter+Addition.swift in Sources */,
@@ -1725,6 +1735,7 @@
 			baseConfigurationReference = 36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FunctionConfirm/FunctionConfirm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98UFL8A7L4;
 				INFOPLIST_FILE = FunctionConfirm/Info.plist;
@@ -1744,6 +1755,7 @@
 			baseConfigurationReference = B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FunctionConfirm/FunctionConfirm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98UFL8A7L4;
 				INFOPLIST_FILE = FunctionConfirm/Info.plist;
