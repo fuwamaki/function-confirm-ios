@@ -192,6 +192,8 @@
 		9CFF6AB921E4A1AC00E4097A /* CodeOnlyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF6AB821E4A1AC00E4097A /* CodeOnlyPickerViewController.swift */; };
 		BD6A22A11BDA32E731DB140D /* Pods_FunctionConfirmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB16365F1F8113A9AD28629 /* Pods_FunctionConfirmTests.framework */; };
 		CC1A8292F287035F7AB0A2D9 /* Pods_FunctionConfirm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86185E7441591B25CBAF36FE /* Pods_FunctionConfirm.framework */; };
+		DD27A44C2798F7E1008FBD84 /* SIWPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27A44B2798F7E1008FBD84 /* SIWPViewController.swift */; };
+		DD27A44E2798F7EC008FBD84 /* SIWP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD27A44D2798F7EC008FBD84 /* SIWP.storyboard */; };
 		DDE191752738A75400366BC1 /* Math.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE191742738A75400366BC1 /* Math.storyboard */; };
 		DDE191772738A75F00366BC1 /* MathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191762738A75F00366BC1 /* MathViewController.swift */; };
 		DDE191792738ED6C00366BC1 /* KatexMathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE191782738ED6C00366BC1 /* KatexMathView.swift */; };
@@ -411,6 +413,8 @@
 		9F999D8D35C57390F5AF55FA /* Pods-FunctionConfirmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.release.xcconfig"; sourceTree = "<group>"; };
 		B0EF827F6E003F3185FD0CCE /* Pods-FunctionConfirm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.release.xcconfig"; sourceTree = "<group>"; };
 		BD616033D16449827D6A695F /* Pods-FunctionConfirmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirmTests/Pods-FunctionConfirmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD27A44B2798F7E1008FBD84 /* SIWPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIWPViewController.swift; sourceTree = "<group>"; };
+		DD27A44D2798F7EC008FBD84 /* SIWP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SIWP.storyboard; sourceTree = "<group>"; };
 		DDE191742738A75400366BC1 /* Math.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Math.storyboard; sourceTree = "<group>"; };
 		DDE191762738A75F00366BC1 /* MathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathViewController.swift; sourceTree = "<group>"; };
 		DDE191782738ED6C00366BC1 /* KatexMathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexMathView.swift; sourceTree = "<group>"; };
@@ -879,6 +883,7 @@
 				20ECC6D727170B33006EC3FD /* ImageViewer */,
 				20236CA0271FD1BB00B4AA43 /* Segue */,
 				DDE191732738A73F00366BC1 /* Math */,
+				DD27A44A2798F7B1008FBD84 /* SIWP */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1107,6 +1112,15 @@
 			path = CodeOnlyPickerView;
 			sourceTree = "<group>";
 		};
+		DD27A44A2798F7B1008FBD84 /* SIWP */ = {
+			isa = PBXGroup;
+			children = (
+				DD27A44B2798F7E1008FBD84 /* SIWPViewController.swift */,
+				DD27A44D2798F7EC008FBD84 /* SIWP.storyboard */,
+			);
+			path = SIWP;
+			sourceTree = "<group>";
+		};
 		DDE191732738A73F00366BC1 /* Math */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1294,7 @@
 				2009FE2D25133472000D81FB /* Speech.storyboard in Resources */,
 				20037F9324290EAC009D5CF5 /* PresentTransitionFromRight.storyboard in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
+				DD27A44E2798F7EC008FBD84 /* SIWP.storyboard in Resources */,
 				20E109A426CF8465004ABA4A /* HorizontalPage.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
 				9CD30C7421F6FCCB00D6184A /* StatusBarInNavigation.storyboard in Resources */,
@@ -1481,6 +1496,7 @@
 				DDE191792738ED6C00366BC1 /* KatexMathView.swift in Sources */,
 				7B67233D20E200FF00D8A5A3 /* QiitaListRequest.swift in Sources */,
 				201D8721271126DC00D44C4D /* MessageEntity.swift in Sources */,
+				DD27A44C2798F7E1008FBD84 /* SIWPViewController.swift in Sources */,
 				201A4969270BE45F00563A1E /* BottomTabViewController.swift in Sources */,
 				201D8729271132E300D44C4D /* MessageHeaderReusableView.swift in Sources */,
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
