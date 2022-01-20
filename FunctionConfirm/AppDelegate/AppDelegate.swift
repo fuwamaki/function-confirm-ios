@@ -25,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             region: .USWest2,
             credentialsProvider: credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
+
+        // setup Views
+        UINavigationBar.appearance().standardAppearance = UINavigationBarAppearance()
+        UINavigationBar.appearance().scrollEdgeAppearance = UINavigationBarAppearance()
+        UINavigationBar.appearance().compactAppearance = UINavigationBarAppearance()
+        if #available(iOS 15.0, *) {
+            UINavigationBar.appearance().compactScrollEdgeAppearance = UINavigationBarAppearance()
+        }
+
         return true
     }
 
