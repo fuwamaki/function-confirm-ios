@@ -54,4 +54,8 @@ final class CodeOnlyPickerView: UIView {
             datePicker.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
+
+    func update(_ date: Date) {
+        datePicker.date = date
+    }
 }

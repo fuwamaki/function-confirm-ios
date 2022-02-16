@@ -12,6 +12,8 @@ final class CodeOnlyPickerViewController: UIViewController {
 
     @IBOutlet private weak var textField: UITextField!
     @IBAction private func clickUpdateButton(_ sender: Any) {
+        let date = dateFormatter.date(from: "2022/12/12 12:12")!
+        datePickerView.update(date)
     }
 
     private lazy var toolbar: UIToolbar = {
@@ -38,13 +40,14 @@ final class CodeOnlyPickerViewController: UIViewController {
         return formatter
     }()
 
+    private let datePickerView = CodeOnlyPickerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
     }
 
     func setupDatePicker() {
-        let datePickerView = CodeOnlyPickerView()
         datePickerView.setup(delegate: self)
         textField.inputView = datePickerView
         textField.inputAccessoryView = toolbar
