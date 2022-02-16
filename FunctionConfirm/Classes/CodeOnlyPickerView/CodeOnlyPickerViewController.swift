@@ -10,36 +10,47 @@ import UIKit
 
 final class CodeOnlyPickerViewController: UIViewController {
 
-    @IBOutlet weak var textField: UITextField!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "Picker動作"
-        setupDatePicker()
-        setupDoneToolBar()
+    @IBOutlet private weak var textField: UITextField!
+    @IBAction private func clickUpdateButton(_ sender: Any) {
     }
 
-    func setupDatePicker() {
-        let datePickerView = CodeOnlyPickerView()
-        textField.inputView = datePickerView
-        datePickerView.datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
-    }
+    private lazy var toolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let toolbarButton = UIBarButtonItem(
+            title: "Done",
+            style: .plain,
+            target: self,
+            action: #selector(doneButtonAction)
+        )
+        toolbar.items = [space, toolbarButton]
+        return toolbar
+    }()
 
-    func setupDoneToolBar() {
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(doneButtonAction))
-        toolBar.items = [toolBarBtn]
-        textField.inputAccessoryView = toolBar
-    }
-
-    @objc func datePickerValueChanged(sender: UIDatePicker) {
+    @objc private func datePickerValueChanged(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         textField.text = dateFormatter.string(from: sender.date)
     }
 
-    @objc func doneButtonAction() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupDatePicker()
+    }
+
+    func setupDatePicker() {
+        let datePickerView = CodeOnlyPickerView()
+        textField.inputView = datePickerView
+        textField.inputAccessoryView = toolbar
+        datePickerView.datePicker.addTarget(
+            self,
+            action: #selector(datePickerValueChanged(sender:)),
+            for: UIControl.Event.valueChanged
+        )
+    }
+
+    @objc private func doneButtonAction() {
         textField.resignFirstResponder()
     }
 }
