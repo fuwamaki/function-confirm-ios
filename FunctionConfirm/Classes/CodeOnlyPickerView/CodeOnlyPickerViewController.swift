@@ -28,6 +28,16 @@ final class CodeOnlyPickerViewController: UIViewController {
         return toolbar
     }()
 
+    @objc private func doneButtonAction() {
+        textField.resignFirstResponder()
+    }
+
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        return formatter
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
@@ -39,17 +49,11 @@ final class CodeOnlyPickerViewController: UIViewController {
         textField.inputView = datePickerView
         textField.inputAccessoryView = toolbar
     }
-
-    @objc private func doneButtonAction() {
-        textField.resignFirstResponder()
-    }
 }
 
 // MARK: CodeOnlyPickerViewDelegate
 extension CodeOnlyPickerViewController: CodeOnlyPickerViewDelegate {
     func handleValueChanged(_ date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         textField.text = dateFormatter.string(from: date)
     }
 }
