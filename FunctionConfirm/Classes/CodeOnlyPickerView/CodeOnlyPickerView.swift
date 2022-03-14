@@ -8,32 +8,54 @@
 
 import UIKit
 
+protocol CodeOnlyPickerViewDelegate: AnyObject {
+    func handleValueChanged(_ date: Date)
+}
+
 final class CodeOnlyPickerView: UIView {
 
-    var datePicker: UIDatePicker = UIDatePicker()
+    private weak var delegate: CodeOnlyPickerViewDelegate?
+
+    private lazy var datePicker: UIDatePicker = {
+        var picker = UIDatePicker()
+        picker.datePickerMode = .dateAndTime
+        picker.locale = Locale(identifier: "ja")
+        picker.minimumDate = Date()
+        picker.preferredDatePickerStyle = .wheels
+        picker.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 216)
+        picker.addTarget(
+            self,
+            action: #selector(datePickerValueChanged(sender:)),
+            for: UIControl.Event.valueChanged
+        )
+        return picker
+    }()
+
+    @objc private func datePickerValueChanged(sender: UIDatePicker) {
+        delegate?.handleValueChanged(sender.date)
+    }
 
     override init(frame: CGRect) {
         let view = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 216)
         super.init(frame: view)
-        setupDatePicker()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    func setupDatePicker() {
-        datePicker.datePickerMode = .date
-        datePicker.locale = Locale(identifier: "ja")
-        datePicker.maximumDate = Date()
-        if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .wheels
-        }
-        datePicker.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 216)
+    func setup(delegate: CodeOnlyPickerViewDelegate) {
+        self.delegate = delegate
         addSubview(datePicker)
-        datePicker.topAnchor.constraint(equalTo: self.topAnchor, constant: 0.0).isActive = true
-        datePicker.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0.0).isActive = true
-        datePicker.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0).isActive = true
-        datePicker.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.0).isActive = true
+        NSLayoutConstraint.activate([
+            datePicker.topAnchor.constraint(equalTo: self.topAnchor),
+            datePicker.leftAnchor.constraint(equalTo: self.leftAnchor),
+            datePicker.rightAnchor.constraint(equalTo: self.rightAnchor),
+            datePicker.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+
+    func update(_ date: Date) {
+        datePicker.date = date
     }
 }
