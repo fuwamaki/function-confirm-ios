@@ -83,8 +83,6 @@ final class EKSampleViewController: UIViewController {
     }
 }
 
-//extension EKSampleViewController: UINavigationControllerDelegate {}
-
 extension EKSampleViewController: EKEventEditViewDelegate {
 //    func eventEditViewControllerDefaultCalendar(
 //        forNewEvents controller: EKEventEditViewController
