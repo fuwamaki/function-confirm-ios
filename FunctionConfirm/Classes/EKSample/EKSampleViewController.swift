@@ -45,6 +45,9 @@ final class EKSampleViewController: UIViewController {
         event.startDate = startDatePicker.date
         event.endDate = endDatePicker.date
         event.notes = noteTextField.text
+        event.addAlarm(EKAlarm(relativeOffset: -30*60))
+        event.isAllDay = false
+        event.url = nil
         event.calendar = eventStore.defaultCalendarForNewEvents
         return event
     }
