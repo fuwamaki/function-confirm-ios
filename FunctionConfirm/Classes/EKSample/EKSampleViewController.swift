@@ -20,11 +20,6 @@ final class EKSampleViewController: UIViewController {
 
     @IBAction private func clickAddSchedule(_ sender: Any) {
         guard EKEventStore.authorizationStatus(for: .event) == .authorized else { return }
-        let event = EKEvent(eventStore: eventStore)
-        event.title = titleTextField.text
-        event.startDate = startDatePicker.date
-        event.endDate = endDatePicker.date
-        event.notes = noteTextField.text
         do {
             try eventStore.save(event, span: .thisEvent)
             showAlert(title: "登録完了", message: "カレンダーに予定を登録しました。")
@@ -35,11 +30,6 @@ final class EKSampleViewController: UIViewController {
 
     @IBAction private func clickShowAddView(_ sender: Any) {
         guard EKEventStore.authorizationStatus(for: .event) == .authorized else { return }
-        let event = EKEvent(eventStore: eventStore)
-        event.title = titleTextField.text
-        event.startDate = startDatePicker.date
-        event.endDate = endDatePicker.date
-        event.notes = noteTextField.text
         let viewController = EKEventEditViewController()
         viewController.eventStore = eventStore
         viewController.event = event
@@ -48,6 +38,16 @@ final class EKSampleViewController: UIViewController {
     }
 
     private let eventStore = EKEventStore()
+
+    private var event: EKEvent {
+        let event = EKEvent(eventStore: eventStore)
+        event.title = titleTextField.text
+        event.startDate = startDatePicker.date
+        event.endDate = endDatePicker.date
+        event.notes = noteTextField.text
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        return event
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,14 +98,9 @@ extension EKSampleViewController: EKEventEditViewDelegate {
     ) {
         controller.dismiss(animated: true)
         switch action {
-        case .canceled:
-            print("canceled")
         case .saved:
-            print("saved")
-        case .deleted:
-            print("deleted")
-        @unknown default:
-            fatalError()
+            showAlert(title: "登録完了", message: "カレンダーに予定を登録しました。")
+        default: break
         }
     }
 }
