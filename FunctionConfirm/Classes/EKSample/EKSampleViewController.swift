@@ -87,7 +87,7 @@ extension EKSampleViewController: EKEventEditViewDelegate {
 //    func eventEditViewControllerDefaultCalendar(
 //        forNewEvents controller: EKEventEditViewController
 //    ) -> EKCalendar {
-//        <#code#>
+//        return eventStore.defaultCalendarForNewEvents!
 //    }
 
     func eventEditViewController(
