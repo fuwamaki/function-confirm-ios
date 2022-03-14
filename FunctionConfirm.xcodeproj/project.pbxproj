@@ -1252,9 +1252,10 @@
 			};
 			buildConfigurationList = 2032A6D020DCC9E50091952F /* Build configuration list for PBXProject "FunctionConfirm" */;
 			compatibilityVersion = "Xcode 12.0";
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				ja,
 				en,
 				Base,
 			);
