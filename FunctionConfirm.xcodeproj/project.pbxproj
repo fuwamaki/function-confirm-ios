@@ -13,6 +13,8 @@
 		20037F9724291058009D5CF5 /* TestFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9624291058009D5CF5 /* TestFirst.storyboard */; };
 		20037F9924291314009D5CF5 /* TestSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20037F9824291313009D5CF5 /* TestSecondViewController.swift */; };
 		20037F9B2429131F009D5CF5 /* TestSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20037F9A2429131F009D5CF5 /* TestSecond.storyboard */; };
+		200432A427DED5B900923E22 /* EKSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200432A327DED5B900923E22 /* EKSample.storyboard */; };
+		200432A627DED5C500923E22 /* EKSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200432A527DED5C500923E22 /* EKSampleViewController.swift */; };
 		2009FE2D25133472000D81FB /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2009FE2C25133472000D81FB /* Speech.storyboard */; };
 		2009FE2F2513349E000D81FB /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009FE2E2513349E000D81FB /* SpeechViewController.swift */; };
 		200CD86827096F0D00E4F33A /* CustomCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200CD86727096F0D00E4F33A /* CustomCanvasView.swift */; };
@@ -227,6 +229,8 @@
 		20037F9624291058009D5CF5 /* TestFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestFirst.storyboard; sourceTree = "<group>"; };
 		20037F9824291313009D5CF5 /* TestSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSecondViewController.swift; sourceTree = "<group>"; };
 		20037F9A2429131F009D5CF5 /* TestSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSecond.storyboard; sourceTree = "<group>"; };
+		200432A327DED5B900923E22 /* EKSample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EKSample.storyboard; sourceTree = "<group>"; };
+		200432A527DED5C500923E22 /* EKSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKSampleViewController.swift; sourceTree = "<group>"; };
 		2009FE2C25133472000D81FB /* Speech.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		2009FE2E2513349E000D81FB /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		200CD86727096F0D00E4F33A /* CustomCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCanvasView.swift; sourceTree = "<group>"; };
@@ -464,6 +468,15 @@
 				20037F9A2429131F009D5CF5 /* TestSecond.storyboard */,
 			);
 			path = PresentTransitionFromRight;
+			sourceTree = "<group>";
+		};
+		200432A227DED59100923E22 /* EKSample */ = {
+			isa = PBXGroup;
+			children = (
+				200432A327DED5B900923E22 /* EKSample.storyboard */,
+				200432A527DED5C500923E22 /* EKSampleViewController.swift */,
+			);
+			path = EKSample;
 			sourceTree = "<group>";
 		};
 		2009FE2B2513345B000D81FB /* Speech */ = {
@@ -892,6 +905,7 @@
 				20236CA0271FD1BB00B4AA43 /* Segue */,
 				DDE191732738A73F00366BC1 /* Math */,
 				DD27A44A2798F7B1008FBD84 /* SIWP */,
+				200432A227DED59100923E22 /* EKSample */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1264,6 +1278,7 @@
 				20B0155B243702D8008DA31D /* SemiModalTestTableCell.xib in Resources */,
 				20B015592437005E008DA31D /* SemiModalTest.storyboard in Resources */,
 				9C78A29C221483320036D3FD /* CodeOnlyPickerViewController.storyboard in Resources */,
+				200432A427DED5B900923E22 /* EKSample.storyboard in Resources */,
 				9C78A29A221481700036D3FD /* GitHubRepositoryList.storyboard in Resources */,
 				9CCCA878224F39DF00FCAB03 /* Barcode2.storyboard in Resources */,
 				9C78A2A6221499160036D3FD /* Animation.storyboard in Resources */,
@@ -1526,6 +1541,7 @@
 				20037F9924291314009D5CF5 /* TestSecondViewController.swift in Sources */,
 				9CE2644E211A85E500DD178E /* MVPTableCell.swift in Sources */,
 				9C827A33213EB56600E72FDA /* ItemResponse.swift in Sources */,
+				200432A627DED5C500923E22 /* EKSampleViewController.swift in Sources */,
 				2014E8882709269C000DD97E /* MoveObjectViewController.swift in Sources */,
 				9C78A2B222194BB50036D3FD /* AnimationSixthViewController.swift in Sources */,
 				9CB8082621F751A900DAD155 /* StatusBarThirdViewController.swift in Sources */,

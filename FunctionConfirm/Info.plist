@@ -51,5 +51,7 @@
 	<string>[音声認識使用に関する説明]</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>[マイク使用に関する説明]</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>カレンダーに予定を保存するため</string>
 </dict>
 </plist>

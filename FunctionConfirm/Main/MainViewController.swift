@@ -26,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 36
+        return 37
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -173,9 +173,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mathCell", for: indexPath)
             cell.textLabel?.text = "数式"
             return cell
-        } else {
+        } else if indexPath.row == 35 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "siwpCell", for: indexPath)
             cell.textLabel?.text = "Sign in with Apple"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ekSampleCell", for: indexPath)
+            cell.textLabel?.text = "カレンダー登録"
             return cell
         }
     }
@@ -328,9 +332,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Math", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "MathViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 35:
             let storyBoard = UIStoryboard(name: "SIWP", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SIWPViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "EKSample", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "EKSampleViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
