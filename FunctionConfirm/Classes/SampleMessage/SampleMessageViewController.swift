@@ -81,7 +81,7 @@ final class SampleMessageViewController: MessagesViewController {
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
         messageInputBar.sendButton.tintColor = .gray
         messageInputBar.sendButton.setSize(CGSize(width: 24.0, height: 36.0), animated: false)
-        messageInputBar.sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+//        messageInputBar.sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         messageInputBar.inputTextView.font = UIFont.systemFont(ofSize: 14.0)
         messageInputBar.inputTextView.textColor = UIColor.label
         messageInputBar.backgroundView.backgroundColor = UIColor.secondarySystemBackground
