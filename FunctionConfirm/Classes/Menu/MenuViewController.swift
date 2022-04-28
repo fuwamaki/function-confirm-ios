@@ -9,34 +9,35 @@
 import UIKit
 
 enum MenuType: CaseIterable {
-    case pppppp
-    case akane
-    case sakamoto
+    case ios
+    case android
+    case web
 
     var title: String {
         switch self {
-        case .pppppp:
-            return "PPPPPP"
-        case .akane:
-            return "あかね噺"
-        case .sakamoto:
-            return "Sakamoto Days"
+        case .ios:
+            return "iOS"
+        case .android:
+            return "Android"
+        case .web:
+            return "Web"
         }
     }
 }
 
 final class MenuViewController: UIViewController {
 
+    @IBOutlet private weak var sampleBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var sampleButton: UIButton!
 
-    private var selectedMenuType = MenuType.pppppp
+    private var selectedMenuType = MenuType.ios
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureMenuButton()
+        configureMenu()
     }
 
-    private func configureMenuButton() {
+    private func configureMenu() {
         let actions = MenuType.allCases
             .compactMap { type in
                 UIAction(
@@ -44,11 +45,26 @@ final class MenuViewController: UIViewController {
                     state: type == selectedMenuType ? .on : .off,
                     handler: { _ in
                         self.selectedMenuType = type
-                        self.configureMenuButton()
+                        self.configureMenu()
                     })
             }
         sampleButton.menu = UIMenu(title: "", options: .displayInline, children: actions)
         sampleButton.showsMenuAsPrimaryAction = true
         sampleButton.setTitle(selectedMenuType.title, for: .normal)
     }
+
+//    private func configureMenu() {
+//        let actions = MenuType.allCases
+//            .compactMap { type in
+//                UIAction(
+//                    title: type.title,
+//                    state: type == selectedMenuType ? .on : .off,
+//                    handler: { _ in
+//                        self.selectedMenuType = type
+//                        self.configureMenu()
+//                    })
+//            }
+//        sampleBarButtonItem.menu = UIMenu(title: "", options: .displayInline, children: actions)
+//        sampleBarButtonItem.title = selectedMenuType.title
+//    }
 }
