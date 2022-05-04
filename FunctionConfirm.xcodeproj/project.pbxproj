@@ -59,6 +59,8 @@
 		208A61C8243AE4AC00A64212 /* SemiModalDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */; };
 		208A61CA243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */; };
 		208CE614234753F60024AE3A /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208CE613234753F60024AE3A /* ImageButton.swift */; };
+		209416D52823490B004CAE8C /* FadeScroll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209416D42823490B004CAE8C /* FadeScroll.storyboard */; };
+		209416D728234916004CAE8C /* FadeScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209416D628234916004CAE8C /* FadeScrollViewController.swift */; };
 		20A5142826ABC91200658C03 /* ClearNav.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A5142726ABC91200658C03 /* ClearNav.storyboard */; };
 		20A5142A26ABC91F00658C03 /* ClearNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5142926ABC91F00658C03 /* ClearNavViewController.swift */; };
 		20B015532436FCB4008DA31D /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B015522436FCB4008DA31D /* SemiModalViewController.swift */; };
@@ -283,6 +285,8 @@
 		208A61C7243AE4AC00A64212 /* SemiModalDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalDismissAnimationController.swift; sourceTree = "<group>"; };
 		208A61C9243AE4EA00A64212 /* OverCurrentTransitioningInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverCurrentTransitioningInteractor.swift; sourceTree = "<group>"; };
 		208CE613234753F60024AE3A /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		209416D42823490B004CAE8C /* FadeScroll.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadeScroll.storyboard; sourceTree = "<group>"; };
+		209416D628234916004CAE8C /* FadeScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeScrollViewController.swift; sourceTree = "<group>"; };
 		20A5142726ABC91200658C03 /* ClearNav.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClearNav.storyboard; sourceTree = "<group>"; };
 		20A5142926ABC91F00658C03 /* ClearNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavViewController.swift; sourceTree = "<group>"; };
 		20B015522436FCB4008DA31D /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
@@ -684,6 +688,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		209416D3282348F8004CAE8C /* FadeScroll */ = {
+			isa = PBXGroup;
+			children = (
+				209416D628234916004CAE8C /* FadeScrollViewController.swift */,
+				209416D42823490B004CAE8C /* FadeScroll.storyboard */,
+			);
+			path = FadeScroll;
+			sourceTree = "<group>";
+		};
 		20A5142626ABC8F900658C03 /* ClearNav */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +933,7 @@
 				DD27A44A2798F7B1008FBD84 /* SIWP */,
 				200432A227DED59100923E22 /* EKSample */,
 				20C5FC602817BC960011B695 /* Menu */,
+				209416D3282348F8004CAE8C /* FadeScroll */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1320,6 +1334,7 @@
 				2032A71220DCDD680091952F /* CustomPickerView.xib in Resources */,
 				DDE1917D2738F86600366BC1 /* katex in Resources */,
 				9C62DA3A227C4BA4002DEA7C /* MVVMListTableViewCell.xib in Resources */,
+				209416D52823490B004CAE8C /* FadeScroll.storyboard in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
 				2046257227174E2F00DD9564 /* SampleMessage2.storyboard in Resources */,
@@ -1565,6 +1580,7 @@
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
 				9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */,
+				209416D728234916004CAE8C /* FadeScrollViewController.swift in Sources */,
 				9C660DFC21DF5E54003BF811 /* UIImage+Color.swift in Sources */,
 				9CD30C8021F7100B00D6184A /* UINavigationController+StatusBarStyle.swift in Sources */,
 				DD27A4502798FBFF008FBD84 /* UIView+Addition.swift in Sources */,
