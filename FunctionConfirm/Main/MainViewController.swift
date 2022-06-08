@@ -26,7 +26,7 @@ extension MainViewController: UITableViewDataSource {
 
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 39
+        return 40
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -185,9 +185,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
             cell.textLabel?.text = "Menu"
             return cell
-        } else {
+        } else if indexPath.row == 38 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "fadeScrollCell", for: indexPath)
             cell.textLabel?.text = "Fade Scroll"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "calendarViewCell", for: indexPath)
+            cell.textLabel?.text = "UICalendarView"
             return cell
         }
     }
@@ -352,9 +356,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "Menu", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "MenuViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 38:
             let storyBoard = UIStoryboard(name: "FadeScroll", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "FadeScrollViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "SampleCalendar", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SampleCalendarViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
