@@ -57,6 +57,7 @@
 		203AFD482344EA330021FA9A /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AFD472344EA330021FA9A /* RoundedCornerButton.swift */; };
 		2046257227174E2F00DD9564 /* SampleMessage2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2046257127174E2F00DD9564 /* SampleMessage2.storyboard */; };
 		2046257427174E4700DD9564 /* SampleMessage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046257327174E4700DD9564 /* SampleMessage2ViewController.swift */; };
+		205183552852302E00EE116A /* TestChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205183542852302E00EE116A /* TestChildViewController.swift */; };
 		20521A5220DF50BB00621136 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20521A5120DF50BB00621136 /* NibLoadable.swift */; };
 		2062B9062445E98200B9A171 /* SemiModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */; };
 		208A61C6243AE49300A64212 /* OldSemiModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */; };
@@ -287,6 +288,7 @@
 		203AFD472344EA330021FA9A /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		2046257127174E2F00DD9564 /* SampleMessage2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleMessage2.storyboard; sourceTree = "<group>"; };
 		2046257327174E4700DD9564 /* SampleMessage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMessage2ViewController.swift; sourceTree = "<group>"; };
+		205183542852302E00EE116A /* TestChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChildViewController.swift; sourceTree = "<group>"; };
 		20521A5120DF50BB00621136 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2062B9052445E98200B9A171 /* SemiModalTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTransitioningDelegate.swift; sourceTree = "<group>"; };
 		208A61C5243AE49300A64212 /* OldSemiModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldSemiModalPresentationController.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			children = (
 				2028E53F2852286F00DD5846 /* NewPageControl.storyboard */,
 				2028E5412852287F00DD5846 /* NewPageControlViewController.swift */,
+				205183542852302E00EE116A /* TestChildViewController.swift */,
 			);
 			path = NewPageControl;
 			sourceTree = "<group>";
@@ -1540,6 +1543,7 @@
 				7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */,
 				9CDB1B5A22749F69004EFB68 /* CounterReducer.swift in Sources */,
 				9CB8083C21F8330B00DAD155 /* StatusBarPopup3ViewController.swift in Sources */,
+				205183552852302E00EE116A /* TestChildViewController.swift in Sources */,
 				20037F9124290E9B009D5CF5 /* PresentTransitionFromRightViewController.swift in Sources */,
 				20F7D2E824459DF00054A935 /* DimmedView.swift in Sources */,
 				20F7D2EA24459E3F0054A935 /* SemiContainerView.swift in Sources */,

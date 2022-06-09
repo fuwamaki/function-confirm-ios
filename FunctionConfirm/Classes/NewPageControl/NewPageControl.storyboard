@@ -15,15 +15,76 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-Xe-fuS">
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                                <connections>
+                                    <segue destination="RhI-eK-8Bo" kind="embed" id="2g8-Wv-7dN"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Sl-arV">
+                                <rect key="frame" x="137" y="744" width="116" height="26"/>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="E1Z-Sl-arV" secondAttribute="bottom" constant="40" id="3ah-9q-dNg"/>
+                            <constraint firstAttribute="bottom" secondItem="JYU-Xe-fuS" secondAttribute="bottom" id="DRR-5U-zbQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JYU-Xe-fuS" secondAttribute="trailing" id="HnX-Xv-L2h"/>
+                            <constraint firstItem="E1Z-Sl-arV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="VE6-5u-5OK"/>
+                            <constraint firstItem="JYU-Xe-fuS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ab7-T8-gKC"/>
+                            <constraint firstItem="JYU-Xe-fuS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jfj-VX-4cd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ページ" id="aBC-dL-Z0b"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="containerView" destination="JYU-Xe-fuS" id="w6y-0l-IKt"/>
+                        <outlet property="pageControl" destination="E1Z-Sl-arV" id="XjT-L3-djk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="4"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Zh5-d1-MDB">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RhI-eK-8Bo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJl-FV-A6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="4"/>
+        </scene>
+        <!--Test Child View Controller-->
+        <scene sceneID="xp0-qe-fWy">
+            <objects>
+                <viewController storyboardIdentifier="TestChildViewController" id="TIF-IQ-Qmr" customClass="TestChildViewController" customModule="FunctionConfirm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eNh-pK-r5z">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXZ-v2-oJ4">
+                                <rect key="frame" x="157.33333333333334" y="403" width="75.666666666666657" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TG4-EO-gYw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IXZ-v2-oJ4" firstAttribute="centerX" secondItem="eNh-pK-r5z" secondAttribute="centerX" id="8j4-TL-CRV"/>
+                            <constraint firstItem="IXZ-v2-oJ4" firstAttribute="centerY" secondItem="eNh-pK-r5z" secondAttribute="centerY" id="afK-gq-VhS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testLabel" destination="IXZ-v2-oJ4" id="Gwp-ef-eTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0Y-el-5Z5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="8"/>
         </scene>
     </scenes>
     <resources>
