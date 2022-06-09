@@ -13,15 +13,27 @@ final class NewPageControlViewController: UIViewController {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var pageControl: UIPageControl!
 
+    @IBAction private func clickPageControl(_ sender: UIPageControl) {
+        self.pageViewController?.setViewControllers(
+            [self.viewControllers[sender.currentPage]],
+            direction: .forward,
+            animated: false
+        )
+    }
+
     private var pageViewController: UIPageViewController?
     private var viewControllers: [UIViewController] = [
         TestChildViewController.make(text: "First"),
-        TestChildViewController.make(text: "Second")
+        TestChildViewController.make(text: "Second"),
+        TestChildViewController.make(text: "Third"),
+        TestChildViewController.make(text: "Fourth"),
+        TestChildViewController.make(text: "Fifth")
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupPageControl()
     }
 
     private func setupViews() {
@@ -36,6 +48,14 @@ final class NewPageControlViewController: UIViewController {
         pageViewController?.dataSource = self
         pageViewController?.delegate = self
     }
+
+    private func setupPageControl() {
+        pageControl.backgroundColor = UIColor.systemBackground
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.numberOfPages = viewControllers.count
+        pageControl.currentPage = 0
+    }
 }
 
 // MARK: UIPageViewControllerDataSource
@@ -45,7 +65,7 @@ extension NewPageControlViewController: UIPageViewControllerDataSource {
         viewControllerBefore viewController: UIViewController
     ) -> UIViewController? {
         let index = viewControllers.firstIndex(of: viewController) ?? 0
-        return index > 0 ? viewControllers[0] : nil
+        return index > 0 ? viewControllers[index-1] : nil
     }
 
     func pageViewController(
@@ -53,7 +73,7 @@ extension NewPageControlViewController: UIPageViewControllerDataSource {
         viewControllerAfter viewController: UIViewController
     ) -> UIViewController? {
         let index = viewControllers.firstIndex(of: viewController) ?? 0
-        return index < viewControllers.count-1 ? viewControllers[1] : nil
+        return index < viewControllers.count-1 ? viewControllers[index+1] : nil
     }
 }
 
@@ -64,5 +84,8 @@ extension NewPageControlViewController: UIPageViewControllerDelegate {
         didFinishAnimating finished: Bool,
         previousViewControllers: [UIViewController],
         transitionCompleted completed: Bool
-    ) {}
+    ) {
+        let index = viewControllers.firstIndex(of: pageViewController.viewControllers![0]) ?? 0
+        pageControl.currentPage = index
+    }
 }

@@ -24,6 +24,9 @@
                             </containerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Sl-arV">
                                 <rect key="frame" x="137" y="744" width="116" height="26"/>
+                                <connections>
+                                    <action selector="clickPageControl:" destination="Y6W-OH-hqX" eventType="valueChanged" id="oyb-g3-7qR"/>
+                                </connections>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -79,7 +82,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="IXZ-v2-oJ4" id="Gwp-ef-eTj"/>
+                        <outlet property="testLabel" destination="IXZ-v2-oJ4" id="MfL-LP-fAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0Y-el-5Z5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
