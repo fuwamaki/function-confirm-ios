@@ -41,6 +41,8 @@
 		20236CA8271FD98600B4AA43 /* SegueA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20236CA7271FD98600B4AA43 /* SegueA.storyboard */; };
 		2028E53628507E0B00DD5846 /* SampleCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2028E53528507E0B00DD5846 /* SampleCalendar.storyboard */; };
 		2028E53828507E1800DD5846 /* SampleCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028E53728507E1800DD5846 /* SampleCalendarViewController.swift */; };
+		2028E5402852286F00DD5846 /* NewPageControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2028E53F2852286F00DD5846 /* NewPageControl.storyboard */; };
+		2028E5422852287F00DD5846 /* NewPageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028E5412852287F00DD5846 /* NewPageControlViewController.swift */; };
 		2032A6D920DCC9E50091952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6D820DCC9E50091952F /* AppDelegate.swift */; };
 		2032A6DB20DCC9E50091952F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2032A6DA20DCC9E50091952F /* MainViewController.swift */; };
 		2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032A6DC20DCC9E50091952F /* Main.storyboard */; };
@@ -263,6 +265,8 @@
 		20236CA7271FD98600B4AA43 /* SegueA.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SegueA.storyboard; sourceTree = "<group>"; };
 		2028E53528507E0B00DD5846 /* SampleCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleCalendar.storyboard; sourceTree = "<group>"; };
 		2028E53728507E1800DD5846 /* SampleCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCalendarViewController.swift; sourceTree = "<group>"; };
+		2028E53F2852286F00DD5846 /* NewPageControl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPageControl.storyboard; sourceTree = "<group>"; };
+		2028E5412852287F00DD5846 /* NewPageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageControlViewController.swift; sourceTree = "<group>"; };
 		2032A6D520DCC9E50091952F /* FunctionConfirm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionConfirm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2032A6D820DCC9E50091952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2032A6DA20DCC9E50091952F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -560,6 +564,15 @@
 				2028E53728507E1800DD5846 /* SampleCalendarViewController.swift */,
 			);
 			path = UICalendarView;
+			sourceTree = "<group>";
+		};
+		2028E53E2852285600DD5846 /* NewPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				2028E53F2852286F00DD5846 /* NewPageControl.storyboard */,
+				2028E5412852287F00DD5846 /* NewPageControlViewController.swift */,
+			);
+			path = NewPageControl;
 			sourceTree = "<group>";
 		};
 		2032A6CC20DCC9E50091952F = {
@@ -948,6 +961,7 @@
 				20C5FC602817BC960011B695 /* Menu */,
 				209416D3282348F8004CAE8C /* FadeScroll */,
 				2028E53428507DF700DD5846 /* UICalendarView */,
+				2028E53E2852285600DD5846 /* NewPageControl */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1362,6 +1376,7 @@
 				2009FE2D25133472000D81FB /* Speech.storyboard in Resources */,
 				20037F9324290EAC009D5CF5 /* PresentTransitionFromRight.storyboard in Resources */,
 				2032A6DE20DCC9E50091952F /* Main.storyboard in Resources */,
+				2028E5402852286F00DD5846 /* NewPageControl.storyboard in Resources */,
 				DD27A44E2798F7EC008FBD84 /* SIWP.storyboard in Resources */,
 				20E109A426CF8465004ABA4A /* HorizontalPage.storyboard in Resources */,
 				9CB8083E21F8332300DAD155 /* StatusBarPopup3ViewController.xib in Resources */,
@@ -1594,6 +1609,7 @@
 				9C78A2B222194BB50036D3FD /* AnimationSixthViewController.swift in Sources */,
 				9CB8082621F751A900DAD155 /* StatusBarThirdViewController.swift in Sources */,
 				9CE26450211A890900DD178E /* UITableView+Addition.swift in Sources */,
+				2028E5422852287F00DD5846 /* NewPageControlViewController.swift in Sources */,
 				9CE2645E211A919900DD178E /* MVPRegistModel.swift in Sources */,
 				9CFA441B221C5C2A00CA07CD /* Celebrity.swift in Sources */,
 				209416D728234916004CAE8C /* FadeScrollViewController.swift in Sources */,
