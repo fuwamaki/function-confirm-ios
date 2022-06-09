@@ -29,11 +29,13 @@ final class AnimationPageViewController: UIPageViewController {
     }
 
     private func setupPageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: 0,
-                                                  y: self.view.frame.height - 100,
-                                                  width: self.view.frame.width,
-                                                  height: 50))
-        pageControl.backgroundColor = UIColor.baseGray
+        pageControl = UIPageControl(frame: CGRect(
+            x: 0,
+            y: self.view.frame.height - 100,
+            width: self.view.frame.width,
+            height: 50
+        ))
+        pageControl.backgroundColor = UIColor.systemBackground
         pageControl.currentPageIndicatorTintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.black
         pageControl.numberOfPages = 8 // ページ数
