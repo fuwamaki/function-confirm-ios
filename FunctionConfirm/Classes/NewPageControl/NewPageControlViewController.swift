@@ -50,11 +50,13 @@ final class NewPageControlViewController: UIViewController {
     }
 
     private func setupPageControl() {
-        pageControl.backgroundColor = UIColor.systemBackground
         pageControl.currentPageIndicatorTintColor = UIColor.red
-        pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.blue
         pageControl.numberOfPages = viewControllers.count
         pageControl.currentPage = 0
+        pageControl.direction = .topToBottom
+        pageControl.preferredIndicatorImage = UIImage(systemName: "circle.circle")
+        pageControl.preferredCurrentPageIndicatorImage = UIImage(systemName: "circle.circle.fill")
     }
 }
 

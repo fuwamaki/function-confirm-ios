@@ -23,7 +23,7 @@
                                 </connections>
                             </containerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Sl-arV">
-                                <rect key="frame" x="137" y="744" width="116" height="26"/>
+                                <rect key="frame" x="32" y="409" width="116" height="26"/>
                                 <connections>
                                     <action selector="clickPageControl:" destination="Y6W-OH-hqX" eventType="valueChanged" id="oyb-g3-7qR"/>
                                 </connections>
@@ -32,10 +32,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="E1Z-Sl-arV" secondAttribute="bottom" constant="40" id="3ah-9q-dNg"/>
+                            <constraint firstItem="E1Z-Sl-arV" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="53a-7d-kvj"/>
                             <constraint firstAttribute="bottom" secondItem="JYU-Xe-fuS" secondAttribute="bottom" id="DRR-5U-zbQ"/>
+                            <constraint firstItem="E1Z-Sl-arV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="HhG-pI-X8h"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JYU-Xe-fuS" secondAttribute="trailing" id="HnX-Xv-L2h"/>
-                            <constraint firstItem="E1Z-Sl-arV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="VE6-5u-5OK"/>
                             <constraint firstItem="JYU-Xe-fuS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ab7-T8-gKC"/>
                             <constraint firstItem="JYU-Xe-fuS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jfj-VX-4cd"/>
                         </constraints>
@@ -54,7 +54,7 @@
         <!--Page View Controller-->
         <scene sceneID="Zh5-d1-MDB">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RhI-eK-8Bo" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="RhI-eK-8Bo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJl-FV-A6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="922" y="4"/>
