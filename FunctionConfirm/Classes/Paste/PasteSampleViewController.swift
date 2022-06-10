@@ -10,6 +10,7 @@ import UIKit
 
 final class PasteSampleViewController: UIViewController {
     @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var pasteControl: UIPasteControl!
 
     @IBAction private func clickSampleCopyButton(_ sender: UIButton) {
         UIPasteboard.general.string = "Sample"
@@ -18,8 +19,6 @@ final class PasteSampleViewController: UIViewController {
     @IBAction private func clickPasteButton(_ sender: UIButton) {
         textField.text = UIPasteboard.general.string
     }
-
-    @IBOutlet weak var pasteControl: UIPasteControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
