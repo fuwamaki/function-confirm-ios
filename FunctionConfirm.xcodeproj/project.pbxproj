@@ -39,6 +39,8 @@
 		20236CA4271FD1F500B4AA43 /* Segue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20236CA3271FD1F500B4AA43 /* Segue.storyboard */; };
 		20236CA6271FD90900B4AA43 /* SegueAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20236CA5271FD90900B4AA43 /* SegueAViewController.swift */; };
 		20236CA8271FD98600B4AA43 /* SegueA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20236CA7271FD98600B4AA43 /* SegueA.storyboard */; };
+		202407AF285240260066F68A /* PasteSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202407AE285240260066F68A /* PasteSampleViewController.swift */; };
+		202407B1285240300066F68A /* PasteSample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202407B0285240300066F68A /* PasteSample.storyboard */; };
 		2028E53628507E0B00DD5846 /* SampleCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2028E53528507E0B00DD5846 /* SampleCalendar.storyboard */; };
 		2028E53828507E1800DD5846 /* SampleCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028E53728507E1800DD5846 /* SampleCalendarViewController.swift */; };
 		2028E5402852286F00DD5846 /* NewPageControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2028E53F2852286F00DD5846 /* NewPageControl.storyboard */; };
@@ -264,6 +266,8 @@
 		20236CA3271FD1F500B4AA43 /* Segue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Segue.storyboard; sourceTree = "<group>"; };
 		20236CA5271FD90900B4AA43 /* SegueAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueAViewController.swift; sourceTree = "<group>"; };
 		20236CA7271FD98600B4AA43 /* SegueA.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SegueA.storyboard; sourceTree = "<group>"; };
+		202407AE285240260066F68A /* PasteSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSampleViewController.swift; sourceTree = "<group>"; };
+		202407B0285240300066F68A /* PasteSample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasteSample.storyboard; sourceTree = "<group>"; };
 		2028E53528507E0B00DD5846 /* SampleCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleCalendar.storyboard; sourceTree = "<group>"; };
 		2028E53728507E1800DD5846 /* SampleCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCalendarViewController.swift; sourceTree = "<group>"; };
 		2028E53F2852286F00DD5846 /* NewPageControl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPageControl.storyboard; sourceTree = "<group>"; };
@@ -557,6 +561,15 @@
 				20236CA7271FD98600B4AA43 /* SegueA.storyboard */,
 			);
 			path = Segue;
+			sourceTree = "<group>";
+		};
+		202407AD2852400D0066F68A /* Paste */ = {
+			isa = PBXGroup;
+			children = (
+				202407B0285240300066F68A /* PasteSample.storyboard */,
+				202407AE285240260066F68A /* PasteSampleViewController.swift */,
+			);
+			path = Paste;
 			sourceTree = "<group>";
 		};
 		2028E53428507DF700DD5846 /* UICalendarView */ = {
@@ -965,6 +978,7 @@
 				209416D3282348F8004CAE8C /* FadeScroll */,
 				2028E53428507DF700DD5846 /* UICalendarView */,
 				2028E53E2852285600DD5846 /* NewPageControl */,
+				202407AD2852400D0066F68A /* Paste */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1357,6 +1371,7 @@
 				201E42D7251357DF00C9917C /* Alarm.storyboard in Resources */,
 				20E45821267C4536008FA5C5 /* SampleKeyboardLayoutGuide.storyboard in Resources */,
 				2032A6E620DCC9E70091952F /* LaunchScreen.storyboard in Resources */,
+				202407B1285240300066F68A /* PasteSample.storyboard in Resources */,
 				9CDB1B5222749A80004EFB68 /* ReViewController.storyboard in Resources */,
 				9CFE3DE4224E05F900809567 /* Barcode.storyboard in Resources */,
 				2014E88627092690000DD97E /* MoveObject.storyboard in Resources */,
@@ -1627,6 +1642,7 @@
 				9C62DA3B227C4BA4002DEA7C /* MVVMListViewController.swift in Sources */,
 				9CE2644C211A818A00DD178E /* MVPModel.swift in Sources */,
 				7B67233B20E200B500D8A5A3 /* DecodableDataParser.swift in Sources */,
+				202407AF285240260066F68A /* PasteSampleViewController.swift in Sources */,
 				9CB8083521F8236000DAD155 /* StatusBar2Manager.swift in Sources */,
 				9C87B27621F5967100A50985 /* StatusBarViewController.swift in Sources */,
 				201D872B2711611C00D44C4D /* UIImageView+PinRemoteImage.swift in Sources */,
