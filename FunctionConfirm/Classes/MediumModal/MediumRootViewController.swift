@@ -16,10 +16,20 @@ final class MediumRootViewController: UIViewController {
     @IBAction func clickButton(_ sender: Any) {
 //        if let sheet = phpickerViewController.sheetPresentationController {
 //            sheet.detents = [.medium(), .large()]
+//            sheet.detents = [.large(), .custom { _ in 200.0 }]
+//            sheet.detents = [.large(), .custom { context in 0.3*context.maximumDetentValue }]
 //            sheet.prefersGrabberVisible = true
 //            sheet.largestUndimmedDetentIdentifier = .medium
 //        }
-        present(phpickerViewController, animated: true)
+        let viewController = TestChildViewController.make(text: "test")
+        if let sheet = viewController.sheetPresentationController {
+            sheet.detents = [
+                .custom { context in 0.7*context.maximumDetentValue },
+                .custom { context in 0.4*context.maximumDetentValue },
+                .custom { context in 0.1*context.maximumDetentValue }
+            ]
+        }
+        present(viewController, animated: true)
     }
 
     private lazy var phpickerViewController: PHPickerViewController = {
