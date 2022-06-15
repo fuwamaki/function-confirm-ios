@@ -79,6 +79,7 @@
 		20BB2C9F243BFEDD00A5CC46 /* SemiModalCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */; };
 		20C5FC622817BC9D0011B695 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C5FC612817BC9D0011B695 /* Menu.storyboard */; };
 		20C5FC642817BCA60011B695 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5FC632817BCA60011B695 /* MenuViewController.swift */; };
+		20C69180285A8D7C0023C2F1 /* SwiftUISampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */; };
 		20E109A426CF8465004ABA4A /* HorizontalPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E109A326CF8465004ABA4A /* HorizontalPage.storyboard */; };
 		20E109A626CF8475004ABA4A /* HorizontalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E109A526CF8475004ABA4A /* HorizontalPageViewController.swift */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
@@ -312,6 +313,7 @@
 		20BB2C9E243BFEDD00A5CC46 /* SemiModalCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalCustomView.swift; sourceTree = "<group>"; };
 		20C5FC612817BC9D0011B695 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		20C5FC632817BCA60011B695 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleView.swift; sourceTree = "<group>"; };
 		20E109A326CF8465004ABA4A /* HorizontalPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HorizontalPage.storyboard; sourceTree = "<group>"; };
 		20E109A526CF8475004ABA4A /* HorizontalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPageViewController.swift; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -774,6 +776,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		20C6917E285A8D540023C2F1 /* SwiftUISample */ = {
+			isa = PBXGroup;
+			children = (
+				20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */,
+			);
+			path = SwiftUISample;
+			sourceTree = "<group>";
+		};
 		20E109A226CF8447004ABA4A /* HorizontalPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +989,7 @@
 				2028E53428507DF700DD5846 /* UICalendarView */,
 				2028E53E2852285600DD5846 /* NewPageControl */,
 				202407AD2852400D0066F68A /* Paste */,
+				20C6917E285A8D540023C2F1 /* SwiftUISample */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1607,6 +1618,7 @@
 				9CE2645C211A918B00DD178E /* MVPRegistPresenter.swift in Sources */,
 				20F7D2F02445A3410054A935 /* SemiModalPresentationState.swift in Sources */,
 				9C660DF121DD45F3003BF811 /* UIStoryboard+Name.swift in Sources */,
+				20C69180285A8D7C0023C2F1 /* SwiftUISampleView.swift in Sources */,
 				9CB8083A21F832BA00DAD155 /* StatusBar3Manager.swift in Sources */,
 				20E45823267C4549008FA5C5 /* SampleKeyboardLayoutGuideViewController.swift in Sources */,
 				9C62DA39227C4BA4002DEA7C /* MVVMListTableViewCell.swift in Sources */,
