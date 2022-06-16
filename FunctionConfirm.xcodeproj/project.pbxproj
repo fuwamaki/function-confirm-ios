@@ -82,6 +82,7 @@
 		20C69180285A8D7C0023C2F1 /* SwiftUISampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */; };
 		20C69182285AB8080023C2F1 /* SwiftUISample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C69181285AB8080023C2F1 /* SwiftUISample.storyboard */; };
 		20C69184285AB8130023C2F1 /* SwiftUISampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C69183285AB8130023C2F1 /* SwiftUISampleViewController.swift */; };
+		20C69186285B1CA30023C2F1 /* SwiftUISampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C69185285B1CA30023C2F1 /* SwiftUISampleData.swift */; };
 		20E109A426CF8465004ABA4A /* HorizontalPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E109A326CF8465004ABA4A /* HorizontalPage.storyboard */; };
 		20E109A626CF8475004ABA4A /* HorizontalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E109A526CF8475004ABA4A /* HorizontalPageViewController.swift */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
@@ -318,6 +319,7 @@
 		20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleView.swift; sourceTree = "<group>"; };
 		20C69181285AB8080023C2F1 /* SwiftUISample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwiftUISample.storyboard; sourceTree = "<group>"; };
 		20C69183285AB8130023C2F1 /* SwiftUISampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleViewController.swift; sourceTree = "<group>"; };
+		20C69185285B1CA30023C2F1 /* SwiftUISampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleData.swift; sourceTree = "<group>"; };
 		20E109A326CF8465004ABA4A /* HorizontalPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HorizontalPage.storyboard; sourceTree = "<group>"; };
 		20E109A526CF8475004ABA4A /* HorizontalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPageViewController.swift; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -786,6 +788,7 @@
 				20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */,
 				20C69181285AB8080023C2F1 /* SwiftUISample.storyboard */,
 				20C69183285AB8130023C2F1 /* SwiftUISampleViewController.swift */,
+				20C69185285B1CA30023C2F1 /* SwiftUISampleData.swift */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -1540,6 +1543,7 @@
 				9C78A2A822149CDC0036D3FD /* AnimationPageViewController.swift in Sources */,
 				9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */,
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
+				20C69186285B1CA30023C2F1 /* SwiftUISampleData.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerViewController.swift in Sources */,
 				20C69184285AB8130023C2F1 /* SwiftUISampleViewController.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
