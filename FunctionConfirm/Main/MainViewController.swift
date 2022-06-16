@@ -386,8 +386,9 @@ extension MainViewController: UITableViewDelegate {
             let viewController = storyBoard.instantiateViewController(withIdentifier: "PasteSampleViewController")
             navigationController?.pushViewController(viewController, animated: true)
         default:
-            let hostingController = UIHostingController(rootView: SwiftUISampleView())
-            navigationController?.pushViewController(hostingController, animated: true)
+            let storyBoard = UIStoryboard(name: "SwiftUISample", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SwiftUISampleViewController")
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }

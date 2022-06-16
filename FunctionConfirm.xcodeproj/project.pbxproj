@@ -80,6 +80,8 @@
 		20C5FC622817BC9D0011B695 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C5FC612817BC9D0011B695 /* Menu.storyboard */; };
 		20C5FC642817BCA60011B695 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C5FC632817BCA60011B695 /* MenuViewController.swift */; };
 		20C69180285A8D7C0023C2F1 /* SwiftUISampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */; };
+		20C69182285AB8080023C2F1 /* SwiftUISample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C69181285AB8080023C2F1 /* SwiftUISample.storyboard */; };
+		20C69184285AB8130023C2F1 /* SwiftUISampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C69183285AB8130023C2F1 /* SwiftUISampleViewController.swift */; };
 		20E109A426CF8465004ABA4A /* HorizontalPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E109A326CF8465004ABA4A /* HorizontalPage.storyboard */; };
 		20E109A626CF8475004ABA4A /* HorizontalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E109A526CF8475004ABA4A /* HorizontalPageViewController.swift */; };
 		20E35064232A28F50057A561 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35063232A28F50057A561 /* TimerViewController.swift */; };
@@ -314,6 +316,8 @@
 		20C5FC612817BC9D0011B695 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		20C5FC632817BCA60011B695 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleView.swift; sourceTree = "<group>"; };
+		20C69181285AB8080023C2F1 /* SwiftUISample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwiftUISample.storyboard; sourceTree = "<group>"; };
+		20C69183285AB8130023C2F1 /* SwiftUISampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleViewController.swift; sourceTree = "<group>"; };
 		20E109A326CF8465004ABA4A /* HorizontalPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HorizontalPage.storyboard; sourceTree = "<group>"; };
 		20E109A526CF8475004ABA4A /* HorizontalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPageViewController.swift; sourceTree = "<group>"; };
 		20E35063232A28F50057A561 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -780,6 +784,8 @@
 			isa = PBXGroup;
 			children = (
 				20C6917F285A8D7C0023C2F1 /* SwiftUISampleView.swift */,
+				20C69181285AB8080023C2F1 /* SwiftUISample.storyboard */,
+				20C69183285AB8130023C2F1 /* SwiftUISampleViewController.swift */,
 			);
 			path = SwiftUISample;
 			sourceTree = "<group>";
@@ -1414,6 +1420,7 @@
 				7B67233120E1E14700D8A5A3 /* QiitaList.storyboard in Resources */,
 				20F7D2DC24458A9A0054A935 /* HalfModalViewController.storyboard in Resources */,
 				20F7D2DA24458A7C0054A935 /* HalfModalRoot.storyboard in Resources */,
+				20C69182285AB8080023C2F1 /* SwiftUISample.storyboard in Resources */,
 				2028E53628507E0B00DD5846 /* SampleCalendar.storyboard in Resources */,
 				9C78A2A12214941A0036D3FD /* RoundedCorner.storyboard in Resources */,
 				9C62DA3C227C4BA4002DEA7C /* MVVMViewController.storyboard in Resources */,
@@ -1534,6 +1541,7 @@
 				9C78A29B221481FC0036D3FD /* GitHubRepositoryListViewController.swift in Sources */,
 				9C78A29422146DBB0036D3FD /* QiitaListElement.swift in Sources */,
 				2032A71420DCE0180091952F /* PickerViewController.swift in Sources */,
+				20C69184285AB8130023C2F1 /* SwiftUISampleViewController.swift in Sources */,
 				9CB8083821F8283900DAD155 /* StatusBarForthViewController.swift in Sources */,
 				7B67232F20E1E13B00D8A5A3 /* QiitaListViewController.swift in Sources */,
 				20037F9524291049009D5CF5 /* TestFirstViewController.swift in Sources */,
