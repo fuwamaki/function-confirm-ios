@@ -11,12 +11,12 @@ import Foundation
 class SwiftUISampleData: ObservableObject {
     @Published var name: String
     @Published var isFavorited: Bool
-    
+
     init(name: String, isFavorited: Bool) {
         self.name = name
         self.isFavorited = isFavorited
     }
-    
+
     var favoriteImageName: String {
         isFavorited ? "heart.fill" : "heart"
     }

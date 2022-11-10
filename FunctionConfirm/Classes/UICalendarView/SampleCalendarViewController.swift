@@ -59,6 +59,7 @@ extension SampleCalendarViewController: UICalendarSelectionMultiDateDelegate {
 }
 
 extension SampleCalendarViewController: UICalendarViewDelegate {
+    // swiftlint:disable cyclomatic_complexity
     func calendarView(
         _ calendarView: UICalendarView,
         decorationFor dateComponents: DateComponents
