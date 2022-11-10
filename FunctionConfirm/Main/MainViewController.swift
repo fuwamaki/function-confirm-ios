@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 
+// swiftlint:disable file_length
 class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -24,10 +25,9 @@ class MainViewController: UIViewController {
 
 // セルを追加する場合の作業1/4: Main.storyboardにセルを追加
 extension MainViewController: UITableViewDataSource {
-
     // セルを追加する場合の作業2/4: Section数を追加
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 43
+        return 44
     }
 
     // セルを追加する場合の作業3/4: Cellを追加
@@ -202,9 +202,13 @@ extension MainViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "pasteCell", for: indexPath)
             cell.textLabel?.text = "Paste Sample"
             return cell
-        } else {
+        } else if indexPath.row == 42 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "swiftuiSampleCell", for: indexPath)
             cell.textLabel?.text = "SwiftUI Sample"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "simpleListCell", for: indexPath)
+            cell.textLabel?.text = "Simple List"
             return cell
         }
     }
@@ -385,9 +389,13 @@ extension MainViewController: UITableViewDelegate {
             let storyBoard = UIStoryboard(name: "PasteSample", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "PasteSampleViewController")
             navigationController?.pushViewController(viewController, animated: true)
-        default:
+        case 42:
             let storyBoard = UIStoryboard(name: "SwiftUISample", bundle: nil)
             let viewController = storyBoard.instantiateViewController(withIdentifier: "SwiftUISampleViewController")
+            navigationController?.pushViewController(viewController, animated: true)
+        default:
+            let storyBoard = UIStoryboard(name: "SimpleList", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "SimpleListViewController")
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

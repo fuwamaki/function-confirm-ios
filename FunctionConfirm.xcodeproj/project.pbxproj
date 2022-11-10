@@ -107,6 +107,8 @@
 		20F7D2EA24459E3F0054A935 /* SemiContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2E924459E3F0054A935 /* SemiContainerView.swift */; };
 		20F7D2EE2445A2970054A935 /* SemiModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2ED2445A2970054A935 /* SemiModalHeight.swift */; };
 		20F7D2F02445A3410054A935 /* SemiModalPresentationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7D2EF2445A3410054A935 /* SemiModalPresentationState.swift */; };
+		20F859CB291CDC20009A5078 /* SimpleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F859CA291CDC20009A5078 /* SimpleListViewController.swift */; };
+		20F859CD291CDC32009A5078 /* SimpleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F859CC291CDC32009A5078 /* SimpleList.storyboard */; };
 		7B67232120E0BF0300D8A5A3 /* ScreenTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */; };
 		7B67232320E0BF3D00D8A5A3 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */; };
 		7B67232C20E0D78300D8A5A3 /* GitHubRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67232B20E0D78300D8A5A3 /* GitHubRepositoryModel.swift */; };
@@ -344,6 +346,8 @@
 		20F7D2E924459E3F0054A935 /* SemiContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiContainerView.swift; sourceTree = "<group>"; };
 		20F7D2ED2445A2970054A935 /* SemiModalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalHeight.swift; sourceTree = "<group>"; };
 		20F7D2EF2445A3410054A935 /* SemiModalPresentationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalPresentationState.swift; sourceTree = "<group>"; };
+		20F859CA291CDC20009A5078 /* SimpleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListViewController.swift; sourceTree = "<group>"; };
+		20F859CC291CDC32009A5078 /* SimpleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleList.storyboard; sourceTree = "<group>"; };
 		36AAEDA64165B12B029D3C83 /* Pods-FunctionConfirm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionConfirm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm.debug.xcconfig"; sourceTree = "<group>"; };
 		7B67232020E0BF0300D8A5A3 /* ScreenTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionViewController.swift; sourceTree = "<group>"; };
 		7B67232220E0BF3D00D8A5A3 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
@@ -865,6 +869,15 @@
 			path = SemiModalPresentation;
 			sourceTree = "<group>";
 		};
+		20F859C9291CDC10009A5078 /* SimpleList */ = {
+			isa = PBXGroup;
+			children = (
+				20F859CA291CDC20009A5078 /* SimpleListViewController.swift */,
+				20F859CC291CDC32009A5078 /* SimpleList.storyboard */,
+			);
+			path = SimpleList;
+			sourceTree = "<group>";
+		};
 		7B67231E20E0BC5700D8A5A3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1011,7 @@
 				2028E53428507DF700DD5846 /* UICalendarView */,
 				2028E53E2852285600DD5846 /* NewPageControl */,
 				202407AD2852400D0066F68A /* Paste */,
+				20F859C9291CDC10009A5078 /* SimpleList */,
 				20C6917E285A8D540023C2F1 /* SwiftUISample */,
 			);
 			path = Classes;
@@ -1403,6 +1417,7 @@
 				209416D52823490B004CAE8C /* FadeScroll.storyboard in Resources */,
 				2032A71020DCDD370091952F /* Picker.storyboard in Resources */,
 				9CD30C7821F6FCFD00D6184A /* StatusBarInTabBar.storyboard in Resources */,
+				20F859CD291CDC32009A5078 /* SimpleList.storyboard in Resources */,
 				2046257227174E2F00DD9564 /* SampleMessage2.storyboard in Resources */,
 				9C87B27421F5966100A50985 /* StatusBar.storyboard in Resources */,
 				20A5142826ABC91200658C03 /* ClearNav.storyboard in Resources */,
@@ -1573,6 +1588,7 @@
 				201E42D92513590D00C9917C /* Alarm.swift in Sources */,
 				20F7D2D624458A490054A935 /* HalfModalRootViewController.swift in Sources */,
 				201D87232711278B00D44C4D /* MessageSenderType.swift in Sources */,
+				20F859CB291CDC20009A5078 /* SimpleListViewController.swift in Sources */,
 				20E109A626CF8475004ABA4A /* HorizontalPageViewController.swift in Sources */,
 				20A5142A26ABC91F00658C03 /* ClearNavViewController.swift in Sources */,
 				208CE614234753F60024AE3A /* ImageButton.swift in Sources */,
