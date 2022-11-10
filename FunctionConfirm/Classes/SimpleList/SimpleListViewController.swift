@@ -20,6 +20,10 @@ final class SimpleListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.delegate = self
+        title = "複数行表示できるかどうか試しにやってみたけどこんな感じになった"
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -50,5 +54,15 @@ extension SimpleListViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath
     ) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension SimpleListViewController: UINavigationBarDelegate {
+    func navigationBar(
+        _ navigationBar: UINavigationBar,
+        shouldPush item: UINavigationItem
+    ) -> Bool {
+        item.setValuesForKeys(["__largeTitleTwoLineMode": true])
+        return true
     }
 }
