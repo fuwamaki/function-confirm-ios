@@ -1284,7 +1284,7 @@
 				2032A6D220DCC9E50091952F /* Frameworks */,
 				2032A6D320DCC9E50091952F /* Resources */,
 				23A8E3A06E04D289A6EEBBE7 /* [CP] Embed Pods Frameworks */,
-				9C78A295221471460036D3FD /* ShellScript */,
+				9C78A295221471460036D3FD /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -1499,13 +1499,15 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FunctionConfirm/Pods-FunctionConfirm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9C78A295221471460036D3FD /* ShellScript */ = {
+		9C78A295221471460036D3FD /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
