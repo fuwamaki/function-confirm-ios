@@ -16,7 +16,8 @@ target 'FunctionConfirm' do
   pod 'APIKit', '~> 5.1.0'
   pod 'Cartography', '~> 4.0.0'
   pod 'KRProgressHUD', '~> 3.4.4'
-  pod 'AWSRekognition', '~> 2.19.1'
+  pod 'AWSMobileClient'
+  pod 'AWSPinpoint'
   pod 'RxSwift', '~> 5.1.1'
   pod 'RxCocoa', '~> 5.1.1'
   pod 'SwiftLint', '~> 0.41.0'
@@ -25,7 +26,7 @@ target 'FunctionConfirm' do
   pod 'MessageKit', '~> 3.7.0'
   pod 'PINRemoteImage', '~> 3.0'
   pod 'ImageViewer', '~> 6.0'
-  pod 'iosMath', '~> 0.9.4'
+  pod 'iosMath'
 
   target 'FunctionConfirmTests' do
     inherit! :search_paths

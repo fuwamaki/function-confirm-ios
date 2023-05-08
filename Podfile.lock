@@ -1,8 +1,20 @@
 PODS:
   - APIKit (5.1.0)
-  - AWSCore (2.19.1)
-  - AWSRekognition (2.19.1):
-    - AWSCore (= 2.19.1)
+  - AWSAuthCore (2.31.1):
+    - AWSCore (= 2.31.1)
+  - AWSCognitoIdentityProvider (2.31.1):
+    - AWSCognitoIdentityProviderASF (= 2.31.1)
+    - AWSCore (= 2.31.1)
+  - AWSCognitoIdentityProviderASF (2.31.1):
+    - AWSCore (= 2.31.1)
+  - AWSCore (2.31.1)
+  - AWSMobileClient (2.31.1):
+    - AWSAuthCore (= 2.31.1)
+    - AWSCognitoIdentityProvider (= 2.31.1)
+    - AWSCognitoIdentityProviderASF (= 2.31.1)
+    - AWSCore (= 2.31.1)
+  - AWSPinpoint (2.31.1):
+    - AWSCore (= 2.31.1)
   - Cartography (4.0.0)
   - ImageViewer (6.0.0)
   - InputBarAccessoryView (5.4.0):
@@ -45,10 +57,11 @@ PODS:
 
 DEPENDENCIES:
   - APIKit (~> 5.1.0)
-  - AWSRekognition (~> 2.19.1)
+  - AWSMobileClient
+  - AWSPinpoint
   - Cartography (~> 4.0.0)
   - ImageViewer (~> 6.0)
-  - iosMath (~> 0.9.4)
+  - iosMath
   - KRProgressHUD (~> 3.4.4)
   - MessageKit (~> 3.7.0)
   - PanModal
@@ -63,8 +76,12 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - APIKit
+    - AWSAuthCore
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
     - AWSCore
-    - AWSRekognition
+    - AWSMobileClient
+    - AWSPinpoint
     - Cartography
     - ImageViewer
     - InputBarAccessoryView
@@ -86,8 +103,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   APIKit: 9e1a4069608bf0ae5238811e6cfc26928ad4d01e
-  AWSCore: 55c154ae27efc5c98bdc30a0eeea5a35d10a2ab5
-  AWSRekognition: 5450c553bdb0e42168b78669818127a5a0312a15
+  AWSAuthCore: efed26af355360a00b84fc9251ce3e3beeecac92
+  AWSCognitoIdentityProvider: 63dda7bea693a2b0e76229c40a82a8a4199e4487
+  AWSCognitoIdentityProviderASF: a7323a914ab660c625b71a05d338230dcfee3d2e
+  AWSCore: 3fa19af1810d4430cfb735cc5323b68d8674fb5b
+  AWSMobileClient: 5605350f3e9c0ee6d1f2b2a1a0b8aa2954aef6cb
+  AWSPinpoint: 5b1c7ddda610be6377113abf874b533118fec814
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   ImageViewer: cb88ef1c0ba19161bc10702adfdcebc116a7a59d
   InputBarAccessoryView: 74d471ab1fa1736806be50328df79257e52865a9
@@ -107,6 +128,6 @@ SPEC CHECKSUMS:
   RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: 274ddddf6f7341afa4533ddcddc673855b5aee35
+PODFILE CHECKSUM: c4035317ae8d935e5dd5dba8cfc5aeefce7770fa
 
 COCOAPODS: 1.11.2
