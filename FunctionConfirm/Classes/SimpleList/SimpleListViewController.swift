@@ -20,7 +20,8 @@ final class SimpleListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.delegate = self
+        // ここでdelegateを設定するとクラッシュしてしまう
+//        navigationController?.navigationBar.delegate = self
         title = "複数行表示できるかどうか試しにやってみたけどこんな感じになった"
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
