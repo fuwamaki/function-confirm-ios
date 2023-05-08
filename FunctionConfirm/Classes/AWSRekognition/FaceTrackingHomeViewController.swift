@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-import AWSRekognition
+import AWSCore
 
 final class FaceTrackingHomeViewController: UIViewController {
 
@@ -57,61 +57,61 @@ final class FaceTrackingHomeViewController: UIViewController {
             }
         }
 
-        let rekognitionObject = AWSRekognition.default()
-        let celebImageAWS = AWSRekognitionImage()
-        celebImageAWS?.bytes = celebImageData
-        guard let celebRequest = AWSRekognitionRecognizeCelebritiesRequest() else {
-            return
-        }
-        celebRequest.image = celebImageAWS
-
-        rekognitionObject.recognizeCelebrities(celebRequest) { result, error in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-
-            guard let celebrityFaces = result?.celebrityFaces else {
-                return
-            }
-
-            if celebrityFaces.count > 0 { // もし有名人なら
-                for (index, celebFace) in celebrityFaces.enumerated() { // 識別した有名人の数だけ繰り返す
-                    guard let value = celebFace.matchConfidence?.intValue, value > 50 else { // 有名人の信頼値が50以上か確認
-                        return
-                    }
-                    DispatchQueue.main.async { [weak self] in
-                        self?.displayCelebrityImage(index: index, celebFace: celebFace)
-                    }
-                }
-            } else if let count = result?.unrecognizedFaces?.count, count > 0 {
-                // 画像は存在している。画像内でそれをポインティングする（演習用）
-            } else {
-                print("No faces in this pic")
-            }
-        }
+//        let rekognitionObject = AWSRekognition.default()
+//        let celebImageAWS = AWSRekognitionImage()
+//        celebImageAWS?.bytes = celebImageData
+//        guard let celebRequest = AWSRekognitionRecognizeCelebritiesRequest() else {
+//            return
+//        }
+//        celebRequest.image = celebImageAWS
+//
+//        rekognitionObject.recognizeCelebrities(celebRequest) { result, error in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            guard let celebrityFaces = result?.celebrityFaces else {
+//                return
+//            }
+//
+//            if celebrityFaces.count > 0 { // もし有名人なら
+//                for (index, celebFace) in celebrityFaces.enumerated() { // 識別した有名人の数だけ繰り返す
+//                    guard let value = celebFace.matchConfidence?.intValue, value > 50 else { // 有名人の信頼値が50以上か確認
+//                        return
+//                    }
+//                    DispatchQueue.main.async { [weak self] in
+//                        self?.displayCelebrityImage(index: index, celebFace: celebFace)
+//                    }
+//                }
+//            } else if let count = result?.unrecognizedFaces?.count, count > 0 {
+//                // 画像は存在している。画像内でそれをポインティングする（演習用）
+//            } else {
+//                print("No faces in this pic")
+//            }
+//        }
     }
 
-    private func displayCelebrityImage(index: Int, celebFace: AWSRekognitionCelebrity) {
-        let celebrityInImage = Celebrity()
-        celebrityInImage.celebrityImageView = celebImageView
-        // 認識した顔の座標を取得
-        celebrityInImage.boundingBox = CGRect(x: celebFace.face?.boundingBox?.left?.doubleValue ?? 0.0,
-                                              y: celebFace.face?.boundingBox?.top?.doubleValue ?? 0.0,
-                                              width: celebFace.face?.boundingBox?.width?.doubleValue ?? 0.0,
-                                              height: celebFace.face?.boundingBox?.height?.doubleValue ?? 0.0)
-        celebrityInImage.name = celebFace.name ?? "no name"
-        if let count = celebFace.urls?.count, count > 0 {
-            celebrityInImage.infoLink = celebFace.urls![0]
-        } else {
-            celebrityInImage.infoLink = "https://www.imdb.com/search/name-text?bio=" + celebrityInImage.name
-        }
-        infoLinksMap[index] = "https://" + celebFace.urls![0]
-        let infoButton: UIButton = celebrityInImage.infoButton
-        infoButton.tag = index
-        infoButton.addTarget(self, action: #selector(handleTap), for: UIControl.Event.touchUpInside)
-        celebImageView.addSubview(infoButton)
-    }
+//    private func displayCelebrityImage(index: Int, celebFace: AWSRekognitionCelebrity) {
+//        let celebrityInImage = Celebrity()
+//        celebrityInImage.celebrityImageView = celebImageView
+//        // 認識した顔の座標を取得
+//        celebrityInImage.boundingBox = CGRect(x: celebFace.face?.boundingBox?.left?.doubleValue ?? 0.0,
+//                                              y: celebFace.face?.boundingBox?.top?.doubleValue ?? 0.0,
+//                                              width: celebFace.face?.boundingBox?.width?.doubleValue ?? 0.0,
+//                                              height: celebFace.face?.boundingBox?.height?.doubleValue ?? 0.0)
+//        celebrityInImage.name = celebFace.name ?? "no name"
+//        if let count = celebFace.urls?.count, count > 0 {
+//            celebrityInImage.infoLink = celebFace.urls![0]
+//        } else {
+//            celebrityInImage.infoLink = "https://www.imdb.com/search/name-text?bio=" + celebrityInImage.name
+//        }
+//        infoLinksMap[index] = "https://" + celebFace.urls![0]
+//        let infoButton: UIButton = celebrityInImage.infoButton
+//        infoButton.tag = index
+//        infoButton.addTarget(self, action: #selector(handleTap), for: UIControl.Event.touchUpInside)
+//        celebImageView.addSubview(infoButton)
+//    }
 }
 
 // MARK: UIImagePickerControllerDelegate
